@@ -44,6 +44,7 @@
   - `git commit -m "메모"`  - 메모
   - `git push` - 보내기
   - `git pull` - 받기
+  - 만약, 컴퓨터에  기존 git자료가 없다면 `git clone 주소`  으로 자료를 동기화(받기)
 - 마인드맵 - gitmind
 
 ---
