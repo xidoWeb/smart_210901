@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- b_01_selector.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>css 선택자</title>
+  <!-- style -->
+  <style>
+    #wrap { 
+      /* display:inline;   */
+      width:300px; height:200px;
+      background-color:khaki; 
+    }
+    #test { 
+      display:block; 
+      width:300px; height:500px;
+      background-color: #f07;
+    }
+    .other {
+      display:inline-block;
+      display:none;
+      width:100px; height:200px;
+      background-color: #07a;
+    }
+
+    /* 기본 display:inline-block요소
+       img, button, input, select, textarea    
+    */
+  </style>
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    00
+  </div>
+  <span id="test">
+    111
+  </span>
+  <span class="other">1234</span>
+  <span class="other">test</span>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>
