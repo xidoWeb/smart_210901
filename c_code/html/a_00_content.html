@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <!-- style -->
-    <style></style>
+    <style>
+
+      div { width:500px; }
+      .ex_part { background-color:#fcf; }
+      .other_part { border-radius:30px; }
+      #one { background-color: #f7f;}
+      
+    </style>
   </head>
   <body>
     <!-- layout -->
-    <h1>웹기초</h1>
+    <h1 class="ex_part">웹기초</h1>
 
-    <div class="ex_part">
+    <div class="ex_part other_part">
       <h2>기초 내용</h2>
       <ul>
-        <li><a target="_blank" href="./a_01_basic.html">제목 및 내용</a></li>
+        <li id="one" class="other_part"><a target="_blank" href="./a_01_basic.html">제목 및 내용</a></li>
         <li><a target="_blank" href="./a_02_basic_list.html">리스트</a></li>
       </ul>
     </div>
