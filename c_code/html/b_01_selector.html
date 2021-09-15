@@ -8,6 +8,17 @@
   <title>css 선택자</title>
   <!-- style -->
   <style>
+
+    /* 
+      *{ color: #777; margin:0; padding:0; text-decoration:overline; } 
+    */
+
+    a {color:#171717; }
+    /* div#wrap { 
+      border-width:5px; 
+      border-style:solid; 
+      border-color:#f9a;} */
+
     #wrap { 
       /* display:inline;   */
       width:900px; height:2000px;
@@ -35,7 +46,9 @@
     h1 { width:200px; height:50px; background-color: #ccf;}
     h1 a {display:block; width:100%; height:100%; color:#973; text-decoration:none; }
     .ex_part { width:90%; height:auto; margin:auto; background-color: #fff;}
-    .ex_part h2 { color:#06f; }
+    div.ex_part h2 { color:#06f; }
+    
+
 
     ul {
       border-width:1px; 
@@ -44,7 +57,7 @@
     }
 
     .ex_part ul { border-style:solid; }
-    
+
     /* > 있는것과 없는 것 비교 */
     .ex_part ul > li { 
       margin-bottom:10px; 
@@ -52,10 +65,19 @@
     }
 
     /** 선택자 
-    - 하나의 요소를 선택하여 css를 적용: 타입/요소 선택자
+    - 하나의 요소를 선택하여 css를 적용: 타입/요소 선택자 
+      ex:  div {}   ||   p {}   ||   a{}   ||   li {}
     - 요소 (스페이스) 요소 를 선택하여 css 적용 : 자손(후손) 선택자   
+      ex:  ul li {}  || ol li {}  || div  a {}  ||  #box  li {}  || .test a {}
     - 요소 > 요소 선택자 : 자식선택자
+      ex:  ul > li {}  ||  div > h3 {}   ||  #box > h2 {}
+    - id/class  :  id -> #id명   ,  class  -> .class명
+    - * 전체선택자 : 가급적 사용 X
     */
+
+   .ex_part a { color:#03f; }
+   .ex_part ol a { color:#f30; }
+
   </style>
 </head>
 <body>
@@ -78,7 +100,7 @@
       </ul>
     </div>
 
-    <div class="ex_part2">
+    <section class="ex_part">
       <h2>글씨 색상을 검정색으로</h2>
       <ul>
         <li><a href="#">네이버</a>로 이동</li>
@@ -91,7 +113,7 @@
         </li>
         <li>list 3번째</li>
       </ul>
-    </div>
+    </section>
 
   </div>
   
