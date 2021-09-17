@@ -16,6 +16,23 @@
 h2 {
   width: 100%;   border-bottom:1px solid #3af;
 }
-.ex_part > div {
+.img_arr {
   width: 100%; height: auto;  background-color: #fdd;
+}
+
+.img_arr > img { width:auto; height:200px; }
+
+.img_content {
+  width:100%; height:auto; background-color: #cdf;
+}
+
+.img_area { 
+  float:left; 
+  width:150px; height:150px;
+  margin-right:15px;
+}
+.img_area img {width: 100%; height: auto;}
+.img_content p {
+  width: 100%; height: auto; 
+  background-color: #0df;
 }
