@@ -72,6 +72,16 @@ li {
   color:#f70; font-style:italic;
 }
 
+.first::first-letter { 
+  font-size:2rem; font-weight: bold; color:#f06;
+}
+
+.multi_line::first-line {
+  text-decoration:underline;
+  color:#f70;
+}
+
+
 /*
 선택자:hover   -> 마우스 올릴경우 /*
 선택자:active  -> 마우스 클릭(누르는경우)
