@@ -17,6 +17,23 @@
       }
 
       .on:hover { background-color: #0af; }
+      .push:active { background-color: #f0c; }
+      .link > a:visited {color:#f00;}
+      .go > a:link {
+        display: block; 
+        width: 100%; height: 100%; 
+        background-color: #fff;}
+      .go > a:visited { color:#f00; background-color: #afa;}
+
+      .none { 
+        display:none;
+        width:100px; height:300px; 
+        background-color: #afa;}
+      .on:hover > div{ display: block;}
+      .check > a:focus {
+        outline:0;
+        background-color: #a77; color:#fff;
+      }
     </style>
   </head>
   <body>
@@ -24,19 +41,23 @@
     <div id="wrap">
       <h1><a href="./a_00_content.html">웹기초</a></h1>
       <hr />
-
       <h2>의사전달코드 1</h2>
       <p>의사전달코드란? 사용자가 행동하는 내용에 따른 결과를 다르게 보여주는 기능 또는 <br />
         웹 개발자의 의사를 반영할 수 있도록 만들어진 코드 
       </p>
       <ul>
         <li class="on">마우스 올렸을 경우</li>
-        <li>마우스 버튼을 누를 경우</li>
-        <li>링크페이지를 방문한 경우</li>
-        <li>링크페이지를 링크인 경우</li>
-        <li>초점이 맞는 경우(focus처리)</li>
-      </ul>
-      
+        <li class="push">마우스 버튼을 누를 경우</li>
+        <li class="link"><a href="./test.html">링크페이지를 방문한 경우</a></li>
+        <li class="go"><a href="#">링크페이지를 링크인 경우</a></li>
+        <li class="on">
+          마우스 올리면?
+          <div class="none">내용???</div>
+        </li>
+        <li class="check">
+          <a href="#">초점이 맞는 경우(focus처리) - a, button, input</a>
+        </li>
+      </ul>     
 
     </div>
 
