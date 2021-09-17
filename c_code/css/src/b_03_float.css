@@ -60,3 +60,40 @@ h2 {
   list-style:none;
 }
 .img_list img {width:auto; height: 100%;}
+
+/* ----------------- */
+.content_area {
+  width: 800px; height:400px;
+  margin:auto;
+  background-color: #fa0;
+}
+
+.viewer {
+  float:right;
+  width:120px; height:120px; 
+  margin:30px;
+}
+.viewer img { width:100%; height:auto; }
+
+.content_area p { 
+  width: 95%; height: auto; 
+  margin:auto;
+  background-color: #fff;
+}
+
+/* ------------------- */
+
+.list_area { 
+  width: 90%; height:800px; margin:auto;
+  background-color: #fff;
+}
+
+.list_area ul{
+  width: 100%; height:auto; padding: 0; background-color: #adf;
+}
+.list_area li{
+  list-style: none;
+  width:100px; height:150px; border-radius:5px;
+  background-color: #7aa;
+}
+.list_area img{  width: 100%; height:auto; }
