@@ -36,3 +36,27 @@ h2 {
   width: 100%; height: auto; 
   background-color: #0df;
 }
+
+/* ----------------------------------------------- */
+
+.img_wrap {
+   width: 500px; height: 200px; margin:auto;
+   background-color: #fff;
+  }
+.img_wrap  img { width:80px; height:auto; }
+
+/* ------- */
+.img_list {
+  width:500px; height:200px; 
+  margin:auto; padding:0;
+  background-color:#fd0;
+}
+.img_list li {
+  float:left;
+  /* display:inline-block; */
+  width:80px; height:80px; 
+  border-radius:10px;
+  background-color: #afd;
+  list-style:none;
+}
+.img_list img {width:auto; height: 100%;}
