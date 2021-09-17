@@ -91,4 +91,17 @@ li {
 
 선택자::before {content:;} -> 선택자의 내부 내용이전에...
 선택자::after {content:;}  -> 선택자의 내부 내용이후에...
+
+선택자:first-letter {}
+선택자:first-line {}
+
 */
+
+
+/* 
+웹페이지 초기화 : reset.css
+공통 class 사용 : common.css
+font   : font_xx.css
+
+*/
+
