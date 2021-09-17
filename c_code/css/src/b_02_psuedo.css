@@ -71,3 +71,14 @@ li {
   content:"뒤에는 노란색";
   color:#f70; font-style:italic;
 }
+
+/*
+선택자:hover   -> 마우스 올릴경우 /*
+선택자:active  -> 마우스 클릭(누르는경우)
+
+선택자:visited -> 방문한적이 있는(a태그)
+선택자:focus   -> 초점이 맞는경우(a, button, input)
+
+선택자::before {content:;} -> 선택자의 내부 내용이전에...
+선택자::after {content:;}  -> 선택자의 내부 내용이후에...
+*/
