@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* b_03_float.css */
+
+
+#wrap {
+  width: 900px; height:auto; min-height:500px;
+  margin:auto; padding-bottom:500px;
+  border-top:1px solid #333;  background-color: #eee;
+}
+
+.ex_part {
+  width: 90%; height:auto;
+  border-width:1px;  border-style:solid;  border-color:#333;
+}
+
+h2 {
+  width: 100%;   border-bottom:1px solid #3af;
+}
+.ex_part > div {
+  width: 100%; height: auto;  background-color: #fdd;
+}
