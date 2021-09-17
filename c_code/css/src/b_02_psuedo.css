@@ -1,6 +1,24 @@
 @charset "UTF-8";
 /* b_02_psuedo.css */
 
+/* 
+  선택자 {}
+  @기능 () {}  
+    ->  @media screen and (min-width:320px) {}
+    ->  @supports (옵션) {}
+  @기능 {}
+    ->  @animation 이름 {}
+  @기능 "역할"
+    -> @charset "UTF-8";
+    -> @import url("data");
+*/
+
+#wrap {
+  width: 100%; height: auto;
+  padding-bottom: 1000px;
+}
+
+
 li { 
   width:400px; height:auto; 
   margin:5px; padding:10px;
@@ -24,4 +42,32 @@ li {
 .check > a:focus {
   outline:0;
   background-color: #a77; color:#fff;
+}
+
+.front {font-weight:700;}
+.front:before,
+.front::before {
+  content:"앞에 추가-";
+  color:#f00;
+  display: inline-block; 
+  width: 100px; height:10px;
+  background-color: #fa0;
+}
+
+.back { color:#505; }
+.back:after,
+.back::after {
+  content:"-뒤에 추가";
+}
+
+.both:before,
+.both::before {
+  content:"앞에는 빨간색";
+  color:#f00; font-weight: 900;
+}
+
+.both:after,
+.both::after {
+  content:"뒤에는 노란색";
+  color:#f70; font-style:italic;
 }
