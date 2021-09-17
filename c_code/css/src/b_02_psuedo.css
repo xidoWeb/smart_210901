@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* b_02_psuedo.css */
+
+li { 
+  width:400px; height:auto; 
+  margin:5px; padding:10px;
+  background-color: #ddd;
+}
+
+.on:hover { background-color: #0af; }
+.push:active { background-color: #f0c; }
+.link > a:visited {color:#f00;}
+.go > a:link {
+  display: block; 
+  width: 100%; height: 100%; 
+  background-color: #fff;}
+.go > a:visited { color:#f00; background-color: #afa;}
+
+.none { 
+  display:none;
+  width:100px; height:300px; 
+  background-color: #afa;}
+.on:hover > div{ display: block;}
+.check > a:focus {
+  outline:0;
+  background-color: #a77; color:#fff;
+}
