@@ -98,13 +98,56 @@
 
 .p_base {
   padding:0; list-style: none;
-
   width: 600px; height: auto;
+}
+.p_base::after{  content:""; display: block; clear:both;
 }
 
 .p_base > li {
-  float: left;
-  width: 100px; height: 100px;
+  float: left;  width: 100px; height: 100px;
   background-color: #dfa;
   background-image: linear-gradient(45deg, #dfa, #7c8);
 }
+
+.p_base span {
+  display: block; width: 100%; height: 100%;
+  background-color: rgba(255,255,255,30%);
+}
+/* -------------------------------------- */
+
+.p_01 { padding:10px; }
+.p_02 { padding:20px 40px;}
+.p_03 { padding:10px 40px 50px;}
+.p_04 { padding:5px 10px 20px 40px; }
+.p_05 { 
+  padding-top:30px; padding-left:10px;
+  padding-right:30px; padding-bottom: 20px;
+}
+.p_06 {
+  padding-top:10%; padding-left:10%;
+}
+
+.p_07 {
+  padding:10px; padding-right: 40px; }
+.p_base .p_08 {
+  padding-top:30px;
+  background-image: none;
+  background-color: transparent; 
+}
+
+
+.p_base .p_09 {
+  width: 40px; height: 40px;
+  padding:30px;
+}
+
+.p_10 {
+  width: 100px; height: 100px;
+  padding:30px;
+  /* box-sizing:content-box || border-box; */
+  box-sizing: border-box;
+}
+
+
+
+/* margin, padding */
