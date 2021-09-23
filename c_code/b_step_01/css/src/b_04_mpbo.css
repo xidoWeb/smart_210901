@@ -67,3 +67,31 @@
 .m_07 { margin-top:-50px;}
 .m_08 { margin-left:10%; margin-top:10%; }
 /* .m_base2 { overflow: hidden;} */
+
+/* ----------------------------------------- */
+
+.float_area { 
+  list-style:none;
+  padding: 0;
+  width:500px;
+  margin:auto;
+  border:1px solid #333;
+  background-color: #fff;
+}
+.float_area:after{
+  content:""; display:block; clear:both;
+  width: 100%; height: 30px; 
+  background-color: #fff; 
+}
+
+.float_area > li {
+  float:left;
+  width:100px; height:100px;
+  background-image:
+    linear-gradient(60deg, #adf, #f7a);
+}
+
+.l_01 {margin-bottom:10px;}
+.float_area > .l_02 { height: 50px; margin-bottom:10px; }
+
+
