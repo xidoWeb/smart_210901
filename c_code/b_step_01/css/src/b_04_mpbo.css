@@ -50,3 +50,20 @@
   /* margin-left:300px; */
   /* margin-bottom:100px; */
 }
+/* ------------------------------ */
+.m_base2 { margin-top: 50px;}
+.m_base2:after{
+  content:""; display: block; clear:both;
+}
+.m_base2 > div {float:left;}
+
+.m_01 { margin:50px; }
+.m_02 { margin:10px  30px; }
+.m_03 { margin:10px  50px  30px; }
+.m_04 { margin:5px 20px 40px 70px;}
+/* .m_05 {margin:20px 20px 10px;} */
+.m_05 { margin:20px; margin-bottom:10px; }
+.m_06 { margin:0 auto;}
+.m_07 { margin-top:-50px;}
+.m_08 { margin-left:10%; margin-top:10%; }
+/* .m_base2 { overflow: hidden;} */
