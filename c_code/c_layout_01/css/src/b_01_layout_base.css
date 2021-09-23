@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* css/src/b_01_layout_base.css */
+
+.ex_part {
+  width: 900px; height: 900px;
+  border-width:1px; 
+  border-style:solid; 
+  border-color:#333;
+}
