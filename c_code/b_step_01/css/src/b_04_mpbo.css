@@ -30,25 +30,23 @@
 /* ----------------------------------------- */
 /* margin: 외부여백 - 요소와 요소사이의 공백 */
 .m_base {
-  /* border:0; */
+  border:0;
+  width:200px;
   background-color: #fda;
 }
 .m_base:after{ 
   content:""; display: block; clear: both;}
 
-.m_base > div {
-  float:left;
-}
+.m_base > div {  float:left; }
 
 .margin_01 {
-  margin-left:50px;
-  margin-bottom:10px;
+  /* margin-left:50px; */
   margin-top:50px;
-  margin-right:100px;
+  margin-bottom: 50px;
 }
 
 .margin_02 {
   margin-top:50px;
-  margin-left:30px;
-  margin-bottom:100px;
+  /* margin-left:300px; */
+  /* margin-bottom:100px; */
 }
