@@ -94,4 +94,17 @@
 .l_01 {margin-bottom:10px;}
 .float_area > .l_02 { height: 50px; margin-bottom:10px; }
 
+/* --------------------------------------- */
 
+.p_base {
+  padding:0; list-style: none;
+
+  width: 600px; height: auto;
+}
+
+.p_base > li {
+  float: left;
+  width: 100px; height: 100px;
+  background-color: #dfa;
+  background-image: linear-gradient(45deg, #dfa, #7c8);
+}
