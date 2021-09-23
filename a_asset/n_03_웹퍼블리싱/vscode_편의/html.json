@@ -1,0 +1,45 @@
+{
+	"html_base_01": {
+		"prefix": "x1",
+		"body": [
+			"<!DOCTYPE html>",
+			"<!-- ${TM_FILENAME_BASE}.html -->",
+			"<html lang=\"ko-KR\" class=\"no-js\">",
+			"<head>",
+			"  <meta charset=\"UTF-8\">",
+			"  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+			"  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"",
+			"  <script src=\"../js/common/modernizr-custom.js\"></script>",
+			"",
+			"  <link rel=\"stylesheet\" href=\"../css/src/${TM_FILENAME_BASE}.css\">",
+			"  <title>${1:웹기초}</title>",
+			"  <link rel=\"shortcut icon\" href=\"../favicon.png\" type=\"image/png\">",
+			"  <link rel=\"apple-touch-icon\" href=\"../favicon.png\">",
+			"</head>",
+			"<body>",
+			"  <!-- layout -->",
+			"  <div id=\"wrap\">",
+			"    ${2:<h1><a href=\"./a_content.html\">웹</a></h1>}",
+			"  </div>",
+			"",
+			"  <!-- script -->",
+			"  <script></script>",
+			"</body>",
+			"</html>"
+		],
+		"description": "html_base_01"
+	},
+	"html_ex_01": {
+		"prefix": "ex",
+		"body": [
+			"<div class=\"ex_part\">",
+			"  <h2></h2>",
+			"  <div class=\"ex\">",
+			"    ",
+			"  </div>",
+			"</div>"
+		],
+		"description": "html_ex_01"
+	}
+}
