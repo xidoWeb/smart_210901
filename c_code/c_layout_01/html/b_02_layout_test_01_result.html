@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<!-- a_content.html -->
+<!-- b_02_layout_test_01_result.html -->
 <html lang="ko-KR" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href=""> -->
 
   <script src="../js/common/modernizr-custom.js"></script>
 
+  <link rel="stylesheet" href="../css/src/b_02_layout_test_01_result.css">
+  <title>웹 레이아웃 테스트 1</title>
   <link rel="shortcut icon" href="../favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="../favicon.png">
-  <title>Document</title>
 </head>
 <body>
   <!-- layout -->
   <div id="wrap">
-    <h1><a href="#">웹 내용 풀이</a></h1>
-
-    <hr />
-    <div class="part">
-      <h2>레이아웃</h2>
-      <ul>
-        <li><a href="./b_01_layout_base.html">float을 이해하기 위한 layout 구성풀이</a></li>
-        <li><a href="./b_02_layout_test_01_result.html">레이아웃 테스트 1</a></li>
-      </ul>
-
-    </div>
-
-  </div><!-- // #wrap -->
+    <div id="header">
+      header
+    </div><!-- // #header -->
+    
+    <div id="section" class="clearfix">
+      <div class="sect_01">sect_01</div>
+      <div class="sect_02">sect_02</div>
+    </div><!-- // #section -->
+    
+    <div id="footer">
+      footer
+    </div><!-- // #footer -->
+    
+  </div><!--// #wrap -->
 
   <!-- script -->
   <script></script>
