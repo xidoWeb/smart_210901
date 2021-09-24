@@ -1,6 +1,17 @@
 @charset "UTF-8";
 /* css/src/b_01_layout_base.css */
 
+/* common.css */
+.clearfix:after,
+.clearfix::after {
+  content:"";
+  display:block;
+  width: 100%; height: 0;
+  clear:both;
+}
+
+/* ================================= */
+
 .ex_part {
   width: 900px; height: 900px;
   border-width:1px; 
@@ -85,7 +96,41 @@
 .inner_02 .insert { width:45%; margin:auto; background-color:#d33; }
 .inner_03 .insert { width:60%; background-color:#57f; }
 
-/* --------------------------------------------------- */
+/* .box_05 ==================================== */
+.box_05 {
+  width: 600px; height:auto;
+  margin:auto;
+  border:5px solid #ccc;
+}
+
+.box_05 > div {
+  float:left;
+  width:200px; height:600px;
+  padding:5px; box-sizing:border-box;
+}
+
+.box_05 .insert {
+  width:100%; height:180px;
+  background-color: #dfa;
+}
+.box_05  .inner_02 {
+  padding-top:180px;
+  box-sizing: border-box;
+}
+
+/* .inner_02 > .insert {
+  margin-top:180px;
+} */
+
+.inner_03 > .insert {
+  /* margin-top:360px; */
+  border-top:360px solid transparent;
+  background-clip: content-box;
+}
+
+
+
+/* ------------------------------------------- */
 .box_06 {
   width:600px; height:auto; min-height:200px;
   margin:auto;
