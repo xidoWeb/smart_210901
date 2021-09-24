@@ -5,11 +5,17 @@
 =============================== */
 body {margin: 0;
   background-color: #000070;}
-h1,h2,h3,h4,h5,h6,p,pre,address{
+
+h1,h2,h3,h4,h5,h6,
+p,pre,address,
+ul,ol,li,dl,dt,dd {
   margin: 0; padding: 0;
-  font-size:16px;
-}
+  font-size:16px; font-family:sans-serif; }
+
+ul,ol { list-style:none;}
+
 a { text-decoration: none; color:inherit;}
+button {border:0; background-color: transparent; cursor: pointer;}
 
 /* common.css 
 ============================= */
@@ -37,8 +43,16 @@ a { text-decoration: none; color:inherit;}
     background-color: #dfd;}
   .navigation {
     float:right; width: 400px; height: 100px; 
-    background-color: #fa0;
-  }
+    padding-top:50px; box-sizing: border-box;
+    background-color: #fa0; }
+  .navigation > ul {float:right; width:auto; height: auto; background-color: #fff;}
+  .navigation li {
+    float:left; width:40px; height:50px; 
+    margin-left:10px;
+    background-color: #35a; color:#fff;}
+  .navigation li a { display: block; width: 100%; height: 100%; background-color: #ca7; }
+  .navigation li:first-child { margin-left:0; }
+
 /* #section 
 --------------------------------------- */
 #section{
