@@ -5,6 +5,11 @@
 =============================== */
 body {margin: 0;
   background-color: #000070;}
+h1,h2,h3,h4,h5,h6,p,pre,address{
+  margin: 0; padding: 0;
+  font-size:16px;
+}
+a { text-decoration: none; color:inherit;}
 
 /* common.css 
 ============================= */
@@ -19,6 +24,7 @@ body {margin: 0;
 #wrap {
   width: 600px; height: auto; min-height:500px;
   margin:auto; margin-top: 50px;
+  padding-bottom: 500px;
   /* background-color: #afa; */
 }
 
@@ -26,7 +32,13 @@ body {margin: 0;
 --------------------------------------- */
 #header{
   width:100%; height:100px; background-color: #f06;}
-
+  h1 {
+    float: left; width: 120px; height: 100px; 
+    background-color: #dfd;}
+  .navigation {
+    float:right; width: 400px; height: 100px; 
+    background-color: #fa0;
+  }
 /* #section 
 --------------------------------------- */
 #section{
@@ -34,6 +46,57 @@ body {margin: 0;
   #section > div { float:left; height:300px; }
   .sect_01 { width:40%; background-color: #7a7; }
   .sect_02 { width:60%; background-color: #777; }
+
+/* #aside
+--------------------------------------- */
+#aside {
+  width: 100%; height:auto;
+}
+#aside > div {
+  float:left;
+  width: calc(100% / 3);
+  height:300px;
+}
+.side_01{ width:33.333333%; background-color: #fcf;}
+.side_02{ width:33.333334%; background-color: #aca;}
+.side_03{ width:33.333333%; background-color: #d7d;}
+
+/* #article
+--------------------------------------- */
+#article { 
+  width: 100%; height:auto; 
+  background-color: #7a7;}
+  .art_01 { 
+    float:left;
+    width:calc(100% / 3); height:300px;
+    background-color: #35a;
+  }
+  .art_02 { 
+    float:left;
+    width:calc(100% / 3 * 2); height:150px;
+    background-color: #f3a;
+  }
+  .art_03 { 
+    float:left;
+    width:calc(100% / 3 * 2); height:150px;
+    background-color: #a7a;
+  }
+
+/* #content  
+--------------------------------------- */
+#content {width: 100%; height:auto;}
+/* #content .art_01 {float:right; height: 500px;}
+#content .art_03 {height:350px;} */
+
+#content .art_01 {
+  float:left; width: 70%; height: 150px; }
+#content .art_02 {
+  float:left; width: 70%; height: 350px; }
+#content .art_03 {
+  float:left; width: 30%; height: 550px; 
+  margin-top:-150px;
+}
+
 
 /* #footer 
 --------------------------------------- */
