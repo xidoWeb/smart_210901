@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* b_05_nth.css */
+
+.ex {
+  width: 80%; height:auto;
+  margin:auto; padding: 20px;
+  border:1px solid #333;
+}
+
+ul {
+  background-color: #eee;
+}
+
+ul li { margin-bottom:20px; padding:3px 0;}
+ul li:first-child { background-color: #adf;}
+ul li:nth-child(1) { color:#F07;} 
+ul li:nth-child(2) { color:#057;} 
+ul li:nth-child(5) { border-bottom:1px solid #5ac;} 
+ul li:last-child { margin-bottom: 0;} 
+ul li:nth-last-child(1) {background-color: #add;} 
+ul li:nth-last-child(3) {background-color: #a6d;} 
+ul li:nth-child(2n) {text-indent:20px;} 
+ul li:nth-child(2n-1) {text-indent:50px;} 
