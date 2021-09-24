@@ -178,42 +178,19 @@
 
 .b_02 { border:10px dotted #fa0; }
 
-.b_03 { 
-  border:5px dashed #dff; 
-  box-sizing: border-box;
-}
-
-.b_04 {
-  border:10px dotted #faa;
-  padding:10px;
-  background-clip:border-box;
-}
+.b_03 {   border:5px dashed #dff;  box-sizing: border-box;}
+.b_04 { border:10px dotted #faa; padding:10px; background-clip:border-box; }
 /* background-clip: border-box || padding-box || content-box || inherit */
-
 .b_05 {
   border:5px solid #fac;
   border-top:4px dashed #aff;
   border-left-color: #afc;
-  border-right-width:10px;
-  border-bottom-width:0;
+  border-right-width:10px;  border-bottom-width:0;
 }
-
-.b_06 {
-  border-top:5px solid #fac;
-  border-bottom:5px solid #fac;
-}
+.b_06 { border-top:5px solid #fac; border-bottom:5px solid #fac;}
 .b_06 button {
-  width: 0; height: 0;
-  padding: 0;
-  cursor:pointer;
+  width: 0; height: 0;  padding: 0;  cursor:pointer;
   border:20px solid transparent;
-  border-left:30px solid #f33;
-  border-right:0;
-  background-color: transparent;
-}
-
-.b_06 span { 
-  display: block;
-  width: 0; height: 0; overflow:hidden; 
-}
+  border-left:30px solid #f33; border-right:0; background-color: transparent;}
+.b_06 span { display: block; width: 0; height: 0; overflow:hidden;}
 
