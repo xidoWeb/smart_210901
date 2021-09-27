@@ -20,6 +20,7 @@ h1,h2,h3,h4,h5,h6,
 div,p,pre,address,
 ul,ol,li,dl,dt,dd {
   margin: 0; padding: 0; font-family: 'apple SD', 'myriad pro',arial,sans-serif;
+  vertical-align: baseline;
 }
 
 ol,ul { list-style:none; }
@@ -180,6 +181,7 @@ abbr {text-decoration: none;}
     float:left;
     width: 350px; height: 430px;
     margin-right: 62px;
+    box-sizing: border-box; padding: 8px;
     background-color: #fcf;
   }
   .card:last-of-type {
@@ -188,7 +190,6 @@ abbr {text-decoration: none;}
 
   .card > div {
     width: 100%; height: 200px;
-    box-sizing: border-box; padding: 8px;
     background-color: #f5f;
   }
   .img_part { margin-bottom: 14px;}
@@ -207,7 +208,34 @@ abbr {text-decoration: none;}
     margin:auto;
     background-color: #0ac;
   }
+  .new_con_title_area{
+    float:left;
+    width: 640px; height:700px;
+    background-color: #da0;
+  }
+    .new_con_title_img{
+      width:100%; height:350px; 
+      background-color: #aca;
+    }
+    .new_con_title_text{
+      width:100%; height:350px;
+      box-sizing:border-box; padding:20px; 
+      background-color: #aff;
+      background-clip:content-box;
+    }
 
+    /* 
+    background-clip: 배경색상을 칠하는 범위;
+      content-box  : 내용만 칠해라
+      padding-box  : padding범위까지 칠해라
+      border-box   : 외곽선까지 칠해라
+    */
+  .new_con_more_area {
+    float:right;
+    width:630px; height:400px;
+    background-color: #da0;
+  }
+  
 /* #recommendedContentBox 
 ================================== */
 #recommendedContentBox {
@@ -225,14 +253,23 @@ abbr {text-decoration: none;}
 ================================== */
 #communityBox {
   height: 800px;
-  box-sizing: border-box; padding-top: 60px;
-  background-color: #ddd;    
+  box-sizing: border-box; padding-top: 60px; background-color: #ddd;    
 }
   .community_area{
-    width: 1300px; height: 600px;
-    margin:auto;
-    background-color: #0ac;
-  }
+    width: 1300px; height: 600px;  margin:auto; background-color: #0ac; }
+
+  .community_area ul {  width: 100%; height: auto;  }
+  .community_con {
+    width: 100%; height: 160px;  margin-bottom:60px; background-color: #dd0; }
+  .community_con:last-child{ margin-bottom: 0;}
+
+  .community_con:before,
+  .community_con::before{
+    content:"Q & A"; float:left;
+    width:300px; height: 160px;
+    font-size:80px; text-align: center; line-height:160px;
+    background-color: #faf;  }
+
 
 /* #miniAdBox 
 ================================== */
