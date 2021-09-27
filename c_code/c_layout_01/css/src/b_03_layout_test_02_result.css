@@ -39,10 +39,15 @@ abbr {text-decoration: none;}
   content:""; display: block; clear:both;
 }
 
-.box_space { margin-bottom: 80px;}
-
 /* design ==================================================== */
+/* work_page common */
+.box_space { margin-bottom: 80px;}
+.area_title {
+  width: 1300px; height: 50px;
+  margin:auto; margin-bottom: 30px;
+  background-color: #0ac; }
 
+/* layout page design */
 #wrap {
   width:1600px; height: auto; min-height:500px;
   margin:auto;
@@ -76,15 +81,34 @@ abbr {text-decoration: none;}
 /* #adViewBox 
 ================================== */
 #adViewBox { 
-  height: 750px; background-color: #aaa;
+  height: 750px; 
+  box-sizing:border-box; padding-top: 28px;
+  background-color: #aaa;
 }
+  .view_outer {
+    width: 1300px; height: 600px;
+    margin:auto; margin-bottom: 28px;
+    background-color: #0ac;
+  }
+  .view_indicator {
+    width: 850px; height: 60px;
+    margin:auto; 
+    background-color: #0ac;
+  }
 
 /* #localNavBox 
 ================================== */
 #localNavBox {
-  height: 250px; background-color: #999;
-  margin-bottom:50px;
+  height: 250px; 
+  margin-bottom:50px; 
+  box-sizing: border-box; padding-top: 18px;
+  background-color: #999;
 }
+  .local_nav_outer {
+    width: 1500px; height: 196px;
+    margin:auto;
+    background-color: #0ac;
+  }
 
 
 /* #popularContentBox 
@@ -93,36 +117,73 @@ abbr {text-decoration: none;}
   height: 600px; background-color: #aaa;
 }
 
+  .pop_con_area {
+    width: 1300px; height: 470px;
+    margin:auto;
+    background-color: #0ac;
+  }
+
 /* #newContentBox 
 ================================== */
 #newContentBox {
   height: 900px; 
+  box-sizing:border-box; padding-top: 60px;
   background-color: #ddd;
 }
+  .new_con_area {
+    width: 1300px; height:700px;
+    margin:auto;
+    background-color: #0ac;
+  }
 
 /* #recommendedContentBox 
 ================================== */
 #recommendedContentBox {
-  height: 600px; 
+  height: 600px;
+  box-sizing: border-box; padding-top: 30px; 
   background-color: #aaa;
 }
+  .recon_con_area{
+    width: 1300px; height: 440px;
+    margin:auto;
+    background-color: #0ac;
+  }
 
 /* #communityBox 
 ================================== */
 #communityBox {
   height: 800px;
+  box-sizing: border-box; padding-top: 60px;
   background-color: #ddd;    
 }
+  .community_area{
+    width: 1300px; height: 600px;
+    margin:auto;
+    background-color: #0ac;
+  }
 
 /* #miniAdBox 
 ================================== */
 #miniAdBox {
   height: 400px; 
+  box-sizing: border-box; padding-top: 40px;
   background-color: #aaa;
 }
+  .mini_ad_outer{
+    width: 1500px; height:300px;
+    margin:auto;
+    background-color: #0ac;
+  }
 
 /* #footBox 
 ================================== */
 #footBox {
-  height: 200px; background-color: #999;
+  height: 200px; 
+  box-sizing: border-box; padding-top: 22px;
+  background-color: #999;
+}
+.foot_outer {
+  width: 1300px; height: 140px;
+  margin:auto;
+  background-color: #0ac;
 }
