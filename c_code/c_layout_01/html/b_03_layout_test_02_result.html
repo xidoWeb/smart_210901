@@ -16,35 +16,44 @@
 <body>
   <!-- layout -->
   <div id="wrap">
-    <div id="headBox">
+    <div id="headBox" role="banner">
       <h1>file name</h1>
-      <div class="gnb">
+      <div class="gnb" role="navigation">
         <h2 class="blind">global navigation</h2>
       </div>
-      <div class="unb">
+      <div class="unb" role="navigation">
         <h2 class="blind">utility navigation</h2>
       </div>
     </div>
     <!-- // #headBox -->  
 
-    <div id="adViewBox">
+    <div id="adViewBox" role="region">
       <h2 class="blind">주요 광고 내용</h2>
 
       <div class="view_outer">view_outer</div>
       <div class="view_indicator">
         view_indicator
       </div>
+      <div class="view_btn">
+        <a href="" role="button" 
+        aria-hidden="true" aria-roledescription="이전">
+          <span class="blind">이전</span>
+        </a>
+        <a href="" role="button" aria-roledescription="다음">
+          <span class="blind">다음</span>
+        </a>
+      </div>
     </div>
     <!-- // #adViewBox -->    
 
-    <div id="localNavBox">
+    <div id="localNavBox" role="navigation">
       <h2 class="blind">local navigation</h2>
       <div class="local_nav_outer">
         local_nav_outer
       </div>
     </div>
 
-    <div class="content_box_wrap">
+    <div class="content_box_wrap" role="main">
       <h2 class="blind">주요 내용</h2>
       <!-- // #localNavBox -->    
       <div id="popularContentBox">
@@ -77,7 +86,7 @@
 
     </div><!-- // .content_box_wrap -->
 
-    <div id="communityBox" class="box_space">
+    <div id="communityBox" class="box_space" role="main">
       <h2 class="area_title">
         community
       </h2>
@@ -87,14 +96,14 @@
     </div>
     <!-- // #communityBox -->    
 
-    <div id="miniAdBox" class="box_space">
+    <div id="miniAdBox" class="box_space" role="region">
       <h2 class="blind">보조광고</h2>
       <div class="mini_ad_outer">
         mini_ad_outer
       </div>
     </div>
     <!-- // #miniAdBox -->    
-    <div id="footBox">
+    <div id="footBox" role="contentinfo">
       <h2 class="blind">site infomation</h2>
       <div class="foot_outer"></div>
     </div>
