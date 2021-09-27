@@ -75,9 +75,9 @@ abbr {text-decoration: none;}
     background-color: #0ac;
   }
   .gnb {
-    float:left;
+    float:right;
     width:850px; height: 80px;
-    margin-left:75px;
+    margin-right:75px;
     background-color: #0ac;
   }
     .gnb ul {
@@ -244,10 +244,32 @@ abbr {text-decoration: none;}
   background-color: #aaa;
 }
   .recon_con_area{
-    width: 1300px; height: 440px;
-    margin:auto;
+    width: 1300px; height:auto;
+    margin:auto; padding:20px 0;
     background-color: #0ac;
   }
+
+  .recon_con_area ul { width: 100%; height:auto;} 
+  .recon_con_area li {
+    float:left;
+    width:300px; height:400px;
+    margin-right:33px;
+    background-color: #fcf;
+  }
+  .recon_con_area li:last-child {margin-right: 0;}
+  .recon_img {
+    width: 100%; height:210px;
+    background-color: #a5a;
+  }
+  .recon_content {
+    width: 100%; 
+    height: 190px; height:calc(100% - 210px);
+    box-sizing: border-box;
+    padding:15px;
+    background-color: #a8a;
+    background-clip:content-box;
+  }  
+
 
 /* #communityBox 
 ================================== */
@@ -267,8 +289,24 @@ abbr {text-decoration: none;}
   .community_con::before{
     content:"Q & A"; float:left;
     width:300px; height: 160px;
-    font-size:80px; text-align: center; line-height:160px;
-    background-color: #faf;  }
+    font-size:80px; text-align: center; line-height:160px; }
+
+  .community_con > dl { 
+    width:980px;
+    width:calc(100% - 320px); height: 100px;
+    margin-left:320px;
+    padding-top:30px;
+  }
+
+  .community_con dt {
+    width: 100%; height:50px; 
+    margin-bottom: 20px;
+    background-color: #fa0;
+  }
+  .community_con dd {
+    width: 100%; height:60px;
+    background-color: #fa0;
+  }
 
 
 /* #miniAdBox 
