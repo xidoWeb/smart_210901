@@ -39,6 +39,8 @@ abbr {text-decoration: none;}
   content:""; display: block; clear:both;
 }
 
+.box_space { margin-bottom: 80px;}
+
 /* design ==================================================== */
 
 #wrap {
@@ -52,8 +54,24 @@ abbr {text-decoration: none;}
 ================================== */
 #headBox {
   height: 150px; background-color: #ddd;
-  margin-top:50px;
+  margin-top:50px; box-sizing:border-box; padding:34px 50px 0;
 }
+  h1 {
+    float:left;
+    width:250px; height:80px;
+    background-color: #0ac;
+  }
+  .gnb {
+    float:left;
+    width:850px; height: 80px;
+    margin-left:75px;
+    background-color: #0ac;
+  }
+  .unb {
+    float:right;
+    width:250px; height:80px;
+    background-color: #0ac;
+  }
 
 /* #adViewBox 
 ================================== */
@@ -77,20 +95,34 @@ abbr {text-decoration: none;}
 
 /* #newContentBox 
 ================================== */
-#newContentBox {}
+#newContentBox {
+  height: 900px; 
+  background-color: #ddd;
+}
 
 /* #recommendedContentBox 
 ================================== */
-#recommendedContentBox {}
+#recommendedContentBox {
+  height: 600px; 
+  background-color: #aaa;
+}
 
 /* #communityBox 
 ================================== */
-#communityBox {}
+#communityBox {
+  height: 800px;
+  background-color: #ddd;    
+}
 
 /* #miniAdBox 
 ================================== */
-#miniAdBox {}
+#miniAdBox {
+  height: 400px; 
+  background-color: #aaa;
+}
 
 /* #footBox 
 ================================== */
-#footBox {}
+#footBox {
+  height: 200px; background-color: #999;
+}
