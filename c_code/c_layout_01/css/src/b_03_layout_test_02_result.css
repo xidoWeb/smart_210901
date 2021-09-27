@@ -1,6 +1,17 @@
 @charset "UTF-8";
 /* b_03_layout_test_02_result.css */
-
+/* 속성작성요령: 
+  선택자{
+    존재유무/형태 -> display, overflow
+    위치 -> position
+    크기 -> width -> height 
+    공간 -> margin -> box-sizing -> padding -> border
+    서체 -> font-weight, font-style, font-size, line-height, family..... 
+    배경처리 -> image, repeat, position, size, clip ...
+    기타효과 -> shadow, ...
+    애니메이션 
+  }
+*/
 /* reset.css ==================================================== */
 html,body {width:100%; height: 100%;}
 
@@ -31,7 +42,55 @@ abbr {text-decoration: none;}
 /* design ==================================================== */
 
 #wrap {
-  width: 1600px; height: auto; min-height:500px;
+  width:1600px; height: auto; min-height:500px;
   margin:auto;
-  background-color: #ddd;
 }
+
+#wrap > div { width:100%; }
+
+/* #headBox 
+================================== */
+#headBox {
+  height: 150px; background-color: #ddd;
+  margin-top:50px;
+}
+
+/* #adViewBox 
+================================== */
+#adViewBox { 
+  height: 750px; background-color: #aaa;
+}
+
+/* #localNavBox 
+================================== */
+#localNavBox {
+  height: 250px; background-color: #999;
+  margin-bottom:50px;
+}
+
+
+/* #popularContentBox 
+================================== */
+#popularContentBox {
+  height: 600px; background-color: #aaa;
+}
+
+/* #newContentBox 
+================================== */
+#newContentBox {}
+
+/* #recommendedContentBox 
+================================== */
+#recommendedContentBox {}
+
+/* #communityBox 
+================================== */
+#communityBox {}
+
+/* #miniAdBox 
+================================== */
+#miniAdBox {}
+
+/* #footBox 
+================================== */
+#footBox {}
