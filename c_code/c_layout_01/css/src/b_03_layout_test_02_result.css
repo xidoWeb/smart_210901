@@ -79,6 +79,19 @@ abbr {text-decoration: none;}
     margin-left:75px;
     background-color: #0ac;
   }
+    .gnb ul {
+      width:auto; height: auto;
+      padding:5px 0;
+    }
+    .gnb li {
+      float:left;
+      width: 150px; height: 70px;
+      /* margin-right:20px; */
+      margin:0 10px;
+      background-color: #fd0;
+    }
+    .gnb li:last-child {margin-right: 0;}
+
   .unb {
     float:right;
     width:250px; height:80px;
@@ -103,6 +116,18 @@ abbr {text-decoration: none;}
     background-color: #0ac;
   }
 
+  .view_indicator ul {
+    width: 100%; height:auto;
+    padding:10px 15px; 
+  }
+  .view_indicator li {
+    float:left; 
+    width:120px; height: 40px; 
+    margin-right:20px;
+    background-color: #fa0;
+  }
+  .view_indicator li:last-child{ margin-right: 0;}
+
 /* #localNavBox 
 ================================== */
 #localNavBox {
@@ -115,7 +140,20 @@ abbr {text-decoration: none;}
     width: 1500px; height: 196px;
     margin:auto;
     background-color: #0ac;
+    padding:23px 75px;
   }
+  .local_nav_outer ul {
+    width: 100%; height: auto;
+    box-sizing: border-box;
+    
+  }
+  .local_nav_outer li {
+    float:left;
+    width:200px; height:150px;
+    margin-right: 30px;
+    background-color: #fa0;
+  }
+  .local_nav_outer li:last-child {margin-right: 0;}
 
 /* ====================================== */
 /* .content_box_wrap 
@@ -131,12 +169,31 @@ abbr {text-decoration: none;}
 #popularContentBox {
   height: 600px; background-color: #aaa;
 }
-
   .pop_con_area {
     width: 1300px; height: 470px;
-    margin:auto;
+    margin:auto; 
+    box-sizing:border-box;
+    padding:20px 63px;
     background-color: #0ac;
   }
+  .card {
+    float:left;
+    width: 350px; height: 430px;
+    margin-right: 62px;
+    background-color: #fcf;
+  }
+  .card:last-of-type {
+    margin-right: 0;
+  }
+
+  .card > div {
+    width: 100%; height: 200px;
+    box-sizing: border-box; padding: 8px;
+    background-color: #f5f;
+  }
+  .img_part { margin-bottom: 14px;}
+
+
 
 /* #newContentBox 
 ================================== */
