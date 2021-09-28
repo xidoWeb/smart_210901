@@ -5,7 +5,7 @@ html,body{ margin: 0; padding: 0;}
 
 
 /* html5 버전  */
-header, nav, section, main, article, aside, footer {
+header, nav, section, main, article, aside, footer,figure, figcaption {
   display:block; margin: 0; padding: 0; border: 0;
 }
 
