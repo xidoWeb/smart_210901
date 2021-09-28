@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* b_03_layout_test_03_result.css */
+
+/* reset.css */
+html,body { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6 {
+  margin: 0; padding: 0;
+}
+
+
+/* common.css */
+
+
+
+/* design */
+
+#wrap {
+  width: 960px; height:auto;
+  margin: auto;
+}
+
+/* #headBox */
+#headBox{
+  width:100%; height:120px;
+  box-sizing: border-box; padding:10px; 
+  background-color: #f4f;
+}
+h1 { 
+  float:left; width: 150px; height: 100px;
+  background-color: #fff;}
+
+.navigation_area {
+  float:right; width:500px; height:auto; }
+#unb {
+  float:right; width: 220px; height: 40px;
+  margin-bottom: 10px;
+  background-color: #fff;}
+#gnb {
+  float:right; width: 500px; height: 50px;
+  background-color: #fff;}
+
+/* #viewBox */
+#viewBox{
+  width:100%; height:450px;
+  background-color: #f80;
+}
+/* #contentBox */
+#contentBox{
+  width:100%; height:500px;
+  background-color: #2ae;
+}
+/* #footBox */
+#footBox{
+  width:100%; height:130px;
+  background-color: #777;
+}
