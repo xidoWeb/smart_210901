@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* main_v1.css */
+body {
+  --color-gray1:#c4c4c4;
+  --color-sample1:#acf;
+}
 
 /* main_common.css */
 
@@ -11,46 +15,93 @@
 /* #headBox 
   ================================================ */
 #headBox { 
-  width:100%; height:100px; background-color: #c4c4c4;
+  width:100%; height:100px; 
+  padding-top: 20px; padding-bottom: 10px;
+  background-color: #c4c4c4;
 }
-
+.head_inner { 
+  width:1100px; height: 100%; margin:auto;
+  background-color:var(--color-sample1);}
 /* #viewBox 
   ================================================ */
 #viewBox { 
-  width:100%; height:600px; background-color: #868686;
+  width:100%; height:600px; 
+  padding-top: 100px;
+  background-color: #868686;
 }
-
+  .view_inner {
+    width:780px; height:400px; margin: auto;
+    background-color: var(--color-sample1);
+  }
 /* #newBox 
   ================================================ */
 #newBox { 
-  width:100%; height:700px; background-color: #fff;
+  width:100%; height:700px; 
+  padding-top: 60px;
+  background-color: #fff;
 }
+  .new_inner {
+    width: 940px; height: 570px; margin:auto;
+    background-color: var(--color-sample1);
+  }
 
 /* #subAdBox 
   ================================================ */
 #subAdBox { 
-  width:100%; height:350px; background-color: #777;
+  width:100%; height:350px; 
+  padding-top: 50px;
+  background-color: #777;
 }
+  .sub_inner {
+    width: 1100px; height: 300px; margin:auto;
+    background-color: var(--color-sample1);
+  }
+
 /* #bestBox
   ================================================ */
 #bestBox {
-  width: 100%; height: 700px; background-color: #fff;
+  width: 100%; height: 700px; 
+  padding-top: 175px;
+  background-color: #fff;
 }
+  .best_inner {
+    width: 1100px; height: 380px; margin:auto;
+    background-color: var(--color-sample1);
+  }
 
 /* #galleryBox 
   ================================================ */
 #galleryBox { 
-  width:100%; height:750px; background-color: #c4c4c4;
+  width:100%; height:750px;
+  padding-top: 80px;
+  background-color: #c4c4c4;
 }
+  .gallery_inner {
+    width: 940px; height: 540px;
+    margin:auto;
+    background-color: var(--color-sample1);
+  }
 
 /* #sponsorBox 
   ================================================ */
 #sponsorBox { 
-  width:100%; height:100px; background-color: #777;
+  width:100%; height:100px; 
+  padding-top:10px;
+  background-color: #777;
 }
+  .sponsor_inner {
+    width: 940px; height: 80px; margin:auto;
+    background-color: var(--color-sample1);
+  }
 
 /* #footBox 
   ================================================ */
 #footBox { 
-  width:100%; height:450px; background-color: #333;
+  width:100%; height:auto; 
+  padding-top: 70px; padding-bottom: 140px;
+  background-color: #333;
 }
+  .foot_inner {
+    width: 940px; height: 250px; margin:auto;
+    background-color: var(--color-sample1);
+  }
