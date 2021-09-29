@@ -36,6 +36,7 @@ h1 {
 }
 #navigation {
   float:right; width:auto; height:30px;
+  margin-top:20px;
 }
 .gnb { width:auto; height:30px; }
 .gnb a {

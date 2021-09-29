@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* b_06_position.css */
+/* reset.css */
+html,body { height: 100%; }
+html,body,div,h1,h2,h3,h4,h5,p,pre,ul,li,ol,dl,dt,dd {
+  margin: 0; padding: 0;
+}
+ul,ol { list-style: none;}
+hr {margin: 0; padding: 0; border:0; border-bottom: 1px solid #555;}
+
+hgroup{display:block; margin: 0; padding: 0;}
+
+/* design */
+#wrap {
+  width: 900px; height: 500px; 
+  margin:auto; padding-bottom:2000px;
+  background-color: #fdd;
+  background-image: linear-gradient(360deg, #fdd, #ccf, rgba(230,230,230,0.5));
+}
+
+hgroup{
+  width: 100%; height: 100px; 
+  box-sizing: border-box; padding: 20px;
+}
+
+.part { 
+  width: 650px; height: 120px; 
+  margin:auto; margin-top:150px; border:1px solid #333; 
+  padding:8px; box-sizing: border-box;
+  background-color: #fff;}
+.part ul { width: 100%; height: 100%; background-color: #ddd;}
+
+.part li {
+  float:left; width:100px; height:100px;
+  border:1px solid #a7f; box-sizing: border-box;
+  color:#fff; text-align: center; line-height:100px; font-weight: 800; font-size:1.2rem; }
+
+.default { background-color: #E84E46;}
+.static { background-color: #E53393;}
+.fixed { background-color: #3E6B14;}
+.absolute{ background-color: #0DF6D8;}
+.relative{ background-color: #3240A3;}
+
+/* ---------------------------- */
+.default {}
+.static {}
+.fixed {}
+.absolute{}
+.relative{}
