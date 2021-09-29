@@ -29,21 +29,54 @@ hgroup{
   padding:8px; box-sizing: border-box;
   background-color: #fff;}
 .part ul { width: 100%; height: 100%; background-color: #ddd;}
-
 .part li {
   float:left; width:100px; height:100px;
   border:1px solid #a7f; box-sizing: border-box;
   color:#fff; text-align: center; line-height:100px; font-weight: 800; font-size:1.2rem; }
-
 .default { background-color: #E84E46;}
-.static { background-color: #E53393;}
+.static { background-color: #E5aa93;}
 .fixed { background-color: #3E6B14;}
-.absolute{ background-color: #0DF6D8;}
+.absolute{ background-color: #ff0066;}
 .relative{ background-color: #3240A3;}
-
 /* ---------------------------- */
-.default {}
-.static {}
-.fixed {}
-.absolute{}
-.relative{}
+
+
+.part { position: relative; }
+.part ul { position: absolute; top: 0; left: 0; }
+.static { position:static; top:1000px; left:5000px; z-index:-1000;}
+.fixed { position:fixed;   top:0; left:0; z-index:-1;}
+.absolute{ position: absolute; bottom:150px; left:50px; z-index:100;}
+.relative{  
+  position: relative; top:150px; left:-50px;
+}
+
+
+/* ------------------------------ */
+.ex_part { 
+  width: 80%; height:400px; border:2px solid #567;
+  margin:100px auto; padding:30px; 
+}
+
+/* 화면의 한가운데 배치!~!! */
+.view_center { 
+  position: fixed;
+
+  /*방법 1*/
+  /* top: calc(50% - 150px); left: calc(50% - 250px); */
+
+  /* 방법2 */
+  /*
+  top:50%; left:50%;
+  width: 500px; height:300px;
+  margin-top:-150px; margin-left:-250px;
+  */
+
+  /* 방법3 */
+  top:0; left:0; right:0; bottom:0;
+  width: 500px; height:300px;
+  margin:auto;
+  
+  border:4px solid #777;
+  border-radius:5px; 
+  background-color: #fff;
+}
