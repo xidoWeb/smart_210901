@@ -60,23 +60,45 @@ hgroup{
 /* 화면의 한가운데 배치!~!! */
 .view_center { 
   position: fixed;
-
   /*방법 1*/
   /* top: calc(50% - 150px); left: calc(50% - 250px); */
-
   /* 방법2 */
   /*
   top:50%; left:50%;
   width: 500px; height:300px;
   margin-top:-150px; margin-left:-250px;
   */
-
   /* 방법3 */
-  top:0; left:0; right:0; bottom:0;
+  top:0; left:0; right:0; bottom:200px;
   width: 500px; height:300px;
   margin:auto;
   
+  z-index:100;
   border:4px solid #777;
   border-radius:5px; 
   background-color: #fff;
 }
+
+  .close { 
+    position:absolute; right:-20px; top: -20px;
+    width: 40px; height: 40px; 
+  }
+  .close button {
+    width:100%; height: 100%; 
+    border: 0; margin: 0; 
+    background-color: #0ac;
+    cursor: pointer;
+    border-radius:100%;}
+
+.view_bg {
+  position: fixed;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.3 );
+}
+
+.btn {
+  position: fixed; z-index:200; left:50%; bottom:50px; 
+  width: 100px; height: 100px; margin-left:500px;
+  background-color: #adf; border:3px solid #171717;}
+.btn button { background-color: transparent; border: 0; cursor: pointer; margin: 0;}
