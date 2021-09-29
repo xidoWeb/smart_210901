@@ -2,11 +2,10 @@
 /* main_v1.css */
 body {
   --color-gray1:#c4c4c4;
-  --color-sample1:#acf;
+  --color-sample1:rgba(20, 100,255,0.15);
 }
 
 /* main_common.css */
-
 /* design */
 #wrap {
   width: 1440px; height:auto; min-height:500px;}
@@ -22,6 +21,24 @@ body {
 .head_inner { 
   width:1100px; height: 100%; margin:auto;
   background-color:var(--color-sample1);}
+
+  h1 {
+    float: left;
+    width: 120px; height: 70px;
+    background-color: #555;
+  }
+  #navigation{
+    float:right;
+    width: 510px; height: 70px;
+    background-color: var(--color-sample1);
+  }
+/* 
+  글씨가 많이들어가거나, 
+  박스의 값이 100% 맞아떨어지면,
+  일부 웹의 환경에서는 마지막요소가 아래로 떨어질 수 있다.
+*/
+
+
 /* #viewBox 
   ================================================ */
 #viewBox { 
@@ -33,6 +50,42 @@ body {
     width:780px; height:400px; margin: auto;
     background-color: var(--color-sample1);
   }
+    .view_inner dl{
+      float:left;
+      width: 300px; height: 270px;
+      margin-top: 70px;
+      background-color: var(--color-sample1);
+    }
+
+    .view_inner dt{
+      width:100%; height:auto;
+      margin-bottom:12px;
+      font-size:40px;
+    }
+    .view_inner dd{
+      width: 100%; height: 140px;
+      background-color: var(--color-sample1);
+    }
+    .view_inner dd:last-of-type{
+      height: 50px;
+      margin-top:5px;
+      background-color: var(--color-sample1);
+    }
+    .view_inner dd:last-of-type a{
+      /* display: block; */
+      /* width: 100%; height: 100%; */
+      padding:10px 20px; padding-right:200px;
+      font-size:18px;
+      background-color: #fff;
+    }
+
+    .img_source{
+      float:right;
+      width: 380px; height: 400px;
+      background-color: var(--color-sample1);
+    }
+
+
 /* #newBox 
   ================================================ */
 #newBox { 
