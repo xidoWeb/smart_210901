@@ -5,12 +5,15 @@
 .wrap {
   position: relative;
   width: 800px; height: 600px;
+  margin:50px auto;
   background-color: #f0a;
   /* border-top:1px solid #f0a; */
 }
 
 .q_8 > .modal {
-  width: 500px; height: 150px;
+  --width:500px;
+
+  width:var(--width); height: 150px;
   background-color: #0af;
   /* 방법1
   margin-top:225px;
@@ -18,5 +21,40 @@
   */
   /* 방법2 */
   position:absolute;
-  top: 30%; left:50%; margin-left:-250px;
+  top: 30%; left:50%; 
+  margin-left:-250px;
+  margin-left:calc( var(--width) / -2 );
 }
+
+/* -------------------------------- */
+.q-9 > .side_indicator {
+  position: absolute; 
+  right:30px;
+  width: 50px; 
+  /* height: 350px; */
+  height: auto;
+  background-color: #0af;
+
+  /* 방법 1 
+  top:125px;
+  */
+  /* 방법 2 
+  */
+  top:50%; margin-top:-175px;
+}
+
+.q-9 ul {
+  list-style:none;
+  width: 100%; height:auto;
+  padding-top:10px; padding-bottom:10px;
+}
+.q-9 li {
+  width: 30px; height: 30px; 
+  margin:0 auto;
+  margin-bottom:30px;
+  border-radius:100%;
+  text-align: center;
+  line-height:30px;
+  background-color: #fff;
+}
+.q-9 li:last-child { margin-bottom: 0; }
