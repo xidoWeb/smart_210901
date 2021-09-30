@@ -1,0 +1,22 @@
+* {margin: 0; padding: 0; border: 0;}
+
+/* ------------------------------ */
+
+.wrap {
+  position: relative;
+  width: 800px; height: 600px;
+  background-color: #f0a;
+  /* border-top:1px solid #f0a; */
+}
+
+.q_8 > .modal {
+  width: 500px; height: 150px;
+  background-color: #0af;
+  /* 방법1
+  margin-top:225px;
+  margin-left: 150px;
+  */
+  /* 방법2 */
+  position:absolute;
+  top: 30%; left:50%; margin-left:-250px;
+}
