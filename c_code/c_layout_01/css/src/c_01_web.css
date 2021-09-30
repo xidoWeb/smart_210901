@@ -23,20 +23,80 @@
     background-color: #777;
   }
 
+    .gnb { width: 100%; height: 100%;}
+    .gnb li{
+      float:left;
+      width: 25%; height:100%; 
+      box-sizing: border-box; 
+      padding:0 5px;
+      text-align: center; 
+      line-height:40px;
+    }
+    .gnb a {
+      display: block;
+      width: 100%; height: 100%;
+      background-color: #efefef;
+    }
 
+/* #viewBox
+  ============================================ */
 #viewBox {
   width: 100%; height: 300px;
   background-color: #3C85DF;
 }
-
+/* #conBox
+  =========================== */
 #conBox {
   width: 100%; height: 200px;
 }
 
+/* .con_inner_01  */
 .con_inner_01 {
   float:left; width:400px; height:200px;
+  padding:10px 20px; box-sizing: border-box;
   background-color: #ccc;
 }
+
+  .tab_title_area {
+    width: 100%; height: 30px;
+    background-color: #eee;
+  }
+  .tab_title_area ul {
+    width: 100%; height: 100%;
+    box-sizing: border-box;
+    border-bottom:1px solid #333;
+  }
+  .tab_title_area li {
+    float:left;
+    width:100px; height:100%;
+    box-sizing: border-box; padding:0 5px;
+    text-align: center; line-height:30px;
+    background-color: #fff;
+  }
+  .tab_title_area li.action {
+    border:1px solid #333;
+    border-bottom:0;
+  }
+  .tab_title_area button {
+    width: 100%; height: 100%;
+  }
+
+  .tab_content_area {
+    width: 100%; height:150px;
+  }
+    .tab_content_area > div.action{ display: block; }
+    .tab_detail_01{ 
+      display:none;
+      width: 100%; height: 100%;
+      background-color: #77FE74;
+    }
+    .tab_detail_02{ 
+      display:none;
+      width: 100%; height: 100%;
+      background-color: #245377;
+    }
+
+/* .con_inner_02 */
 .con_inner_02 {
   float:left; width:400px; height:200px;
   background-color: #aaa;
