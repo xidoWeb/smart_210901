@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* common.css */
+
+/* IR: image replace */
+
+.blind { 
+  display: block;
+  width: 0; height: 0; overflow: hidden; }
+
+.clearfix { width:100%; height:auto; }
+.clearfix:after, .clearfix::after{
+  content:""; display: block; clear:both; width: 100%; height: 0; }
+#wrap { margin:auto; }

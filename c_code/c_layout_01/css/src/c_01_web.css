@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* c_01_web.css */
+
+#wrap {
+  width: 1200px; height:auto;
+  margin: auto;
+}
+
+#headBox {
+  width: 100%; height: 100px;
+  padding:30px 20px;
+  box-sizing: border-box;
+  background-color: #ccc;
+}
+  h1 {
+    float:left;
+    width: 200px; height: 40px;
+    background-color: #555;
+  }
+  #navigation {
+    float:right;
+    width:600px; height:40px;
+    background-color: #777;
+  }
+
+
+#viewBox {
+  width: 100%; height: 300px;
+  background-color: #3C85DF;
+}
+
+#conBox {
+  width: 100%; height: 200px;
+}
+
+.con_inner_01 {
+  float:left; width:400px; height:200px;
+  background-color: #ccc;
+}
+.con_inner_02 {
+  float:left; width:400px; height:200px;
+  background-color: #aaa;
+}
+.con_inner_03 {
+  float:right; width:400px; height:200px;
+  background-color: #eee;
+}
+
+#footBox {
+  width: 100%; height: 100px;
+  padding: 30px 20px; 
+  box-sizing: border-box;
+  background-color: #528541;
+}
+
+#footBox > h2 {
+  float:left; 
+  width: 200px; height: 40px;
+  background-color: #ccc;
+}
+address {
+  float:left; 
+  width: 600px; height: 40px;
+  margin-left:100px;
+  background-color: #aaa;
+}
+.social {
+  float:right; 
+  width: 200px; height: 40px;
+  background-color: #ccc;
+}
