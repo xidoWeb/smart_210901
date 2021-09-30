@@ -100,3 +100,39 @@
 .siblings > dt:hover ~ dd {
   background-color: #afa;
 }
+
+/* --------------------------------- */
+/* q-11 */
+
+/* .wrap 위에 작성 */
+.q11 { position: relative; }
+.title_box {
+  position: absolute; z-index:300;
+  top: 30%; left: 20px;
+  width: 450px; height: 200px;
+  padding:10px; box-sizing: border-box; 
+  color:#fff;
+  background-color: rgba(150,0,150,0.5);}
+
+h1 {font-size: 1.5rem;
+  text-transform:capitalize; }
+p { font-size: 1rem; }
+
+.img2 { 
+  position: absolute; bottom: 0;
+  width: 250px;}
+
+.img_box_01{ 
+  right: 250px; z-index:200;
+  height: 400px; background-color: #5bb;}
+.img_box_02{ 
+  right: 20px;
+  height: 500px; background-color: #798;}
+
+
+
+  /* 
+    background-color: hsla(270, 50%, 50%, 1); 
+    background-color: #aa00aa99; 
+    opacity:50%;
+  */
