@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* c_02_web.css */
+/* * { margin: 0; padding: 0; border: 0;
+box-sizing: border-box;} */
+
+/* --------------------------- */
+#wrap {
+  width: 1200px; height:auto; min-height:700px;
+  margin:auto;
+}
+
+/* #headBox */
+#headBox{
+  width:100%; height:100px; 
+  padding:0 20px; padding-top: 60px; box-sizing: border-box;
+  background-color: #ccc;
+}
+  h1{
+    float:left; width: 200px; height: 40px;
+    background-color: #afa;
+  }
+  .navigation {
+    float:right; width: 400px; height: 30px; 
+    margin-top: 10px;
+    background-color: #aff;
+  }
+
+
+/* #viewBox */
+#viewBox{
+  width:100%; height:300px; background-color: #aaa;
+}
+
+/* #contentbox */
+#contentbox{ width:100%; height:200px; }
+  #contentbox > div {
+    float:left; width:400px; height:200px;
+  }
+  .notice_area { background-color: #afd;}
+  .gallery_area { background-color: #daf;}
+  .commercial_area { background-color: #afd;}
+
+/* #footBox */
+#footBox{
+  width:100%; height:100px; 
+  padding:30px 20px; padding-bottom:50px;
+  background-color: #999;
+}
+  #footBox > h2 {
+    float:left; width:200px; height:40px;
+    background-color: #faa;
+  }
+  address {
+    float:left; width:600px; height:30px; 
+    margin-top:10px; margin-left:100px;
+    background-color: #afa;
+  }
+  .family {
+    float:right; width:200px; height:30px;
+    margin-top:10px;
+    background-color: #aaf;
+  }
