@@ -33,7 +33,7 @@ box-sizing: border-box;} */
 
 /* #contentbox */
 #contentbox{ width:100%; height:200px; }
-  #contentbox > div {
+  #contentbox > .con_area {
     float:left; width:400px; height:200px;
   }
   .notice_area { background-color: #afd;}

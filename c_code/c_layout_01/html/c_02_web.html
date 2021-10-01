@@ -11,21 +11,42 @@
 </head>
 <body>
   <div id="wrap">
-    <div id="headBox">
+    <header id="headBox">
       <h1>사이트</h1>
-      <div class="navigation"></div>
-    </div>
-    <div id="viewBox"></div>
-    <div id="contentbox">
-      <div class="notice_area"></div>
-      <div class="gallery_area"></div>
-      <div class="commercial_area"></div>
-    </div>
-    <div id="footBox">
+      <nav class="navigation">
+        <h2 class="blind">네비게이션</h2>
+      </nav>
+    </header>
+    <section id="viewBox">
+      <h2 class="blind">광고</h2>
+    </section>
+    <article id="contentbox">
+      <h2 class="blind">본문내용</h2>
+      <section class="con_area notice_area">
+        <h3 class="blind">notice</h3>
+      </section>
+
+      <section class="con_area gallery_area">
+        <h3 class="blind">gallery</h3>
+      </section>
+
+      <section class="con_area commercial_area">
+        <h3 class="blind">commercial</h3>
+      </section>
+    </article>
+    <footer id="footBox">
       <h2>사이트이름</h2>
       <address></address>
       <div class="family"></div>
-    </div>
+    </footer>
   </div>
 </body>
 </html>
+
+<!-- 
+  시멘틱구조에서 :
+  웹페이지의 본문의 성격을 띄는 article/section의 형식은
+  내부에 다시 header/article/section/nav/aside/footer...을 가질 수 있다.
+  하지만 header/aside/footer/nav의 특정위치나, 기능의 성향을 가지고있는 요소는 내부에 section/article을 사용할 수 없다.
+  header의 경우는 내부에 nav요소를 가질 수 있다.
+-->

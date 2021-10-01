@@ -6,7 +6,7 @@ html,body,
 h1,h2,h3,h4,h5,h6,
 p,pre,blockquote,address,
 ul,ol,li,dl,dt,dd,
-hr, button, img, 
+hr, button, img, div,
 header,article, nav, section, footer, aside, 
 main, figure, figcaption, hgroup {
   margin: 0; padding: 0; border:0; font-size:100%;
