@@ -11,12 +11,21 @@ box-sizing: border-box;} */
 }
 
 /* #headBox */
+/* #headBox를 상단에 고정: position:fixed
+    1. top 0, 가로 가운데 배치 (전체 가로 꽉차게):width100%
+      - width100% 는? #wrap에 꽉찬거 아닌가?
+      - 왜 아니지? fixed는 브라우저를 기준으로 처리
+    2. 다른요소들보다 앞에 배치 :
+    3. fixed를 처리함으로 인해 다른 요소(형제)들은? 
+    4. 내부 요소는 가로 1200크기일때 가운데 배치?
+*/
 #headBox{
   position: fixed; top:0; left:0;  z-index: 1500;
   width:100%; height:100px; 
   padding:0 20px; padding-top: 60px; box-sizing: border-box;
   background-color: rgba(200,200,200,0.5);
 }
+
   .head_wrapper {
     width: 1200px; height:40px;
     margin:auto; 
@@ -63,6 +72,17 @@ box-sizing: border-box;} */
     /* .nav_title:hover + .nav_list { display: block;} */
 
 /* #viewBox */
+/* 왜? headBox뒤에 붙을까? 해결방법은?
+    - headBox 가 fixed처리되어있으니 headBox는 공중에 떠있어서 해당부분이 비어있다. 그래서 headBox자리에 viewBox가 자리를 차지한다.
+    - 높이값이 300이지만 우리에겐 200만큼만 보이더라 ㅜㅜ
+    - 우린 300을 원한다구.!
+    - 그럼 실제로는 400만큼의 크기를 가져야 300이 보이는데 어케???
+    - 상단에 100을 추가하자 ( 선택: margin/padding )
+    - 그래!! padding-top이야! 
+    - 그런데? 왜 안으로 들어가지?
+    - reset에 box-sizing:border-box가 있어!!!
+    - ???? 언제? 시른데? -> box-sizing:content-box
+*/
 #viewBox{
   width:100%; height:300px; background-color: #aaa;
   padding-top: 100px; box-sizing:content-box;
