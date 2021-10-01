@@ -4,10 +4,20 @@
 box-sizing: border-box;} */
 
 /* --------------------------- */
+/* #wrap설명:
+  1. wrap의 가로값은 1200을 기준으로 가로 가운데 배치해야한다.
+  2. 이때, 내부에 존재하는 headBox가 상단에 fixed로 배치했다.
+      - 그로인해 headBox뒤에오는 viewBox가 상단으로 올라갔다. 
+      - 왜? headBox가 position:fixed로 되어서, 형제요소의 개념이 아닌 별도의 위치로 배치하는 (브라우저기준) 내용이 되었기 때문.
+      - 그래서, viewBox에 내용을 화면에 온전히 보이게 만들기 위해
+      - 조건 : headBox배경색이 불투명
+      - wrap에 강제로 하위 내용이 배치할수 있도록 밀어내자!!
+        (padding-top:100px;) 이다.
+*/
 #wrap {
   width: 1200px; height:auto; min-height:700px;
   margin:auto; 
-  /* padding-top: 100px; */
+  padding-top: 100px;
 }
 
 /* #headBox */
@@ -85,7 +95,7 @@ box-sizing: border-box;} */
 */
 #viewBox{
   width:100%; height:300px; background-color: #aaa;
-  padding-top: 100px; box-sizing:content-box;
+  /* padding-top: 100px; box-sizing:content-box; */
 }
 
 /* #contentbox */
