@@ -94,6 +94,7 @@
       </div>
       <div class="location_link">
         <h3 class="blind">바로가기</h3>
+
         <button type="button">
           모달 바로가기
         </button>
@@ -108,6 +109,7 @@
           </div>
           <div class="modal_bg">  </div>
         </div>
+
       </div>
     </article> <!-- // #conBox-->
 
@@ -117,6 +119,14 @@
   </div>
 
   <!-- script -->
-  <script></script>
+  <script>
+    const modalArea = document.querySelector('.modal_area');
+    const closeBtn = document.querySelector('.close');
+
+    closeBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      modalArea.style.display = "none";
+    });
+  </script>
 </body>
 </html>

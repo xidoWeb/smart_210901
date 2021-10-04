@@ -10,14 +10,9 @@
 /* #headBox 
 ============================== */
 #headBox{
-  position:relative; z-index:1000;
-  float:left; width:250px; height:650px;
-  box-sizing: border-box; padding:10px;
+  position:relative; z-index:1000; float:left; width:250px; height:650px; box-sizing: border-box; padding:10px;
   background-color: #fdf;} 
-h1 { 
-  width: 100%; height:50px; 
-  margin-bottom: 20px;
-  background-color: #999;}
+h1 { width: 100%; height:50px; margin-bottom: 20px; background-color: #999;}
 h1 a { display: block; width: 100%; height: 100%;}
 
 .navigation { width: 100%; height: auto;}
@@ -33,101 +28,49 @@ h1 a { display: block; width: 100%; height: 100%;}
 .navigation dt a {
   display: block; width: 100%; height:100%; 
   text-align: center; line-height:36px;}
-
-
 .navigation dd {
-  display: none;
-  position: absolute; top: 0; left: 0;
+  display: none;  position: absolute; top: 0; left: 0;
   width:100%; height:auto; min-height:140px;
-  margin-left:100%;
-  transform:translateY(-20%);
-  background-color: #333;
-}
+  margin-left:100%;  transform:translateY(-20%);  background-color: #333;}
 .navigation li:hover dd {display: block;}
-.navigation li:hover dt {
-  background-color: #333; color:#fff;
-}
+.navigation li:hover dt {  background-color: #333; color:#fff;}
 
 .navigation dd a {
   display: block; width: 100%; height:auto;
-  margin-bottom:10px;
-  color:#fff; font-weight: 700;
-  padding:10px; box-sizing: border-box;
-}
+  margin-bottom:10px;  color:#fff; font-weight: 700;  padding:10px; box-sizing: border-box;}
 
 .navigation dd a:hover { color:#333; background-color: #fff; }
-.navigation dd a:focus {
-  color: #f06; font-size:1.1rem; background-color: #ddd; }
+.navigation dd a:focus { color: #f06; font-size:1.1rem; background-color: #ddd; }
 
 /* #viewBox 
 ============================== */
 #viewBox{ height:350px; background-color: #ddd;} 
-
+.view_area { position: relative;}
 /* #conBox 
 ============================== */
-#conBox{height:200px; } 
-
-  .notice_gallery{
-    float:left; width:65%; height:100%; padding:10px;  }
-  .notice_gallery dl { 
-    position: relative; width: 100%; height: 100%; 
-    background-color: #eee; }
-  .notice_gallery dt {
-    float:left;  width:45%; height:25px;
-    border-right:1px solid #333; 
-    background-color: #fd0;}
+  #conBox{height:200px; } 
+  .notice_gallery{ float:left; width:65%; height:100%; padding:10px;  }
+  .notice_gallery dl { position: relative; width: 100%; height: 100%; background-color: #eee; }
+  .notice_gallery dt { float:left;  width:45%; height:25px; border-right:1px solid #333; background-color: #fd0;}
   .notice_gallery dt:last-of-type { border:0 }
-
-  .notice_gallery dd {
-    display: none; position: absolute; left: 0; top: 25px; 
-    width: 100%; height:calc(100% - 25px); }
+  .notice_gallery dd { display: none; position: absolute; left: 0; top: 25px; width: 100%; height:calc(100% - 25px); }
   dd.notice { background-color: #aff;}
   dd.gallery { background-color: #faa;}
-
   dt.action + dd { display: block; }
-
-  .location_link{
-    float:left; width:35%; height:100%;
-    padding:20px;
-    background-color: #fff; }
-
-  .location_link > button {
-    width: 100%; height: 100%;
-    background-color: #575757; color:#fff;
-  }
-
-  .modal_area {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:1500;
-    margin:auto;
-  }
+  .location_link{ float:left; width:35%; height:100%; padding:20px; background-color: #fff; }
+  .location_link > button { width: 100%; height: 100%; background-color: #575757; color:#fff; }
+  .modal_area { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:1500; margin:auto; }
   .modal_message {
-    position: absolute; 
-    top: 0; left: 0; bottom: 0; right: 0; margin: auto;
-    width: 700px; height: 400px; 
-    padding:10px;
-    border:1px solid #3333;
-    background-color: #fff;
-    border-radius:0.3rem;
-    box-shadow:5px 5px 5px rgba(51,51,51,0.9);
-  }
-
-  .modal_message .close {
-    position: absolute; right: 0; bottom: 0;
-    padding:10px;
-  }
-
+    position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto;
+    width: 700px; height: 400px; padding:10px;
+    border:1px solid #3333; background-color: #fff;
+    border-radius:0.3rem; box-shadow:5px 5px 5px rgba(51,51,51,0.9); }
+  .modal_message .close { position: absolute; right: 0; bottom: 0; padding:10px; }
   .modal_message .close button {
-    width: 100px; height: 40px;
-    border-radius: 0.3rem;
-    background-color: #ccc;
-    box-shadow:3px 3px 3px rgba(0,0,0,0.5);
-  }
-
-  .modal_bg {
-    width: 100%; height: 100%;
-    background-color: rgba(51,51,51,0.7);
-  }
-
+    width: 100px; height: 40px; border-radius: 0.3rem;
+    background-color: #ccc; box-shadow:3px 3px 3px rgba(0,0,0,0.5);  }
+  .modal_bg { width: 100%; height: 100%; background-color: rgba(51,51,51,0.7); }
+  /* .location_link > button:hover + .modal_area { display: block; } */
 
 /* #footBox 
 ============================== */
