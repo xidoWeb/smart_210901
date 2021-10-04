@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* c_03_web.css */
+
+/* layout common */
+.container{  float:left; width:750px; }
+
+/* design */
+#wrap { width: 1000px; height: 650px; margin:auto; }
+
+/* #headBox 
+============================== */
+#headBox{
+  float:left; width:250px; height:650px;
+  background-color: #fdf;} 
+
+/* #viewBox 
+============================== */
+#viewBox{ height:350px; background-color: #ddd;} 
+
+/* #conBox 
+============================== */
+#conBox{height:200px; background-color: #aaa; } 
+
+/* #footBox 
+============================== */
+#footBox{ height:100px;  background-color: #ccc; } 
