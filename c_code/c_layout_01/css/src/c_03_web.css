@@ -10,6 +10,7 @@
 /* #headBox 
 ============================== */
 #headBox{
+  position:relative; z-index:1000;
   float:left; width:250px; height:650px;
   box-sizing: border-box; padding:10px;
   background-color: #fdf;} 
