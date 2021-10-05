@@ -111,14 +111,39 @@
 #conBox {
   float:left; width:750px; height:auto;
 }
+  /* .info_content_area ------------------ */
   .info_content_area{
-    float:left; width:50%; height:200px;
-    background-color: #1CFD9033;
-  }
+    float:left; width:50%; height:200px; padding:10px;
+    background-color: #1CFD9033;}
+    .tab_title{width: 100%; height: 30px;}
+    .tab_title li { float:left; width:100px; height:30px; }
+    .tab_title button {
+      width: 100%; height: 100%; background-color: #fff;}
+    .tab_title button:hover { background-color: #aaa; text-decoration:underline;} 
+    .tab_title li.action > button { background-color: #333; color:#fff; font-weight: 700;} 
+
+    .tab_content{width: 100%; height: 150px; border-top: 1px solid #333;}
+    .tab_content > div { width: 100%; height: 100%; padding:5px; background-color: #fff;}
+    /* 
+    .notice{}
+    .gallery{} 
+    */
+    .notice h3 { width: 100%; height: auto; padding-bottom: 5px; }
+    .notice ul { width: 100%; height: auto; max-height:120px;}
+    .notice li { width: 100%; height: 18px; margin-bottom:3px; line-height:18px; color:#575757; }
+    .notice li:before{ content:"+"; color:#f06; margin-right:3px; }
+    .notice a:focus { 
+      outline:0; 
+      text-decoration: underline; text-decoration-color: #f06; 
+      font-weight: 700; color:#333; }
+
+  
+  /* .sub_view_area ------------------ */
   .sub_view_area{
     float:left; width:25%; height:200px;
     background-color: #E5243433;
   }
+  /* .location_link_area ------------------ */
   .location_link_area{
     float:left; width:25%; height:200px;
     background-color: #0B177833;
