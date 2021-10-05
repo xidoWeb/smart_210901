@@ -21,3 +21,4 @@
 .clearfix:after, .clearfix::after{
   content:""; display: block; clear:both; width: 100%; height: 0; }
 #wrap { margin:auto; }
+

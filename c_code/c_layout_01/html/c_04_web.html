@@ -73,14 +73,50 @@
 
     <section id="viewBox">
       <h2 class="blind">광고영역</h2>
-      <div class="clip_t">
-        <div class="insert"></div>
+
+      <div class="view_btn" hidden>다음/이전버튼</div>
+      <div class="view_indicator" hidden>인디케이터</div>
+
+      <!-- .view_area  영역의 위치를 잡기위한 틀 -->
+      <div class="view_area">
+        <!-- .view_wrapper 광고영역의 나열시 범위 -->
+        <div class="view_wrapper">
+          <!-- .view_content 광고 내용 -->
+          <div class="view_content view_01">광고 01</div>
+          <div class="view_content view_02">광고 02</div>
+          <div class="view_content view_03">광고 03</div>
+        </div>
       </div>
+
     </section>
     <!-- #viewBox -->
 
-    <article id="conBox">
+    <article id="conBox" class="clearfix">
       <h2 class="blind">본문내용</h2>
+      <div class="info_content_area">
+        <!-- ul.tab_title>li*2>button[type=button] -->
+        <ul class="tab_title">
+          <li><button type="button">공지사항</button></li>
+          <li><button type="button">갤러리</button></li>
+        </ul>
+        <div class="tab_content">
+          <div class="notice">
+            <h3>공지사항</h3>
+            <!-- ul>li*5>a[href=#]{lorem5} -->
+            <ul>
+              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="#">Lorem ipsum dolor sit amet consectetur.</a></li>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+              <li><a href="#">Lorem ipsum dolor sit.</a></li>
+              <li><a href="#">Lorem, ipsum.</a></li>
+            </ul>
+          </div>
+
+          <div class="gallery" hidden>갤러리</div>
+        </div>
+      </div>
+      <div class="sub_view_area"></div>
+      <div class="location_link_area"></div>
     </article>
     <!-- #conBox -->
 

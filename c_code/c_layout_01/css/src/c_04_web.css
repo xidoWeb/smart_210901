@@ -61,17 +61,68 @@
 
 /* #viewBox 
 ========================================= */
+
 #viewBox {
   float:left; width:750px; height:350px;
+  padding: 10px 50px;
   background-color: #eee;
 }
+
+.view_area {
+  width: 100%; height: 100%; 
+  border:1px solid #333;
+  background-color: #afc;
+} 
+
+/* 가로형 슬라이드 배너 사용법 */
+/*
+.view_wrapper { 
+  --slide-len:3;
+  width:300%; height:100%; background-color: #fca; 
+  width:calc( 100% * var(--slide-len));
+}
+.view_content {
+  float:left; width:33.333333%; height:100%;
+  width: calc(100% / var(--slide-len));
+}
+*/
+
+/* 같은자리에 모여있는 형태로 사용 방법
+  - 기준이 되는 요소에 relative, 
+  - 보여줄 요소에 absolute
+  - 처음 보여주어야 하는 요소에 z-index를 주어 앞으로 배치
+  - 이후에 (뒤에) 오는 요소에는 z-index를 앞에 오는 요소의 낮은값으로 주어 뒤에 배치
+  - 이외의 나머지는 보이지 않도록 처리
+*/
+
+.view_wrapper {
+  position: relative;
+  width:100%; height:100%; background-color: #fca; }
+
+.view_content { position:absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.view_01 {z-index:10; background-color: #423CF6aa;}
+.view_02 {z-index:9; background-color: #0A704Aaa;}
+.view_03 {background-color: #B45E83aa;} 
+
+
 
 /* #conBox 
 ========================================= */
 #conBox {
-  float:left; width:750px; height:200px;
-  background-color: #aaa;
+  float:left; width:750px; height:auto;
 }
+  .info_content_area{
+    float:left; width:50%; height:200px;
+    background-color: #1CFD9033;
+  }
+  .sub_view_area{
+    float:left; width:25%; height:200px;
+    background-color: #E5243433;
+  }
+  .location_link_area{
+    float:left; width:25%; height:200px;
+    background-color: #0B177833;
+  }
 
 /* #footBox 
 ========================================= */
@@ -84,16 +135,3 @@
 address {
   float:left; width:650px; height:50px; background-color: #aaf; }
 
-  .clip_t {
-    /* clip:rect(상단, 오른쪽, 하단, 왼쪽); */
-    position: absolute;
-    clip:rect(18px, 122px, 92px, 18px);
-    width: 200px; height: 200px;
-    box-sizing: border-box; padding:20px;
-    background-image: radial-gradient(#64f, #fc5);
-  }
-
-  .insert {
-    width: 100px; height: 70px;
-    background-color: rgba(255,255,255,0.2);
-  }
