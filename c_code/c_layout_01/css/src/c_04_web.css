@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* c_04_web.css */
+
+/**
+  [] logo : 200px × 40px, 로고는 글자로 대체
+  [] navigation 마우스올리면 (hover) , hilight 처리(해제시 처리)
+  [] 공지사항 첫 번째 클릭(Click), 팝업창(Layer Pop_up) 나타남
+  [] 레이어 팝업창 내에 닫기 버튼을 두어서 클릭 사라짐
+  [] html / css 유효성 검사 
+*/
+
+#wrap { width:1000px; height:650px; margin:auto; }
+
+/* #headBox 
+========================================= */
+#headBox {
+  float:left;
+  width:250px; height:650px;
+  background-color: #ccc;}
+
+/* #viewBox 
+========================================= */
+#viewBox {
+  float:left; width:750px; height:350px;
+  background-color: #eee;
+}
+
+/* #conBox 
+========================================= */
+#conBox {
+  float:left; width:750px; height:200px;
+  background-color: #aaa;
+}
+
+/* #footBox 
+========================================= */
+#footBox {
+  float:left; width:750px; height:100px;
+  background-color: #777;
+}
