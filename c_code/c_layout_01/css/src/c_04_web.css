@@ -30,16 +30,27 @@
     font-size:1.2rem;
   }
 
-  /* 
-  .navigation{}
-  .navigation ul{}
-  .navigation li{}
-  .navigation dl{}
-  .navigation dt{}
-  .navigation dt a{}
-  .navigation dd{}
-  .navigation dd a{} 
-  */
+  .navigation {
+    width: 100%; height:auto;
+    background-color: #ddf;}
+    .navigation ul {width: 100%; height:auto;}
+    .navigation li {width: 100%; height: auto;}
+    .navigation dl {width: 100%; height: auto;}
+    .navigation dt {
+      width: 100%; height:40px; 
+      padding-bottom:3px; background-color: #fff; }
+    .navigation dt a {
+      display:block; width: 100%; height: 100%;
+      text-align: center; line-height:40px; }
+    .navigation dt a:hover {background-color: #333;}
+    
+    .navigation dd {
+      width: 100%; height:auto; background-color: #fff; }
+    .navigation dd a {
+      display: block; width: 100%; height: 30px; margin-bottom:5px; } 
+    .navigation dd a:hover {
+      color:#fff; font-weight: 700; background-color: #333; }
+    
 
 
 /* #viewBox 
