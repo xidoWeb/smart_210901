@@ -131,7 +131,12 @@
     .notice h3 { width: 100%; height: auto; padding-bottom: 5px; }
     .notice ul { width: 100%; height: auto; max-height:120px;}
     .notice li { width: 100%; height: 18px; margin-bottom:3px; line-height:18px; color:#575757; }
-    .notice li:before{ content:"+"; color:#f06; margin-right:3px; }
+    .notice li:before{ 
+      content:"\f54b";  
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; font-size:0.5rem;
+      color:#f06; margin-right:3px; 
+    }
     .notice a:focus { 
       outline:0; 
       text-decoration: underline; text-decoration-color: #f06; 
