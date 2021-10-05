@@ -76,6 +76,24 @@
 /* #footBox 
 ========================================= */
 #footBox {
-  float:left; width:750px; height:100px;
-  background-color: #777;
-}
+  float:left; width:750px; height:100px; background-color: #777; }
+#footBox > h2 {
+  float:left; width:100px; height:100px; background-color: #fa0; }
+.info_nav {
+  float:left;width: 650px; height:50px; background-color: #aff; }
+address {
+  float:left; width:650px; height:50px; background-color: #aaf; }
+
+  .clip_t {
+    /* clip:rect(상단, 오른쪽, 하단, 왼쪽); */
+    position: absolute;
+    clip:rect(18px, 122px, 92px, 18px);
+    width: 200px; height: 200px;
+    box-sizing: border-box; padding:20px;
+    background-image: radial-gradient(#64f, #fc5);
+  }
+
+  .insert {
+    width: 100px; height: 70px;
+    background-color: rgba(255,255,255,0.2);
+  }
