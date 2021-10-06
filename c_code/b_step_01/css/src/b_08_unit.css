@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* b_08_unit.css */
 
+:root { font-size:16px; }
+html,body { background-color: #fff;}
+
 .unit_part {
   width: 600px; height: 600px;
   border:1px solid #171717;
@@ -10,40 +13,83 @@
 .unit_part h3 { 
   margin: 0; padding: 0; margin-bottom: 10px;
   border-bottom:1px solid #555;
-  font-size:16px; }
-.unit_part .outer {background-color: rgba(255, 200, 0, 0.3); margin:auto;}
-.unit_part p { margin: 0; padding: 0; background-color: rgba(230,150, 150, 0.4); margin:auto;}
-.unit_part span {
-  display: block; margin: 0; padding: 0; 
-  background-color: rgba(100, 240, 100, 0.4); margin:auto;}
-.unit_part strong {display: block; margin: 0; padding: 0; 
-  background-color: rgba(120,70,200, 0.5); margin:auto;}
-.unit_part i {
-  display: block; margin: 0; padding: 0; color:#fff; font-style: normal;
-  background-color: rgba(51,51,51,0.7); margin:auto;}
-/* ----------------------------------------------------------------- */
+  font-size:inherit; }
+  .unit_part .outer {background-color: rgba(255, 200, 0, 0.3); margin:auto;}
+  .unit_part p { margin: 0; padding: 0; background-color: rgba(230,150, 150, 0.4); margin:auto;}
+  .unit_part span {
+    display: block; margin: 0; padding: 0; 
+    background-color: rgba(100, 240, 100, 0.4); margin:auto;}
+    .unit_part strong {display: block; margin: 0; padding: 0; 
+      background-color: rgba(120,70,200, 0.5); margin:auto;}
+      .unit_part i {
+        display: block; margin: 0; padding: 0; color:#fff; font-style: normal;
+        background-color: rgba(51,51,51,0.7); margin:auto;}
+
+        
+/* 기본 font-size:32px */
+/* ----------------------------------------------------------- */
 /* px단위의 이해(600*600) */
-.px_part .outer { width:300px; height:300px;}
-.px_part p { width:200px; height:200px;}
-.px_part span { width:300px; height:300px;}
-.px_part strong { width:150px; height:150px;}
-.px_part i { width:75px; height:75px;}
-/* ----------------------------------------------------------------- */
+.px_part .outer { width:300px; height:300px; font-size:16px;}
+.px_part p { width:200px; height:200px; font-size: 10.667px;}
+.px_part span { width:300px; height:300px; font-size: 16px;}
+.px_part strong { width:150px; height:150px; font-size: 8px;}
+.px_part i { width:75px; height:75px; font-size: 4px;}
+
+/* ----------------------------------------------------------- */
 /* 16px === 12pt === 100%(최초기본) === 1em(최초기본) === 1rem */
 /* pt단위의 이해(600px * 600px) - (450pt * 450pt) */
-.pt_part .outer { width:225pt; height:225pt;}
-.pt_part p { width:150pt; height:150pt;}
-.pt_part span { width:225pt; height:225pt;}
-.pt_part strong { width:112.5pt; height:112.5pt;}
-.pt_part i { width:56.25pt; height:56.25pt;}
+.pt_part .outer { width:225pt; height:225pt; font-size: 12pt;}
+.pt_part p { width:150pt; height:150pt; font-size: 8pt;}
+.pt_part span { width:225pt; height:225pt; font-size: 12pt;}
+.pt_part strong { width:112.5pt; height:112.5pt; font-size: 6pt;}
+.pt_part i { width:56.25pt; height:56.25pt; font-size: 3pt;}
 
-/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------- */
 /* 16px === 12pt === 100%(최초기본) === 1em(최초기본) === 1rem */
 /* percent 단위의 이해(600px * 600px) */
-.percent_part .outer { width:50%; height:50%;}
-.percent_part p { width:66.666667%; height:66.666667%;}
-.percent_part span { width:150%; height:150%;}
-.percent_part strong { width:50%; height:50%;}
-.percent_part i { width:50%; height:50%;}
+.percent_part .outer { width:50%; height:50%; font-size:100%;}
+.percent_part p { width:66.666667%; height:66.666667%; font-size:66.66667%;}
+.percent_part span { width:150%; height:150%; font-size:150%;}
+.percent_part strong { width:50%; height:50%; font-size:50%;}
+.percent_part i { width:50%; height:50%; font-size:50%;}
+
+/* ----------------------------------------------------------- */
+/* 16px === 12pt === 100%(최초기본) === 1em(최초기본) === 1rem */
+/* em 단위의 이해(600px * 600px) */
+/*
+.em_part .outer { width:18.75em; height:18.75em; font-size: 1em;}
+.em_part p { width:12.5em; height:12.5em; font-size:0.67em;}
+.em_part span { width:18.75em; height:18.75em; font-size:1.5em;}
+.em_part strong { width:9.375em; height:9.375em; font-size:0.5em;}
+.em_part i { width:4.6875em; height:4.6875em; font-size:0.5em;} 
+*/
+.em_part .outer { width:18.75em; height:18.75em; font-size: 1em;}
+.em_part p { width:18.75em; height:18.75em; font-size:0.67em;}
+.em_part span { width:18.75em; height:18.75em; font-size:1.5em;}
+.em_part strong { width:18.75em; height:18.75em; font-size:0.5em;}
+.em_part i { width:18.75em; height:18.75em; font-size:0.5em;} 
 
 
+/* ----------------------------------------------------------- */
+/* 16px === 12pt === 100%(최초기본) === 1em(최초기본) === 1rem */
+/* rem 단위의 이해(600px * 600px) */
+
+.rem_part .outer { width:18.75rem; height:18.75rem; font-size:1rem;}
+.rem_part p { width:12.5rem; height:12.5rem; font-size:0.67rem;}
+.rem_part span { width:18.75rem; height:18.75rem; font-size:1rem;}
+.rem_part strong { width:9.375rem; height:9.375rem; font-size:0.5rem;}
+.rem_part i { width:4.6875rem; height:4.6875rem; font-size:0.25rem;} 
+
+/*  size_test */
+.size_test { 
+  width:400px; height:400px; border: 1px solid #333; 
+  width:25rem; height:25rem;  border:0.625rem solid #333;
+}
+
+
+.size_test { width:400px; height:400px; border: 1px solid #333; }
+
+/* 임의 속성을 달아서, 해당속성을 인지하면 {} 내부의 기능을 수행할 수 있도록 처리 */
+@supports ( width:25rem ) {
+  .size_test {  width:25rem; height:25rem;  border:0.625rem solid #333; }
+}
