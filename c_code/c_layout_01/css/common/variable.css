@@ -6,11 +6,15 @@
   /* color */
   --color-white:#fff;
   --color-black:#171717;
-  --color-gray1:#eee;
-  --color-gray2:#ccc;
-  --color-gray3:#aaa;
-  --color-gray4:#777;
+  /* --color-gray1:#eee; */
+  /* --color-gray2:#ccc; */
+  /* --color-gray3:#aaa; */
+  /* --color-gray4:#777; */
   /* --color-gray5:#555; */
+  --color-gray1:transparent;
+  --color-gray2:transparent;
+  --color-gray3:transparent;
+  --color-gray4:transparent;
   --color-gray5:var(--color-gray3);
   /* --color-primary:#f06; */
   --color-primary:var(--color-focus);
