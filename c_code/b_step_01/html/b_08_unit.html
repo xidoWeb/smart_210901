@@ -21,7 +21,7 @@
     <h2>단위의 이해</h2>
     <hr />
 
-    <div class="unit_part px_part">
+    <div class="unit_part px_part" hidden>
       <h3>px영역(w600, h600)</h3>
       <div class="outer"> 큰영역-level_01 - w:1/2, h:1/2
         <p> 내용영역-level_02 - w:2/3, h:2/3
@@ -33,7 +33,7 @@
         </p>
       </div>
     </div><!-- // .unit_part --><hr />
-    <div class="unit_part pt_part">
+    <div class="unit_part pt_part" hidden>
       <h3>pt영역(w600, h600)</h3>
       <div class="outer">
         큰영역-level_01 - w:1/2, h:1/2
@@ -51,7 +51,7 @@
         </p>
       </div>
     </div><!-- // .unit_part --><hr />
-    <div class="unit_part percent_part">
+    <div class="unit_part percent_part" hidden>
       <h3>percent 영역(w600, h600)</h3>
       <div class="outer">
         큰영역-level_01 - w:1/2, h:1/2
@@ -69,7 +69,7 @@
         </p>
       </div>
     </div><!-- // .unit_part --><hr />
-    <div class="unit_part em_part">
+    <div class="unit_part em_part" hidden>
       <h3>em영역(w600, h600)</h3>
       <div class="outer">
         큰영역-level_01 - w:1/2, h:1/2
@@ -87,7 +87,7 @@
         </p>
       </div>
     </div><!-- // .unit_part --><hr />
-    <div class="unit_part rem_part">
+    <div class="unit_part rem_part" hidden>
       <h3>rem영역(w600, h600)</h3>
       <div class="outer">
         큰영역-level_01 - w:1/2, h:1/2
@@ -106,8 +106,19 @@
       </div>
     </div><!-- // .unit_part --><hr />
 
-    <div class="size_test">
+    <div class="size_test" hidden>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, iste tempora. Labore ad aperiam atque dolore quis rem cum voluptatem pariatur at laboriosam non a ducimus, nesciunt porro possimus placeat.
+    </div>
+    
+    <hr />
+    <div class="sizing_check">
+      기준 : 200px * 200px
+      <div class="size_02">
+        부모기준 : w/h 50%
+        <div class="size_03">
+          원기준  크기로 돌아가기(200 * 200)
+        </div>
+      </div>
     </div>
 
   </div>
