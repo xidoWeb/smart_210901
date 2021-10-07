@@ -1,47 +1,56 @@
 @charset "UTF-8";
 /* c_05_web.css */
 
-
 /* #wrap 
 ==================================== */
-#wrap{ 
-  width: 1200px; height:700px;
-  width: 75rem; height:43.75rem;
-  margin:auto;
+#wrap {
+  width: 1200px;
+  height: 700px;
+  width: 75rem;
+  height: 43.75rem;
+  margin: auto;
   background-color: #eee;
   background-color: var(--color-gray1);
-  border:1px solid #171717; box-sizing: content-box;
+  border: 1px solid #171717;
+  box-sizing: content-box;
 }
 
 /* #headBox 
 ==================================== */
-#headBox{
-  width: 100%; height: 100px; height: 6.25rem;
+#headBox {
+  width: 100%;
+  height: 100px;
+  height: 6.25rem;
   background-color: #ccc;
   background-color: var(--color-gray2);
 }
 
 /* #viewBox 
 ==================================== */
-#viewBox{
-  width: 100%; height: 300px; height: 18.75rem; 
+#viewBox {
+  width: 100%;
+  height: 300px;
+  height: 18.75rem;
   background-color: #aaa;
   background-color: var(--color-gray3);
 }
 
 /* #conBox 
 ==================================== */
-#conBox{
-  width:100%; height:200px; height:12.5rem;
+#conBox {
+  width: 100%;
+  height: 200px;
+  height: 12.5rem;
   background-color: #ccc;
   background-color: var(--color-gray2);
 }
 
 /* #footBox 
 ==================================== */
-#footBox{
-  width: 100%; height:100px; height:6.25rem;
+#footBox {
+  width: 100%;
+  height: 100px;
+  height: 6.25rem;
   background-color: #aaa;
   background-color: var(--color-gray3);
 }
-
