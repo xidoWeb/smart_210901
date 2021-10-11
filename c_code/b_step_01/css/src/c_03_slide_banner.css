@@ -53,3 +53,16 @@ h1 {
 .slide_con_wrap {position: relative; height: 100%; }
 
 /* ---------------------------------------------------------------- */
+.position_slide .slide_con_wrap > div { 
+  display: none;
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.position_slide .slide_con_wrap > div.action { display: block; z-index:10;}
+
+/*  */
+#slide_01{ background-color: #4BB39B77;}
+#slide_02{ background-color: #7730F777;}
+#slide_03{ background-color: #666D3577;}
+#slide_04{ background-color: #CC818677;}
+#slide_05{ background-color: #3E016277;}
