@@ -59,7 +59,16 @@ h1 {
   width: 100%; height: 100%;
 }
 .position_slide .slide_con_wrap > div.action { display: block; z-index:10;}
+/* ------------------------------------------------------- */
+.horizontal_slide .slide_con_wrap {
+  --len:6;
+  width:500%; width: calc( 100% * var(--len) ); height:100%; 
+}
+.horizontal_slide .slide_con_wrap > div{
+  float:left; width:20%; width:calc( 100% / var(--len) ); height: 100%;
+}
 
+/* ------------------------------------------------------- */
 /*  */
 #slide_01{ background-color: #4BB39B77;}
 #slide_02{ background-color: #7730F777;}
