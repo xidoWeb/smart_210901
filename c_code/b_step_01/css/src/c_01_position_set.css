@@ -110,7 +110,7 @@ h1 {
   position: absolute; top:0; bottom:0;  right:-5px;
   margin:auto;
   width: 0; height:10px; border-right:1px solid #19a;
-  display: none;
+  /* display: none; */
 }
 .nav_list li:last-child:after{ display: none;}
 
@@ -123,6 +123,6 @@ h1 {
 .nav_list li:last-child{  border:0; padding-right: 0; }
 
 
-/* .nav_list a {
+/* .nav_list a {][
   background-color: #7ff;
 }  */
