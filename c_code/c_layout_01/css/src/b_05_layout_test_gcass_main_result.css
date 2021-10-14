@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* b_05_layout_test_gcass_main_result.css */
+/* variable.css */
+:root{
+  /* color */
+  --color-white  :#fff;
+  --color-black  :#171717;
+  --color-yellow1: #fff30d;
+  --color-yellow2: #baa50c;
+  --color-gray1  : #adadad;
+  --color-gray2  : #7d7d7d;
+  --color-gray3  : #505050;
+  --color-gray4  : #757575;
+
+  /* font */
+  --font-point   : 72px;
+  --font-title   : 32px;
+  --font-normal  : 16px;
+  --font-regular : 14px;
+  --font-small   : 12px;
+}
+
+
+
+
+/* design.css */
+#wrap {
+  position: relative;
+  width: 980px; height: 850px; 
+  width: 61.25rem; height: 53.125rem; 
+  padding-top: 1.875rem;
+}
+
+#headBox {
+  float:left;
+  width: 15.625rem; height: 44.375rem; 
+  background-color: var(--color-gray4);
+}
+
+#viewBox {
+  float:right;
+  width:calc(100% - 15.625rem); height:44.375rem;
+  background-color: #adf;
+}
+
+#sideBox{
+  position: absolute; top: 0; left: 0;
+  width: 100%; height:1.875rem;
+  /* margin-top: -30px; */
+  background-color: var(--color-gray2);
+}
+
+#footBox {
+  clear:both;
+  width:100%; height:6.875rem;
+  border-top:1px solid var(--color-gray3);
+  background-color: var(--color-white);
+}
