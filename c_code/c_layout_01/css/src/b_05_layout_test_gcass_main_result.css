@@ -13,11 +13,11 @@
   --color-gray4  : #757575;
 
   /* font */
-  --font-point   : 72px;
-  --font-title   : 32px;
-  --font-normal  : 16px;
-  --font-regular : 14px;
-  --font-small   : 12px;
+  --font-point   : 3.125rem;
+  --font-title   : 2rem;
+  --font-normal  : 1rem;
+  --font-regular : 0.875rem;
+  --font-small   : 0.75rem;
 }
 
 
@@ -26,29 +26,67 @@
 /* design.css */
 #wrap {
   position: relative;
-  width: 980px; height: 850px; 
   width: 61.25rem; height: 53.125rem; 
   padding-top: 1.875rem;
 }
 
 #headBox {
   float:left;
-  width: 250px; height: 44.375rem; 
-  /* padding-top:56px; padding-left:42px; padding-right:52px; padding-bottom:103px; */
-  padding:56px 52px 50px 42px;
+  width: 15.625rem; height: 44.375rem; 
+  /* padding-top:3.5rem; padding-left:2.625rem; padding-right:3.25rem; padding-bottom:6.4375rem; */
+  padding:3.5rem 3.25rem 3.125rem 2.625rem;
   background-color: var(--color-gray4);
 }
 
 h1 {
-  width: 100%; height: 104px;
-  margin-bottom: 42px;
+  width: 100%; height: 6.5rem;
+  margin-bottom: 2.625rem;
   background-color: #fa0;
 }
 
 .gnb {
-  width: 100%; height: auto; min-height:300px;
-  background-color: #555;
+  width: 100%; height: auto; min-height:18.75rem;
+  font-size:var(--font-title);
+  color:var(--color-white);
+  text-transform:uppercase;
+  line-height:1;
+  letter-spacing:-0.0625rem;
 }
+.gnb > ul {
+  width: 100%; height:auto;
+  padding-right:1.25rem;
+}
+.gnb li {
+  width: 100%; height: 2.5rem; 
+  margin-bottom: 1.5rem; padding-bottom:0.3125rem;
+  border-bottom:0.25rem solid var(--color-white);
+}
+.gnb a { 
+  display: block; width: 100%; height: 100%; 
+  padding:0.1875rem 0.5rem; padding-right: 0.25rem; box-sizing:border-box;
+  color:inherit;
+}
+.gnb a:hover { text-decoration: none;}
+
+.gnb i {
+  float:right; font-size:var(--font-normal);
+  line-height:1.9375rem;
+}
+
+.gnb li:last-of-type{ 
+  width: 6.875rem; height:6.875rem; margin-left: 1.25rem; border:0;
+  font-size:var(--font-point);
+  color:var(--color-gray4);
+  text-align: center; 
+  line-height:6.875rem;
+  letter-spacing:-0.0625rem;
+}
+
+.gnb li:last-of-type a {
+  padding:0.1875rem; border-radius:100%;
+  background-color: var(--color-white); }
+.gnb li:last-of-type span { font-size:var(--font-title); }
+
 
 /* ======================================= */
 #viewBox {
@@ -57,18 +95,18 @@ h1 {
   background-color: #adf;
 }
 #viewBox:before{
-  content:""; display:block; width: 100%; height: 50px;
+  content:""; display:block; width: 100%; height: 3.125rem;
   background-color: #fa0;
 }
 
 .view_img {
-  position:absolute; right: 297px; bottom: 64px; z-index:10;
-  width: 328px; height: 520px;
+  position:absolute; right: 18.5625rem; bottom: 4rem; z-index:10;
+  width: 20.5rem; height: 32.5rem;
   background-color: #ddf;
 }
 .view_content {
-  position:absolute; right: 48px; bottom:120px;
-  width: 294px; height: 444px;
+  position:absolute; right: 3rem; bottom:7.5rem;
+  width: 18.375rem; height: 27.75rem;
   background-color: #fda;
 }
 
@@ -81,32 +119,32 @@ h1 {
 }
 .unb {
   float:right;
-  width: auto; min-width:300px; height:100%;
+  width: auto; min-width:18.75rem; height:100%;
   background-color: #fff;
 }
 
 /* ======================================= */
 #footBox {
   clear:both; width:100%; height:auto;
-  padding:6px 40px 25px;
-  border-top:1px solid var(--color-gray3);
+  padding:0.375rem 2.5rem 1.5625rem;
+  border-top:0.0625rem solid var(--color-gray3);
   background-color: var(--color-white);
 }
 
 #footBox h2 {
   float:left;
-  width: 78px; height: 53px; 
-  margin-top: 6px; background-color: #ddd;
+  width: 4.875rem; height: 3.3125rem; 
+  margin-top: 0.375rem; background-color: #ddd;
 }
 .site_service {
-  float:left; width: 95px; height: 35px; 
-  margin-top: 25px; margin-left:35px; background-color: #aaa;
+  float:left; width: 5.9375rem; height: 2.1875rem; 
+  margin-top: 1.5625rem; margin-left:2.1875rem; background-color: #aaa;
 }
 address {
   float:left;
-  width: 350px; height: 45px;
-  margin-top: 16px; margin-left: 20px; background-color: #aaa;
+  width: 21.875rem; height: 2.8125rem;
+  margin-top: 1rem; margin-left: 1.25rem; background-color: #aaa;
 }
 .other {
-  float:right; width: 300px; height: 82px; background-color: #ccc;
+  float:right; width: 18.75rem; height: 5.125rem; background-color: #ccc;
 }
