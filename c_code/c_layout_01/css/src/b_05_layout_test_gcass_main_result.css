@@ -51,22 +51,62 @@ h1 {
 }
 
 /* ======================================= */
-
 #viewBox {
-  float:right;
+  position:relative; float:right;
   width:calc(100% - 15.625rem); height:44.375rem;
   background-color: #adf;
 }
+#viewBox:before{
+  content:""; display:block; width: 100%; height: 50px;
+  background-color: #fa0;
+}
 
+.view_img {
+  position:absolute; right: 297px; bottom: 64px; z-index:10;
+  width: 328px; height: 520px;
+  background-color: #ddf;
+}
+.view_content {
+  position:absolute; right: 48px; bottom:120px;
+  width: 294px; height: 444px;
+  background-color: #fda;
+}
+
+
+/* ======================================= */
 #sideBox{
   position: absolute; top: 0; left: 0;
   width: 100%; height:1.875rem;
   background-color: var(--color-gray2);
 }
+.unb {
+  float:right;
+  width: auto; min-width:300px; height:100%;
+  background-color: #fff;
+}
 
+/* ======================================= */
 #footBox {
-  clear:both;
-  width:100%; height:6.875rem;
+  clear:both; width:100%; height:auto;
+  padding:6px 40px 25px;
   border-top:1px solid var(--color-gray3);
-  background-color: var(--color-gray1);
+  background-color: var(--color-white);
+}
+
+#footBox h2 {
+  float:left;
+  width: 78px; height: 53px; 
+  margin-top: 6px; background-color: #ddd;
+}
+.site_service {
+  float:left; width: 95px; height: 35px; 
+  margin-top: 25px; margin-left:35px; background-color: #aaa;
+}
+address {
+  float:left;
+  width: 350px; height: 45px;
+  margin-top: 16px; margin-left: 20px; background-color: #aaa;
+}
+.other {
+  float:right; width: 300px; height: 82px; background-color: #ccc;
 }
