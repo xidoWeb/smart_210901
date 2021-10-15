@@ -94,3 +94,28 @@
   background-position:-311px -397px;
   background-size: initial;
 }
+
+button {
+  width: 3.125rem; height: 3.125rem;
+  margin:1.875rem;
+  background-color: #fd0;
+  border-radius:4px;
+  background-image:url("../../img/icon/istock_icon.jpg");
+  background-repeat: no-repeat;
+  background-position-x:-20px;
+}
+
+.test1 { 
+  background-position-y: -19px; 
+  transition: all 300ms ease;
+}
+.test1:hover { background-position-x: -240px; }
+.test1:active { background-position-x: -380px; }
+
+.test2 { background-position-y: -192px; }
+.test2:hover { background-position-x: -240px; }
+.test2:active { background-position-x: -380px; }
+
+.test3 { background-position-y: -249px; }
+.test3:hover { background-position: -159px -249px; }
+.test3:active { background-position:-308px -249px;}
