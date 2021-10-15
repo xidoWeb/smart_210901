@@ -71,6 +71,29 @@
   background-color: #ddd;
 }
 
-.text_shadow_01 {}
-.text_shadow_02 {}
-.text_shadow_03 {}
+.text_shadow_01 {
+/* 글씨에 그림자주기
+    text-shadow:x y blur color;
+  */
+  text-shadow:5px 5px 5px #777;
+}
+.text_shadow_02 {
+  text-shadow:5px 5px #47a,
+              10px 4px #fa0;
+  color:rgba(255,255,255,0.5);
+}
+.text_shadow_03 { }
+
+/* -------------------------------- */
+
+.image > div {
+  float:left;
+  width: 200px; height: 200px; 
+  margin:50px;
+  border-radius:100%;
+  background-color: #ccc;
+  background-image: url("../../img/icon/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 50% 50%;
+}
