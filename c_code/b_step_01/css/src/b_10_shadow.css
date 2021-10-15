@@ -82,7 +82,19 @@
               10px 4px #fa0;
   color:rgba(255,255,255,0.5);
 }
-.text_shadow_03 { }
+
+.part .text_shadow_03 {
+  background-image: url("../../img/background/background_05.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  color:#fff; font-size: 5rem;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-fill-color:transparent;
+}
 
 /* -------------------------------- */
 
@@ -91,9 +103,17 @@
   width: 200px; height: 200px; 
   margin:50px;
   border-radius:100%;
-  background-color: #ccc;
-  background-image: url("../../img/icon/arrow.svg");
+  /* background-color: #ccc; */
+  /* background-image: url("../../img/icon/arrow.svg"); */
+  background-image: url("../../img/icon/chinchilla.png");
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: 50% 50%;
 }
+
+.img_shadow_01 { box-shadow:5px 5px 5px #333; }
+.img_shadow_02 { filter:drop-shadow(-5px -5px 5px #333); }
+.img_shadow_03 { filter:blur(10px) grayscale(70%); 
+    transition: all 200ms linear; }
+.img_shadow_03:hover{ filter:blur(0) grayscale(0); }
+.img_shadow_04 { filter:hue-rotate(180deg); } 
