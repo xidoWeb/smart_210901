@@ -1,5 +1,0 @@
-
-#unb{ background-color: #faa;}
-#unb ul { display:none; }
-#unb:focus ul,
-#unb:hover ul { display: block; }
