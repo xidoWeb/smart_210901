@@ -1,5 +1,5 @@
 # smart_210901
-# ## 과정명 : 스마트 과정
+# branch 수정 : step_02
 
 html, css, js
 
