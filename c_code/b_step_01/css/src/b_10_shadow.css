@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* b_10_shadow.css */
+
+#wrap {
+  width: 56.25rem; height: auto;
+  padding-bottom: 62.5rem;
+  box-sizing:content-box;
+}
+
+.part {
+  width: 100%; height: 45rem;
+  border-bottom:0.0625rem solid #777;
+}
+
+.box > div {
+  float:left;
+  width: 21.875rem; height:12.5rem;
+  margin:1.875rem;
+  text-align: center; line-height: 12.5rem;
+  background-color: #ddd;
+}
+
+.box_shadow_01 {
+  /**그림자를 만드는 기법
+    box-shadow:x  y  blur color; */
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem #077;
+}
+.box_shadow_02 {
+  /**그림자를 만드는 기법
+    box-shadow:x  y  blur offset color; */
+  box-shadow: 0 0 0.3125rem 0.3125rem #077;
+}
+
+.box_shadow_03 {
+  /**그림자를 만드는 기법
+    box-shadow:inset x  y  blur color; */
+  box-shadow:inset 0.3125rem 0.3125rem 0.3125rem #777;
+}
+
+.box_shadow_04 {
+  box-shadow: 0 0 0.625rem #fff,
+              -0.3125rem -0.3125rem 0.3125rem #555,
+              0.625rem 0.625rem 0.1875rem #adf,
+              inset 0 0 0.9375rem #333;
+}
+
+
+.box .star {
+  width: 0.1875rem; height: 0.1875rem; background-color: #daa;
+  box-shadow: 0.9375rem 0.9375rem 0 0.1875rem #0af,
+              3.125rem 5rem 0 0.3125rem #f06,
+              8.75rem 18.75rem #fa0,
+              -2.5rem -1.25rem #ddf,
+              -12.5rem -25rem #171717;
+  position: fixed; 
+  animation:star 5000ms normal infinite ease-in; 
+}
+
+@keyframes star {
+  0% { top: -6.25rem; right:-12.5rem; opacity:0.8;}
+  100%{ top:100%; right:100%; opacity:0;}
+}
+
+/* --------------------------------------- */
+
+.text > div {
+  width:100%; height:9.375rem;
+  margin-bottom:0.625rem;
+  font-size:3rem; font-weight: 700;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.text_shadow_01 {}
+.text_shadow_02 {}
+.text_shadow_03 {}
