@@ -93,7 +93,7 @@
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-fill-color:transparent;
+  /* text-fill-color:transparent; */
 }
 
 /* -------------------------------- */
@@ -116,4 +116,4 @@
 .img_shadow_03 { filter:blur(10px) grayscale(70%); 
     transition: all 200ms linear; }
 .img_shadow_03:hover{ filter:blur(0) grayscale(0); }
-.img_shadow_04 { filter:hue-rotate(180deg); } 
+.img_shadow_04 { filter:hue-rotate(180deg); }  
