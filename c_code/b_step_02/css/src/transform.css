@@ -61,29 +61,28 @@ h3 { background-color: #ddf;}
   .rotate:hover li:nth-child(3){ transform: rotateX(30deg);}
   /* .rotate:hover li:nth-child(4){ transform: rotate3d(1,2,1, 60deg);} */
 
-
-  .rotate:hover li:nth-child(5){ transform: rotateY(180deg);}
-
 .rotate li:nth-child(5){
-  position: relative;
-  width:200px; height:150px;}
-.rotate li div { width: 100%; height: 100%; padding: 3rem;}
-.front {
-  position: absolute; top: 0; left: 0; z-index:1;
-  background-color: #fa0; 
+  position: relative; z-index: 20;  width:200px; height:150px;}
+.rotate li div {
+  position: absolute; top: 0; left: 0;
   backface-visibility: hidden;
-  transform:rotate(0);
-}
-.back {
-  position: absolute; top: 0; left: 0; z-index:-1;
-  background-color: #acf; 
-  backface-visibility:hidden;
-  transform:rotateY(180deg);
-}
+  transition:all 400ms ease;
+  width: 100%; height: 100%; padding: 3rem;}
+  
+.front { z-index:1; background-color: #fa0; transform:rotateY(0); }
+.back {  background-color: #acf; transform:rotateY(180deg); }
 
-/* !카드 뒤집기 문제 발생 해결요망 */
+.rotate li:hover .front{ transform:rotateY(180deg);}
+.rotate li:hover .back{ transform:rotateY(360deg); }
+
+/* 
+  - 카드 뒤집기 문제 발생 해결요망
+  - 앞면,뒷면을 만들어서 배치 후
+  - 감싼요소를 회전 X
+  - 앞면, 뒷면을 만든 각각의 카드를 회전시켜야 한다!
+*/
+
 /* ------------------------------------------------------ */
-
 
 .part .rorate2 {
   perspective: 500px;
@@ -93,3 +92,5 @@ h3 { background-color: #ddf;}
   float:left; transition:all 1500ms linear;
   text-align: center; line-height: 100px; }
 .rorate2:hover li {transform:rotateX(360deg);}
+
+/* ----------------------------------------------------- */
