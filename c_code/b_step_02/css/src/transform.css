@@ -59,6 +59,7 @@ h3 { background-color: #ddf;}
   .rotate:hover li:nth-child(1){ transform:rotate(45deg); }
   .rotate:hover li:nth-child(2){ transform: rotateY(720deg);}
   .rotate:hover li:nth-child(3){ transform: rotateX(30deg);}
+
   /* .rotate:hover li:nth-child(4){ transform: rotate3d(1,2,1, 60deg);} */
 
 .rotate li:nth-child(5){
@@ -85,12 +86,33 @@ h3 { background-color: #ddf;}
 /* ------------------------------------------------------ */
 
 .part .rorate2 {
-  perspective: 500px;
+  perspective: 200px;
   float:left; width:auto;
 }
 .rorate2 li{  
   float:left; transition:all 1500ms linear;
   text-align: center; line-height: 100px; }
-.rorate2:hover li {transform:rotateX(360deg);}
+.rorate2:hover li {transform:rotateX(180deg);}
 
 /* ----------------------------------------------------- */
+.part .rotate3 { float:left; width:auto; margin-top: 40px; }
+.rotate3 li{
+  float:left; transition:all 1500ms linear;
+  text-align: center; line-height: 100px;  }
+.rotate3:hover li {transform:perspective(300px) rotateY(180deg); }
+
+/* ------------------------------------------------------- */
+
+.multi_tr li { transition:all 2000ms ease;}
+.multi_tr:hover li:nth-child(1) { transform:translateX(500px) rotate(360deg); }
+.multi_tr:hover li:nth-child(2) { transform:rotate(360deg) translateX(500px); }
+.multi_tr li:nth-child(3) { transform-origin:100% 100%; }
+.multi_tr:hover li:nth-child(3) { transform:rotate(360deg);}
+
+
+/* 
+  perspective: 숫자가 작을수록 가까운처리 ; 
+  transform-origin: 기준의좌표를 지정하는 형태;
+  transform: translate() || scale() || skew() || roatate() || perspective();
+  backface-visibility:hidden || visible; 
+*/
