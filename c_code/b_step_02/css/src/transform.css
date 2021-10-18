@@ -116,3 +116,20 @@ h3 { background-color: #ddf;}
   transform: translate() || scale() || skew() || roatate() || perspective();
   backface-visibility:hidden || visible; 
 */
+
+#perspectiveWrap{
+  position: relative;
+  display:flex;  justify-content:space-around;  
+  width: 100%; min-width:1440px; height:400px; 
+  box-sizing: content-box; padding-bottom:500px;padding-top: 50px;
+  background-color: #eee;
+  perspective:500px;
+}
+
+.pers_card {
+  width: 250px; height: 400px; 
+  background-color: #acf; background-image: linear-gradient(45deg, #acf, #fac);
+  border-radius:5px; transition:all 1s linear;}
+
+#perspectiveWrap:hover .pers_card { transform:rotateX(-45deg); }
+/* #perspectiveWrap:hover .pers_card { transform:perspective(500px) rotateX(-45deg); } */
