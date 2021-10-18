@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* b_01_audio.css */
+
+#wrap {
+  width: 800px; height: auto;
+  margin:auto;
+}
+
+.part {
+  width: 100%; height: auto;
+  margin: 30px auto;
+}
+
+.sound{
+  width: 90%; height:150px;
+  margin:auto; margin-bottom: 30px;
+  border:1px solid #777;
+}
+
