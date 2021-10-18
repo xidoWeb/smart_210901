@@ -3,7 +3,7 @@
 
 #wrap {
   width: 800px; height:auto; min-height:500px;  
-  margin:auto;}
+  margin:auto; padding-bottom: 500px;}
 h1 {
   width: 100%; height: auto;
   margin-bottom: 50px;
@@ -43,3 +43,53 @@ h3 { background-color: #ddf;}
 .scale:hover li:nth-child(5){ transform:scaleZ(2); }
 /* --------------------------------------------------------- */
 
+.skew li {
+  margin:30px; transition:all 300ms ease-in;
+  font-size: 2rem;}
+.skew li:nth-child(1){ transform:skew(30deg); }
+.skew li:nth-child(2){ transform:skewY(30deg); }
+.skew li:nth-child(3){ transform:skew(30deg, 15deg); }
+.skew li:nth-child(4){ transform:skewX(45deg); }
+.skew li:nth-child(4) span {
+  display: block; width: 100%; height: 100%;
+  transform:skewX(-45deg);}
+
+  /* --------------------------------------------- */
+  .rotate li { margin:40px; transition:all 300ms ease-in;}
+  .rotate:hover li:nth-child(1){ transform:rotate(45deg); }
+  .rotate:hover li:nth-child(2){ transform: rotateY(720deg);}
+  .rotate:hover li:nth-child(3){ transform: rotateX(30deg);}
+  /* .rotate:hover li:nth-child(4){ transform: rotate3d(1,2,1, 60deg);} */
+
+
+  .rotate:hover li:nth-child(5){ transform: rotateY(180deg);}
+
+.rotate li:nth-child(5){
+  position: relative;
+  width:200px; height:150px;}
+.rotate li div { width: 100%; height: 100%; padding: 3rem;}
+.front {
+  position: absolute; top: 0; left: 0; z-index:1;
+  background-color: #fa0; 
+  backface-visibility: hidden;
+  transform:rotate(0);
+}
+.back {
+  position: absolute; top: 0; left: 0; z-index:-1;
+  background-color: #acf; 
+  backface-visibility:hidden;
+  transform:rotateY(180deg);
+}
+
+/* !카드 뒤집기 문제 발생 해결요망 */
+/* ------------------------------------------------------ */
+
+
+.part .rorate2 {
+  perspective: 500px;
+  float:left; width:auto;
+}
+.rorate2 li{  
+  float:left; transition:all 1500ms linear;
+  text-align: center; line-height: 100px; }
+.rorate2:hover li {transform:rotateX(360deg);}
