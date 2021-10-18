@@ -11,7 +11,7 @@ h1 {
 h2{  border-bottom: 1px solid #171717; }
 
 .part {
-  width: 95%; height:500px;
+  width: 95%; height:800px;
   margin:auto; margin-top:50px; padding:8px; border:1px solid #333; }
 h3 { background-color: #ddf;}
 .part ul { width: 100%; height:auto; 
@@ -32,3 +32,14 @@ h3 { background-color: #ddf;}
 .translate:hover li:nth-child(3) {  transform:translate(-120px, 50px); }
 .translate:hover li:nth-child(4) {  transform:translateZ(500px); } 
 .translate:hover li:nth-child(5) {  transform:translate(50%); } 
+
+/* ---------------------------------------------------------- */
+
+.scale li{margin:30px; transition: all 400ms ease;}
+.scale:hover li:nth-child(1){ transform:scale(120%); }
+.scale:hover li:nth-child(2){ transform:scaleX(1.5); }
+.scale:hover li:nth-child(3){ transform:scaleY(0.7); }
+.scale:hover li:nth-child(4){ transform:scale(0.5, 1.5); }
+.scale:hover li:nth-child(5){ transform:scaleZ(2); }
+/* --------------------------------------------------------- */
+
