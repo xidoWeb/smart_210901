@@ -34,6 +34,7 @@ li { border-bottom: 1px solid #000; margin-bottom: 1rem;}
 
 
 .over_02{
+  visibility:visible;
   width: 100%; height:200px;
   margin-top: 4rem;
   padding: 1rem;  
