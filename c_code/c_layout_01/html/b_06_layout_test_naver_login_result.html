@@ -28,28 +28,39 @@
         <form action="#" method="POST">
           <fieldset class="login_part">
             <legend class="blind">회원 계정 입력란</legend>
-            <div class="member member_id">
-              <label for="">
+            <div class="member member_id">           
+              <input type="text" id="userId" value="" name="user__id" 
+                      maxlength="16"  placeholder="아이디" />
+              <label for="userId">
+                <i class="fas fa-user"></i>
                 <span class="blind">사용자의 아이디를 입력하세요.</span>
               </label>
-              <input type="text">
             </div>
-            <div class="member member_pw">
-              <label for="">
+            <div class="member member_pw">             
+              <input type="password" id="userPw" value="" name="user__pw" 
+                      maxlength="16" placeholder="비밀 번호" />
+              <label for="userPw">
+                <i class="fas fa-lock"></i>
                 <span class="blind">사용자의 비밀번호를 입력하세요.</span>
               </label>
-              <input type="text">
             </div>
           </fieldset>
-
+        <!-- +++++++++++++++++++++++++++++++++++++++++++ -->
           <fieldset class="member_status">
             <legend class="blind">회원 계정 상태 유지 관리</legend>
+            <input type="checkbox" value="상태 유지 확인" id="stateCheck" name="state__ck" class="blind" />
+            <label for="stateCheck">
+              <i class="far fa-check-circle"></i>
+              <span>회원 계정 상태 유지</span>
+            </label>
           </fieldset>
-
-          <fieldset class="ok_btn">
-            <legend class="blind">로그인 확인</legend>
-          </fieldset>
-        </form>
+        <!-- +++++++++++++++++++++++++++++++++++++++++++ -->
+        <fieldset class="ok_btn">
+          <legend class="blind">로그인 확인</legend>
+          <input type="submit" value="로그인" />
+        </fieldset>
+      </form>
+      <!-- =================================================== -->
         <div class="member_more">
           <a href="#">아이디 찾기</a>
           <a href="#">비밀번호 찾기</a>

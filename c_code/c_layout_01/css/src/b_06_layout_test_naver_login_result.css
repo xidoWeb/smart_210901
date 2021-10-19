@@ -35,9 +35,7 @@ form {
   fieldset {
     margin: 0; padding: 0; border: 0;
     width: 100%; height:auto; 
-    margin-bottom: 22px;
-    background-color: #dfd;
-  }
+    margin-bottom: 22px;}
   fieldset:last-of-type{ margin-bottom: 0;}
 
   .login_part {
@@ -54,15 +52,45 @@ form {
       border-bottom-right-radius:0;
       border-bottom:0;
     }
-    .member_pw{
-      border-radius:0 0 0.5rem 0.5rem;
+    .member_pw{ border-radius:0 0 0.5rem 0.5rem; }
+    .member > input {
+      float:right; width: calc(100% - 30px); height:100%;
+      border:0; padding: 0; text-indent:0.5rem;}
+    .member > label {
+      float:left;
+      width:26px; height: 100%;
+      text-align: center; font-size:1.1rem;
+      color:#aaa;
+      line-height:1.8;
     }
 
-  .member_status {
-    height:20px;
-  }
-  .ok_btn {
-    height:60px;
+    .member input::placeholder { color:#7a7; }
+
+    .member input:focus + label { color:#333; }
+    .member input:focus { background-color: #eee; outline:0;}
+
+/* focus를 가질 수 있는 요소
+    a, form내부에존재하는 입력,체크,버튼역할하는 요소 */
+/* --------------------------------------------- */
+  .member_status { height:20px; }
+  label[for="stateCheck"]{
+    font-size:1.2rem; line-height: 1.2;
+    color:#575757; }
+  label[for="stateCheck"] > i { 
+    font-size:1.3rem; margin-right:0.3rem;}
+
+  #stateCheck:checked + label > i { color:#f55; font-weight: 700;}
+/* ------------------------------------ */
+  .ok_btn { height:60px; }
+  input[type="submit"] {
+    width: 100%; height: 100%;
+    margin: 0; padding: 0;
+    border:1px solid #393;
+    background-color: #5a5;
+    color:#fff; font-weight: bold;
+    font-size:1,2rem;
+    border-radius:0.5rem;
+    cursor: pointer;
   }
 
 /* ======================================== */
