@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- b_03_form.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <link rel="stylesheet" href="../css/common/reset.css"> -->
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/b_03_form.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹</a></h1>
+    <hr />
+    <h2>form</h2>
+    <p>무언가를 입력, 선택, 자료를 전송하게만드는 기능을가진 요소</p>
+    <p>양방향 전송방식 - 입력 - 보내기 - 받아서 처리 - 결과를 피드백</p>
+    <p>검색, 로그인, 회원가입, 구매, 게시판</p>
+
+    <ol>
+      <li>검색하기 위해 필요한 단어/문장을 작성(글을 작성할 수 있는 영역)</li>
+      <li>전송버튼을 클릭(a는 data를 보내는 능력x, data보내는 능력을 가진 버튼)</li>
+      <li>데이타를 전송받을곳으로 전송(어디로 보낼지 체크, 공개(get)/비공개(post).....)</li>
+      <li>전송받은 곳에서 무언가 수행(backend)</li>
+      <li>수행에 대한 결과를 피드백</li>
+      <li>피드백 받은 결과를 도출</li>
+    </ol>
+
+    <hr />
+
+    <div class="content_input_area">
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>각 영역별 기능 구분</legend>
+
+          <label for="userName">사용자 이름</label>
+          <input type="text" id="userName" value="" name="userName" />
+
+          <label for="userPw">비밀번호</label>
+          <input type="password" id="userPw" value="" name="userPw" />
+
+          <label for="userGender">성별</label>
+          <input type="text" id="userGender" value="" name="userGender" />
+
+          <label for="userOld">나이
+            <span class="blind">
+              를 태어난 해를 기준으로 입력하세요.
+            </span>
+          </label>
+          <input type="text" id="userOld" value="" name="userOld" />
+          
+          <input type="submit" value="확인" />
+          <!-- 
+            userName : xido 
+            userGender : male
+            userOld : 10
+          -->
+
+        </fieldset>
+
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>
