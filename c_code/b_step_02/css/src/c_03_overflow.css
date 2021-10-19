@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* c_03_overflow.css */
+
+#wrap {
+  width: 600px; height: auto;
+  background-color: #ddd;
+}
+
+.part {
+  width: 90%; height:auto;
+  padding: 1rem;
+  margin:auto; border:1px solid #555;
+}
+
+.over_01 {
+  width: 100%; height:200px;
+  padding:0.5rem;
+  background-color: #caa;
+  /* overflow-x:hidden; */
+  overflow-y:auto;
+}
+/* overflow: visible || auto || hidden || scroll */
+
+h3{ height: 50px; margin-bottom: 0.3rem;}
+p {
+  padding:1rem 0;
+  margin-bottom: 2rem;
+  background-color: #dff;}
+dl{  width: 100%; height:auto; 
+  background-color: #fa0;}
+dt { background-color: #0aa; color:#fff;}
+dd { background-color: #fff;}
+li { border-bottom: 1px solid #000; margin-bottom: 1rem;}
+
+
+.over_02{
+  width: 100%; height:200px;
+  margin-top: 4rem;
+  padding: 1rem;  
+  border-radius:0.2rem;
+  background-color: #5df;
+  overflow:hidden;
+}
+
+.con_wrap {
+  width: 100%; height:100%;
+  padding-right:5rem;
+  box-sizing:content-box;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
