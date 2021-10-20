@@ -1,12 +1,42 @@
 @charset "UTF-8";
 /* b_07_jobis_signup_result.css */
 
-#wrap {  width: 600px; height: auto; }
+#wrap {  width: 600px; height: auto; color:#333; }
 h1 { width: 100%; height: 50px; padding:1rem;}
 h1 > a {display:block; width:200px; height: 100%; color: #325DFF; font-size:2rem;}
 
 #signUp { width: 500px; height:auto; margin:auto; margin-top:50px; padding:5px; }
 h2 {width: 100%; height: auto; margin-bottom:25px; font-size: 1.375rem;}
-.sign_content { width: 100%; height: auto; min-height:500px; background-color: #eee;}
+.sign_content { width: 100%; height: auto; min-height:500px;}
+
+/* --------------------------- */
+.make_account { width: 100%; height: 355px;}
+  .input_text { width: 100%; height: auto; margin-bottom:20px;}
+  .input_text ul {width: 100%; height: auto;}
+  .input_text li {
+    width: 100%; height: 40px;     
+    margin-bottom: 0.75rem; 
+
+    padding:0.5rem 0; 
+    border:1px solid #999; border-radius:0.3rem; 
+    text-indent:0.5rem; color:#676767;
+    background-color: #eee
+  }
+  .input_text li:last-child {margin-bottom: 0;}
+
+  .make_btn { width: 100%; height: 40px; padding:1rem 0;  box-sizing: content-box; }
+  .make_btn > button { 
+    width: 100%; height: 100%;  
+    color:#fff; font-size: 1rem; font-weight: 600;
+    border-radius:0.3rem; box-shadow:0 0.3rem 0.3rem rgba(58, 100, 253, 0.616); 
+    background-color: #325DFF; transition: all 200ms ease;}
+    .make_btn > button:hover { 
+      transform:translateY(-0.3rem); box-shadow:0 0.6rem 0.3rem rgba(58, 100, 253, 0.616); 
+      background-color: #4f75ff; color:#171717;}
+    .make_btn > button:focus {outline:3px solid #22367e; font-size:1.3rem;}
 
 
+/* --------------------------- */
+p{width: 100%; height:auto; padding:15px 0; font-size:0.875rem; font-weight: 400;}
+p>a { font-size:1rem; color:#325DFF; font-weight:600;}
+.sign_content > p:last-of-type { text-align: center;}
