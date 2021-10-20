@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* b_07_jobis_signup_result.css */
+
+#wrap {  width: 600px; height: auto; }
+h1 { width: 100%; height: 50px; padding:1rem;}
+h1 > a {display:block; width:200px; height: 100%; color: #325DFF; font-size:2rem;}
+
+#signUp { width: 500px; height:auto; margin:auto; margin-top:50px; padding:5px; }
+h2 {width: 100%; height: auto; margin-bottom:25px; font-size: 1.375rem;}
+.sign_content { width: 100%; height: auto; min-height:500px; background-color: #eee;}
+
+
