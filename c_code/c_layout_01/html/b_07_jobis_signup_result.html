@@ -21,24 +21,37 @@
     <article id="signUp">
       <h2>회원 가입</h2>
       <div class="sign_content">
-        <div class="make_account">
-          <div class="input_text">
+        <form action="#" method="POST" class="make_account">
+          <fieldset class="input_text">
+            <legend class="blind">개인 정보 입력</legend>
             <ul>
-              <li>회사명</li>
-              <li>이메일</li>
-              <li>비밀번호</li>
-              <li>휴대폰번호</li>
+              <li>
+                <label for="companyName" class="blind">회사명</label>
+                <input type="text" id="companyName" name="company__name" value="" placeholder="회사명" />
+              </li>
+              <li>
+                <label for="emailAddress" class="blind">이메일</label>
+                <input type="email" id="emailAddress" name="email__address" value="" placeholder="이메일" />
+              </li>
+              <li>
+                <label for="passwordKey" class="blind">비밀번호</label>
+                <input type="password" id="passwordKey" name="password__key" value="" placeholder="비밀번호" />
+              </li>
+              <li>
+                <label for="phoneNumber" class="blind">휴대폰번호</label>
+                <input type="tel" id="phoneNumber" name="phone__number" value="" placeholder="휴대폰번호" />
+              </li>
             </ul>
-          </div>
+          </fieldset>
           <p>잠깐! 이미 자비스에 가입된 회사의 직원이신가요? <br />
             담당자가 보낸 초대메일을 먼저 확인해 주세요.
             <a href="#"><span class="blind">담당자 초대메일 관련 내용</span>자세히 보기</a>
           </p>
-          <div class="make_btn">
-            <button>우리회사 계정 만들기</button>
-          </div>
-        </div>
-
+          <fieldset class="make_btn">
+            <button type="submit">우리회사 계정 만들기</button>
+          </fieldset>
+        </form>
+        <!-- ++++++++++++++++++++++++++++++ -->
         <p >가입하면 <a href="#">이용약관</a>과 
           <a href="#">개인정보취급방침</a>에 동의한 것으로 봅니다.</p>
 

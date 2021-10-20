@@ -16,13 +16,15 @@ h2 {width: 100%; height: auto; margin-bottom:25px; font-size: 1.375rem;}
   .input_text li {
     width: 100%; height: 40px;     
     margin-bottom: 0.75rem; 
-
-    padding:0.5rem 0; 
+  }
+  .input_text li:last-child {margin-bottom: 0;}
+  .input_text input{ 
+    width: 100%; height: 100%; 
+    padding:0.5rem; box-sizing: border-box;
     border:1px solid #999; border-radius:0.3rem; 
     text-indent:0.5rem; color:#676767;
     background-color: #eee
   }
-  .input_text li:last-child {margin-bottom: 0;}
 
   .make_btn { width: 100%; height: 40px; padding:1rem 0;  box-sizing: content-box; }
   .make_btn > button { 
