@@ -24,10 +24,70 @@
     <form action="#" method="POST">
       <fieldset>
         <legend>입력형태, 특수형</legend>
+        <div><input type="hidden" name="sendName" value="advw" /></div>
+        <div>
+          <label for="idText">입력할 내용 작성 설명</label>
+          <input type="text" name="id__text" id="idText" value="" 
+                placeholder="입력할 사항의 예시" maxlength="10" />
+        </div>
+        <div>
+          <label for="pwText">숨겨지는 글자를 작성</label>
+          <input type="password" name="pw__Text" id="pwText" value="" 
+                placeholder="비밀번호 입력" maxlength="10" />
+        </div>
+
       </fieldset>
 
       <fieldset>
         <legend>체크항목</legend>
+        <div>
+          <h3>type-radio</h3>
+          <p>다음중 가장 쉬운 언어는 무엇일까?</p>
+          <ul>
+            <li>
+              <input type="radio" id="radio_01" name="radio__Select" value="javascript" 
+              checked="checked" />
+              <label for="radio_01">javascript</label>
+            </li>
+            <li>
+              <input type="radio" id="radio_02" name="radio__Select" value="python" />
+              <label for="radio_02">python</label>
+            </li>
+            <li>
+              <input type="radio" id="radio_03" name="radio__Select" value="java" />
+              <label for="radio_03">java</label>
+            </li>
+            <li>
+              <input type="radio" id="radio_04" name="radio__Select" value="c++" />
+              <label for="radio_04">c++</label>
+            </li>
+          </ul>
+
+        </div>
+        <div>
+          <h3>type-checkbox</h3>
+          <p>이번 주말에 먹고싶은 음식을 고르시오.</p>
+          <ul>
+            <li>
+              <input type="checkbox" id="check_01" name="check__Select" value="제육전골" 
+              checked />
+              <label for="check_01">제육전골</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check_02" name="check__Select" value="족발" checked  />
+              <label for="check_02">족발</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check_03" name="check__Select" value="보쌈" />
+              <label for="check_03">보쌈</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check_04" name="check__Select" value="랍스타" />
+              <label for="check_04">랍스타</label>
+            </li>
+          </ul>
+        </div>
+
       </fieldset>
 
       <fieldset>
