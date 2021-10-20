@@ -92,10 +92,57 @@
 
       <fieldset>
         <legend>버튼형식</legend>
+        <input type="reset" value="취소" /><br />
+        <input type="submit" value="동의 및 전송" /><br />
+        <del><input type="image" src="../img/001-.png" alt="동의 및 전송" /></del><br />
+        <input type="button" value="다음 내용 보기" /><br />
+        <input type="file" name="send__file" value="" id="fileSelect" />
+        <label for="fileSelect">전송할 파일을 선택하세요.</label>
+
+        <!--
+          1. 버튼에서 내용상 구분이 되어야하는 항목에서는 시각형태로도 구분이되게 처리
+          2. 제출/전송/동의 항목이 존재할경우, 
+              그에반하는 버튼도 만들면서 취소를 우선순위로 두어야 한다.
+        -->
       </fieldset>
 
       <fieldset>
         <legend>멀티형</legend>
+        <div>
+          <label for="multiLine">여러줄 작성가능한 요소 설명</label>
+          <textarea name="multi__Line" id="multiLine"></textarea>
+        </div>
+        <div>
+          <label for="selectProduct">구매할 제품을 선택하세요.</label> <br />
+          <select name="select__Procuct" id="selectProduct">
+            <option>선택하세요.</option>
+            <option value="mouse">mouse</option>
+            <option value="keyboard">keyboard</option>
+            <option value="tablet">tablet</option>
+            <option value="smartphone">smartphone</option>
+            <option value="lapto p">laptop</option>
+          </select>
+          <hr />
+          <p>select대안: mac에서는 select가 전혀 다른 디자인이 나오며, 기본디자인자체도 select기능이 원할하게 동작하지 않으로 다른 형태로 처리</p>
+
+          <!-- <label for="mySelect">선택한 내용을 ...</label> -->
+          <input type="hidden" id="mySelect" name="my__Select" value="" />
+          <dl class="like_select">
+            <dt>상품을 선택하세요.</dt>
+            <dd>
+              <ul>
+                <li data-select="마우스">마우스</li>
+                <li data-select="키보드">키보드</li>
+                <li data-select="스마트폰">스마트폰</li>
+                <li data-select="태블릿">태블릿</li>
+                <li data-select="노트북">노트북</li>
+              </ul>
+            </dd>
+          </dl>
+
+        </div>
+
+
       </fieldset>
     </form>
 
