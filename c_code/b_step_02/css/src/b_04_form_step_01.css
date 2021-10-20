@@ -3,6 +3,7 @@
 
 #wrap {
   width: 900px;  height: auto; min-height:500px;
+  padding-bottom:500px;
 }
 
 form {

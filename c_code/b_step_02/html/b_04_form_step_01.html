@@ -21,7 +21,7 @@
 
     <!-- form문서  -->
     <h2>form 이해</h2>
-    <form action="#" method="POST">
+    <form action="#" method="POST" hidden>
       <fieldset>
         <legend>입력형태, 특수형</legend>
         <div><input type="hidden" name="sendName" value="advw" /></div>
@@ -139,16 +139,77 @@
               </ul>
             </dd>
           </dl>
-
         </div>
 
-
+        <div>
+          <button type="submit">확인</button>
+          <button type="reset">취소</button>
+          <button type="button">버튼</button>
+        </div>
       </fieldset>
     </form>
 
+  <hr />
+
+    <div class="other">
+      <label for="year">태어난 연도를 선택하세요.</label>
+      <select name="select__Year" id="year">
+        <!-- <option value="">2021</option> -->
+      </select>
+    </div>
+
   </div><!-- // #wrap -->
 
+
+
   <!-- script -->
-  <script></script>
+  <script>
+    
+    /*
+    var yearSelector = document.querySelector('#year');
+      // option요소 생성
+      var creatOption = document.createElement('option'); 
+      // 기본 변수 y생성
+      var y = 2021;
+      // option요소에 담을 text, 속성(value)을 첨부
+      creatOption.innerText = y + '년';
+      creatOption.value = y;
+      // option요소를 select요소에 담기
+      yearSelector.append( creatOption );
+    */
+
+    // var y = 2021;
+    // y = y -1;
+
+    // 하나의 행동처리를 위한 틀 잡기
+    var yearSelector = document.querySelector('#year');
+    var y = 2021;
+    var creatOption;
+    var makeFn = function(){
+      creatOption = document.createElement('option');
+      creatOption.innerText = y + '년';
+      creatOption.value = y;
+      yearSelector.append(creatOption);
+    };
+/*
+    // 틀 수행
+    // makeFn();
+    // y = y -1; // 2020
+    // makeFn();
+
+    // 반복수행
+    // for(최초값; 조건비교; 증감){수행}
+
+    // 최초의 y값에서 1870보다 크면 기능을 수행하는데,
+    // 이수행을 최초의 변수에서 1씩 뺄때마다 수행을하고, 
+    // 이 내용이 1870과 같아지면 수행하지 않도록
+    // 반복 수행하는 내용
+*/
+
+    for(; y >= 1870; y = y -1){
+      makeFn();
+    }
+
+  </script>
 </body>
 </html>
