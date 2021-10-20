@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* b_04_form_step_01.css */
+
+#wrap {
+  width: 900px;  height: auto; min-height:500px;
+}
+
+form {
+  width: 100%; height: auto;
+  margin: 0; padding: 0; padding-top: 3rem;
+  border:1px solid #aaa;
+}
+
+fieldset {
+  position: relative;
+  width: 100%; height:auto; 
+  margin-bottom: 4rem;
+  padding:0.3rem; background-color: #fdd;
+  border:0; border-bottom:1px solid #aaa;
+}
+legend {
+  position: absolute; top:0; left: 1rem;
+  border-left:5px solid #f06; 
+  text-indent:1rem;
+  transform:translateY(-100%);
+}
