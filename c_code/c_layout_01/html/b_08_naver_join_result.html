@@ -32,7 +32,7 @@
                 <span class="blind">를 입력하세요.</span>
               </label>
               <div class="input_part">
-                <input type="text" name="user__Id" id="userId" value="" />
+                <input type="text" name="user__Id" id="userId" value="" required />
                 <span>@naver.com</span>
               </div>
               <p class="message">필수 입력사항입니다.</p>
@@ -42,7 +42,7 @@
                 <span class="blind">를 입력하세요.</span>
               </label>
               <div class="input_part">
-                <input type="password" name="user__Pw" id="userPw" value="" />
+                <input type="password" name="user__Pw" id="userPw" value="" required />
                 <span>
                   <i class="fas fa-lock"></i>
                 </span>
@@ -54,7 +54,7 @@
                 다시한번 입력하세요.</span>
               </label>
               <div class="input_part">
-                <input type="password" name="user__Pw2" id="userPw2" value="" />
+                <input type="password" name="user__Pw2" id="userPw2" value="" required />
                 <span>
                   <i class="fas fa-lock"></i>
                 </span>
@@ -71,7 +71,7 @@
                 <span class="blind">을 작성해 주세요.</span>
               </label>
               <div class="input_part">
-                <input class="full"  type="text" name="user__Name" id="userName" value="" />
+                <input class="full"  type="text" name="user__Name" id="userName" value="" required />
               </div>
             </li>
             <li>
@@ -80,11 +80,11 @@
               </label>
               <div class="year_part">
                 <div class="particle">
-                  <input class="birth" type="text" name="birth__Year" id="birthYear" value="" placeholder="년(4자)" />
+                  <input class="birth" type="text" name="birth__Year" id="birthYear" value="" placeholder="년(4자)" required />
                 </div>
                 <div class="particle">
                   <label for="birthMonth" class="blind">태어난 월 선택</label>
-                  <select class="birth" name="birth__Month" id="birthMonth">
+                  <select class="birth" name="birth__Month" id="birthMonth" required>
                     <option>월</option>
                     <option value="01">01월</option>
                     <option value="02">02월</option>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="particle">
                   <label for="birthDay" class="blind">태어난 날짜 선택</label>
-                  <input class="birth" type="text" name="birth__Day" id="birthDay" value="" placeholder="일" />
+                  <input class="birth" type="text" name="birth__Day" id="birthDay" value="" placeholder="일" required />
                 </div>
               </div>
             </li>
@@ -112,10 +112,10 @@
                 <span class="blind">을 선택해 주세요.</span>
               </label>
               <div class="input_part">
-                <select class="full" name="user__Gender" id="userGender">
+                <select class="full" name="user__Gender" id="userGender" required>
                   <option value="male">남성</option>
                   <option value="female">여성</option>
-                  <option value="none">선택안함</option>
+                  <option value="none" selected>선택안함</option>
                 </select>
               </div>
             </li>
@@ -125,7 +125,7 @@
                 <small>(선택)</small>
               </label>
               <div class="input_part">
-                <input class="full" type="text" name="user__Email" id="userEmail" value="" placeholder="선택입력" />
+                <input class="full" type="email" name="user__Email" id="userEmail" value="" placeholder="선택입력" />
               </div>
             </li>
           </ul>
@@ -151,7 +151,7 @@
                 <label for="telNumber" class="blind">
                   전화번호 입력 하시고 버튼을 눌러 인증받으세요.
                 </label>
-                <input class="full" type="text" name="tel__Number" id="telNumber" value="" placeholder="전화번호 입력" />
+                <input class="full" type="tel" name="tel__Number" id="telNumber" value="" placeholder="전화번호 입력" required />
               </div>
 
               <div class="tel_btn_part">
