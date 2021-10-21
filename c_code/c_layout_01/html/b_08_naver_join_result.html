@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="../fonts/ibm_Plex/IBMPlex.css">
+  <link rel="stylesheet" href="../fonts/fontAwesome/css/all.min.css">
+  
   <link rel="stylesheet" href="../css/common/reset.css">
   <link rel="stylesheet" href="../css/common/common.css">
   <link rel="stylesheet" href="../css/src/b_08_naver_join_result.css">
@@ -25,7 +27,7 @@
         <fieldset class="make_account">
           <legend class="blind">아이디 및 비밀번호 생성</legend>
           <ul class="account_area">
-            <li>
+            <li class="action">
               <label for="userId">아이디
                 <span class="blind">를 입력하세요.</span>
               </label>
@@ -34,16 +36,75 @@
                 <span>@naver.com</span>
               </div>
             </li>
-            <li></li>
-            <li></li>
+            <li>
+              <label for="userPw">비밀번호
+                <span class="blind">를 입력하세요.</span>
+              </label>
+              <div class="input_part">
+                <input type="password" name="user__Pw" id="userPw" value="" />
+                <span>
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </li>
+            <li>
+              <label for="userPw2">비밀번호 재확인
+                <span class="blind">입니다. <br />
+                다시한번 입력하세요.</span>
+              </label>
+              <div class="input_part">
+                <input type="password" name="user__Pw2" id="userPw2" value="" />
+                <span>
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </li>
           </ul>
         </fieldset><!-- // .make_account -->
 
         <fieldset class="privacy_data">
           <legend class="blind">개인정보 입력</legend>
           <ul>
-            <li></li>
-            <li></li>
+            <li>
+              <label for="userName">이름
+                <span class="blind">을 작성해 주세요.</span>
+              </label>
+              <div class="input_part">
+                <input type="text" name="user__Name" id="userName" value="" />
+              </div>
+            </li>
+            <li>
+              <label for="birthYear">생년월일
+                <span class="blind">을 각각 입력해 주세요.</span>
+              </label>
+              <div class="year_part">
+                <div class="particle">
+                  <input class="birth" type="text" name="birth__Year" id="birthYear" value="" />
+                </div>
+                <div class="particle">
+                  <label for="birthMonth" class="blind">태어난 월 선택</label>
+                  <select class="birth" name="birth__Month" id="birthMonth">
+                    <option>월</option>
+                    <option value="01">01월</option>
+                    <option value="02">02월</option>
+                    <option value="03">03월</option>
+                    <option value="04">04월</option>
+                    <option value="05">05월</option>
+                    <option value="06">06월</option>
+                    <option value="07">07월</option>
+                    <option value="08">08월</option>
+                    <option value="09">09월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                  </select>
+                </div>
+                <div class="particle">
+                  <label for="birthDay" class="blind">태어난 날짜 선택</label>
+                  <input class="birth" type="text" name="birth__Day" id="birthDay" value="" />
+                </div>
+              </div>
+            </li>
             <li></li>
             <li></li>
           </ul>
