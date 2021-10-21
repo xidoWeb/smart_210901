@@ -1,5 +1,15 @@
 @charset "UTF-8";
 /* b_08_naver_join_result.css */
+/**
+ * li class="action"  이 들어가면 input요소에 focus될경우 수행하는 기능
+ * 인증쪽(???) class="disable" 이 들어가면 인증번호 입력 방지 
+*/
+/*  */
+.message  {width: 100%; height: auto; font-size:0.875rem;}
+.error .message { color:#f00; }
+.success .message {color:#03C75A;  }
+
+/* ------------------------ */
 html,body { width:100%; height:100%; }
 
 #wrap {
@@ -84,7 +94,6 @@ input[type="button"],
   content:""; display: block; position: absolute; top: 0; left: 0; z-index:10;
   width: 100%; height: 100%; background-color: rgba(230,235,240,0.5);
 }
-
 
 /* --------------------------------- */
 #footBox {
