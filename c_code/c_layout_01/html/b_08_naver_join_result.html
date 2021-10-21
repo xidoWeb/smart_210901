@@ -70,7 +70,7 @@
                 <span class="blind">을 작성해 주세요.</span>
               </label>
               <div class="input_part">
-                <input type="text" name="user__Name" id="userName" value="" />
+                <input class="full"  type="text" name="user__Name" id="userName" value="" />
               </div>
             </li>
             <li>
@@ -105,16 +105,58 @@
                 </div>
               </div>
             </li>
-            <li></li>
-            <li></li>
+
+            <li>
+              <label for="userGender">성별
+                <span class="blind">을 선택해 주세요.</span>
+              </label>
+              <div class="input_part">
+                <select class="full" name="user__Gender" id="userGender">
+                  <option value="male">남성</option>
+                  <option value="female">여성</option>
+                  <option value="none">선택안함</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <label for="userEmail">본인 확인 이메일
+                <span class="blind">을 작성해 주세요.</span>
+                <small>(선택)</small>
+              </label>
+              <div class="input_part">
+                <input class="full" type="text" name="user__Email" id="userEmail" value="" />
+              </div>
+            </li>
           </ul>
         </fieldset><!-- // .privacy_data -->
 
         <fieldset class="cirtify_check">
           <legend class="blind">인증 및 확인</legend>
           <ul>
-            <li></li>
-            <li></li>
+            <li>
+              <label for="userTel">휴대전화
+                <span class="blind">번호를 입력하여 사용자 인증해 주세요.</span>
+              </label>
+              <div class="input_part">
+                <select class="full" name="user__Tel" id="userTel">
+                  <option value="1">미국 <span>+1</span></option>
+                  <option selected value="82">대한민국 <span>+82</span></option>
+                  <option value="33">프랑스 <span>+33</span></option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div class="tel_part">
+                <label for="telNumber" class="blind">
+                  전화번호 입력 하시고 버튼을 눌러 인증받으세요.
+                </label>
+                <input class="full" type="text" name="tel__Number" id="telNumber" value=""  />
+              </div>
+
+              <div class="tel_btn_part">
+                <input class="full" type="button" value="인증번호 받기" class="tel_number_btn" />
+              </div>
+            </li>
             <li></li>
           </ul>
         </fieldset><!-- // .cirtify_check -->
