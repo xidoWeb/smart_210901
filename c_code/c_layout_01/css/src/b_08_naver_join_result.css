@@ -5,8 +5,7 @@ html,body { width:100%; height:100%; }
 #wrap {
   width: 100%; height: auto; min-height: 100%;
   padding-top:40px;  
-  /* background-color: #F5F6F7; */
-  background-color: #999;
+  background-color: rgba(230,235,240,0.5);
 }
 
 h1 {
@@ -25,27 +24,25 @@ h1 {
 fieldset {
   width: 100%; height: auto; min-height:30px;
   margin-bottom:30px;
-  background-color: #fff;
 }
 
 fieldset > ul{ width: 100%; height: auto; }
 fieldset li { 
   width: 100%; height: auto; min-height:52px;
-  margin-bottom: 12px;
-  background-color: #fdd;
-}
+  margin-bottom: 12px;}
 fieldset li:last-child {margin-bottom: 0;}
 
 label{ 
   display:block; 
   width: 100%; height: auto; margin-bottom: 5px; 
-  font-weight: 600; font-size:1.125rem;
+  font-weight: 600; font-size:1.125rem;  
 }
 .input_part {
   width: 100%; height: 52px;
   padding:10px 12px;
   border:1px solid #c7c7c7;
   border-radius: 0.1rem;
+  background-color: #fff;
 }
 .input_part input { 
   float:left; width: 325px; height: 100%; 
@@ -63,12 +60,14 @@ fieldset .full {width: 100%; height: 100%; background-color: transparent;}
   float:left; width:146px; height: 100%; 
   margin-right:10px; padding:10px 12px;
   border:1px solid #c7c7c7; border-radius: 0.1rem;
+  background-color: #fff;
 }
 .particle:last-of-type {margin: 0;}
-.birth {width: 100%; height: 100%;}
+.birth {width: 100%; height: 100%; background-color: transparent;}
 
 .tel_part { float:left; width: 335px; height: 52px; 
-  padding:10px 12px; border:1px solid #c7c7c7; border-radius: 0.1rem; }
+  padding:10px 12px; border:1px solid #c7c7c7; border-radius: 0.1rem; 
+  background-color: #fff;}
 .tel_btn_part {float:right; width: 115px; height: 52px; }
 
 fieldset li.action .input_part{ 
@@ -77,8 +76,14 @@ fieldset li.action .input_part{
 }
 
 input[type="button"], 
-input[type="submit"] { cursor: pointer; background-color: #03C75A; color:#fff; }
+[type="submit"] { cursor: pointer; background-color: #03C75A; color:#fff; }
+[type="submit"] {width: 100%; height: 52px;}
 
+.disable {position:relative; z-index:100;}
+.disable:before { cursor: pointer;
+  content:""; display: block; position: absolute; top: 0; left: 0; z-index:10;
+  width: 100%; height: 100%; background-color: rgba(230,235,240,0.5);
+}
 
 
 /* --------------------------------- */

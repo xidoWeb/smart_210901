@@ -33,6 +33,7 @@ select, input {
 input[type="text"],
 input[type="password"] { text-indent: 0.5rem;}
 
+select,input,textarea { cursor: pointer;}
 
 
 header,article, nav, section, footer, aside, 

@@ -79,7 +79,7 @@
               </label>
               <div class="year_part">
                 <div class="particle">
-                  <input class="birth" type="text" name="birth__Year" id="birthYear" value="" />
+                  <input class="birth" type="text" name="birth__Year" id="birthYear" value="" placeholder="년(4자)" />
                 </div>
                 <div class="particle">
                   <label for="birthMonth" class="blind">태어난 월 선택</label>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="particle">
                   <label for="birthDay" class="blind">태어난 날짜 선택</label>
-                  <input class="birth" type="text" name="birth__Day" id="birthDay" value="" />
+                  <input class="birth" type="text" name="birth__Day" id="birthDay" value="" placeholder="일" />
                 </div>
               </div>
             </li>
@@ -124,7 +124,7 @@
                 <small>(선택)</small>
               </label>
               <div class="input_part">
-                <input class="full" type="text" name="user__Email" id="userEmail" value="" />
+                <input class="full" type="text" name="user__Email" id="userEmail" value="" placeholder="선택입력" />
               </div>
             </li>
           </ul>
@@ -150,20 +150,27 @@
                 <label for="telNumber" class="blind">
                   전화번호 입력 하시고 버튼을 눌러 인증받으세요.
                 </label>
-                <input class="full" type="text" name="tel__Number" id="telNumber" value=""  />
+                <input class="full" type="text" name="tel__Number" id="telNumber" value="" placeholder="전화번호 입력" />
               </div>
 
               <div class="tel_btn_part">
                 <input class="full" type="button" value="인증번호 받기" class="tel_number_btn" />
               </div>
             </li>
-            <li></li>
+            <li>
+              <label for="cirtifyCheck" class="blind">인증번호 확인</label>
+              <div class="input_part disable">
+                <input class="full" type="text" name="cirtify__Check" id="cirtifyCheck" value="" 
+                placeholder="인증번호를 입력하세요." tabindex="-1" />
+              </div>
+            </li>
           </ul>
         </fieldset><!-- // .cirtify_check -->
 
         <fieldset class="join_btn">
           <legend class="blind">가입동의 버튼</legend>
-
+          <!-- <input type="submit" value="가입하기" /> -->
+          <button type="submit">가입하기</button>
         </fieldset><!-- // .join_btn -->
       </form><!-- form -->
     </article>
