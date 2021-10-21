@@ -52,7 +52,7 @@ label{
   background-color: transparent;
 }
 
-.input_part .full {width: 100%; height: 100%; background-color: transparent;}
+fieldset .full {width: 100%; height: 100%; background-color: transparent;}
 
 .input_part span { 
   float:right; width:auto; height: 100%; 
@@ -76,6 +76,10 @@ fieldset li.action .input_part{
   background-color: #efe;
 }
 
+input[type="button"], 
+input[type="submit"] { cursor: pointer; background-color: #03C75A; color:#fff; }
+
+
 
 /* --------------------------------- */
 #footBox {
@@ -84,3 +88,17 @@ fieldset li.action .input_part{
   padding-bottom:10px; box-sizing: content-box;
   background-color: #fff;
 }
+
+
+
+/* 속성선택자
+  선택 요소의 속성값을 선택하여 처리하는 선택자
+  [속성명="값"] {} 으로 사용
+  요소[속성명="값"] {}
+  ----------------------------------------------
+  요소[속성명^="값"] {}  : ^은 시작을   a[href^="http"] { }
+  요소[속성명$="값"] {}  : $은 끝을   a[href$="com"] { }
+  요소[속성명|="값"] {}  : |은 단어형식의 모든   a[class|="full"] { }  <a class="full-box wrap"></a>
+  요소[속성명*="값"] {}  : *은 모든(전체의)      a[class*="a"] { }
+  요소[속성명~="값"] {}  : ~은 분리가능한 단어(값)  a[class~="full"]{}  <a class="full box wrap"></a>
+*/
