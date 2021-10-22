@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../fonts/fontAwesome/css/all.min.css">
+  <link rel="stylesheet" href="../fonts/ibm_Plex/IBMPlex.css">
 
   <link rel="stylesheet" href="../css/common/reset.css">
   <link rel="stylesheet" href="../css/common/common.css">
@@ -21,9 +23,37 @@
       <h1><a href="./a_content.html">웹</a></h1>
     </header>
 
-    
-    <article id="joinBox">
 
+    <article id="joinBox">
+      <h2 class="blind">쿠팡 회원가입 내용 입력 및 체크</h2>
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>회원정보를 입력해주세요</legend>
+          <ul class="private_data">
+            <li>
+              <div class="input_data">
+                <input type="text" id="userId" name="user__Id" value="" 
+                placeholder="아이디(이메일)" />
+                <label for="userId">
+                  <i class="fas fa-envelope-open-text"></i>
+                  <span class="blind">
+                    사용자 아이디를 입력하세요. 
+                    형식은 이메일입니다.
+                  </span>
+                </label>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </fieldset>
+        <hr class="form_line" />
+        <fieldset>
+          <legend>쿠팡 서비스약관에 동의해주세요</legend>
+        </fieldset>
+      </form>
     </article>
 
 

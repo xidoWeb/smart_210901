@@ -2,7 +2,6 @@
 /* b_10_coupang_join_result.css */
 
 html,body {width: 100%; height: 100%;}
-
 #wrap {  width: 460px; height: auto; min-height:100%;}
 
 /* #headBox ================================================ */
@@ -19,6 +18,38 @@ h1 > a { display: block; width: 100%; height: 100%;}
   background-color: #dff;
 }
 
+form { width: 100%; height: auto;}
+fieldset {
+  position: relative;
+  width: 100%; height: auto; 
+  padding-top:1.5rem; 
+  background-color: #fda;
+}
+legend {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 1.5rem;
+  padding: 0;
+  background-color: #aff;
+}
+
+.private_data { width: 100%; height:auto; padding-top:2rem; }
+.private_data li { width: 100%; height: auto; margin-bottom: 14px; background-color: #ddd;}
+.private_data li:last-child {margin-bottom: 0;}
+
+.input_data {width: 100%; height: 50px;}
+.input_data input { float:right; width:calc(100% - 50px); height:100%; padding:14px 10px; 
+  border:1px solid #777; box-sizing: border-box;}
+.input_data label { 
+  float:left; width: 50px; height:50px; 
+  border:1px solid #777; border-right:0;box-sizing: border-box;
+  text-align: center; line-height: 50px; color:#777;
+  background-color: #eee;}
+
+
+
+
+.form_line {
+  border:0; border-bottom:1px solid #777; margin:1rem 0; }
 
 /* #footBox ================================================ */
 #footBox {
