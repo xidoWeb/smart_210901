@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* b_10_coupang_join_result.css */
+
+#wrap { width: 800px; height: auto;}
+
+.input_test {width: 300px;}
+
+.input_test input{width: 30px; height: 30px; }
+.input_test label { display: block; width: 100%; height:30px;  }
+.input_test i {
+  float:left; 
+  width: 32px; height: 32px;
+  background-image: url("../../img/coupang/check_icon.png");
+  background-repeat: no-repeat;
+  background-position: 50% -50px;
+  background-size: initial;
+  transition: all 300ms ease;
+}
+.input_test input { display:block; position: absolute; width: 0; height: 0;  z-index:-1; overflow: hidden;}
+.input_test input:focus + label {  background-color: #faa; border:2px solid #f00;}
+.input_test input:checked + label > i { background-position-Y:-6px; }
+
+/* ------------------------------------------ */
+.modal {
+  overflow: hidden;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:2000;
+  width: 400px; height: 650px;
+  margin:auto;
+  background-color: #fff;
+  border-radius:0.1rem;
+  border:1px solid #ccc;
+}
+.modal:before {
+  content:""; display: block; 
+  position: fixed; top: 0; left: 0; z-index:-1;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+.content {
+  width: 100%; height: 100%; 
+  padding: 1rem; padding-bottom: 4rem;
+  background-color: #fff;
+}
+
+.confirm_btn {
+  position: absolute; bottom: 1rem; right: 1rem;
+}

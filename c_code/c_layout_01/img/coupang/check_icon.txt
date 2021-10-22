@@ -1,0 +1,15 @@
+1. 이미지 32px
+2. 전체 6px padding처리되어있음.
+3. 아이콘 간의 사이간격 12px
+
+/* 체크된아이콘 */
+.check_icon_check {
+    width: 32px; height: 32px;
+    background: url('check_icon.png') -6px -6px;
+}
+
+/* 체크되지 않은 아이콘 */
+.check_icon {
+    width: 32px; height: 32px;
+    background: url('check_icon.png') -6px -50px;
+}
