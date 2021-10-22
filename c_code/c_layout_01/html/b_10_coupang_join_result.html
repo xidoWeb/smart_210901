@@ -27,6 +27,7 @@
         <i></i>  
         체크확인
       </label>
+      <a href="#">정보보기</a>
     </div>
 
     <div class="modal_area">
@@ -73,6 +74,29 @@
   </div><!--// #wrap -->
 
   <!-- script -->
-  <script></script>
+  <script>
+    var inputTest = document.querySelector('.input_test');
+    var inputLink = inputTest.querySelector('a');
+    var modalArea = document.querySelector('.modal_area');
+    var closeWrap = document.querySelector('.close_btn');
+    var closeBtn  = closeWrap.querySelector('button');
+
+    inputLink.addEventListener('click', function(event){
+      // a, button의 경우 기본 실행되는 이벤트처리를 동작방지
+      event.preventDefault();
+      modalArea.style.display = 'block';
+    }); 
+    closeBtn.addEventListener('click', function(event){
+      event.preventDefault();
+      // modalArea.style.display = 'none';
+      modalArea.removeAttribute('style');
+    });
+    
+
+    // ()  소괄호
+    // {}  중괄호
+    // []  대괄호
+    
+  </script>
 </body>
 </html>

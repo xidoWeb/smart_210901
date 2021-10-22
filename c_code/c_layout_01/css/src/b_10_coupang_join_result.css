@@ -21,20 +21,20 @@
 .input_test input:checked + label > i { background-position-Y:-6px; }
 
 /* ------------------------------------------ */
+.modal_area {display:none;}
 .modal {
+  --color-white :#fff; 
+  --border-line1 : 1px solid #ccc;
   position: fixed; top:50%; left:50%; z-index:2000;
   width: 400px; height: auto;
   transform:translate(-50%, -50%);
-  border-radius:0.1rem;  border:1px solid #ccc; }
+  border-radius:0.1rem;  border:1px solid #ccc; 
+  background-color: var(--color-white);}
 .modal_bg {
   position: fixed; top: 0; left: 0; z-index:1500;
   width: 100%; height: 100%;  
   background-color: rgba(0,0,0,0.3);
 }
-.modal { 
-  --color-white :#fff; 
-  --border-line1 : 1px solid #ccc;
-  background-color: var(--color-white);}
 .modal h3{ 
   width:100%; height:auto;   padding:1rem;
   border-bottom: var(--border-line1);
