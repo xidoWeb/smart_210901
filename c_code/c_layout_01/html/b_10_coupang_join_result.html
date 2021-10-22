@@ -31,9 +31,10 @@
           <legend>회원정보를 입력해주세요</legend>
           <ul class="private_data">
             <li>
+              <!-- 아이디(이메일)작성 -->
               <div class="input_data">
                 <input type="text" id="userId" name="user__Id" value="" 
-                placeholder="아이디(이메일)" />
+                placeholder="아이디(이메일)" required />
                 <label for="userId">
                   <i class="fas fa-envelope-open-text"></i>
                   <span class="blind">
@@ -42,8 +43,24 @@
                   </span>
                 </label>
               </div>
+              <div class="input_info"></div>
             </li>
-            <li></li>
+
+            <li>
+              <!-- 비밀번호1 -->
+              <div class="input_data">
+                <input type="text" id="userPw" name="user__Pw" value="" maxlength="15"
+                placeholder="비밀번호" required />
+                <label for="userPw">
+                  <i class="fas fa-lock"></i>
+                  <span class="blind">
+                    사용자 비밀번호를 생성하세요. 최소 10이상 최대 15글자입니다. </span>
+                </label>
+              </div>
+              <div class="input_info"></div>
+            </li>
+
+
             <li></li>
             <li></li>
             <li></li>
