@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* b_10_coupang_join_result.css */
+
+html,body {width: 100%; height: 100%;}
+
+#wrap {  width: 460px; height: auto; min-height:100%;}
+
+/* #headBox ================================================ */
+#headBox {
+  width: 100%; height:46px; padding-top:48px; }
+h1 {width:195px; height: 46px; margin:auto; 
+    background-color: #acf; text-align: center;}
+h1 > a { display: block; width: 100%; height: 100%;}
+
+/* #joinBox =============================================== */
+#joinBox {
+  width: 100%; height: auto; min-height:300px;
+  margin-top: 20px;
+  background-color: #dff;
+}
+
+
+/* #footBox ================================================ */
+#footBox {
+  width: 100%; height: auto;
+  margin-top:1rem; text-align: center;
+  font-size:0.75rem;
+}
