@@ -15,7 +15,6 @@ h1 > a { display: block; width: 100%; height: 100%;}
 #joinBox {
   width: 100%; height: auto; min-height:300px;
   margin-top: 20px;
-  background-color: #dff;
 }
 
 form { width: 100%; height: auto;}
@@ -23,13 +22,11 @@ fieldset {
   position: relative;
   width: 100%; height: auto; 
   padding-top:1.5rem; 
-  background-color: #fda;
 }
 legend {
   position: absolute; top: 0; left: 0;
   width: 100%; height: 1.5rem;
   padding: 0;
-  background-color: #aff;
 }
 
 .private_data { width: 100%; height:auto; padding-top:2rem; }
@@ -73,6 +70,57 @@ legend {
     box-shadow:inset 0 -0.3rem 0 rgba(0,0,0,0.3);
     cursor: pointer;
   }
+
+/* ---------------------------------------------- */
+/* .check_all */
+.check_all { width: 100%; height:auto; padding:1rem 0;}
+.check_all dl { width: 100%; height:auto;}
+.check_all dt {
+  width: 100%; height: auto; 
+  font-size:1.1rem; font-weight: 600;}
+.check_all dd {
+  width: 100%; height: auto; 
+  padding:0.3rem 0; padding-left:2rem;
+  line-height:130%; font-size:0.875rem;
+  letter-spacing:-0.015rem;
+}
+.check_info { width: 100%; height: auto; padding:0.3rem 0; }
+.check_terms {
+  width: 100%; height:auto; 
+  padding:1rem;
+  border:1px solid #777;
+}
+.check_terms ul {
+  width: 100%; height: auto;
+}
+.check_terms li {
+  width: 100%; height:auto; min-height:20px;
+  margin-bottom:0.5rem;
+  background-color: rgba(255,50,0,0.2);
+}
+.check_terms li:last-child {margin-bottom: 0;}
+
+.sub_title { margin-bottom:0.5rem;}
+.sub_select { padding-left: 2rem; }
+
+fieldset.check_info {display: none;}
+fieldset.error .check_info {display:block; font-size:1rem; color:#f00;}
+/* ---------------------------------------------- */
+/* .check_data */
+.check_data {width: 100%; height:auto; background-color: #faa;}
+.check_data label { 
+  display:block; width:100%; height:20px; 
+  padding:5px 0; box-sizing: content-box;
+  line-height:20px; background-color: #fff;}
+.check_data i { 
+  float:left; width:20px; height:20px; margin-right:10px;
+  background-image: url("../../img/coupang/check_icon.png");
+  background-size: 100%; background-repeat: no-repeat; background-position: 50% 100%;
+  opacity: 0.2; 
+}
+.check_data input:checked + label > i {
+  background-position-y: 0; opacity: 1;
+}
 
 /* #footBox ================================================ */
 #footBox {
