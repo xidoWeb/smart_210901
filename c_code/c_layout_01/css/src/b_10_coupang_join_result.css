@@ -22,26 +22,39 @@
 
 /* ------------------------------------------ */
 .modal {
-  overflow: hidden;
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:2000;
-  width: 400px; height: 650px;
-  margin:auto;
-  background-color: #fff;
-  border-radius:0.1rem;
-  border:1px solid #ccc;
-}
-.modal:before {
-  content:""; display: block; 
-  position: fixed; top: 0; left: 0; z-index:-1;
-  width: 100%; height: 100%;
+  position: fixed; top:50%; left:50%; z-index:2000;
+  width: 400px; height: auto;
+  transform:translate(-50%, -50%);
+  border-radius:0.1rem;  border:1px solid #ccc; }
+.modal_bg {
+  position: fixed; top: 0; left: 0; z-index:1500;
+  width: 100%; height: 100%;  
   background-color: rgba(0,0,0,0.3);
 }
-.content {
-  width: 100%; height: 100%; 
-  padding: 1rem; padding-bottom: 4rem;
-  background-color: #fff;
-}
-
+.modal { 
+  --color-white :#fff; 
+  --border-line1 : 1px solid #ccc;
+  background-color: var(--color-white);}
+.modal h3{ 
+  width:100%; height:auto;   padding:1rem;
+  border-bottom: var(--border-line1);
+  /* background-color: var(--color-white); */ }
+.content { 
+  overflow: hidden;
+  width:100%; height:400px;
+  padding:1.5rem; padding-bottom: 0; margin-bottom: 1rem;
+  /* background-color: var(--color-white); */ }
+.content_inner {
+  overflow-x:hidden; overflow-y: auto;
+  width: 100%; height: 100%;
+  padding-right:3rem;  box-sizing: content-box;
+  word-break: break-all;  text-align:justify; }
 .confirm_btn {
-  position: absolute; bottom: 1rem; right: 1rem;
-}
+  width:100%; height:auto;
+  padding:1rem; padding-top:30px;
+  text-align: right;
+  /* background-color: var(--color-white); */ }
+.close_btn {
+  position: absolute; top: 1rem; right: 1rem; z-index:10;
+  width: 30px; height: 30px; background-color: #fdd;}
+.close_btn button {width: 100%; height: 100%;}
