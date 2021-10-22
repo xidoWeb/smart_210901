@@ -33,7 +33,7 @@
             <li>
               <!-- 아이디(이메일)작성 -->
               <div class="input_data">
-                <input type="text" id="userId" name="user__Id" value="" 
+                <input type="email" id="userId" name="user__Id" value="" 
                 placeholder="아이디(이메일)" required />
                 <label for="userId">
                   <i class="fas fa-envelope-open-text"></i>
@@ -49,7 +49,7 @@
             <li>
               <!-- 비밀번호1 -->
               <div class="input_data">
-                <input type="text" id="userPw" name="user__Pw" value="" maxlength="15"
+                <input type="password" id="userPw" name="user__Pw" value="" maxlength="15"
                 placeholder="비밀번호" required />
                 <label for="userPw">
                   <i class="fas fa-lock"></i>
@@ -60,15 +60,54 @@
               <div class="input_info"></div>
             </li>
 
+            <li>
+              <!-- 비밀번호2 -->
+              <div class="input_data">
+                <input type="password" id="userPw2" name="user__Pw2" value="" maxlength="15"
+                placeholder="비밀번호 확인" required />
+                <label for="userPw2">
+                  <i class="fas fa-user-lock"></i>
+                  <span class="blind">사용자 비밀번호를 다시한번 입력하세요. </span>
+                </label>
+              </div>
+              <div class="input_info"></div>
+            </li>
 
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <!-- 이름작성 -->
+              <div class="input_data">
+              <input type="text" id="userName" name="user__Name" value="" maxlength="15"
+              placeholder="이름" required />
+              <label for="userName">
+                <i class="fas fa-user-check"></i>
+                <span class="blind">이름를 입력하세요. </span>
+              </label>
+            </div>
+            <div class="input_info"></div>
+            </li>
+
+            <li>
+              <!-- 전화번호 -->
+              <div class="input_data">
+                <input type="tel" id="userTel" name="user__Tel" value="" maxlength="12"
+                placeholder="휴대폰 번호" required />
+                <label for="userTel">
+                  <i class="fas fa-mobile"></i>
+                  <span class="blind">휴대폰번호 입력하세요. </span>
+                </label>
+              </div>
+              <div class="input_info"></div>
+            </li>
           </ul>
         </fieldset>
         <hr class="form_line" />
         <fieldset>
           <legend>쿠팡 서비스약관에 동의해주세요</legend>
+        </fieldset>
+
+        <fieldset>
+          <legend class="blind">동의 및 가입</legend>
+          <button type="submit">동의하고 가입하기</button>
         </fieldset>
       </form>
     </article>
