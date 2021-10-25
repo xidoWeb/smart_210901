@@ -141,3 +141,29 @@
   transition-delay:1000ms; }
 .tran_ex:hover .line_04 {height:100%;
   transition-delay:1500ms; }
+
+.hover_line {
+  width: 700px; height: 100px;
+  margin:10rem auto;
+  background-color: #fcc;
+}
+.gage {
+  width: 0; height: 100%; background-color: #05a;
+  transition:all 1000ms ease-out 1300ms;}
+
+.hover_line:hover .gage {
+  width:100%;
+  transition-delay: 0ms;
+}
+
+.hover_line .gage {
+  transition-delay:1300ms;
+}
+
+/* 
+ * 하나의 요소가 아니라 여러개의 요소에 시간을 다르게 배분시,
+ * 다양한 에러가 발생하기 때문에 0초의 시간도 ms단위를 붙여 사용
+ * 마우스를 올리거나, 벗어나거나, 누르거나 띄거나 등
+ * 2가지 이상의 선택상황이 생기면 위와 동일한 에러가 발생하기 때문에, 
+ * 선택자의 상황도 동일하게 처리하는 것이 좋다.
+*/
