@@ -142,3 +142,54 @@ li {width: 100%; height: 6rem;
 @keyframes onceWin {
   100% { transform:translateY(70%) skew(-45deg); }
 }/* onceWin */
+
+.wheel {
+  position: absolute; bottom:0; left:15%;
+  width:70%; height:100px;
+}
+.wheel span {
+  width: 80px; height: 80px; 
+  background-color: #77a;
+  border-radius:100%; text-align: center;
+  animation:moveWheel 500ms infinite normal both linear;
+}
+
+.front_wheel { float:left; }
+.back_wheel { float:right; }
+
+@keyframes moveWheel {
+  0% {transform:rotate(0deg);}
+  100% {transform:rotate(-360deg);}
+}/* moveWheel */
+
+/* --------------------------------- */
+
+.mouse {
+  position: absolute; bottom: 1rem; left: 0; right: 0;
+  width: 3rem; height: 6.5rem;
+  margin:auto; padding:1.5rem 0.5rem;
+  background-color: #059;
+}
+
+.mouse_line {
+  position: relative;
+  width: 100%; height: 100%; 
+  border:0.3rem solid #fff;
+  border-radius:2rem;
+  animation:mouseMove 700ms infinite alternate linear; 
+}
+
+.mouse_line:before,
+.mouse_line::before{
+  position: absolute; top:0.4rem; left: 0; right: 0;
+  content:""; display: block;
+  width: 0.5rem; height: 0.8rem;
+  margin:auto; border-radius: 1rem;
+  background-color: #fff;
+  animation:mouseMove 700ms infinite alternate linear; 
+}
+
+@keyframes mouseMove {
+  0% { transform:translateY(10%);  }
+  100% {transform:translateY(-10%); }
+}/* mouseMove */
