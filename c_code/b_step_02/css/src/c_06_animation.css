@@ -31,4 +31,28 @@ li {width: 100%; height: 6rem;
 }
 
 /* -------------------------------- */
-.ani li:nth-child(1) > span {}
+/**
+ * animation기능 사용을위해서는 2가지 속성을알아야한다.
+ * 1. animation 시간/움직임/반복 등의 선택자에 관련된 내용
+ * 2. animation의 전체 시간에 따른 비율(%)에 대한 움직임처리
+*/
+.ani li:nth-child(1) > span {
+  /* 이름을 설정 (사용자가 임의로 생성) */
+  animation-name:myMove; 
+  /* animation 움직이는 시간 */
+  animation-duration: 2000ms;
+  /* animation 반복여부처리 1은 1번이동, infinite는 무제한반복 */
+  animation-iteration-count: 2;
+  /* 행동을 처리하는 방향 - 
+   * 정방향(normal), 역방향(reverse), 왕복(alternate), 역순으로왕복(alternate-reverse) 
+  */
+  animation-direction: normal;
+  /* 움직임처리 */
+  animation-timing-function: linear;
+}
+
+@keyframes myMove {
+  0% { transform:translate(0px);}  
+  50% { transform:translate(-100px, -100px) rotate(360deg); }
+  100% { transform:translate(500px, 100px);}
+}
