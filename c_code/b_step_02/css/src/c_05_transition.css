@@ -99,7 +99,7 @@
   margin:5rem auto;
   border:1px solid #777;
   background-color: #ccc;
-  padding:1.2rem;
+  /* padding:1.2rem; */
 }
 
 .div_line {
@@ -114,30 +114,30 @@
   --time:500ms;
 }
 
-.div_line .line_01 {top:0; left:0; height:1rem;      width:0; 
+.tran_ex .line_01 {top:0; left:0; height:5rem;      width:0; 
   /* transition-delay:1500ms; */
   transition-delay:calc( var(--time) * 3);
 }
-.div_line .line_02 {top:0; right:0; width:1rem;      height:0;
+.tran_ex .line_02 {top:0; right:0; width:5rem;      height:0;
   /* transition-delay:1000ms; */
   transition-delay:calc( var(--time) * 2);
 }
-.div_line .line_03 {bottom:0; right:0;  height:1rem; width:0; 
+.tran_ex .line_03 {bottom:0; right:0;  height:5rem; width:0; 
   /* transition-delay:500ms; */
   transition-delay:calc( var(--time) * 1);
 }
-.div_line .line_04 {bottom:0; left:0; width:1rem;    height:0;
+.tran_ex .line_04 {bottom:0; left:0; width:5rem;    height:0;
   /* transition-delay:0ms; */
   transition-delay:calc( var(--time) * 0);
 }
 
-/* .div_line:hover span { } */
+/* .tran_ex:hover span { } */
 
-.div_line:hover .line_01 {width:100%;
+.tran_ex:hover .line_01 {width:100%;
   transition-delay:0ms; }
-.div_line:hover .line_02 {height:100%;
+.tran_ex:hover .line_02 {height:100%;
   transition-delay:500ms; }
-.div_line:hover .line_03 {width:100%;
+.tran_ex:hover .line_03 {width:100%;
   transition-delay:1000ms; }
-.div_line:hover .line_04 {height:100%;
+.tran_ex:hover .line_04 {height:100%;
   transition-delay:1500ms; }
