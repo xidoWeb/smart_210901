@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* c_05_transition.css */
+
+#wrap {
+  width: 900px; height: auto;
+  margin:auto; background-color: #eee;
+  padding-bottom:700px; box-sizing: content-box;
+}
+
+.part {
+  width: 95%; height: auto;
+  margin:auto; border:1px solid #777;
+  padding:0.5rem;
+}
+
+.part ul {
+  width: 100%; height: auto;
+  background-color: #fdd;
+}
+
+.part li {
+  width: 100%; height: 120px;
+  margin-bottom: 50px; 
+  padding:2rem;
+  border-bottom: 1px solid #0af;
+}
+
+.part span {
+  display: block; width: 4rem; height: 4rem;
+  border-radius:0.5rem; text-align: center;
+  line-height: 4rem;
+  background-color: #f73;
+}
+
+.tr1:hover li:nth-child(1) span {
+  transform:translate(700px);
+
+  transition-property:transform; 
+  transition-duration:1000ms;
+  transition-timing-function:linear;
+  /**
+   * ease : 점점빠르다가 느리게(자연스럽게)
+   * ease-in : 점점 빠르게
+   * ease-out : 점점 느리게
+   * ease-in-out : 점점빨라졌다가 느리게(시작/끝속도가 같음)
+   * linear : 동일한속도
+   * cubic-bezier(수치.....);  
+  */
+  transition-delay: 1s;
+}
+
+.tr1 li:nth-child(2) span {
+  transition-property:transform, background-color, color;
+  transition-duration:2000ms, 1000ms;
+  transition-timing-function:ease-out;
+  transition-delay:300ms, 1000ms;
+}
+.tr1:hover li:nth-child(2) span {
+  transform:translate(500px) scale(1.2);
+  background-color: #f07; color:#fff; 
+}
+
+.tr1 li:nth-child(3) span {
+  transition: all 2000ms linear 300ms;
+  /* transition:선택자 구현시간 움직임 지연시간; */
+}
+
+.tr1:hover li:nth-child(3) span {
+  transform:translate(700px) rotate(360deg);
+  background-color: #06f; font-weight:700;
+  color:#fff;
+}
+
+.tr1 li:nth-child(4) span {
+  transition: all 2000ms cubic-bezier(.16,.73,.94,.29) 300ms;
+}
+
+.tr1:hover li:nth-child(4) span {
+  transform:translate(700px) rotate(360deg);
+  background-color: #06f; font-weight:700;
+  color:#fff;
+}
+
+
+.tr1 li:nth-child(5) span {
+  transition: all 2000ms cubic-bezier(.16,.73,.94,.29) 300ms;
+}
+.tr1:hover li:nth-child(5) span {
+  transform:translate(700px) rotate(360deg);
+  background-color: #06f; font-weight:700;
+  color:#fff;
+
+  transition:all 500ms ease;
+}
