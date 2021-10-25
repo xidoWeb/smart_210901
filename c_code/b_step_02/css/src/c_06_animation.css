@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* c_06_animation.css */
+
+#wrap {
+  width: 900px; height: auto;
+  margin:auto;
+  box-sizing: content-box;
+  padding-bottom:700px;
+}
+
+.part {
+  width: 100%; height: auto;
+  margin-bottom: 4rem;
+  padding: 1rem; 
+  border:1px solid #777;
+}
+
+ul { width: 100%; height: auto; 
+  background-color: #eee;}
+
+li {width: 100%; height: 6rem; 
+  margin-bottom: 1rem; 
+  padding: 1rem;
+  border-bottom: 1px solid #555;}
+
+.part span {
+  --size: 4rem;
+  display: block; width: var( --size ); height: var( --size );
+  border-radius:0.3rem; background-color: #f7a;
+  text-align: center; line-height:var( --size ); font-weight: 700;
+}
+
+/* -------------------------------- */
+.ani li:nth-child(1) > span {}
