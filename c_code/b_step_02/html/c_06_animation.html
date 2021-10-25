@@ -18,7 +18,7 @@
   <!-- layout -->
   <div id="wrap">
     <h1><a href="./a_content.html">웹</a></h1>
-    <div class="part ani">
+    <div class="part ani" hidden>
       <h2>animation basic</h2>
       <ul>
         <li><span>01</span></li>
@@ -28,10 +28,22 @@
       </ul>
     </div>
 
+    <div class="sample_test">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae nihil iure dolores corporis natus cupiditate enim. Consequuntur, quis iure. Sequi iusto praesentium saepe quidem odio explicabo qui deserunt nesciunt tempora?</p>
+      <div class="car"></div>
+      <div class="mouse" hidden></div>
+    </div>
 
   </div>
 
   <!-- script -->
-  <script></script>
+  <script>
+    var samT = document.querySelector('.sample_test');
+    // 일정시간(0.5초)뒤에 기능을 수행
+    setTimeout(function(){
+      samT.classList.add('action');
+    }, 500);
+  </script>
 </body>
 </html>

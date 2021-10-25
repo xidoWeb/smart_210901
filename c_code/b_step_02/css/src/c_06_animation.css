@@ -90,3 +90,34 @@ li {width: 100%; height: 6rem;
 .ani li:nth-child(4):hover > span {
   animation-play-state: running;
 }
+
+/* ---------------------------------- */
+.sample_test {
+  overflow: hidden;
+  position: relative; z-index:100;
+  width: 100%; height: 800px; 
+  background-color: #77f;
+}
+.sample_test h2 {
+  width: 100%; height: auto;
+  margin:1rem auto; padding:2rem;
+  text-align: center; color:#fff;
+}
+.sample_test p {
+  width: 100%; height:auto;
+  margin:2rem auto; 
+  padding-bottom:3rem; padding-left:2rem;
+}
+
+
+.car {
+  position: absolute; bottom:7rem; left: 0; right: 0;
+  width: 780px; height:290px;
+  margin:auto;
+  border: 1px solid #057;
+  background-color: #fff;
+  transform:translate(100vw);
+  /* transition:all 1000ms ease 1000ms; */
+}
+
+/* .action .car { transform:translate(0); } */
