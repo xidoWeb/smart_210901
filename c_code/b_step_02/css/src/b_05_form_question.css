@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* b_05_form_question.css */
+
+#wrap {
+  width: 800px; height: auto;
+  margin:auto;
+}
+
+h1{ text-align: center; margin-bottom: 1rem;}
+
+.part {
+  width: 100%; height: 450px; 
+  background-color: #eee;
+}
+h2 {
+  width: 100%; height: auto; padding:0.5rem 1rem;
+  font-size: 1.5rem; }
+
+form {
+  width: 100%; height: auto;
+  padding: 1.5rem;
+}
+fieldset {
+  width: 100%; height:auto;
+  padding:1rem;
+  background-color: #ddd;
+  box-shadow: 0.3rem 0.3rem 0.3rem #aaa;
+}
+
+.title_area {
+  position: relative;
+  width: 100%; height: 30px;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  box-shadow:inset 0.1rem 0.1rem 0.1rem #999;
+}
+label {
+  float: left;
+  width: 100px; height: 100%; 
+  font-weight: 700; font-size:1.3rem;
+  letter-spacing:0.1rem; text-align: center; 
+  color:#07a; 
+}
+#writeTitle {
+  position: absolute; top: 0; left: 0;
+  /* float:right; */
+  width: 100%; height: 100%;
+  padding: 0; border: 0;
+  text-indent: 1rem;
+  background-color: rgba(255,255,255,0.5);
+}
+#writeTitle.action { 
+  background-color: rgba(255,255,255,1);
+}
+
+
+.content_area {
+  width: 100%; height: 450px;
+  background-color: #fff;
+}
+
+#writeContent {
+  width: 100%; height: 100%;
+  box-shadow:inset 0.2rem 0.2rem 0.2rem #aaa;
+  text-indent:0.5rem;
+  padding:0.5rem;
+}
