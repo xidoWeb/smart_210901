@@ -109,6 +109,21 @@
   </div>
 
   <!-- script -->
-  <script></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
+  <script src="https://unpkg.com/jquery-ui@1.13.0/ui/widget.js"></script>
+  <script>
+    // js : document.querySelector(선택자);
+    // jQuery : $(선택자);
+    
+    $('html,body').css({overflowX:'hidden'});
+
+    $('.navi').on('mouseenter', function(){
+      $('.sub_nav').stop().slideDown();
+    });
+
+    $('.navi').on('mouseleave', function(){
+      $('.sub_nav').stop().slideUp();
+    });
+  </script>
 </body>
 </html>
