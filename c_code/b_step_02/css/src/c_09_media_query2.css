@@ -1,0 +1,35 @@
+
+
+  /* 
+  web vs app
+  - app이 더 화려하거나 무거운 data를 처리가능 
+  - 서버내용의 변경이 바로 처리/별도의 업데이트
+
+  PWA
+  - html/css 반응형웹
+  */
+
+  /* 필요한 구성을 처리하기위해
+    - 동일한 디자인 구성을 가지고있는 영역을 설정
+    - @media query 
+    -  제작구성 화면구성이며 보이는영역의 최대크기는 600px로 처리
+    -> @media screen and (max-width:600px) { 구성내용을 설정 }
+
+    - 제작구성 인쇄를 고려하고 보여주는 기준크기를 최소 10mm 최대 100mm
+    -> @media print and (min-width:10mm) and (max-width:100mm) { 구성내용을 설정 }
+
+    - 제작구성 모든환경 고려하고 기준크기는 최소 320px 이며, 최대 600px 
+    -> @media all and (min-width:320px) and (max-width:600px) { 구성내용을 설정 }
+    
+  */
+
+  
+body { background-color: #eee; }
+h2 { 
+  width:1440px; height: 100px; 
+  margin:auto;
+  background-color: #fda;}
+
+  @media all and (min-width:320px) and (max-width:600px) {
+    body { background-color: #f06; }
+  } /* @media (320px ~ 600px) */
