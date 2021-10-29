@@ -60,13 +60,23 @@
   - [x] 분리되어있는 요소들을 완전한 하나의 도형으로 처리
 - [x] **ctrl 7** : clipping mask
   - [x] 맨앞에는 하나의 요소, 뒤에는 여러개의 요소를 담아서 마스크 처리하는 기법
-- [ ] scale / offset
-- [ ] share
-- [ ] rotate
-- [ ] reflect
-- [ ] 연결 : **ctrl J** 
+- [x] scale / offset
+- [x] share
+- [x] rotate
+- [x] reflect
+- [x] 연결 : **ctrl J** 
 
+---
 
+##### illustartor: 웹용을 위한 이미지 저장방법
+
+- svg 저장 
+- svg로 저장시 - 
+  - compound path
+  - artboard, 이미지 모두 소수점단위는 제거하고 
+  - save as - use artboard 체크시 범위를 조금더 크게 / 체크안하면 이미지만 저장
+
+---
 
 #### css
 
