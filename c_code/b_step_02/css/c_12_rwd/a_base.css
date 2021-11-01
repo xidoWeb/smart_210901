@@ -1,0 +1,15 @@
+/* a_base.css */
+:root {
+  --color-black:#333;
+  --color-deepGn:#547d77;
+  --color-lightGn:#33b88f;
+  --color-sky:#95D2E9;
+  --color-purple:#957de9;
+  --color-deepY:#ba7;
+}
+
+
+
+#wrap {
+  width: 100%; height: auto; min-height:400px; background-color: #ddd;
+}

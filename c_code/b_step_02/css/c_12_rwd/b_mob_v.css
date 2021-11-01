@@ -1,0 +1,12 @@
+/* b_mob_v.css */
+
+/* (max-width:479px) / design 기준 : 320px */
+@media all and (max-width:479px) {
+  
+  #headBox{ width:100%; height:; background-color: #fff;}
+  #viewBox{ width:100%; height:; background-color: #fff;}
+  #contentBox{ width:100%; height:; background-color: #fff;}
+  #infoBox{ width:100%; height:; background-color: #fff;}
+  #footBox{ width:100%; height:; background-color: #fff;}
+
+}
