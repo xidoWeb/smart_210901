@@ -4,9 +4,9 @@
 @media all and (min-width:480px) and (max-width:767px) {
   
   #headBox{ height:60px;}
-  #viewBox{  height:720px;  padding-top: 60px;}
-  #contentBox{ height:720px; }
-  #infoBox{ height:720px; }
+  #viewBox{  height:720px;  padding-top: 60px; height:150vw; min-height:720px;}
+  #contentBox{ height:720px; height:150vw; min-height:720px;}
+  #infoBox{ height:720px; height:150vw; min-height:720px;}
   #footBox{ height:60px; }
 
 

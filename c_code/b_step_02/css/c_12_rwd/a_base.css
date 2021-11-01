@@ -14,10 +14,10 @@
 
 /* design */
 #wrap { width: 100%; height: auto; min-height:400px; background-color: #ddd;}
-#headBox{
+#headBox {
   position: fixed;  top: 0; left: 0; z-index: 1500;
   width:100%; background-color: var(--color-black);}
-#viewBox{ width:100%; background-color:var(--color-deepY);}
-#contentBox{ width:100%; margin:auto; background-color: var(--color-deepGn);}
-#infoBox{ width:100%; margin:auto; background-color: var(--color-purple);}
-#footBox{ width:100%; background-color: var(--color-black);}
+#viewBox { width:100%; background-color:var(--color-deepY);}
+#contentBox { width:100%; margin:auto; background-color: var(--color-deepGn);}
+#infoBox { width:100%; margin:auto; background-color: var(--color-purple);}
+#footBox { width:100%; background-color: var(--color-black);}
