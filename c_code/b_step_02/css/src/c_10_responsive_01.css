@@ -1,17 +1,18 @@
-#wrap {
-  width: 960px; height:auto; min-height:500px; background-color: #ddd;
-}
 
+#wrap {width: 960px; height:auto; min-height:500px; background-color: #ddd; }
+#headBox {width:100%; background-color: #ccc;}
+#viewBox {margin:auto;}
+#footBox { width:100%}
 
 /* (디자인기준: 320px) ~ 767px */
 @media all and (max-width:767px) {
   
   #wrap { width:320px; min-height:600px; background-color: #fda;}
-
-  #headBox{ width:100%; height:100px; background-color: #ccc; }
-  #viewBox{ width:154px; height:400px; margin:auto; background-color: #0af;}
+  #headBox{ height:100px;}
+  #viewBox{ width:154px; height:400px; background-color: #0af;}
   #conBox { display:none; }
-  #footBox{ width:320px; height:140px; background-color: #afa;}
+  #infoBox {display: none;}
+  #footBox{ height:140px; background-color: #afa;}
 
 } /* (max-width:767px) =================================== */
 
@@ -20,10 +21,11 @@
 @media all and (min-width:768px) and (max-width:1439px) {
 
   #wrap { width: 768px; min-height:400px; background-color: #acf;}
-  #headBox {}
-  #viewBox {}
-  #conBox {}
-  #footBox {}
+  #headBox { height:80px;}
+  #viewBox { width:470px; height:500px; background-color: #8E4D4D;}
+  #conBox  { width: 100%; height:374px; background-color: #afa;}
+  #infoBox { display: none;}
+  #footBox { height: 70px; background-color: #ccc;}
 
 }/* 768px ~ 1439px =================================== */
 
@@ -32,6 +34,11 @@
 @media all and (min-width:1440px) {
 
   #wrap { width:1440px;}
+  #headBox { height: 80px; }
+  #viewBox { width: 100%; height: 500px; background-color: #FC7676;}
+  #conBox { width: 1280px; height: 600px; margin:auto; background-color: #afa;}
+  #infoBox { width: 1280px; height: 300px; margin:auto; background-color: #acf;}
+  #footBox { height: 120px; background-color: #ccc;}
 
 }/* 1440px ~ =================================== */
 
