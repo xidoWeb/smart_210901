@@ -1,0 +1,31 @@
+/* c_tablet.css */
+
+/* max-width:768px */
+@media all and (min-width:480px) and (max-width:768px) {
+
+  #headBox { height:150px;}
+  h1 {float:left; width:100px; height: 100px; background-color: #aca;}
+  #gnbBox {
+    float:right; width:400px; height:50px;
+    margin-top:40px; background-color: #fff; }
+  .nav_btn{display:none;}
+  .global_navigation {width: 100%; height: 100%;}
+  .global_navigation li {
+    float:left; width:80px; height: 100%; margin-left:20px;
+    background-color: #ddf;
+  }
+  .global_navigation li:first-child{margin-left: 0;}
+
+  #viewBox { height:300px;}
+  #conBox  { height:400px;}  
+    #conBox li {width:25%; height:400px; }
+
+    #otherBox{ height:auto; }
+    .info_area{width: 100%; height: 100px; background-color: #fc0;}
+    .notice_area{width: 100%; height: 200px; background-color: #f70;}
+
+  #footBox { height:100px;}
+  #footBox h2 { float:left; width:100px; }
+
+}/* max-width:768px */
+

@@ -1,0 +1,29 @@
+/* b_smartphone.css */
+
+
+/* max-width:480px */
+@media all and (max-width:480px) {
+
+  #wrap {min-width:320px;}
+  #headBox {position:relative; height:100px; }
+  h1 {width: 100%; height: 100%; padding:5px 100px; 
+    background-color: #aca;}
+  #gnbBox { 
+    position: absolute; right: 10px; top:30px;
+    width:45px; height:45px; background-color: #fff;}
+  .nav_btn {width: 100%; height: 100%;}
+  .nav_btn > button { width: 100%; height: 100%;}
+  .global_navigation { display:none;}
+
+  #viewBox { height:400px; }
+  #conBox  { height:auto; }
+    #conBox li {width:50%; height:200px;}
+
+  #otherBox{ height:auto; }
+    .info_area{width: 100%; height: 100px; background-color: #fc0;}
+    .notice_area{width: 100%; height: 200px; background-color: #f70;}
+
+  #footBox { height:100px; }
+  #footBox h2 { width:50%; margin:auto;}
+
+}/* max-width:480px */
