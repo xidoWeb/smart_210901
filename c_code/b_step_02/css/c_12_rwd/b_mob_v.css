@@ -3,10 +3,10 @@
 /* (max-width:479px) / design 기준 : 320px */
 @media all and (max-width:479px) {
   
-  #headBox{ width:100%; height:; background-color: #fff;}
-  #viewBox{ width:100%; height:; background-color: #fff;}
-  #contentBox{ width:100%; height:; background-color: #fff;}
-  #infoBox{ width:100%; height:; background-color: #fff;}
-  #footBox{ width:100%; height:; background-color: #fff;}
+  #headBox{ height:40px;}
+  #viewBox{ height: 480px; padding-top: 40px;}
+  #contentBox{ height:480px;}
+  #infoBox{ height:480px; }
+  #footBox{ height:40px; }
 
-}
+}/* (max-width:479px) */
