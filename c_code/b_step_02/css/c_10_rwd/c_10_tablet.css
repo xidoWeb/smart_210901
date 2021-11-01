@@ -1,0 +1,14 @@
+/* c_10_tablet.css */
+
+/* 768px ~ 1439px */
+@media all and (min-width:768px) and (max-width:1439px) {
+
+  #wrap { width: 100%; min-height:400px;}
+  #headBox { height:80px;}
+  #viewBox { width:61.197916%; min-width:470px; height:500px; background-color: #8E4D4D;}
+    .view_area {width: 100%; height: 100%;}
+  #conBox  { width: 100%; height:374px; background-color: #afa;}
+  #infoBox { display: none;}
+  #footBox { height: 70px; background-color: #ccc;}
+
+}/* 768px ~ 1439px =================================== */

@@ -1,0 +1,6 @@
+/* c_10_base.css */
+
+#wrap {width: 960px; height:auto; min-height:500px;}
+#headBox {width:100%; background-color: #ccc;}
+#viewBox {margin:auto;}
+#footBox { width:100%}
