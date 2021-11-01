@@ -21,3 +21,17 @@
 #contentBox { width:100%; margin:auto; background-color: var(--color-deepGn);}
 #infoBox { width:100%; margin:auto; background-color: var(--color-purple);}
 #footBox { width:100%; background-color: var(--color-black);}
+
+
+/* 
+ * vw적용하는 대표적인 형상 : logo(h1) , #viewBox 영역, 가로/세로의 비율이 그대로 유지하면서 커지는 경우
+
+ * 반응형웹 작업시 : 스마트폰 규격부터 점점 큰 규격으로 변경
+ * 반응형웹 디자인작업: 코드의 크기의 기준에서 작은 디바이스 기준으로 작업
+ * 320 - 768 - 1280 - 1440 - 1920
+ * 공통디자인 요소가 많아야 작업이 쉬워진다.
+ * 모바일기기(wifi가 아닌경우)에서는 영상소스는 최대한 줄여서 처리
+ * font크기는 동일하게(단, 보여주기용으로 크게만든 font는 줄여도 무방)
+ * 버튼의 경우 간격을 넓혀서 모바일기기에서 터치가 용이하도록
+  (여성분들의 경우 엄지손가락으로 누르는 것보다 더 넓은 범위를 누른다고 생각)
+*/
