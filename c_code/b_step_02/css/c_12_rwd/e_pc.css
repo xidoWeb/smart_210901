@@ -13,7 +13,7 @@
       .gnb_list {
         display:block; position: static;
         width: 100%; height: 100%;
-        padding:0;
+        padding:0;        
       }
       .gnb_list ul {width: 100%; height: 100%;}
       .gnb_list li {
