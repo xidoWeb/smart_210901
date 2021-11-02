@@ -1,12 +1,27 @@
 /* c_mob_h.css */
 
 /* (width:480px~767px) / design 기준 : 480px */
-@media all and (min-width:480px) and (max-width:767px) {
-  
+@media all and (min-width:480px) and (max-width:767px) {  
+
+  /* #headBox ------------------------------------------------------ */
   #headBox{ height:60px;}
+  #headBox > .container {padding:10px 15px;}
+  /* h1 {} */
+  #navigation {width:80px;}  
+    .gnb { width:40px; height:34px;}
+    /* .unb {}*/
+
+
+  /* #viewBox ------------------------------------------------------ */
   #viewBox{  height:720px;  padding-top: 60px; height:150vw; min-height:720px;}
+
+  /* #contentBox ------------------------------------------------------ */
   #contentBox{ height:720px; height:150vw; min-height:720px;}
+
+  /* #infoBox ------------------------------------------------------ */
   #infoBox{ height:720px; height:150vw; min-height:720px;}
+
+  /* #footBox ------------------------------------------------------ */
   #footBox{ height:60px; }
 
 

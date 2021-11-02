@@ -3,10 +3,24 @@
 /* (min-width:960px) / design 기준 : 960px */
 @media all and (min-width:960px) {
 
+  /* #headBox -------------------------------------- */
   #headBox{height:60px;}
+  #headBox > .container { padding:10px; }
+    /* h1 {} */
+    #navigation {width:500px;}  
+      .gnb {float:left; width:430px; height:33px;;}
+      .unb {float:right;}   
+      
+  /* #viewBox -------------------------------------- */
   #viewBox{ height:450px; padding-top: 60px;}
+
+  /* #contentBox -------------------------------------- */
   #contentBox{ max-width:960px; height:210px; }
+
+  /* #infoBox -------------------------------------- */
   #infoBox{ max-width:960px; height:540px; }
+
+  /* #footBox -------------------------------------- */
   #footBox{ height:120px; }
 
 }

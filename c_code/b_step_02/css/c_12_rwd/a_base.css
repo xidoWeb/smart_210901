@@ -1,5 +1,6 @@
 /* a_base.css */
 :root {
+  --color-white:#fff;
   --color-black:#333;
   --color-deepGn:#547d77;
   --color-lightGn:#33b88f;
@@ -14,12 +15,27 @@
 
 /* design */
 #wrap { width: 100%; height: auto; min-height:400px; background-color: #ddd;}
+
+/* #headBox --------------------------------------------  */
 #headBox {
   position: fixed;  top: 0; left: 0; z-index: 1500;
   width:100%; background-color: var(--color-black);}
+  h1 {float:left; width: 180px; height: 40px; background-color: var(--color-deepGn);}
+  #navigation {float:right; width:500px; height:auto; padding-top:6px;}  
+    .gnb {float:right; background-color: var(--color-deepY);}
+    .unb {float:left; width:30px; height:34px; background-color: var(--color-white);}   
+    
+
+/* #viewBox --------------------------------------------  */
 #viewBox { width:100%; background-color:var(--color-deepY);}
+
+/* #contentBox --------------------------------------------  */
 #contentBox { width:100%; margin:auto; background-color: var(--color-deepGn);}
+
+/* #infoBox --------------------------------------------  */
 #infoBox { width:100%; margin:auto; background-color: var(--color-purple);}
+
+/* #footBox --------------------------------------------  */
 #footBox { width:100%; background-color: var(--color-black);}
 
 
