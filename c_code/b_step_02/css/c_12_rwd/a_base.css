@@ -1,4 +1,9 @@
 /* a_base.css */
+/* 기능 처리에따른 내용 */
+/* .gnb영역에 `.action` 부여시 gnb 내부 버튼 및 .gnb_list 나타나게 처리 */
+
+
+/* 변수할당 */
 :root {
   --color-white:#fff;
   --color-black:#333;

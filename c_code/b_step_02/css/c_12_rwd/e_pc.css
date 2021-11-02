@@ -8,8 +8,24 @@
   #headBox > .container { padding:10px; }
     /* h1 {} */
     #navigation {width:500px;}  
-      .gnb {float:left; width:430px; height:33px;;}
-      .unb {float:right;}   
+      .gnb {float:left; width:430px; height:33px;}
+      .gnb_btn {display:none;}
+      .gnb_list {
+        display:block; position: static;
+        width: 100%; height: 100%;
+        padding:0;
+      }
+      .gnb_list ul {width: 100%; height: 100%;}
+      .gnb_list li {
+        float:left; width:25%; height: 100%;
+        text-align: center; line-height:33px;
+        margin-bottom: 0;
+      }
+      .gnb_list a {
+        padding:0 8px;
+      }
+
+      .unb {float:right;}
       
   /* #viewBox -------------------------------------- */
   #viewBox{ height:450px; padding-top: 60px;}
