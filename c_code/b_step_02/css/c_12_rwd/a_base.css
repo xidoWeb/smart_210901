@@ -25,7 +25,32 @@
     .gnb {float:right; background-color: var(--color-deepY);}
     .close_btn{display:none;}
     .gnb_list {display:none;}
-    .unb {float:left; width:30px; height:34px; background-color: var(--color-white);}   
+    /* mobile영역 gnb 구현시 처리되는 부분 */
+    .gnb_btn {width: 100%; height: 100%;}
+    .gnb_btn > button { width: 100%; height: 100%; font-size: 0.5rem;}
+    .gnb_list {
+      position: fixed; top: 0; right: 0;
+      width: 100%; height: 100%; 
+      padding: 2rem; padding-top: 3rem;
+      background-color: #fff;
+    }
+    .gnb_list ul {width: 100%; height: auto;}
+    .gnb_list li {
+      width: 100%; height:auto; margin-bottom: 1rem;
+      color:var(--color-deepGn);
+      font-size:1.2rem; font-weight: 600; text-transform:capitalize;}
+    .gnb_list a { color:inherit; }    
+    
+    /* gnb에 action 클래스 첨부시 처리 */
+    .action .open_btn { display: none;}
+    .action .close_btn { display: block; color:var(--color-white);}
+    .action .gnb_btn {
+      position: relative; z-index:100; 
+      background-color: var(--color-black);}
+    .action .gnb_list {display:block;}
+
+    /* unb */
+    .unb {float:left; width:30px; height:34px; background-color: var(--color-white);}  
     
 
 /* #viewBox --------------------------------------------  */
