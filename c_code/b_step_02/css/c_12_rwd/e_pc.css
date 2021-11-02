@@ -21,10 +21,7 @@
         text-align: center; line-height:33px;
         margin-bottom: 0;
       }
-      .gnb_list a {
-        padding:0 8px;
-      }
-
+      .gnb_list a { padding:0 8px; }
       .unb {float:right;}
       
   /* #viewBox -------------------------------------- */
