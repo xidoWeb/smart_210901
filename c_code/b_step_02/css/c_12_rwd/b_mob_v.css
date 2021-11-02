@@ -10,7 +10,31 @@
   h1 {width: 110px; height: 26px;}
   #navigation {width:60px; padding:0;}  
     .gnb {width:20px; height:26px;}
+    .gnb_btn {width: 100%; height: 100%;}
+    .gnb_btn > button { width: 100%; height: 100%; font-size: 0.5rem;}
+    .gnb_list {
+      position: fixed; top: 0; right: 0;
+      width: 100%; height: 100%; 
+      padding: 2rem; padding-top: 3rem;
+      background-color: #fff;
+    }
+    .gnb_list ul {width: 100%; height: auto;}
+    .gnb_list li {
+      width: 100%; height:auto; margin-bottom: 1rem;
+      color:var(--color-deepGn);
+      font-size:1.2rem; font-weight: 600; text-transform:capitalize;}
+    .gnb_list a { color:inherit; }
+
+    /* gnb에 action 클래스 첨부시처리 */
+    .action .open_btn { display: none;}
+    .action .close_btn { display: block; color:var(--color-white);}
+    .action .gnb_btn {
+      position: relative; z-index:100; 
+      background-color: var(--color-black);}
+    .action .gnb_list {display:block;}
+
     .unb {width:26px; height:26px;}
+
 
   /* #viewBox -------------------------------------- */
   #viewBox{ height: 480px; height:150vw; min-height:480px; padding-top: 40px;}

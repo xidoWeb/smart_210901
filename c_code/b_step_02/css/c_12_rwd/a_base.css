@@ -23,6 +23,8 @@
   h1 {float:left; width: 180px; height: 40px; background-color: var(--color-deepGn);}
   #navigation {float:right; width:500px; height:auto; padding-top:6px;}  
     .gnb {float:right; background-color: var(--color-deepY);}
+    .close_btn{display:none;}
+    .gnb_list {display:none;}
     .unb {float:left; width:30px; height:34px; background-color: var(--color-white);}   
     
 
