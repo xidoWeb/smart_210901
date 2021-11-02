@@ -13,8 +13,8 @@
 
 
   /* #viewBox ------------------------------------------------------ */
-  #viewBox{  height:720px;  padding-top: 60px; height:150vw; min-height:720px;}
-
+  #viewBox{  height:720px;  padding-top: 60px; height:150vw; min-height:720px;}  
+  
   /* #contentBox ------------------------------------------------------ */
   #contentBox{ height:720px; height:150vw; min-height:720px;}
 

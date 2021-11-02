@@ -60,7 +60,40 @@
 
 /* #viewBox --------------------------------------------  */
 #viewBox { width:100%; background-color:var(--color-deepY);}
+  .indicator { 
+    position: absolute; bottom:10px; left:50%; z-index:100;
+    width:auto; height:auto; 
+    transform:translateX(-50%);
+  }
+  .indi_list {
+    width:auto; height:auto; min-width:306px;
+    padding:2px; border-radius:30px;
+    background-color: var(--color-white);
+  }
+  .indi_list li {
+    float:left;
+    width:26px; height: 26px; margin-left:16px;    
+  }
+  .indi_list li.action{ width:50px; }
+  .indi_list li:first-child {margin-left:0;}
+  .indi_list  a {
+    display:block; width: 100%; height: 100%;
+    background-color: var(--color-deepY);
+    border-radius:30px;
+  }
 
+.indicator p{ display:none; }
+
+.view_area {width: 100%; height: 100%;}
+  .view_list_wrap {position:relative; width: 100%; height: 100%;}
+  .view_list_wrap li {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    font-size:2rem;
+    background-color: var(--color-purple);
+    display: none;
+  }
+  .view_list_wrap li.action{z-index:10; display: block;}
 /* #contentBox --------------------------------------------  */
 #contentBox { width:100%; margin:auto; background-color: var(--color-deepGn);}
 

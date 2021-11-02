@@ -17,11 +17,12 @@
     padding-top: 12.5vw;}
 
   .indicator { 
-    position: absolute; z-index:100; bottom:10px; right:20px; 
+    left:auto; right:20px; 
     width:56px; height:26px; 
   }
   .indi_list { display:none;}
   .indicator p {
+    display: block;
     width: 100%; height: 100%;
     border-radius:40px;
     font-size:1rem; color:var(--color-white); text-align:center;
@@ -30,16 +31,7 @@
   }
   .total { font-weight: 700;}
 
-  .view_area {width: 100%; height: 100%;}
-  .view_list_wrap {position:relative; width: 100%; height: 100%;}
-  .view_list_wrap li {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%; 
-    font-size:2rem;
-    background-color: var(--color-white);
-    display: none;
-  }
-  .view_list_wrap li.action{z-index:10; display: block;}
+  
 
 
   /* #contentBox -------------------------------------- */
