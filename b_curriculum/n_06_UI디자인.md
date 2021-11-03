@@ -86,7 +86,7 @@
 
 - [x] responsive web 
 - [x] figma를 이용한 반응형웹 구축
-- [ ] display:flex (display:grid)
+- [x] display:flex (display:grid)
 
 ##### js 
 
@@ -96,7 +96,7 @@
 `babel`로 처리하면 간단하게 최신 내용을 작성하고, 
 이를 변환하여 구형브라우저에서도 동작가능하도록 사용할 수 있다.
 
-- [ ] 변수 선언 - 호이스팅현상 
+- [x] 변수 선언 - 호이스팅현상 
 - [ ] 형타입 체크 - 숫자, 문자, 특수(undefined/null),논리(true,false),객체(object,array),함수(function)
 
 ---
