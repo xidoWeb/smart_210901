@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* c_13_flex_test.css */
+#wrap {  width: 90%; height: auto;  padding-bottom: 500px; }
+#wrap > div { width: 100%; height:auto;
+  border:1px solid #333; margin-bottom:100px; padding:10px;}
+h3 {width:150px; height:80px; background-color: #ccc;}
+.navi { width:600px; height:50px; background-color: #eee; margin-top:30px; }
+.gnb {width:400px; height:40px; background-color: #acf;}
+.unb {width:150px; height:40px; background-color: #fdd;}
+
+/* ------------------------------ */
+.header_01 { position: relative; }
+.header_01:after { content:""; display: block; clear:both; }
+.header_01 > h3 {  float:left; }
+/* .header_01  .gnb { float:left; margin-left:100px; } */
+.header_01 .gnb {position: absolute;  top:10px; left: 50%; transform:translate(-50%);}
+.header_01  .unb { float:right; }
+
+/* .header_01 > .navi { float:right; } */
+
+/* ------------------------------ */
+.header_02 { display:flex; justify-content: space-between; }

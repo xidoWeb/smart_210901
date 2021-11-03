@@ -80,14 +80,15 @@
 
 ### 과정내용
 
-#### 21.11.01 ~ 02
+#### 21.11.01 ~ 03
 
 ##### css
 
-- [ ] responsive web 
-- [ ] figma를 이용한 반응형웹 구축
+- [x] responsive web 
+- [x] figma를 이용한 반응형웹 구축
+- [ ] display:flex (display:grid)
 
-##### js
+##### js 
 
 최신브라우저에서 js최신 표준을 지원하지만 그 기준이 현재의 표준보다 늦다. 
 또한, 구형브라우저에서는 ES6 이상의 버전을 지원하지 않는다. 
@@ -97,6 +98,10 @@
 
 - [ ] 변수 선언 - 호이스팅현상 
 - [ ] 형타입 체크 - 숫자, 문자, 특수(undefined/null),논리(true,false),객체(object,array),함수(function)
+
+---
+
+
 
 
 
