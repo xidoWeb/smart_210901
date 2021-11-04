@@ -1,5 +1,8 @@
 // b_02_js_data_type.js
-// 형타입을 파악하는 :  typeof(literal)
+// 형타입을 파악하는함수 :  typeof(literal)
+// 숫자로보이는 문자 ('1')를 강제로 숫자형타입으로 변환하는 함수 : parseInt(변수) , parseFloat(변수), number(변수)...
+
+
 
 // 숫자(number)
 var num = 7;
@@ -22,7 +25,36 @@ console.log( str3 );
 var str4 = parseInt(str2) + 567;
 console.log( str4 );
 
+console.log( typeof('50.4%') );
+console.log( parseInt('50.7%  auto') );   // 첫글자부터 시작해서 정수숫자로 변환가능한 것 까지만 숫자화 처리 나머지는 버림
+console.log( parseFloat('50.7% auto') ); // 첫글자부터 시작해서 실수 숫자모두 숫자로 변환 가능한 부분까지 숫자로처리 나머지는 버림
+console.log( Number('50.7% auto') );     // 문자든/숫자든 관계없이 모두 숫자로 변환처리
+
+var nan = NaN; // Not a Number
+console.log( nan, typeof(nan) );
+
+// Math 함수
+var n = 5.54;
+console.log('올림처리', Math.ceil(n) );
+console.log('내림처리', Math.floor(n) );
+console.log('반올림처리', Math.round(n) );
+console.log('0~1까지의 난수', parseInt( Math.random() * 64 ) );
+console.log('절대값', Math.abs( -n ) );
+
+
 // 논리(boolean)
+// 논리형은 결과를 true/false로 확인하여 처리하지만, 그 결과를 확인하는 검증이 매우 많다.
+// ! -> 반대 ,  === -> 형타입까지 일치하는가? ...
+
+var bool = false;
+console.log( bool,  typeof(bool) );
+
+// 존재하는 값에 !를 붙이면 값이 없다는 의미로 -> false가 되지만 본의도는 값이 있느냐 없느냐 판단용도로 쓰면 !한번더
+console.log(!!n); 
+console.log(!!0); 
+
+
+
 
 
 
