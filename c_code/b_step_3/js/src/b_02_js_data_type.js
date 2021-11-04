@@ -215,7 +215,7 @@ function ckFn2(){
   // 함수 내부에서 var선언을 하느냐 아니냐에 따라 원(전역) 변수의 값이 변경되느냐 아니냐로 구분;
   // var joker = '호아킨 피닉스';
   joker = '호아킨 피닉스'; 
-  return x;
+  return joker;
 }
 console.log( joker ); // '히스레저'
 ckFn2();
