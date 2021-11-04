@@ -2,7 +2,6 @@
 // 형타입을 파악하는함수 :  typeof(literal)
 // 숫자로보이는 문자 ('1')를 강제로 숫자형타입으로 변환하는 함수 : parseInt(변수) , parseFloat(변수), number(변수)...
 
-
 // ------------------------------------------------------------------------------------------
 // 숫자(number)
 var num = 7;
@@ -118,16 +117,16 @@ arA.push('밥');
 arA.unshift(5);
 arA.unshift(0);
 arA.unshift(0000);
-console.log( arA );
+console.log( arA ); // 1시기록
 
 arA.pop();
 arA.pop();
 arA.shift();
 arA.shift();
 arA.shift();
-console.log( arA );
+console.log( arA ); // 2시기록
 // ------------------------------------------------------------------------------------------
-console.clear();
+// console.clear();
 // 2. object 
 var obj = {};
 // var objT = new Object();
@@ -150,5 +149,79 @@ obj2[1] = 'pen';
 obj2[2] = '텀블러';
 console.log( obj2 );
 
+console.clear();
 // ------------------------------------------------------------------------------------------
 // function
+var fn = function(a){
+  // a는 매개변수(parameter), 인수/인자(argument)
+  // return 마지막에 작성하는것으로, 어쨋든간에 최종 결론은?
+  return 1 + a;
+};
+
+console.log( fn(5) );
+
+var fn2 = function(a,b){
+  var c = a + b;
+  return c;
+};
+
+console.log( fn2(1,6) ); 
+
+var d = 1+6;
+console.log( d );
+
+console.log( fn2(4,50) );
+console.log( fn2(4,80) );
+console.log( fn2(44,80) );
+console.log( fn2(41,4) );
+
+// 함수의 기본형태 : function(){}
+// 함수 선언식 : 이름을 부여한다 -> 기명함수 : function 이름 () {}
+// 함수 표현식 : 이름 부여하지않는다 -> 익명함수 -> 
+//               이름이 없기에 대신 이름을 할당할 수 있는 무언가를 선언(변수선언) : var 변수명 = function (){}
+
+
+// 함수 선언식
+console.log( fn3() );
+function fn3(){
+  return 'test';
+}
+console.log( fn3() );
+
+// 함수 표현식
+// console.log( fn4() );
+// console.log( fn4 );
+var fn4 = function () {
+  return 'test2';
+};
+console.log( fn4() );
+
+// -----------------------------------------------------
+console.clear();
+
+var joker = '히스레저'; // 광범위한 범위를 가지고 있다. 전역 변수
+function ckFn() {
+  var y = 'xido'; // y의 사용 범위는  function ckFn() 내부에서만 동작 가능하기에 지역변수
+  console.log( x, y); // 콘솔을 사용했으므로, 반환과는 관계없이 무조건 console창에 내용을 작성
+  return y;
+}
+
+// 1. console.log( x ); //콘솔에 결과:  hero
+// 2. ckFn(); // 콘솔에 결과: hero xido  , 반환된값 : xido
+// 3. var rel = ckFn();   console.log( rel ); 
+// 4. console.log( y ); //콘솔에 결과: 
+
+function ckFn2(){
+  // 함수 내부에서 var선언을 하느냐 아니냐에 따라 원(전역) 변수의 값이 변경되느냐 아니냐로 구분;
+  // var joker = '호아킨 피닉스';
+  joker = '호아킨 피닉스'; 
+  return x;
+}
+console.log( joker ); // '히스레저'
+ckFn2();
+console.log( joker ); // '호아킨 피닉스'
+
+// ---------------------------------------------------------------------------------------------
+
+(function(){})() // 즉시실행함수: 익명함수의 기다림없이 바로 실행
+(function(){}()) // 즉시실행함수: 익명함수의 기다림없이 바로 실행
