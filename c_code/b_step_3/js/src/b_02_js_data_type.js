@@ -81,10 +81,9 @@ console.log( nul, typeof(nul) );
 // js는 순서를 첫번째가 0부터 처리한다.
 // ------------------------------------------------------------------------------------------
 // object
-console.clear();
 // 1. array -----------------------------------------------
 var arr = ['키보드', '마우스', '태블릿', '모니터', '노트북','웹캠'];
-console.log( arr.constructor === Array );
+console.log( arr.constructor === Array ); // true
 console.log(typeof(arr) );
 console.log( arr[3] );
 
@@ -100,6 +99,56 @@ arr[9] = '빼빼로';
 console.log( arr );
 console.log( arr2 );
 
-// ------------------------------------------------------------------------------------------
+console.clear();
 
+var arT = new Array(); // 가방이 필요하면 기본 형태가있는 원본 가방을 하나더 만들어 진걸 구매하여 가방을 하나 얻은것
+console.log( arT );
+arT[0] = '물';
+arT[1] = '약';
+console.log( arT );
+// new Array()를 이용하여 배열을 생성하는 방식은 권장하지 않는다. -> 바로 [] 작성후 바로 수행
+
+var arA = [];
+arA[0] = '물';
+arA[1] = '약';
+
+arA.push('커피');
+arA.push('쥬스');
+arA.push('밥');
+arA.unshift(5);
+arA.unshift(0);
+arA.unshift(0000);
+console.log( arA );
+
+arA.pop();
+arA.pop();
+arA.shift();
+arA.shift();
+arA.shift();
+console.log( arA );
+// ------------------------------------------------------------------------------------------
+console.clear();
+// 2. object 
+var obj = {};
+// var objT = new Object();
+console.log( obj, typeof(obj) );
+console.log( obj.constructor === Object ); 
+
+obj.apple = 'iphone';
+obj.samsung = 'galaxy';
+obj.google = 'pixel';
+obj['농심'] = '너구리';
+obj['오뚜기'] = '진라면';
+obj['한국 야쿠르트'] = '건국우유';
+
+console.log( obj );
+console.log( obj.google );
+
+var obj2 = {};
+obj2[0] = '마이크';
+obj2[1] = 'pen';
+obj2[2] = '텀블러';
+console.log( obj2 );
+
+// ------------------------------------------------------------------------------------------
 // function
