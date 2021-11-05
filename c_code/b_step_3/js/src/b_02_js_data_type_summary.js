@@ -245,7 +245,7 @@ sum(3,3);
 mul(3,3);
 svg(3,3);
 divide(3,3);
-console.log( dic );
+console.log( dic ); // var dic = [];
 
 // var arr12 = [1,2,3];
 // arr12.push(4);
@@ -256,3 +256,4 @@ console.log( dic );
 // dic.push( 함수(a,b) );
 // dic.push( 2+4=6  );
 // dic.push( 2+4=6  );
+
