@@ -29,13 +29,15 @@ var iFn = function(i){
 console.log( date ) // 2021. 11. 04.
 
 // -----------------------------------------------------------------------------------------------------------
+console.clear(); 
 
 var user = function(a){
-  // ?
-  return // ?;
+  var text = '님 오늘도 고생하셨어요!';
+  return a + text;
 };
 
 console.log( user('xido') ); 
+
 //문제 
 //1. 다음내용이 도출되게하시오.
 //  'xido'님 오늘도 고생하셨어요! 
@@ -44,3 +46,45 @@ console.log( user('xido') );
 //  - xx님 오늘도 고생하셨어요! 
 //  - xx님 힘내세요. 
 //  - xx님 내일도 또 다시!!!
+
+var ran = parseInt(Math.random() * 7);  
+var arrSample = [1, 5, 'apple', 'banana', 'graph', 'kiwi','car'];
+console.log( ran, arrSample[ran] );
+
+console.clear();
+
+var content = [
+  '오늘도 고생하셨어요!',
+  '힘내세요.',
+  '내일도 또 다시!!!'
+];
+
+var content2 = [];
+content2[0] = '힘내세요.';
+content2.push('내일도 또 다시!!!');
+content2.unshift('오늘도 고생하셨어요!');
+// console.log(content2);
+
+var userFn = function(data){
+  var random = Math.random() * 3;
+  var int = parseInt(random);
+  var plusText = data + '님' + ' ' + content[int];
+  return plusText;
+};
+
+var userRel = userFn('me');
+console.log( userRel );
+
+var wrap = document.getElementById('wrap');
+var p = document.createElement('p');
+p.innerText = userRel;
+wrap.append(p);
+
+// js에서 id명을 선택하는 방법
+// 1. document.getElementById(id이름);
+// 2. document.querySelector(css와동일한선택자);
+
+// 요소 생성하는 방법
+// document.createElement('div');  // 생성해서 어딘가에 넣을 준비
+// 선택자.innerHTML = '<div></div>'; // 기존 선택자 내부에 존재하는것 삭제
+// 선택자.append(요소) // 선택자 내부 뒤에 요소를 삽입(단, text형태는 글자로 삽입)
