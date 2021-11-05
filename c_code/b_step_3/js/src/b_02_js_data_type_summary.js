@@ -167,12 +167,7 @@ console.log( fnCall2 () );
 // --------------------------------------------------------------------------------------------
 console.clear();
 // + - * / % 
-// sum(a, b); // 덧셈: 'a + b = ' 값
-// minus(a, b); // 뺄셈: 'a - b = ' 값
-// mul(a, b); // 곱셈: 'a * b = ' 값
-// divide(a, b); // 나눗셈: 'a / b = ' 값  -> 정수값만 도출
-// svg(a,b); // 평균: 'a * b / 2 = ' 값
-// remainder(a,b); // 나머지값: 'a % b = ' 값
+
 
 var sum = function(a, b){
   var c = a + b;
@@ -200,3 +195,32 @@ var mul = function(a,b){
 }
 var m = mul(4, 7);
 console.log( m );
+// --------------------------------
+var divide = function(a, b){
+  var c = parseInt(a / b); // parseInt(), Math.floor()
+  var rel = a + '/' + b + '=' + c + '(정수형 몫값만 계산)';
+  var c2 = a % b;
+  var rel2 = a + '%'  + b + '=' + c;
+  return rel + ' 나머지값: '+ c2;
+};
+var d = divide(7,5);
+console.log( d );
+// ---------------------------------
+var svg = function(a,b){
+  var c = a + b / 2;
+  var rel = a + '+' + b + '/' + 2 + '=' + c;
+  return rel;
+};
+var s = svg(5,6);
+console.log( s );
+// -----------------------------------
+// sum(a, b); // 덧셈: 'a + b = ' 값
+// minus(a, b); // 뺄셈: 'a - b = ' 값
+// mul(a, b); // 곱셈: 'a * b = ' 값
+// divide(a, b); // 나눗셈: 'a / b = ' 값  -> 정수값만 도출
+// svg(a,b); // 평균: 'a * b / 2 = ' 값
+// remainder(a,b); // 나머지값: 'a % b = ' 값
+
+// -----------------------------------
+
+
