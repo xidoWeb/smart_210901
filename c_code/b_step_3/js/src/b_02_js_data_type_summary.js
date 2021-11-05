@@ -167,7 +167,7 @@ console.log( fnCall2 () );
 // --------------------------------------------------------------------------------------------
 console.clear();
 // + - * / % 
-
+var dic = [];
 
 var sum = function(a, b){
   var c = a + b;
@@ -176,43 +176,50 @@ var sum = function(a, b){
   // 4 '+' 5 '=' 9
   // 4 + '+' + 5 + '=' + 9
   // a + '+' + b + '=' + c
+  dic.push(rel);
   return rel; 
 };
-console.log( sum( 4, 5 ) );
+// console.log( sum( 4, 5 ) );
 // ---------------------------------
 
 var minus = function(a, b){
   var c =  a - b;
   var rel = a + '-' + b + '= ' + c;
+  dic.push(rel);
   return rel;
 };
-console.log( minus( 6, 10 ) );
+// console.log( minus( 6, 10 ) );
 // ---------------------------------
 var mul = function(a,b){
   var c = a* b;
   var rel = a + 'x' + b + '= ' + c;
+  dic.push(rel);
   return rel;
 }
-var m = mul(4, 7);
-console.log( m );
+// var m = mul(4, 7);
+// console.log( m );
 // --------------------------------
 var divide = function(a, b){
   var c = parseInt(a / b); // parseInt(), Math.floor()
-  var rel = a + '/' + b + '=' + c + '(정수형 몫값만 계산)';
+  var rel = a + '/' + b + '=' + c;
   var c2 = a % b;
   var rel2 = a + '%'  + b + '=' + c;
-  return rel + ' 나머지값: '+ c2;
+  var relPlus = rel + ' 나머지: '+ c2;
+  dic.push(relPlus);
+  return relPlus;
 };
-var d = divide(7,5);
-console.log( d );
+// var d = divide(7,5);
+// console.log( d );
 // ---------------------------------
 var svg = function(a,b){
   var c = a + b / 2;
   var rel = a + '+' + b + '/' + 2 + '=' + c;
-  return rel;
+  // dic.push(rel); //배열에 값추가
+  // return rel; // 값을 반환
+  return dic.push(rel); // 배열에 값추가
 };
-var s = svg(5,6);
-console.log( s );
+// var s = svg(5,6);
+// console.log( s );
 // -----------------------------------
 // sum(a, b); // 덧셈: 'a + b = ' 값
 // minus(a, b); // 뺄셈: 'a - b = ' 값
@@ -222,5 +229,30 @@ console.log( s );
 // remainder(a,b); // 나머지값: 'a % b = ' 값
 
 // -----------------------------------
+// var dic = []; -> 각각 다 집어 넣어라!
+// 함수를 수행할때 마다 return값 을 배열에 담도록 처리!
+// 계산 히스토리를 만들어라!
+// console.log( dic )
 
+// sum();
+// minus();
+// mul();
+// divide();
+// svg();
 
+sum(3,4);
+sum(3,3);
+mul(3,3);
+svg(3,3);
+divide(3,3);
+console.log( dic );
+
+// var arr12 = [1,2,3];
+// arr12.push(4);
+// arr12.push('a');
+// arr12.push('345');
+// arr12.push(45);
+// console.log( arr12 );
+// dic.push( 함수(a,b) );
+// dic.push( 2+4=6  );
+// dic.push( 2+4=6  );
