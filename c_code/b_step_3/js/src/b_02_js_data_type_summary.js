@@ -53,18 +53,12 @@ console.log( ran, arrSample[ran] );
 
 console.clear();
 
-var content = [
-  '오늘도 고생하셨어요!',
-  '힘내세요.',
-  '내일도 또 다시!!!'
-];
-
 var content2 = [];
 content2[0] = '힘내세요.';
 content2.push('내일도 또 다시!!!');
 content2.unshift('오늘도 고생하셨어요!');
 // console.log(content2);
-
+var content = [  '오늘도 고생하셨어요!',  '힘내세요.',  '내일도 또 다시!!!'];
 var userFn = function(data){
   var random = Math.random() * 3;
   var int = parseInt(random);
@@ -74,8 +68,8 @@ var userFn = function(data){
 
 var userRel = userFn('me');
 console.log( userRel );
-
 var wrap = document.getElementById('wrap');
+var classWrap = document.getElementsByClassName('wrap')[0];
 var p = document.createElement('p');
 p.innerText = userRel;
 wrap.append(p);
@@ -88,3 +82,121 @@ wrap.append(p);
 // document.createElement('div');  // 생성해서 어딘가에 넣을 준비
 // 선택자.innerHTML = '<div></div>'; // 기존 선택자 내부에 존재하는것 삭제
 // 선택자.append(요소) // 선택자 내부 뒤에 요소를 삽입(단, text형태는 글자로 삽입)
+
+console.clear();
+// --------------------------------------------------------------------------------
+
+var variable = '이것은 변수입니다.';
+var indicatorNumber = 0;
+// function(){}
+// 함수()
+
+// document.write( indicatorNumber );
+
+// var 식 = (n)번째 광고내용이 바뀌는 식;
+// 인디케이터를 클릭하면, 클릭한 인디케이터가 '몇번째'인지 파악하여, 변수 indicatorNumber에 순번을담아 식(indicatorNumber)을 수행하라
+
+var indiFn = function(){ return 10; }; // 일정한 행동패턴을 저장 
+// document.write( indiFn ); // 문자 'function(){ return 10; }'
+document.write( indiFn() ); // 문자 'function(){ return 10; }'
+
+// function(){
+//   // 이유불문 나에게 돌려줄 값
+//   return 10;
+// }
+
+// 1. 변수가 무엇이고 변수를 부르는 방법과 그 결과
+  var variable = '이것은 변수입니다.';
+// 2. 함수는 무엇이고 변수에 함수를 담아 함수를 부는 방법
+  var indiFn = function(){ return 10; };
+
+// 변수는 햄버거를 담는 그릇
+// 함수는 햄버거를 만드는 방법
+  var buger = '치즈버거';
+  var buger2 = function(){ return '불고기버거' };
+
+  // ----------------------------------------------------------------------
+  
+  var mybuger = '핫스파이스버거';
+  console.log(mybuger);
+  var selectBuger = function(재료){
+    var primary = 재료;
+    var makeBuger = '빵위에 ' + '양상추 ' + primary + ' 기타등등 ' + '소스 ' + '빵';    
+    return primary + '버거'; // 이유불문 최종 결론으로 값
+  };
+console.log( selectBuger() );
+
+// 변수가 먼지 알겠고, 함수가 먼지 구분이간다.
+// 단, 함수를 어떻게 써야하는가?는 빼고, 그냥 변수의 결과를 얻는방법/ 함수를 호출하는방법/ 함수의 결과를 얻는 return의 의미
+
+var selectB = function(){}; // 변수 selectB에 함수를 담은것
+
+// ------------------------------------------------------------------------------------
+
+var a = 10;
+console.log( a );
+
+// var ar = [5, 8, 'what', 'a']; // 많은 정보를 모아서 관리
+// console.log( ar[2] );  // what
+
+var blue = '파란색';
+var red = '빨간색';
+var yellow = '노란색';
+var white = '흰색';
+
+var colorCase = [blue, red, yellow, white]; // 대괄호, brackets
+console.log( colorCase[2] );
+
+// ------------------------------------------------------------------------
+// ;작성위치 - 변수내용 끝, 기능 끝, ()이후 쓸게없다면;
+
+var fnCall = function ( ) {
+  console.log('game Go!');
+};
+fnCall ( );
+
+var fnCall2 = function ( ) {
+  return 'this is Game!';
+}
+console.log( fnCall2 () );
+
+// console.log('문이열리네요 ㄱ....')  : 실제 구현x - 단순 led표시기에 표시되는 형태(console창에)
+// return  : 실제 구현o - 기능자체가 돌아가는거
+// 둘의 구분이 어렵다면, console.log()로 결과를 확인하고, 차~후에 console.log()내부에 들어가는 것을 return에 담기~~
+
+// --------------------------------------------------------------------------------------------
+console.clear();
+// + - * / % 
+// sum(a, b); // 덧셈: 'a + b = ' 값
+// minus(a, b); // 뺄셈: 'a - b = ' 값
+// mul(a, b); // 곱셈: 'a * b = ' 값
+// divide(a, b); // 나눗셈: 'a / b = ' 값  -> 정수값만 도출
+// svg(a,b); // 평균: 'a * b / 2 = ' 값
+// remainder(a,b); // 나머지값: 'a % b = ' 값
+
+var sum = function(a, b){
+  var c = a + b;
+  var rel = a + '+' + b + '= ' + c;
+  // 4 + 5 = 9
+  // 4 '+' 5 '=' 9
+  // 4 + '+' + 5 + '=' + 9
+  // a + '+' + b + '=' + c
+  return rel; 
+};
+console.log( sum( 4, 5 ) );
+// ---------------------------------
+
+var minus = function(a, b){
+  var c =  a - b;
+  var rel = a + '-' + b + '= ' + c;
+  return rel;
+};
+console.log( minus( 6, 10 ) );
+// ---------------------------------
+var mul = function(a,b){
+  var c = a* b;
+  var rel = a + 'x' + b + '= ' + c;
+  return rel;
+}
+var m = mul(4, 7);
+console.log( m );
