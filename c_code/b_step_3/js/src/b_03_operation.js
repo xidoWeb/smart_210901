@@ -165,4 +165,36 @@ var checkFn = function(data){
 checkFn(10);
 checkFn();
 
+console.clear();
 // 삼항연산자 =======================================
+// 참/거짓에 수행하는 내용은 무조건 1줄이어야 한다. 
+// (1) ? 2 : 3 ;
+// (조건) ? 조건결과가 참이면 실행 : 결과가 거짓이면 실행 ;
+
+( !true )? console.log('결과 참!!') : console.log('결과 거짓!');
+
+var list = [];
+var trueFn = function(){
+  list = ['note', 'laptop', 'mouse', 'git'];
+  return list;
+};
+
+var falseFn = function(){
+  list = ['wallet', 'glasses', 'smartphone'];
+  return list;
+};
+
+// 백팩을 들고 다닌다면?
+(!true)? trueFn() : falseFn();
+console.log( list );
+
+// -------------------------------------------------
+// 당신이 개발자라면 프론트와 백엔드 분야중 어느쪽인가?
+// 프론트엔드 분야에서 익혀야하는 언어/기술 [];
+// 백엔드 분야에서 익여햐하는 언어/기술 [];
+
+//1. 3항연산자로 도출해보세요!
+//2. 함수실행 programer('front')  -> 'front' || 'back'으로 작성하여, 1번내용실행되게 만들어보세요.
+
+// programer('front');
+// programer('back') 
