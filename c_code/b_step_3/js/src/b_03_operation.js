@@ -189,12 +189,42 @@ var falseFn = function(){
 console.log( list );
 
 // -------------------------------------------------
+console.clear();
 // 당신이 개발자라면 프론트와 백엔드 분야중 어느쪽인가?
-// 프론트엔드 분야에서 익혀야하는 언어/기술 [];
-// 백엔드 분야에서 익여햐하는 언어/기술 [];
-
+// 프론트엔드 분야에서 익혀야하는 언어/기술 ['html','css','javascript','jQuery','node.js','react','typescript'];
+// 백엔드 분야에서 익여햐하는 언어/기술 ['html','sql','c#','.net','pythone','java','jsp','spring','javascript','node.js'];
 //1. 3항연산자로 도출해보세요!
-//2. 함수실행 programer('front')  -> 'front' || 'back'으로 작성하여, 1번내용실행되게 만들어보세요.
+var prLang = [];
+var frontEndFn = function(){
+  prLang = ['html','css','javascript','jQuery','node.js','react','typescript'];
+  return prLang;
+};
+var backEndFn = function(){
+  prLang = ['html','sql','c#','.net','pythone','java','jsp','spring','javascript','node.js'];
+  return prLang;
+};
 
-// programer('front');
-// programer('back') 
+// var program = 'front';
+// ( program === 'front' ) ? frontEndFn() : backEndFn() ;
+// console.log( prLang );
+
+//2. 함수실행 programer('front')  -> 'front' || 'back'으로 작성하여, 1번내용실행되게 만들어보세요.
+  var programer = function(field){
+    var data = field === 'front';
+    var data2 = field === 'back';
+    // ( data ) ? frontEndFn() : backEndFn() ;
+
+    // 조건 ? 
+    //     (참) : // 참에 관련된 내용 작성
+    //     (조건 ? 참 : 거짓);  // 거짓에 관련된 내용에서 다시 조건 비교
+
+    (data)? 
+      frontEndFn() :
+      (data2) ? backEndFn(): prLang = [] ;
+  };
+
+  // programer('front');
+  // programer('back');
+  programer('design');
+  console.log( prLang );
+// ------------------------------------------------
