@@ -1,0 +1,19 @@
+
+ /* common */
+ /** 기본 웹 css형태를 사용할경우에는 class이름 앞에 me라고 작성후_로 구분하여 이름제작* */
+ /*h2, h3, h4, h5, h6{width: 0; height: 0; overflow: hidden;}*/
+ .me_base{width: 960px; height: auto;padding:0 10px; box-sizing:border-box;margin: 0 auto;}
+ .me_base:after{content:" "; display: block; clear:both;}
+ .me_wide{width: auto; max-width: 100%; min-width: 960px; height: auto;padding:0 10px; box-sizing:border-box;	 margin: 0 auto;}
+ .me_base:after{content:" "; display: block; clear: both;}
+ @media screen and (min-width:960px) {body{overflow-x:hidden;}.me_line{position: relative;}.me_line:before{width: 100vw; height: 100%; position: absolute; top: 0; left: 50%; margin-left: -50vw;background-color:inherit;}}
+ .cf::after, .clearfix::after{content:""; display: block; clear: both;}
+ .me_full{width: 100%; height: 100%;}
+ .me_link a{width:100%; height:100%; background-repeat:no-repeat; display:block;}
+ .me_link a>span, .me_hidden, .hidden, legend{width: 0; height: 0; display: block; position: absolute; z-index: -100; overflow: hidden;}
+ #wrap .me_first:first-of-type{margin-left: 0; padding-left: 0; border-left: 0;}
+ #wrap .me_last:last-of-type{margin-right: 0; padding-right: 0; border-right: 0;}
+ .me_link_bar>li{padding:0 0.4em; position: relative; margin-right:0.2em; float: left;}
+ .me_link_bar>li:after{content:" "; width:2px; height:80%; background-color:#999; position:absolute; right:-50%; top:10%; z-index:100;}
+ .me_link_bar>li:last-child{border-right:0; margin-right: 0;}
+ .me_link_bar>li:last-child:after{display: none;}

@@ -1,0 +1,99 @@
+// variable.scss 
+// ==================
+// 1. webfont
+// 2. color
+// 3. line setting
+// 4. font
+// 5. grid setting
+// 6. etc
+// ==================
+
+// 1. webfont
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+// 2. color
+// /* ------------ color ------------  */
+$color: ( 
+	primary : #656565, 
+	main    : #a30, 
+	sub1    : #c00, 
+	sub2    : #ffaf00, 
+	dark    : #656565, 
+	gray    : #bbb, 
+	point   : #3dd, 
+	font1   : #171717, 
+	font2   : #656565, 
+	white   : #fff, 
+	black   : #171717, 
+	line1   : #a30, 
+	line2   : #656565, 
+	line3   : #171717, 
+	zero    : transparent);
+
+// 3. line setting
+// /* ------------ line ------------  */
+$line: ( 
+	l1 : 1px solid map-get($color, line1), 
+  l2 : 2px solid map-get($color, line2), 
+  l3 : 3px solid map-get($color, point),
+  l4 : 4px solid map-get($color, main),
+  );
+
+// 4. font
+// /* ------------ font ------------  */
+$size: 16;
+$fontSize: ( 
+	base      : ($size / 16 * 0.875)  + rem,     // 14px
+	big       : ($size / 16 * 5)      + rem, 		 // 80px
+	big2      : ($size / 16 * 2.5)    + rem,     // 40px
+	middle    : ($size / 16 * 1.25)   + rem,     // 20px
+	small     : ($size / 16 * 0.75)   + rem,     // 12px
+	menuTitle : ($size / 16 * 1.5)    + rem,     // 24px
+	);
+
+$fontFamily:( 
+	english : ("myriad pro", arial), 
+	korean  : (nanumGothic, "nanum Gothic", dotum), 
+	all     : ("myriad pro", arial, nanumGothic, "nanum Gothic", dotum, sans-serif)
+	);
+
+
+// 5. grid setting
+
+
+
+// 6. etc 
+// /*  -------------- etc ----------------- */
+$minWidth : 960;
+$baseTime : 300ms;
+$baseMotion : ease-in;
+$baseaniUse : all;
+$url:"../img/";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
