@@ -170,6 +170,12 @@ console.clear();
 // 참/거짓에 수행하는 내용은 무조건 1줄이어야 한다. 
 // (1) ? 2 : 3 ;
 // (조건) ? 조건결과가 참이면 실행 : 결과가 거짓이면 실행 ;
+// 조건이중처리 
+//  조건 ? 
+    //     (참) : // 참에 관련된 내용 작성
+    //     (조건 ? 참 : 거짓);  // 거짓에 관련된 내용에서 다시 조건 비교
+
+
 
 ( !true )? console.log('결과 참!!') : console.log('결과 거짓!');
 
@@ -210,21 +216,16 @@ var backEndFn = function(){
 
 //2. 함수실행 programer('front')  -> 'front' || 'back'으로 작성하여, 1번내용실행되게 만들어보세요.
   var programer = function(field){
-    var data = field === 'front';
+    var data = field === 'front'; 
     var data2 = field === 'back';
     // ( data ) ? frontEndFn() : backEndFn() ;
-
-    // 조건 ? 
-    //     (참) : // 참에 관련된 내용 작성
-    //     (조건 ? 참 : 거짓);  // 거짓에 관련된 내용에서 다시 조건 비교
-
     (data)? 
       frontEndFn() :
-      (data2) ? backEndFn(): prLang = [] ;
+      (data2) ? backEndFn(): prLang = ['검색된 과목수는 없습니다.'] ;
   };
 
-  // programer('front');
-  // programer('back');
+  programer('front');
+  programer('back');
   programer('design');
   console.log( prLang );
 // ------------------------------------------------
