@@ -224,7 +224,7 @@ var backEndFn = function(){
       (data2) ? backEndFn(): prLang = ['검색된 과목수는 없습니다.'] ;
   };
 
-  programer('front');
+  // programer('front');
   programer('back');
   programer('design');
   console.log( prLang );
