@@ -43,7 +43,7 @@ var objCk = (obj.constructor === Object) ? '객체' : 'other';
 // var objOrigin = new Object(); // 원형의 형태를 복제한다는 의미 : new
 // console.log(objOrigin);
 
-obj = { "meat": "채끝살", "fruit": "머루포도", "국수": "쫄명", "mobile phone": "samsung" };
+obj = { meat: "채끝살", fruit: "머루포도", "국수": "쫄면", "mobile phone": "samsung" };
 /*
   <div class="box"></div>
   .box { width:100%; margin:auto; }
@@ -51,7 +51,10 @@ obj = { "meat": "채끝살", "fruit": "머루포도", "국수": "쫄명", "mobil
 console.log(obj.fruit);
 console.log(obj["mobile phone"]);
 
-var obj2 = { "web": "frontEnd", "myObj": obj };
+var obj2 = {
+  web: "frontEnd",
+  myObj: obj
+};
 /*
 {
   "web": "frontEnd",
@@ -61,3 +64,47 @@ var obj2 = { "web": "frontEnd", "myObj": obj };
 
 console.log(obj2.myObj.meat); // "채끝살"
 console.log(obj2["myObj"]["meat"]); // "채끝살"
+
+// ======================================================
+console.clear();
+
+var drink = [
+  { 'coffee': ['esspress', 'americano', 'latte', 'mocha', 'choco latte'] },
+  { 'alcole': ['맥주', '소주', '막걸리', '청주', '데낄라'] },
+  { 'juice': ['오렌지', '포도', '자몽', '망고'] },
+  { 'tea': ['black first', ' green', 'red', 'lemon', 'elgray', 'papermint'] },
+  { 'ade': ['자몽', '키위', '레몬'] }
+];
+
+console.log(drink[3].tea[5]); // papermint
+
+// ============================================================================
+var data = {};
+
+var mySet = {
+  name: function (d) {
+    return data.user = d;
+  },
+  old: function (d) {
+    return data.old = d;
+  },
+  gender: function (d) {
+    return data.gender = d;
+  }
+};
+
+console.log(data);
+
+mySet.name('xido');
+console.log(data);
+
+mySet.old(20);
+console.log(data);
+
+mySet.gender('male');
+console.log(data);
+
+// 반복수행( 변수명 in 객체명 ) -> 객체(data) 내부에있는 property를 임의변수에 담아서(sam)
+for (sam in data) {
+  console.log(sam + ':' + data[sam]);
+}
