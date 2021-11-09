@@ -24,3 +24,28 @@
 .area_other { width: 50%; height: 100%; background-color: #adf; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 #viewBox { width: 100%; height: 78.125vw; }
+
+/* ------------------------------------------------------------ */
+.nav_area { width: 960px; height: auto; }
+
+.nav_area li { float: left; width: auto; height: 30px; }
+
+.nav_area a { display: block; width: 100%; height: 100%; background-color: #fa0; }
+
+.nav_area a > span { display: block; width: 0; height: 0; position: absolute; z-index: -1; clip: rect(0 0 0 0); overflow: hidden; }
+
+.nav_area:after, .nav_area::after { content: ""; display: block; clear: both; }
+
+.card { width: 100%; height: auto; }
+
+.card li { float: left; width: 100%; height: 200px; margin: 10px; background-color: #fa0; }
+
+.card li > a { display: block; width: 100%; height: 100%; background-image: url("../../img/bar.png"); background-repeat: no-repeat; background-position: 50% 50%; }
+
+.card li > a > span { display: block; width: 0; height: 0; position: absolute; z-index: -1; clip: rect(0 0 0 0); overflow: hidden; }
+
+.card li > a > i { display: block; width: 100%; height: 100%; }
+
+.card li > a > i > span { display: block; width: 0; height: 0; position: absolute; z-index: -1; clip: rect(0 0 0 0); overflow: hidden; }
+
+.card:after, .card::after { content: ""; display: block; clear: both; }

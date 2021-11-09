@@ -58,3 +58,65 @@ $device: 768;
 #viewBox {
   width: 100%; height:600 / $device * 100vw;
 }
+
+/* ------------------------------------------------------------ */
+
+// 변수 - $변수명 : 값
+// 중첩 - #box{ >li{} }
+// @mixin /  @include
+
+@mixin blind(){
+  display:block; width: 0; height: 0;
+  position:absolute; z-index:-1; clip:rect(0 0 0 0); overflow: hidden;
+}// @mixin blind();
+
+@mixin bar(){
+  &:after, &::after{
+    content:""; display: block; clear: both;
+  }
+}// @mixin bar();
+
+@mixin full(){
+  display: block; width: 100%; height: 100%;
+  & > span{ @include blind(); }
+}// @mixin full();
+
+@mixin MakeCard(){
+  li{
+    float:left; width:100%; height:200px;
+    margin:10px; background-color: $yellow;
+    > a { 
+      @include full; 
+      @content;
+    }
+  }
+}// @mixin MakeCard();
+
+.nav_area {
+  width: 960px; height:auto;
+  li {
+    float:left; width: auto; height:30px;
+  }
+  a { @include full; background-color: $yellow; }
+  // span { @include blind(); }
+  @include bar();
+}// .nav_area
+
+
+.card {
+  width: 100%; height: auto;
+  @include MakeCard(){
+    background-image: url("../../img/bar.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    &>i{ @include full }
+  };
+  @include bar();
+}
+
+// list -  $var: (v1,v2,v3);           nth($var, 숫자)
+// map  -  $map: (a:v1, b:v2, c:v3);   map-get($map, key);
+// @for -  @for $i from startN through lastN {}
+// #{}  -  숫자나,이름을 있는형태 그대로 사용할때 (주로 선택자)
+// @mixin - 기능을 만들때, @include - 기능을 사용할때
+// @content - @mixin 내부에서 기능을 추가할때 
