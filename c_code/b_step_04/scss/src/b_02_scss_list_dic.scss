@@ -1,0 +1,21 @@
+// /b_02_scss_list_dic.scss
+/* b_02_scss_list_dic.css */
+
+// ----------------------------
+// color
+$yellow : #fa0;
+$blue: (#00f, #0af, #0df, #7af);
+// ----------------------------
+
+#wrap {
+  width: 100%; height: 100%; 
+  background-color: lighten($yellow, 30%);
+}
+
+.list_area {
+  width: 100%; height: auto;
+  & > li {
+      width: 100%;
+      background-color: nth($blue,2);
+  }
+}
