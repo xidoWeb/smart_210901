@@ -114,16 +114,16 @@
 
 ##### css - 전처리기(scss)
 
-- vscode - plugin - `live-sass compile`
-- 변수, nesting, list, dictionary, @mixin ...
+- vscode - plugin - `live-sass compile`, prepros, node.js
+- 변수( `$이름` ), nesting( `선택자{ 선택자 { &:hover{} } }` ), list, dictionary, `@mixin/@include` ...
 
 ##### javascript
 
 - [x] 연산자
   - [x] 사칙연산( + - * / % )
-  - [x] 증감연산,  +=, -=, /=, *=, ...
-  - [x] 삼항연산 : 3가지 영역으로 나눠서 처리하는 연산
-- [ ] 객체내 객체( 배열/ 함수 )
+  - [x] 증감연산(++a, a++, --a, b--), 할당연산(+=, -=, /=, *=), 비교연산(||, &&, |, &), 동치연산(===, !==)
+  - [x] 삼항연산 : 3가지 영역으로 나눠서 처리하는 연산   (조건)?(참):(거짓);
+- [ ] 객체내 객체( 배열/ 함수 ) [[],[],[],[]], [{},{},{},{a:[],b:[]}]
 - [ ] 문법 - 조건문(switch, if), 반복문(~~while~~, do-while, for, for-in, forEach)
 - [ ] 메소드, 내장함수
 
