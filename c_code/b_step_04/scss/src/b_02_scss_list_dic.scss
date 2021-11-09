@@ -120,3 +120,17 @@ $device: 768;
 // #{}  -  숫자나,이름을 있는형태 그대로 사용할때 (주로 선택자)
 // @mixin - 기능을 만들때, @include - 기능을 사용할때
 // @content - @mixin 내부에서 기능을 추가할때 
+
+@mixin mobile(){
+  @media screen and (max-width:768px) {
+    @content;
+  }
+}
+
+#wrap {
+  width: 100%; min-width:900px;
+  background-color: $yellow;
+  @include mobile{
+    min-width: auto; background-color: #adf;
+  }
+}
