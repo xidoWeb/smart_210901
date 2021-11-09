@@ -4,7 +4,13 @@
 // ----------------------------
 // color
 $yellow : #fa0;
-$blue: (#00f, #0af, #0df, #7af);
+$blue: (#00f, #0af, #0df, #7af, #adf); // list
+$psuedoCode: (
+  "hover":#87f, 
+  "focus":#4f3, 
+  "active":#fda, 
+  "selected":#dfd
+  ); // dic(map)
 // ----------------------------
 
 #wrap {
@@ -17,5 +23,38 @@ $blue: (#00f, #0af, #0df, #7af);
   & > li {
       width: 100%;
       background-color: nth($blue,2);
+      &:hover { background-color: map-get($psuedoCode,"hover");}
+      &:focus { background-color: map-get($psuedoCode,"focus");}
+  }// li
+}// .list_area
+
+
+$coffee: ("esspress","latte","choco","vanila","other");
+// #{변수명/숫자} 인터폴레이션기법으로 내용을 담을 수 있게 처리하는 
+.coffee_#{nth($coffee,1)} { width:100%; }
+.coffee_#{2} {width: 100%;}
+
+// scss 반복문
+// for(변수명 in 배열){}
+// @for $i from 시작숫자 through 마지막숫자 {}
+
+// 숫자 1부터 5까지 5번 반복수행하면서 해당 숫자는 매개변수 $key에 임의 할당
+@for $key from 1 through length($coffee) {
+  // .area_esspress{}  .area_latte{}  .area_choco{} ...의 형태로 .area_ 의 글자에
+  // $coffee변수 내부에있는 이름을 각각 할당하기위해 보간법인 #{} 를 사용.
+  // list형식을 사용하기 위해서는 nth(변수명, 순번)
+
+  // $coffee: ("esspress","latte","choco","vanila","other");
+  // $blue: (#00f, #0af, #0df, #7af, #adf);
+
+  .area_#{ nth($coffee, $key) } {
+    width:$key * 10%; height:100%;
+    background-color: nth($blue, $key);
+    margin:auto; padding:0; box-sizing:border-box;
   }
+}
+
+$device: 768;
+#viewBox {
+  width: 100%; height:600 / $device * 100vw;
 }

@@ -4,3 +4,23 @@
 .list_area { width: 100%; height: auto; }
 
 .list_area > li { width: 100%; background-color: #0af; }
+
+.list_area > li:hover { background-color: #87f; }
+
+.list_area > li:focus { background-color: #4f3; }
+
+.coffee_esspress { width: 100%; }
+
+.coffee_2 { width: 100%; }
+
+.area_esspress { width: 10%; height: 100%; background-color: #00f; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.area_latte { width: 20%; height: 100%; background-color: #0af; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.area_choco { width: 30%; height: 100%; background-color: #0df; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.area_vanila { width: 40%; height: 100%; background-color: #7af; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.area_other { width: 50%; height: 100%; background-color: #adf; margin: auto; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#viewBox { width: 100%; height: 78.125vw; }
