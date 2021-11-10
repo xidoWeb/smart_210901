@@ -1,14 +1,18 @@
 @charset "UTF-8";
 /* reset.css */
-html,body { font-family: 'Noto Sans KR', sans-serif; }
+html,body { 
+  font-family:'IBM Plex Sans KR', 'Noto Sans KR', sans-serif; 
+  font-weight: 300;
+}
 
 html,body,
 h1,h2,h3,h4,h5,h6,
 p,pre,blockquote,address,
 ul,ol,li,dl,dt,dd,
-hr, button, img, 
+hr, button, img, div,
 header,article, nav, section, footer, aside, 
-main, figure, figcaption, hgroup {
+main, figure, figcaption, hgroup,
+form, fieldset, textarea, select {
   margin: 0; padding: 0; border:0; font-size:100%;
   box-sizing: border-box;}
 
@@ -21,5 +25,16 @@ em,address, i { font-style:normal; }
 abbr { text-decoration: none; }
 table,tr,td,th,thead,tbody,tfoot { 
   border:1px solid #777; border-spacing:0; border-collapse: collapse;}
+
+select, input { 
+  margin: 0; padding: 0; border: 0; 
+  box-sizing: border-box;}
+
+input[type="text"],
+input[type="password"] { text-indent: 0.5rem;}
+
+select,input,textarea { cursor: pointer;}
+
+
 header,article, nav, section, footer, aside, 
 main, figure, figcaption, hgroup { display: block;}
