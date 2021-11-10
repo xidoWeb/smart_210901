@@ -93,10 +93,8 @@ console.clear();
 var storeList = [];
 var i = 0;
 
-var storeFn = function (selector, user) {
-  var userCheck = {}; //{name:'사용자', content: []};
+var storeSelectFn = function (selector) {
   var userStep = [];
-  // ------------------------------
   switch (selector) {
     case 'a':// 물건을 살경우
       userStep.push('1. 물건을 고른다.');
@@ -133,6 +131,14 @@ var storeFn = function (selector, user) {
     default:
       userStep.push('...');
   }
+  return userStep;
+};
+
+var storeFn = function (selector, user) {
+  var userCheck = {}; //{name:'사용자', content: []};
+  var userStep = [];
+  // ------------------------------
+  userStep = storeSelectFn(selector);
   // ------------------------------
   i += 1;
   userCheck.name = user || 'noNameUser_' + i;
