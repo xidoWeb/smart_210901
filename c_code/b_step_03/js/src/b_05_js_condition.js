@@ -92,53 +92,54 @@ console.clear();
 
 var storeList = [];
 var i = 0;
+// ------------------------------------------
 
-var storeSelectFn = function (selector) {
+var setFn = function (selector) {
   var userStep = [];
-  switch (selector) {
-    case 'a':// 물건을 살경우
-      userStep.push('1. 물건을 고른다.');
-      userStep.push('2. 카드를 낸다.');
-      userStep.push('3. 카드 결재를한다.');
-      userStep.push('4. 물건과, 카드를 돌려받는다.');
-      userStep.push('5. 내역을 확인한다.');
-      break;
-
-    case 'b':// 공병을 팔경우
-      userStep.push('1. 물건을 낸다');
-      userStep.push('2. 카드를 낸다.');
-      userStep.push('3. 카드 입급을 받는다.');
-      userStep.push('4. 카드를 돌려받는다.');
-      userStep.push('5. 내역을 확인한다.');
-      break;
-
-    case 'c':// 환불
-      userStep.push('1. 물건을 건넨다.');
-      userStep.push('2. 카드를 낸다.');
-      userStep.push('3. 카드 입금을 받는다(취소처리).');
-      userStep.push('4. 카드를 돌려받는다');
-      userStep.push('5. 내역을 확인한다.');
-      break;
-
-    case 'd':// 결재가 안될때
-      userStep.push('1. 물건을 고른다.');
-      userStep.push('2. 카드를 낸다.');
-      userStep.push('3. 결재 에러발생');
-      userStep.push('4. 카드 돌려받는다.');
-      userStep.push('5. 내역을 확인한다.');
-      break;
-
-    default:
-      userStep.push('...');
-  }
+  var storeSelectFn = function (selector) {
+    switch (selector) {
+      case 'a':// 물건을 살경우
+        storeSelectFn('send');
+        userStep.push('3. 카드 결재를한다.');
+        storeSelectFn('return');
+        break;
+      case 'b':// 공병을 팔경우 
+        storeSelectFn('send');
+        userStep.push('3. 카드 입급을 받는다.');
+        storeSelectFn('return');
+        break;
+      case 'c':// 환불
+        storeSelectFn('send');
+        userStep.push('3. 카드 입금을 받는다(취소처리).');
+        storeSelectFn('return');
+        break;
+      case 'd':// 결재가 안될때
+        storeSelectFn('send');
+        userStep.push('3. 결재 에러발생');
+        storeSelectFn('return');
+        break;
+      case 'send':
+        userStep.push('1. 물건을 건넨다.', '2. 카드를 낸다.');
+        break;
+      case 'return':
+        userStep.push('4. 카드를(물건이 있다면 물건과 함께) 돌려받는다.', '5. 내역을 확인한다.');
+        break;
+      default:
+        userStep.push('사용기록 없슴.');
+    }
+    return userStep;
+  };
+  storeSelectFn(selector);
+  // console.log(userStep);
   return userStep;
-};
+}; // setFn();
 
+// ------------------------------------------
 var storeFn = function (selector, user) {
   var userCheck = {}; //{name:'사용자', content: []};
   var userStep = [];
   // ------------------------------
-  userStep = storeSelectFn(selector);
+  userStep = setFn(selector);
   // ------------------------------
   i += 1;
   userCheck.name = user || 'noNameUser_' + i;
@@ -146,9 +147,9 @@ var storeFn = function (selector, user) {
   storeList.push(userCheck);
   return userCheck;
 };// storeFn();
-
+// ------------------------------------------
 console.log(storeFn('a'));
 console.log(storeFn('b', 'user2'));
-console.log(storeFn('c'));
-console.log(storeFn('d', 'user4'));
+// console.log(storeFn('c'));
+// console.log(storeFn('d', 'user4'));
 console.log(storeList);
