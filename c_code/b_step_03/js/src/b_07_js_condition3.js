@@ -54,4 +54,55 @@ var cut = nn.slice(-3);
 var num2 = cut;
 console.log(num2);
 
+// -----------------------------
+console.clear();
+// 중첩함수 
+var a = function (n) {
+  var b = function (i) {
 
+    var c = function (j) {
+      var r = j + j;
+      return r;
+    }// c
+
+    var r2 = c(i) / 2;
+    return r2;
+  }// b
+
+  var r3 = b(n) + 5;
+  return r3;
+};
+
+console.log(a(4));
+// a호출 -> b호출 -> c호출 -> c해결-> b해결 -> a해결 -> 결과도출
+// 함수를 작성하는 기법 - 
+// 1. 하나의 기능은 하나의 함수.  
+// 2. 해당하는 함수가 내부처리/외부에 별도 호출구분
+// - 여러개의 함수에서 하나의 기능을 자주 사용하면 : 외부함수
+// - 하나의 함수에서 하나만 호출 : 내부/외부
+// - 함수의 결과를 오로지 한군데에서만 호출하여야 한다. : 내부함수
+// - 외부함수의 핵심은 별도의 수행가능여부
+
+
+
+//( (n + n) / 2 ) +  5
+
+
+
+// 재귀
+
+// 클로저
+var aFn = function (n) {
+
+  return (function (i) {
+
+    return (function (j) {
+      var r = j + j;
+      return r;
+    })(i) / 2;
+
+  })(n) + 5;
+
+};
+
+console.log(aFn(4));
