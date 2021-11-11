@@ -92,7 +92,7 @@ console.log(a(4));
 // 재귀
 
 // 클로저
-var aFn = function (n) {
+var aFn = function (n) { 
 
   return (function (i) {
 
@@ -106,3 +106,4 @@ var aFn = function (n) {
 };
 
 console.log(aFn(4));
+

@@ -10,7 +10,7 @@ dicList.push('c');
 dicList.push('d');
 dicList.push('f');
 dicList.push('l');
-console.log( dicList );
+console.log( dicList ); 
 */
 
 var fn1 = function(a,b){
