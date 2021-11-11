@@ -21,10 +21,18 @@ h1 { width: 120px; height: 70px; background-color: #fff; }
 
 .menu_content { width: 100%; height: auto; }
 
-.menu_content > div { width: inherit; height: inherit; }
+.coffee { width: inherit; height: inherit; }
 
 .menu_content ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-.menu_content li { width: 240px; height: 350px; background-color: #fff; border: 1px solid #333; margin-bottom: 20px; }
+.menu_content li { width: 240px; height: 350px; background-color: #fff; margin-bottom: 20px; }
+
+.menu_content li > a { display: block; width: 100%; height: 100%; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #333; border-radius: 3px; }
+
+.thumbnail { width: 100%; height: 220px; margin-bottom: 5px; border-radius: 3px; background-color: #a77; }
+
+.menu_thum { width: 100%; }
+
+.tag { width: 100%; }
 
 #footBox { width: 100%; height: 450px; background-color: #555; }

@@ -1,9 +1,7 @@
 @charset "UTF-8";
 // menu.scss
 /* menu.css */
-// 변수 --------------------------
-
-// @mixin --------------------------
+@import "../common/variable", "../common/mixin";
 
 // design -------------------------- 
 .container { width: 1100px; height: 100%; margin:auto;}
