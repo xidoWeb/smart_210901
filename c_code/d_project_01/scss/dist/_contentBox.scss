@@ -17,7 +17,7 @@
   @at-root .coffee { width: inherit; height:inherit;}
   ul{ display:flex; justify-content:space-between; flex-wrap:wrap;}
   li {
-    width: 240px; height: 350px; background-color: #fff;
+    width: 240px; height: 350px; 
     margin-bottom: 20px;
 
     & > a {
@@ -25,11 +25,16 @@
       width: 100%; height: 100%; 
       padding:10px; box-sizing:border-box;
       border:1px solid #333; border-radius:3px;
+      background-color: #fff;
 
     @at-root .thumbnail{ 
       width: 100%; height: 220px; 
       margin-bottom: 5px; border-radius:3px; 
-      background-color: #a77;}
+      background-image: url("../../img/menu/card_menu_1.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      }
     @at-root .menu_thum{ width: 100%; height:auto; 
       & > dt {
         width: 100%; height: auto; 
@@ -44,9 +49,10 @@
       }
     }
     @at-root .tag{
-      display:flex; width: 100%; height: 22px; 
-      text-transform: uppercase;
-      & > span { border:1px solid #757575; border-radius:3px; }
+      display:flex; width: 100%; height:auto; 
+      margin-top:5px;
+      font-size:12px; font-weight:500; color:#757575; text-transform: uppercase;
+      & > span {margin-right:5px; padding:2px 5px; border:1px solid #757575; border-radius:3px; }
     }
     }// a
   }// li
