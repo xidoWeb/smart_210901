@@ -1,0 +1,15 @@
+// mixin
+
+$url:"../../img/bgIcon/";
+@mixin bgImg($i, $r:no-repeat, $p:50% 50%, $z:initial){
+  background : {
+    image:url(#{$url}#{$i}#{$f});
+    repeat:$r;
+    position: $p;
+    size: $z;
+  }  
+}
+
+#wrap {
+  @include bgImg("file.png");
+}

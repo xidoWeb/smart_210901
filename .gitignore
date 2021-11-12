@@ -15,3 +15,10 @@
 
 # prepros이용하여 생긴 config파일 
 **/prepros.config
+
+# node-module삭제
+**/node_modules
+node_modules
+
+# .vscode
+**/*.vscode
