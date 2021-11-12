@@ -1,0 +1,46 @@
+/* b_03_scss_mixin_function2.css */
+.box_1-1 {
+  width: 320px;
+  height: 640px;
+  width: 20rem;
+  height: 40rem;
+  border-radius: 10px;
+  border-radius: 0.625rem;
+  padding: 10px;
+  padding: 0.625rem;
+  margin: 30px;
+  margin: 1.875rem;
+}
+
+.box_2-1 {
+  width: 300px;
+  height: 500px;
+  height: 83.3333333vw;
+  min-height: 500px;
+  min-height: 31.25rem;
+  max-height: 700px;
+}
+
+.box_1-2 {
+  width: 320px;
+  width: 20rem;
+  height: 640px;
+  height: 40rem;
+  border-radius: 10px;
+  border-radius: 0.625rem;
+  padding: 10px;
+  padding: 0.625rem;
+  margin: 30px;
+  margin: 1.875rem;
+}
+
+.box_2-2 {
+  width: 300px;
+  width: 18.75rem;
+  height: 500px;
+  height: 83.3333333333vw;
+  min-height: 500px;
+  min-height: 31.25rem;
+}
+
+/*# sourceMappingURL=b_03_scss_mixin_function2.css.map */

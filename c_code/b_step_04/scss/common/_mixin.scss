@@ -27,8 +27,8 @@ $baseSize:16;
   #{$s}:rem($u);
 }
 
-$divice:360;
-@function vw($u, $d:$divice){
+$device:360;
+@function vw($u, $d:$device){
   @return ($u/$d*100)+vw;
 }
 
