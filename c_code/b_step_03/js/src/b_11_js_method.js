@@ -100,3 +100,7 @@ filterList = nList.filter(function(d,i,k){
   }
 });
 console.log( 'filterList:', filterList );
+
+// 깊은복사/얕은복사 - JSON.stringify() , JSON.parse()
+// 단순한 배열메서드
+// forEach, reduce, filter
