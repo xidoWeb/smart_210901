@@ -108,3 +108,24 @@ for(var j=0; j<10; j++){ // 10번 반복 수행
 arr2.forEach(function(arg, idx){
   console.log(idx,':', arg, arr2[idx] );
 });
+
+// for(임의변수 in 객체){}
+console.log( obj );
+for(var k in obj){
+  console.log( obj[k] );
+}
+// -----------------------------------
+
+var an = [1,3,4];
+var na = [1,3,4];
+console.log( an === na ); // false
+var n = 5;
+var u = 5;
+console.log( n === u ,'-------------------'); // true
+
+for(var l=0; l<3; l+=1){
+  console.log( an[l] === na[l] );
+}
+
+var nna = na;
+console.log( nna === na );
