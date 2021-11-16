@@ -70,3 +70,22 @@ for(var prop in ob1){ // 객체 반복
 ob1.car = 'niro';
 ob1.fruits.push('melon');
 console.log(cOb1);
+
+// ----------------------------------------------------------------
+console.clear();
+
+var originAr = {
+  'fruits': ['딸기','포도','바나나','오렌지'],  
+  'drink':'coffee',
+  'ade':{ 'ice':'레몬에이드', 'hot':'nothing' }
+};
+
+var textAr = JSON.stringify(originAr);// JSON형식을 보인는 그대로 문자화 처리
+var copyAr = JSON.parse(textAr); // JSON형식(객체/배열)으로 변환
+
+originAr.more = '추가객체 삽입';
+originAr.fruits.push('감');
+
+console.log( copyAr );
+console.log( originAr );
+
