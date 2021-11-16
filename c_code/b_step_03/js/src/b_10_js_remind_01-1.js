@@ -129,3 +129,5 @@ for(var l=0; l<3; l+=1){
 
 var nna = na;
 console.log( nna === na );
+// 주소를 참조하면 얕은 복사
+// 값자체를 복사하면 깊은복사
