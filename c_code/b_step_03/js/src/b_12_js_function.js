@@ -62,6 +62,9 @@ console.log( sum  );
 console.clear() ;
 
 // js에서 문자형태의 숫자는 기본 연산이 된다.(단, + 형태는 연결로 처리)
+// 문자형식의 숫자는 연산시 암묵적 변환을 거쳐서 숫자로 변환이 가능하면 처리
+// 변환이 가능하지 않으면 NaN을 도출
+
 var n1 = "7";
 var n2 = 'a';
 var n = n2 - n1; // NaN
@@ -81,7 +84,6 @@ console.log( space, encodeS );
 var url = 'http://naver.com';
 var encode = encodeURIComponent(url);
 console.log(encode);
-
 
 // decodeURI() : encodeURI()의 복원기능
 // decodeURIComponent() : encodeURIComponent()의 복원기능
