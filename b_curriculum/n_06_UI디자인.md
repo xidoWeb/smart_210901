@@ -130,9 +130,15 @@
 - [x] 문법
   - [x] 조건문(switch, if), 
   - [x] 반복문(~~while~~, do-while, for, for-in, forEach)
-- [ ] 메소드, 내장함수
+- [x] 메소드 : `사용자지정형태.메소드()`
+  - [x] - length, push, shift, pop, unshift, split, reverse, join, splice, sort, forEach, reduce, filter
+
+- [ ] 내장함수 : `이미만들어진형태.메소드()` | `만들어져있는함수()`
+  - [ ] - alert(), prompt(),confirm(), Math.random(), Math.ceil(), Math.round(), console.log()
+
 - [x] 함수-클로저,재귀함수
-- [ ] 깊은복사, 얕은복사
+- [x] 깊은복사, 얕은복사
+- [ ] this, prototype
 
 
 
