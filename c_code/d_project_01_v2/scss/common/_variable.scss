@@ -1,5 +1,6 @@
 // variable.scss
 
+// color =========================
 $color_primary_01: #1a5d54;
 $color_primary_02: #834c33;
 $color_light_gray_01: #c4c4c4;
@@ -9,108 +10,25 @@ $color_deep_gray: #505050;
 $color_black_01: #333333;
 $color_black_02: #171717;
 $color_white: #ffffff;
-$color_gray_op: #555555;
+$color_gray_op: rgba(85,85,85,0.3);
 $color_yellow_01: #ffbd55;
 $color_yellow_02: #f7e9d3;
 $color_white_02: #efefef;
+// ================================
 
-@mixin text_style_title_02 {
-	font-size:40px;
-	font-family:"Noto Sans KR";
-	font-weight:bolder;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_title_03 {
-	font-size:36px;
-	font-family:"Noto Sans KR";
-	font-weight:bolder;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_title_04 {
-	font-size:28px;
-	font-family:"Noto Sans KR";
-	font-weight:bolder;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_title_05 {
-	font-size:22px;
-	font-family:"Noto Sans KR";
-	font-weight:bolder;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_content_01 {
-	font-size:22px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_content_02 {
-	font-size:18px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_content_03 {
-	font-size:16px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_content_04 {
-	font-size:12px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_content_04_1 {
-	font-size:12px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_button_text {
-	font-size:22px;
-	font-family:"Noto Sans KR";
-	font-weight:bolder;
-	font-style:normal;
-	text-decoration:none;
-}
-@mixin text_style_style_code_01 {
-	font-size:9px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	line-height:24px;
-	letter-spacing:-0.006em;
-	text-decoration:none;
-}
-@mixin text_style_style_code_02 {
-	font-size:10px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	line-height:24px;
-	letter-spacing:-0.006em;
-	text-decoration:none;
-}
-@mixin text_style_style_code_03 {
-	font-size:12px;
-	font-family:"Noto Sans KR";
-	font-weight:bold;
-	font-style:normal;
-	line-height:24px;
-	letter-spacing:-0.006em;
-	text-decoration:none;
-}
-@mixin effect_style_shadow_01 {
-	box-shadow:0.00px 4.00px 4.00px #000000;
-}
+
+// font ===========================
+$font_family_en:"apple GD", "noto sans KR";
+$font_family_kr:"noto sans KR", "IBM Plex Sans KR";
+$font_family_common:sans-serif;
+$font_weight_thin:300;
+$font_weight_normal:400;
+$font_weight_bold:500;
+$font_weight_bolder:700;
+$font_weight: (300, 400, 500, 700);
+$font_size:(
+  title2:40px,title3:36px,title4:28px,title5:22px,
+  content1:22px, content2:18px, content3:16px, content4:12px,
+  button:22px, option1:12px, option2:10px, option3:9px);
+
+// ================================
