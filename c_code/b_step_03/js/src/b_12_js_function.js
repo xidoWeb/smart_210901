@@ -136,9 +136,6 @@ console.log( year, month, day );
 
 // 직접사용이 불가능한 함수를 객체로 변환하여 사용할 수 있도록 하는 근본이 되는 함수
 // 생성자함수 - 첫글자가 대문자로 시작하는 함수
-
-
-
 // 내장함수 - js에 있는 함수
 // instance - 생성자함수에 의해 생성된 객체
 
@@ -164,7 +161,7 @@ console.log( afn.name );
 console.log( afn.middle );
 
 var ul = document.getElementsByTagName('ul')[0];
-var li = ul.getElementsByTagName('li'); 
+var li = ul.querySelectorAll('li'); 
 var li2 = ul.children;
 console.log( li, li2);
 
@@ -173,4 +170,3 @@ console.log( li, li2);
 // });
 
 // 유사배열이 존재하는 이유: li들의 요소를 단순 나열하여 배열로 처리, 객체로 모은형식
-

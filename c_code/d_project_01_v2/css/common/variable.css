@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* variable.css */
+
+:root{
+  font-size:16px;
+  /* color */
+  --color-white:#fff;
+  --color-black:#171717;
+  /* --color-gray1:#eee; */
+  /* --color-gray2:#ccc; */
+  /* --color-gray3:#aaa; */
+  /* --color-gray4:#777; */
+  /* --color-gray5:#555; */
+  --color-gray1:transparent;
+  --color-gray2:transparent;
+  --color-gray3:transparent;
+  --color-gray4:transparent;
+  --color-gray5:var(--color-gray3);
+  /* --color-primary:#f06; */
+  --color-primary:var(--color-focus);
+  --color-hover:#0af;
+  --color-focus:#057;
+  /* font */
+  --font-h2:40px;
+  --font-h3:36px;
+  --font-point:60px;
+  --font-p1:18px;
+  --font-p2:16px;
+  --font-p3:14px;
+  --font-p4:12px;
+  --font-title1:24px;
+  --font-title2:20px;
+  /* size */
+  --width-1:1px;
+  /* border */
+  --border-l1:var(--width-1) solid var(--color-black);
+  --border-l2:var(--width-1) solid var(--color-primary);
+}
+
+
+@supports (width:1rem){
+  /* 1rem이라는 단위를 인지되면 ( true ) 수행 */
+  :root{
+  /* font */
+  --font-h2:2.5rem;
+  --font-h3:2.25rem;
+  --font-point:3.75rem;
+  --font-p1:1.125rem;
+  --font-p2:1rem;
+  --font-p3:0.875rem;
+  --font-p4:0.75rem;
+  --font-title1:1.5rem;
+  --font-title2:1.25rem;
+
+  /* size */
+  --width-1:0.0625rem;
+  }
+
+}/* @supports  */

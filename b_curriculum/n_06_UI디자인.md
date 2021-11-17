@@ -133,8 +133,8 @@
 - [x] 메소드 : `사용자지정형태.메소드()`
   - [x] - length, push, shift, pop, unshift, split, reverse, join, splice, sort, forEach, reduce, filter
 
-- [ ] 내장함수 : `이미만들어진형태.메소드()` | `만들어져있는함수()`
-  - [ ] - alert(), prompt(),confirm(), Math.random(), Math.ceil(), Math.round(), console.log()
+- [x] 내장함수 : `이미만들어진형태.메소드()` | `만들어져있는함수()`
+  - [x] - alert(), prompt(),confirm(), Math.random(), Math.ceil(), Math.round(), console.log()
 
 - [x] 함수-클로저,재귀함수
 - [x] 깊은복사, 얕은복사
@@ -152,6 +152,12 @@
 - 320, 768, 1280, 1440, 1920 (기준수치에서 변경 가능 하지만, 다른페이지모두 설정된 사이즈와 동일한 기준에서 변경)
 
 ---
+
+
+
+
+
+
 
 
 
