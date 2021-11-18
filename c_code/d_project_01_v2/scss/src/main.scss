@@ -5,6 +5,11 @@
 @import "../common/mixin";
 // --------------------------------
   $headH:50px;
+  /*
+  $urlCommon:"../page/common/";
+  $urlMain:"../page/main";
+  $importMain:("slideBox","newBox","commercialBox","bestBox","galleryBox","sponsorBox");
+  */
 // --------------------------------
 
 #wrap {
@@ -12,24 +17,21 @@
   height:auto; min-height:800px;
   background-color: #ddd;
 
-  @include mobile{
-    min-width:320px;
-    background-color: #fda;
-  }
+  @include mobile{ min-width:320px;  background-color: #fda; }
   @include tablet{ background-color: #adf;  }
   @include laptop{ background-color: #fdf;  }
   @include pc{ background-color: #dfd; }
-  
+  // -------------------------------------------
   @import "../page/common/headBox";
+
   @import "../page/main/slideBox";
-}
+  @import "../page/main/newBox";
+  @import "../page/main/commercialBox";
+  @import "../page/main/bestBox";
+  @import "../page/main/galleryBox";
+  @import "../page/main/sponsorBox";
 
+  @import "../page/common/footBox";
+  // -------------------------------------------
+}// #wrap
 
-
-
-  // #newBox {}
-  // #commercialBox {}
-  // #bestBox {}
-  // #galleryBox {}
-  // #sponsorBox {}
-  // #footBox {}
