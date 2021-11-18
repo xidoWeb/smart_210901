@@ -20,7 +20,17 @@
 
 // image
 
-// size
+
+// size 
+$baseSize: 16;
+
+// unit
+@mixin remUnit($name, $unit){
+  #{$name}: #{$unit} + px;
+  #{$name}: #{$unit/$baseSize} + rem; 
+}
+
+// @media query --------------------------------------
 $mobile : 320px;
 $tablet : 600px;
 $laptop : 1024px;

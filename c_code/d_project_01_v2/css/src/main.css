@@ -1,9 +1,4 @@
 /* main.css */
-/*
-$urlCommon:"../page/common/";
-$urlMain:"../page/main";
-$importMain:("slideBox","newBox","commercialBox","bestBox","galleryBox","sponsorBox");
-*/
 #wrap {
   width: 100%;
   height: auto;
@@ -31,28 +26,32 @@ $importMain:("slideBox","newBox","commercialBox","bestBox","galleryBox","sponsor
     background-color: #dfd;
   }
 }
+
 #headBox {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
-  height: 50px;
+  height: 50;
   background-color: #fff;
 }
 @media all and (min-width: 600px) and (max-width: 1023px) {
   #headBox {
     height: 50px;
+    height: 3.125rem;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1439px) {
   #headBox {
     height: 100px;
+    height: 6.25rem;
   }
 }
 @media all and (min-width: 1440px) {
   #headBox {
     height: 100px;
+    height: 6.25rem;
   }
 }
 
@@ -60,8 +59,56 @@ $importMain:("slideBox","newBox","commercialBox","bestBox","galleryBox","sponsor
   width: 100%;
   height: 100vh;
   min-height: 500px;
-  padding-top: 50px;
   background-color: #dff;
+}
+@media all and (max-width: 590px) {
+  #slideBox {
+    padding-top: 50;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #slideBox {
+    padding-top: 50;
+    height: 450px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #slideBox {
+    padding-top: 100;
+    height: 600px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #slideBox {
+    padding-top: 100;
+    height: 600px;
+  }
+}
+
+#newBox {
+  width: 100%;
+  height: 100vh;
+  background-color: #add;
+}
+@media all and (max-width: 590px) {
+  #newBox {
+    min-height: 600px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #newBox {
+    height: 600px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #newBox {
+    height: 700px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #newBox {
+    height: 700px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

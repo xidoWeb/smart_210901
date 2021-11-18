@@ -92,7 +92,8 @@ nodejs내부에는 기능을가진 앱스토어(실행프로그램모음)가 있
  |▶(📂scss) ➡ (📂common) ➡ 📙_mixin.scss , 📙_variable.scss , 📙reset.scss , 📙common.scss
              ➡ (📂src)    ➡  main.scss  
              ➡ (📂page)   ➡ (📂base) ➡ _headBox.scss, _footBox.scss
-           			       ➡ (📂main) ➡ _view.scss, _view_smart.scss, _view_tablet.scss
+           			       ➡ (📂main) ➡ _slideBox.scss, _newBox.scss, _commercialBox.scss,
+           			                      _bestBox.scss, _galleryBox.scss, _sponsorBox.scss
                            ➡ (📂about)
                            ➡ (📂product)
 

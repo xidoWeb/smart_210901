@@ -1,14 +1,12 @@
 // slideBox
 
-@at-root #slideBox {
-  width:100%; height:100vh; min-height:500px; 
-  padding-top:$headH;
+#slideBox {
+  width:100%; height:100vh; min-height:500px;   
   background-color: #dff;
 
-
-  @include mobile{}
-  @include tablet{}
-  @include laptop{}
-  @include pc{}
+  @include mobile{ padding-top:$headH; }
+  @include tablet{ padding-top:$headH; height:450px;}
+  @include laptop{ padding-top:$headH2; height:600px;}
+  @include pc{ padding-top:$headH2; height:600px;}
 
 }// #slideBox 
