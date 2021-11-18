@@ -1,20 +1,18 @@
 /* main.css */
 #wrap {
   width: 100%;
-  min-width: 320px;
   height: auto;
   min-height: 800px;
   background-color: #ddd;
 }
 @media all and (max-width: 590px) {
   #wrap {
-    min-height: 1000px;
+    min-width: 320px;
     background-color: #fda;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1023px) {
   #wrap {
-    min-width: 320px;
     background-color: #adf;
   }
 }
@@ -28,7 +26,6 @@
     background-color: #dfd;
   }
 }
-
 #headBox {
   position: fixed;
   top: 0;

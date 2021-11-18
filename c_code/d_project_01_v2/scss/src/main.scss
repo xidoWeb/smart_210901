@@ -8,34 +8,24 @@
 // --------------------------------
 
 #wrap {
-  width:100%; min-width:320px; 
+  width:100%;  
   height:auto; min-height:800px;
   background-color: #ddd;
 
   @include mobile{
-    min-height:1000px;
+    min-width:320px;
     background-color: #fda;
   }
-  @include tablet{
-    min-width:$mobile;
-    background-color: #adf;
-  }
-  @include laptop{
-    background-color: #fdf;
-  }
-  @include pc{
-    background-color: #dfd;
-  }
+  @include tablet{ background-color: #adf;  }
+  @include laptop{ background-color: #fdf;  }
+  @include pc{ background-color: #dfd; }
+  
+  @import "../page/common/headBox";
+  @import "../page/main/slideBox";
 }
 
-  #headBox {
-    position: fixed; top: 0; left: 0; z-index:1000;
-    width: 100%; height: $headH; background-color: #fff;
-  }
-  #slideBox {
-    width:100%; height:100vh; padding-top:$headH;
-    background-color: #dff;
-  }  
+
+
 
   // #newBox {}
   // #commercialBox {}
