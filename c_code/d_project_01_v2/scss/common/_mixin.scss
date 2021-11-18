@@ -36,14 +36,18 @@ $pc:1440px;
 
 @mixin tablet(){
   @media all and (min-width:$tablet) and (max-width:#{$laptop - 1}) {
-    @content;
+    @content; 
   }
 }
 
 @mixin laptop(){
-  @media all and (min-width:$laptop) and (max-width:#{$pc - 1} ) {}
+  @media all and (min-width:$laptop) and (max-width:#{$pc - 1}) {
+    @content;
+  }
 }
 
 @mixin pc(){
-  @media all and (min-width:$pc) {}
+  @media all and (min-width:$pc) {
+    @content;
+  }
 }

@@ -1,33 +1,49 @@
 /* main.css */
 #wrap {
   width: 100%;
-  height: 500px;
+  min-width: 320px;
+  height: auto;
+  min-height: 800px;
+  background-color: #ddd;
 }
 @media all and (max-width: 590px) {
   #wrap {
-    min-width: 320px;
-    height: 400px;
+    min-height: 1000px;
+    background-color: #fda;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1023px) {
   #wrap {
-    min-width: 600px;
-    height: 700px;
+    min-width: 320px;
+    background-color: #adf;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #wrap {
+    background-color: #fdf;
+  }
+}
+@media all and (min-width: 1440px) {
+  #wrap {
+    background-color: #dfd;
   }
 }
 
 #headBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
+  height: 50px;
+  background-color: #fff;
 }
-@media all and (max-width: 590px) {
-  #headBox {
-    width: 90%;
-  }
-}
-@media all and (min-width: 600px) and (max-width: 1023px) {
-  #headBox {
-    width: 95%;
-  }
+
+#slideBox {
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: #dff;
 }
 
 /*# sourceMappingURL=main.css.map */
