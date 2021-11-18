@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* reset.css */
 @import "./variable","./mixin";
+// @use 불러오는 기능도 있으니 체크
 
 html,body { 
   width:100%; height:100%;
