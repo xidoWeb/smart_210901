@@ -100,7 +100,7 @@ nodejs내부에는 기능을가진 앱스토어(실행프로그램모음)가 있
 
 |▶(📂html) ➡ 📙main.html
 
-|▶(📂multi) ➡ (📂img)
+|▶(📂multi) ➡ (📂img)  ➡ 📜favicon.png(64*64)
              ➡ (📂video)
              ➡ (📂audio)
              
@@ -110,6 +110,7 @@ nodejs내부에는 기능을가진 앱스토어(실행프로그램모음)가 있
 |▶(📂data) ➡ (📂csv) ➡ 📜 페이지나기능용도.csv 
             ➡ (📂json) ➡ 📜 페이지나기능용도.json
 |▶(📂work)
+
 ```
 
 
