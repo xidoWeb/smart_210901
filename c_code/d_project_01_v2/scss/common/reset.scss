@@ -3,6 +3,10 @@
 @import "./variable","./mixin";
 // @use 불러오는 기능도 있으니 체크
 
+:root{
+  font-size: #{$baseSize} + px;
+}
+
 html,body { 
   width:100%; height:100%;
   @include font_set; 

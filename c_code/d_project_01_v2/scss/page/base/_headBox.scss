@@ -23,7 +23,7 @@ $logoWhite: #{$imgPath}+'logo_white.svg';
     & > a {      
       @include full('logo_color.png',$size:contain){
         @include laptop{ background-image: url(#{$imgPath}+'logo_color_pc.png'); }
-      }; 
+      };
 
       @include mobile{
         @at-root #headBox.on & { background-image: url($logoWhite);  } 
