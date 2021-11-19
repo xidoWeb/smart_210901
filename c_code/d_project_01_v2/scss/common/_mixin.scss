@@ -45,21 +45,12 @@ $imgPath:'../img/';
   }
 }
 
-// a{  
-//   @include full('file.jpg');  // @include img('image_01.png');
-// } 
-
-
 // unit
 $baseSize: 16;
 @mixin remUnit($name, $unit){
   #{$name}: #{$unit} + px;
   #{$name}: #{$unit / $baseSize} + rem;
 }
-
-
-
-
 
 
 // @media query --------------------------------------
@@ -93,3 +84,6 @@ $pc:1440px;
     @content;
   }
 }
+
+
+

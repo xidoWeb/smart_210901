@@ -1,6 +1,7 @@
 // headBox
 $headH:50 !global;
 $headH2:$headH *2;
+$imgPath:'../../multi/img/base/';
 
 #headBox {
   position: fixed; top: 0; left: 0; z-index:1000;
@@ -16,6 +17,14 @@ $headH2:$headH *2;
       @at-root .head_area{padding: 0;}
       position:absolute; left:0; right:0;  top:8px; margin:auto;
       background-color: #dfa;
+    }
+
+    & > a {      
+      @include full('logo_color.png',$size:contain){
+        @include laptop{
+          background-image: url(#{$imgPath}+'logo_color_pc.png');
+        }
+      }; 
     }
   }
 
