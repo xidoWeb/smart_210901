@@ -28,6 +28,11 @@ $imgPath:'../img/';
     position:$position;
     size: $size;
   } 
+  & > span{
+    display: block; 
+    position: absolute; z-index:-1; clip:rect(0 0 0 0);
+    width: 0; height: 0; overflow: hidden;
+  }
   @content;
 }
 
@@ -40,10 +45,9 @@ $imgPath:'../img/';
   }
 }
 
-// a{
-//   @include full('image_01.png');
-//   // @include img('image_01.png');
-// }
+// a{  
+//   @include full('file.jpg');  // @include img('image_01.png');
+// } 
 
 
 // unit
