@@ -32,17 +32,17 @@ $imgPath:'../img/';
 }
 
 // size 
-@mixin full($img:false, $repeat:no-repeat, $position:50% 50%, $size:initial){
+@mixin full($file:false, $repeat:no-repeat, $position:50% 50%, $size:initial){
   display:block; width:100%; height:100%;
   
-  @if ($img) {
-    @include img(){      @content;    }
+  @if ($file) {
+    @include img($file, $repeat, $position, $size){      @content;    }
   }
 }
 
 // a{
-//   @include full;
-//   @include img('image_01.png');
+//   @include full('image_01.png');
+//   // @include img('image_01.png');
 // }
 
 
