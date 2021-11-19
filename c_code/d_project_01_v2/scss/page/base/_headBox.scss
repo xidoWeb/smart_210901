@@ -4,10 +4,29 @@ $headH2:$headH *2;
 
 #headBox {
   position: fixed; top: 0; left: 0; z-index:1000;
-  width: 100%; height: $headH ; background-color: #fff;
+  width: 100%; 
+  @include remUnit(height, $headH);
+  background-color: #fff;
+
+  @at-root h1 {
+    width: 60px; height: 35px;
+    background-color: #fff;
+
+    @include mobile{
+      @at-root .head_area{padding: 0;}
+      position:absolute; left:0; right:0;  top:8px; margin:auto;
+      background-color: #dfa;
+    }
+  }
+
+  @at-root .navi_inner {
+    width:30px; height: 35px; 
+    float:left;
+    background-color: $color_primary_01;
+  }
+
 
   // @include mobile{}
-
   @include tablet{ 
     @include remUnit(height,$headH); 
   }

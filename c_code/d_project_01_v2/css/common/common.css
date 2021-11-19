@@ -42,4 +42,14 @@
   margin: auto;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #ddd;
+}
+
 /*# sourceMappingURL=common.css.map */

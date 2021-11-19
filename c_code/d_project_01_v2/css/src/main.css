@@ -33,25 +33,52 @@
   left: 0;
   z-index: 1000;
   width: 100%;
-  height: 50;
+  height: 50px;
+  height: 3.125rem;
   background-color: #fff;
 }
+h1 {
+  width: 60px;
+  height: 35px;
+  background-color: #fff;
+}
+@media all and (max-width: 590px) {
+  h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    margin: auto;
+    background-color: #dfa;
+  }
+  .head_area {
+    padding: 0;
+  }
+}
+
+.navi_inner {
+  width: 30px;
+  height: 35px;
+  float: left;
+  background-color: #1a5d54;
+}
+
 @media all and (min-width: 600px) and (max-width: 1023px) {
   #headBox {
     height: 50px;
-    height: 50/16rem;
+    height: 3.125rem;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1439px) {
   #headBox {
     height: 100px;
-    height: 100/16rem;
+    height: 6.25rem;
   }
 }
 @media all and (min-width: 1440px) {
   #headBox {
     height: 100px;
-    height: 100/16rem;
+    height: 6.25rem;
   }
 }
 
