@@ -1,0 +1,11 @@
+// bestBox
+#bestBox{
+  width: 100%; height: auto;
+  background-color: $color_white;
+
+  @include mobile { min-height: 1500px; }
+  @include tablet{ min-height: 1200px; }
+  @include laptop{ height:700px; }
+  @include pc{ height:700px; }
+
+}// #bestBox

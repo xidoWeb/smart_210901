@@ -2,13 +2,23 @@
 $headH:50 !global;
 $headH2:$headH *2;
 
-@at-root #headBox {
+#headBox {
   position: fixed; top: 0; left: 0; z-index:1000;
   width: 100%; height: $headH ; background-color: #fff;
 
   // @include mobile{}
-  @include tablet{ @include remUnit(height,$headH); }
-  @include laptop{ @include remUnit(height,$headH2); }
-  @include pc{ @include remUnit(height,$headH2); }
+
+  @include tablet{ 
+    @include remUnit(height,$headH); 
+  }
+
+  @include laptop{ 
+    @include remUnit(height,$headH2); 
+  }
+
+  @include pc{ 
+    @include remUnit(height,$headH2); 
+  }
   
 }
+

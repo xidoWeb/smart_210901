@@ -23,11 +23,14 @@
 
   @import "../page/main/slideBox";
   @import "../page/main/newBox";
+  @import "../page/main/commercialBox";
+  @import "../page/main/bestBox";
+  @import "../page/main/galleryBox";
+  @import "../page/main/sponsorBox";
 
-  // @import "../page/main/commercialBox";
-  // @import "../page/main/bestBox";
-  // @import "../page/main/galleryBox";
-  // @import "../page/main/sponsorBox";
-
-  // @import "../page/base/footBox";
+  @import "../page/base/footBox";
 // -------------------------------------------
+// 반응형 작업이 개념정리방법
+// 모바일 따로, 고정 width:calc(100% - 20px); min-width:320px;
+// 태블릿 따로. width:600px
+// 노트북 따로 ...

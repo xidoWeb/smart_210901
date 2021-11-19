@@ -27,7 +27,7 @@ $baseSize: 16;
 // unit
 @mixin remUnit($name, $unit){
   #{$name}: #{$unit} + px;
-  #{$name}: #{$unit/$baseSize} + rem; 
+  #{$name}: #{$unit} / #{$baseSize} + rem;
 }
 
 // @media query --------------------------------------

@@ -1,1 +1,12 @@
 // footBox
+
+#footBox{
+  width: 100%; height:450px;
+  background-color: $color_black_01;
+
+  @include mobile { height: 435px; }
+  @include tablet { height: 425px;}
+  // @include laptop {}
+  // @include pc {}
+
+}// footBox

@@ -126,9 +126,11 @@ nodejs내부에는 기능을가진 앱스토어(실행프로그램모음)가 있
 
 #### 브라우저 허용범위 :
 
-- IE10 기준 : flex, rem, vw, box-sizing, shadow, border-radius
+- IE10 기준 : flex, rem, vw, shadow, border-radius
 
 ​       
+
+---
 
 
 

@@ -1,0 +1,12 @@
+// galleryBox
+
+#galleryBox {
+  width: 100%; height:auto; 
+  background-color: $color_yellow_02;
+
+  @include mobile { min-height:970px; }
+  @include tablet { min-height:970px; }
+  @include laptop { height:750px; }
+  @include pc { height:750px; }
+
+}// #$color_yellow_02
