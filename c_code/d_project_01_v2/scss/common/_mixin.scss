@@ -19,16 +19,44 @@
 }
 
 // image
+$imgPath:'../img/';
 
+@mixin img($file, $repeat:no-repeat, $position:50% 50%, $size:initial){
+  background: {
+    image: url(#{$imgPath}#{$file});
+    repeat: $repeat;
+    position:$position;
+    size: $size;
+  } 
+  @content;
+}
 
 // size 
-$baseSize: 16;
+@mixin full($img:false, $repeat:no-repeat, $position:50% 50%, $size:initial){
+  display:block; width:100%; height:100%;
+  
+  @if ($img) {
+    @include img(){      @content;    }
+  }
+}
+
+// a{
+//   @include full;
+//   @include img('image_01.png');
+// }
+
 
 // unit
+$baseSize: 16;
 @mixin remUnit($name, $unit){
   #{$name}: #{$unit} + px;
   #{$name}: #{$unit / $baseSize} + rem;
 }
+
+
+
+
+
 
 // @media query --------------------------------------
 $mobile : 320px;
@@ -39,7 +67,7 @@ $pc:1440px;
 
 
 @mixin mobile(){
-  @media all and (max-width: #{$tablet - 10}){
+  @media all and (max-width: #{$tablet - 1}){
     @content;
   }
 }

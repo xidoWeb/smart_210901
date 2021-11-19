@@ -5,7 +5,7 @@
   min-height: 800px;
   background-color: #ddd;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #wrap {
     min-width: 320px;
     background-color: #fda;
@@ -42,7 +42,7 @@ h1 {
   height: 35px;
   background-color: #fff;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   h1 {
     position: absolute;
     left: 0;
@@ -88,7 +88,7 @@ h1 {
   min-height: 500px;
   background-color: #dff;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #slideBox {
     padding-top: 50;
   }
@@ -117,7 +117,7 @@ h1 {
   height: 100vh;
   background-color: #add;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #newBox {
     min-height: 600px;
   }
@@ -159,7 +159,7 @@ h1 {
   height: auto;
   background-color: #ffffff;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #bestBox {
     min-height: 1500px;
   }
@@ -185,7 +185,7 @@ h1 {
   height: auto;
   background-color: #f7e9d3;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #galleryBox {
     min-height: 970px;
   }
@@ -211,7 +211,7 @@ h1 {
   height: auto;
   background-color: #ffffff;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #sponsorBox {
     height: 400px;
   }
@@ -237,7 +237,7 @@ h1 {
   height: 450px;
   background-color: #333333;
 }
-@media all and (max-width: 590px) {
+@media all and (max-width: 599px) {
   #footBox {
     height: 435px;
   }
