@@ -14,16 +14,16 @@ $imgPath:'../../multi/img/base/';
     background-color: #fff;
 
     @include mobile{
-      @at-root .head_area{padding: 0;}
+      @at-root .head_area{
+        padding:8px 20px;
+      }
       position:absolute; left:0; right:0;  top:8px; margin:auto;
       background-color: #dfa;
     }
 
     & > a {      
       @include full('logo_color.png',$size:contain){
-        @include laptop{
-          background-image: url(#{$imgPath}+'logo_color_pc.png');
-        }
+        @include laptop{ background-image: url(#{$imgPath}+'logo_color_pc.png'); }
       }; 
     }
   }
@@ -32,6 +32,27 @@ $imgPath:'../../multi/img/base/';
     width:30px; height: 35px; 
     float:left;
     background-color: $color_primary_01;
+    .nav_btn{position: relative; z-index:200; width: 100%; height: 100%;
+      & > button { @include full($file:'menu_btn.svg', $size:contain); }
+      @include laptop { display:none; }
+      @include pc{ display:none; }
+    }
+    .navi_wrap{ 
+      
+      @include mobile{
+        position:absolute; z-index:100; top: 0; left: 0;
+        width: 100%; height:100vh; 
+        padding:70px 60px 30px; 
+        background-color: rgba($color_primary_01, 0.7);
+
+        @at-root &.on h1 a{ background-image: url(#{$imgPath}+'logo_white.png');}
+      }
+
+      @include tablet{}
+      @include laptop{}
+      @include pc{}
+
+    }
   }
 
 

@@ -1,4 +1,5 @@
 // mixin.scss
+@use "sass:math"; 
 
 // font-set
 @mixin font_set (){
@@ -49,9 +50,8 @@ $imgPath:'../img/';
 $baseSize: 16;
 @mixin remUnit($name, $unit){
   #{$name}: #{$unit} + px;
-  #{$name}: #{$unit / $baseSize} + rem;
+  #{$name}: math.div($unit , $baseSize) + rem;
 }
-
 
 // @media query --------------------------------------
 $mobile : 320px;
