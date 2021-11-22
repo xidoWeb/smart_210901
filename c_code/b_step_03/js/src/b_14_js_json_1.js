@@ -152,3 +152,9 @@ for(; i<len; i+=1){
   });
 })(jQuery);
 
+
+// var box = document.querySelector('#box');
+// var box2 = $('#box');
+// var li1 = document.querySelectorAll('li');
+// var li2 = $('li');
+
