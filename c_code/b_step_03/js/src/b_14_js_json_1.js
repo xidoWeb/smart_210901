@@ -1,16 +1,16 @@
 // b_14_js_json_1.js
 
 var originData = [
-  {  "id": 1,  "title": "Research Associate",  "link": "http://time.com" }, 
-  {  "id": 2,  "title": "Senior Developer",  "link": "https://blogs.com"}, 
-  {  "id": 3,  "title": "VP Quality Control",  "link": "https://xinhuanet.com"}, 
-  {  "id": 4,  "title": "Automation Specialist II",  "link": "https://businesswire.com"}, 
-  {  "id": 5,  "title": "Geological Engineer",  "link": "https://marriott.com"}, 
+  {  "id": 1,  "title": "Research Associate",          "link": "http://time.com" }, 
+  {  "id": 2,  "title": "Senior Developer",            "link": "https://blogs.com"}, 
+  {  "id": 3,  "title": "VP Quality Control",          "link": "https://xinhuanet.com"}, 
+  {  "id": 4,  "title": "Automation Specialist II",    "link": "https://businesswire.com"}, 
+  {  "id": 5,  "title": "Geological Engineer",         "link": "https://marriott.com"}, 
   {  "id": 6,  "title": "Account Representative III",  "link": "https://patch.com"}, 
-  {  "id": 7,  "title": "Speech Pathologist",  "link": "https://who.int"}, 
-  {  "id": 8,  "title": "Automation Specialist IV",  "link": "https://psu.edu"}, 
-  {  "id": 9,  "title": "Health Coach I",  "link": "https://cnbc.com"}, 
-  {  "id": 10,  "title": "Developer I",  "link": "http://miibeian.gov.cn"}
+  {  "id": 7,  "title": "Speech Pathologist",          "link": "https://who.int"}, 
+  {  "id": 8,  "title": "Automation Specialist IV",    "link": "https://psu.edu"}, 
+  {  "id": 9,  "title": "Health Coach I",              "link": "https://cnbc.com"}, 
+  {  "id": 10, "title": "Developer I",                 "link": "http://miibeian.gov.cn"}
 ];
 
 // originData copy
@@ -43,17 +43,43 @@ navi.append(makeUl);
 // console.log( dataList[0].title, dataList[0].link );
 
 
-// step 1 : li요소 하나만 생성하여 삽입하기!
 var UlList = document.querySelector('.list');
-var makeLi = document.createElement('li');
-var title = dataList[0].title;
-var link =  dataList[0].link;
-var makeA = '<a class="link"></a>';
-makeLi.innerHTML = makeA;
-var findA = makeLi.querySelector('a');
-findA.href = link;
-findA.innerText = title;
-UlList.append(makeLi);
+
+// step 1 : li요소 하나만 생성하여 삽입하기!
+/*
+  var makeLi = document.createElement('li');
+  var title = dataList[0].title;
+  var link =  dataList[0].link;
+  var makeA = '<a class="link"></a>';
+  makeLi.innerHTML = makeA;
+  var findA = makeLi.querySelector('a');
+  findA.href = link;
+  findA.innerText = title;
+  UlList.append(makeLi);
+*/
+
+// step2 : li 요소를 ul에 각각 여러개 삽입 // for(){}, 
+
+var i=0; 
+var len = dataList.length; // 10
+var makeLi, makeA, findA, title, link;
+
+for(; i<len; i+=1){
+  makeLi = document.createElement('li');
+  makeA = '<a class="link">sample text</a>';
+  makeLi.innerHTML = makeA;
+  findA = makeLi.querySelector('a');
+
+  title = dataList[i].title;
+  link =  dataList[i].link;
+  findA.href = link;
+  findA.innerText = title;
+  UlList.append(makeLi); // UlList.내부의뒤에삽입(생성된li)
+}
+
+
+
+// step3 : forEach()
 
 
 
