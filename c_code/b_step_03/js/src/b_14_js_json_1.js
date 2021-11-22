@@ -58,8 +58,8 @@ var UlList = document.querySelector('.list');
   UlList.append(makeLi);
 */
 
-// step2 : li 요소를 ul에 각각 여러개 삽입 // for(){}, 
-
+// step2 : li 요소를 ul에 각각 여러개 삽입 // for(){}
+/*
 var i=0; 
 var len = dataList.length; // 10
 var makeLi, makeA, findA, title, link;
@@ -76,14 +76,60 @@ for(; i<len; i+=1){
   findA.innerText = title;
   UlList.append(makeLi); // UlList.내부의뒤에삽입(생성된li)
 }
-
+*/
 
 
 // step3 : forEach()
+/*
+dataList.forEach(function(content){ 
+  // console.log( data.title, data.link, index );
+  var makeLi = document.createElement('li');
+  var makeA = '<a class="link">sample text</a>';
+  makeLi.innerHTML = makeA;
+  var findA = makeLi.querySelector('a');
+  findA.href = content.link;
+  findA.innerText = content.title;
+  UlList.append(makeLi);
+});
+*/
+// for문과 forEach의 차이는 전체를 순환한다는 의미(0~9)/각각 처리(값자체)
 
+// --------------------------------------------
+// 함수화처리
+// forEach로 
+/*
+var loopFn1 = function(content){
+  var makeLi = document.createElement('li');
+  var makeA = '<a class="link">sample text</a>';
+  makeLi.innerHTML = makeA;
+  var findA = makeLi.querySelector('a');
+  findA.href = content.link;
+  findA.innerText = content.title;
+  UlList.append(makeLi);
+};
 
+dataList.forEach( loopFn1 );
+*/
+// ---------------------------------------------
+// for문을 함수화 처리
+var loopFn2 = function(i){
+  var makeLi, makeA, findA, title, link;
+  makeLi = document.createElement('li');
+  makeA = '<a class="link">sample text</a>';
+  makeLi.innerHTML = makeA;
+  findA = makeLi.querySelector('a');
+  title = dataList[i].title;
+  link =  dataList[i].link;
+  findA.href = link;
+  findA.innerText = title;
+  UlList.append(makeLi); // UlList.내부의뒤에삽입(생성된li)
+};
 
-
+var i=0; 
+var len = dataList.length; // 10
+for(; i<len; i+=1){
+  loopFn2(i);
+}
 
 
 
