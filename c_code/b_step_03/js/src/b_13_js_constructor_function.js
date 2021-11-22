@@ -126,8 +126,6 @@ console.log( coffee.store );
 // -----------------------------------------
 console.clear();
 
-
-
 var  n = 0;
 var addFn = function(){
   // 'use strict'; 모드를 사용하면, 
@@ -202,13 +200,6 @@ console.log( makeList );
 
 //--------------------------------------------------------
 
-// 1. this : window
-// 2. this : 일반함수 - window 이지만, 엄격한 모드('use strict')로 전환시 undefinded
-// 3. this : 생성자함수로 만들어진 객체 
-// 4. this : 메서드 처리시 객체로 처리되어있는 변수명
-// 5. this : 이벤트 핸들러 -이벤트의 주체가 되는 선택자
-
-// -------------------------------------------------------
 var btn = document.querySelector('#btn');
 btn.addEventListener('click' , function(e){
   console.log( this );
@@ -238,5 +229,13 @@ var reset = br1.set.bind(this, 's21', 2021) // bind
 reset();
 
 // ----------------------------------------------------------
+
+// 1. this : window
+// 2. this : 일반함수 - window 이지만, 엄격한 모드('use strict')로 전환시 undefinded
+// 3. this : 생성자함수로 만들어진 객체 
+// 4. this : 메서드 처리시 객체로 처리되어있는 변수명
+// 5. this : 이벤트 핸들러 -이벤트의 주체가 되는 선택자
+
+// -------------------------------------------------------
 
 // XMLHttpRequest -> ajax
