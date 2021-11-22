@@ -112,6 +112,7 @@ dataList.forEach( loopFn1 );
 */
 // ---------------------------------------------
 // for문을 함수화 처리
+/*
 var loopFn2 = function(i){
   var makeLi, makeA, findA, title, link;
   makeLi = document.createElement('li');
@@ -130,9 +131,24 @@ var len = dataList.length; // 10
 for(; i<len; i+=1){
   loopFn2(i);
 }
+*/
+// javascript로 순수하게 처리하는 것 : 모든 것을 수동으로 처리
+// jQuery로 처리하는 것 : 반자동처리
 
 
-
-
-
+(function($){
+  // console.log( $.fn );
+  var ul = $('.list');
+  // li생성/삽입 
+  
+  // jQuery에서는 if, for, forEach 등등 문법 그대로 활용이 가능
+  // forEach대신 수행가능한 메소드는jQuery에 별도로 첨부되어 있다.
+  dataList.forEach(function(content, index){
+    // ul.append('<li><a class="link" href="'+ content.link +'">' + content.title + '</a></li>');
+    ul.append('<li><a class="link" href=""></a></li>');
+    var list = ul.children('li').eq(index).children('a');
+    list.text(content.title);         // 선택자.innerText = '값';
+    list.attr('href', content.link);  // 선택자.setAttribute('속성명', '값');
+  });
+})(jQuery);
 
