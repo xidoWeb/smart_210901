@@ -42,13 +42,19 @@ navi.append(makeUl);
 // a에 href=속성처리, text글자 삽입
 // console.log( dataList[0].title, dataList[0].link );
 
+
+// step 1 : li요소 하나만 생성하여 삽입하기!
 var UlList = document.querySelector('.list');
 var makeLi = document.createElement('li');
 var title = dataList[0].title;
 var link =  dataList[0].link;
-var makeA = '<a class="link" href="' + link + '">' + title + '</a>';
+var makeA = '<a class="link"></a>';
 makeLi.innerHTML = makeA;
+var findA = makeLi.querySelector('a');
+findA.href = link;
+findA.innerText = title;
 UlList.append(makeLi);
+
 
 
 
