@@ -15,7 +15,41 @@ var originData = [
 
 // originData copy
 var textData = JSON.stringify( originData );
-var dataList = JSON.parse( textData );
+var dataList = JSON.parse( textData );  
+
+// .navigation을 선택
+// ul을 생성하여 담기
+
+// document.getElementsByClassName('navigation')[0];
+var navi = document.querySelector('.navigation');
+// navi.style.width = '100%';
+// navi.style.height = '50px';
+// navi.style.backgroundColor = '#dcd';
+navi.style = "width:100%; height:50px; background-color:#dcd";
+
+//생성 -> document.createElement('ul');
+// var makeUl2 = '<ul class="list"></ul>'; // innerHTML을 사용시 직접 내용을 작성
+// navi.innerHTML = makeUl2;
+var makeUl = document.createElement('ul'); // innHTML방식이아니라 내부에 추가로 삽입할때 요소로 삽입처리
+makeUl.classList.add('list');
+navi.append(makeUl);
+
+// ---------------------------------------------------------------------
+//ul.list선택                : querySelector('.list')
+//내부에담을 li 생성         : createElement('li')
+//li내부에 유일요소인 a생성  : createElement('a') -> '<a></a>'
+//li를 .list에 담기          : (.list).append(li)
+// a에 href=속성처리, text글자 삽입
+// console.log( dataList[0].title, dataList[0].link );
+
+var UlList = document.querySelector('.list');
+var makeLi = document.createElement('li');
+var title = dataList[0].title;
+var link =  dataList[0].link;
+var makeA = '<a class="link" href="' + link + '">' + title + '</a>';
+makeLi.innerHTML = makeA;
+UlList.append(makeLi);
+
 
 
 
