@@ -181,8 +181,12 @@ var obj2 = {
   string : 'sub name'
 };
 
+var obj3 = {
+  string : [1,3,4,5]
+}
 console.log( obj2.string );
 obj.reName.call(obj2);
+obj.reName.apply(obj3);
 
 // -------------------------------------------------------
 
@@ -202,7 +206,11 @@ console.log( makeList );
 // 2. this : 일반함수 - window 이지만, 엄격한 모드('use strict')로 전환시 undefinded
 // 3. this : 생성자함수로 만들어진 객체 
 // 4. this : 메서드 처리시 객체로 처리되어있는 변수명
+// 5. this : 이벤트 핸들러 -이벤트의 주체가 되는 선택자
 
-
-
+// -------------------------------------------------------
+var btn = document.querySelector('#btn');
+btn.addEventListener('click' , function(e){
+  console.log( this );
+});
 
