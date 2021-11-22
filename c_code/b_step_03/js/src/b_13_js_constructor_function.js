@@ -1,4 +1,5 @@
 // b_13_js_constructor_function.js
+'use strict'; // 엄격하게 기능을 제한하여 처리하는 모드
 
 // 생성자 함수를 제작하려면, 함수의 이름이 PascalCase기법으로 처리
 
@@ -104,7 +105,6 @@ listArr.forEach(function(data, index){
 // 배열/유사배열
 // prototype
 
-
 // 배열 메소드
 var arr = [];
 arr.push(1)
@@ -124,4 +124,85 @@ var coffee = new ListFn('americano', 'brown');
 console.log( coffee.store );
 
 // -----------------------------------------
+console.clear();
+
+
+
+var  n = 0;
+var addFn = function(){
+  // 'use strict'; 모드를 사용하면, 
+  // 일반함수내의 this는 undefined를 가르킨다.
+  // this.n = 50;
+  n = 50;
+  n++;
+};
+addFn();
+
+console.log( n );
+console.log( window.n );
+
+// ---------------------------
+var lastName = 'kim';
+var firstName = 'xixixixi'; 
+
+var useFile = {
+  firstName : 'xido',
+  lastName  : 'lee',
+  job       : 'designer',
+  subJob    : 'developer',
+  fullName  : function(){
+    return this.lastName + ' ' + this.firstName;
+  }
+};
+console.log( useFile.fullName() );
+//--------------------------------------------------------
+// call, apply, bind
+
+// new Array() === []
+var ar1 = [1,2];
+ar1.push('바나나', '키위');
+
+// Array, Object, Function
+Array.prototype.push.call(ar1, '오렌지','수박');
+
+console.log( ar1 );
+
+
+var obj = {
+  string: 'xido',
+  reName : function(){
+    console.log( 'name: ', this.string);
+  }
+};
+
+obj.reName();
+
+var obj2 = {
+  string : 'sub name'
+};
+
+console.log( obj2.string );
+obj.reName.call(obj2);
+
+// -------------------------------------------------------
+
+var listFn = function(){
+  // return arguments;
+  // return Array.prototype.join.call(arguments).split(',');
+  return Array.prototype.slice.call(arguments);
+};
+
+var makeList = listFn('test','file',1,2,5,7,10);
+console.log( makeList );
+
+
+//--------------------------------------------------------
+
+// 1. this : window
+// 2. this : 일반함수 - window 이지만, 엄격한 모드('use strict')로 전환시 undefinded
+// 3. this : 생성자함수로 만들어진 객체 
+// 4. this : 메서드 처리시 객체로 처리되어있는 변수명
+
+
+
 
