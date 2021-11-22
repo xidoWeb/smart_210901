@@ -214,3 +214,29 @@ btn.addEventListener('click' , function(e){
   console.log( this );
 });
 
+console.clear();
+// -------------------------------------------------------
+
+var Phone = function(brand, product){
+  this.brand = brand;
+  this.product = product;
+};
+
+Phone.prototype.set = function(version, year){
+  console.log( this.brand , this.product, version, year);
+}
+
+var brand = 'apple';
+var product = 'iphone';
+
+var br1 =  new Phone('samsung', 'gallaxy');
+// console.log( br1 );
+br1.set('s21', 2021);
+br1.set.call(this, 's21', 2021); // call은 value담기
+br1.set.apply(this, ['s21', 2021]); // apply는 array담기
+var reset = br1.set.bind(this, 's21', 2021) // bind
+reset();
+
+// ----------------------------------------------------------
+
+// XMLHttpRequest -> ajax
