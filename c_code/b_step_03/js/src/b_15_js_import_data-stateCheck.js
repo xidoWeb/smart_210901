@@ -12,41 +12,49 @@
 // 6. 문서 처리 : http.send()
 //------------------------------------------------------------------
 
-var http = new XMLHttpRequest();
-var stateMessage;
+var linkFn = function(url,method,async){
+  var http = new XMLHttpRequest();
+  var stateMessage;
 
-http.onreadystatechange = function(){
-  console.log( http.status );
-  switch (http.readyState){
-    case  XMLHttpRequest.UNSENT:// 0
-      stateMessage = '서버와의 데이터 연결 끊어짐'
-      break;
-    case  XMLHttpRequest.OPENED :// 1
-      stateMessage = '서버연결'
-      break;
-    case  XMLHttpRequest.HEADERS_RECEIVED:// 2
-      stateMessage = '서버 접근중, 파일검색중'
-      break;
-    case  XMLHttpRequest.LOADING:// 3
-      stateMessage = '데이터 불러오는 중'
-      break;
-    case  XMLHttpRequest.DONE:// 4
-      stateMessage = '서버와 연결 대기중'
-      break;
+  http.onreadystatechange = function(){
+    console.log( http.status );
+    switch (http.readyState){
+      case  XMLHttpRequest.UNSENT:// 0
+        stateMessage = '서버와의 데이터 연결 끊어짐'
+        break;
+      case  XMLHttpRequest.OPENED :// 1
+        stateMessage = '서버연결'
+        break;
+      case  XMLHttpRequest.HEADERS_RECEIVED:// 2
+        stateMessage = '서버 접근중, 파일검색중'
+        break;
+      case  XMLHttpRequest.LOADING:// 3
+        stateMessage = '데이터 불러오는 중'
+        break;
+      case  XMLHttpRequest.DONE:// 4
+        stateMessage = '서버와 연결 대기중'
+        break;
+    }
+    if(http.readyState === XMLHttpRequest.DONE){
+      console.log( '서버가 이상없이 연결되었음' );
+    }
+    // console.log( stateMessage);
   }
-  if(http.readyState === XMLHttpRequest.DONE){
-    console.log( '!!!');
-  }
+
+  var method = method || 'GET'; // 앞의 자료가 undefinded 면 뒤의 값 대체
+  var url = url;
+  var async = async || true;
+
+  http.open(method, url, async);
+  http.send();
 }
 
-http.open('GET', '../data/person_card.json', true);
-http.send();
 
-setTimeout(function(){
-  console.log( stateMessage);
-  // console.log( http );
-  // console.log( http.status );
-  // console.log( http.responseText );
-},100);
+// ------------------------------------------------------
+var method = 'GET';
+var url = '../data/person_card.json';
+var async = true;
+
+linkFn(url, method, async);
 
 
