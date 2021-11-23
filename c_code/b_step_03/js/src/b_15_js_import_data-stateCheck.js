@@ -84,8 +84,4 @@ setTimeout(function(){
   });
 
   console.log( dataList[0].title );
-
-
-
-
 },10)
