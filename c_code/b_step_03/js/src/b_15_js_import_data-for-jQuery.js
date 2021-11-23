@@ -45,4 +45,20 @@
 
   console.log('5.setTimeout 함수 뒤에 수행!');
 
+  // -------------------------------------------
+  var jsonPath = '../data/person_card.json';
+  $.ajax({
+    url:jsonPath
+  }).done(function(data){
+    var dataList = data;
+    console.log( dataList );  
+  });
+
+  $.getJSON(jsonPath, function(data){
+    console.log(data);
+  })
+
+
+
+
 })(jQuery);
