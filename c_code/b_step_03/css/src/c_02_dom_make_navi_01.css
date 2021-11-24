@@ -1,0 +1,46 @@
+/* c_02_dom_make_navi_01.css */
+#wrap {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+}
+
+#headBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 8px 10px;
+  background-color: rgba(85, 85, 85, 0.3);
+}
+
+h1 {
+  width: 60px;
+  height: 40px;
+  background-color: #1a5d54;
+}
+
+.nav_area {
+  width: calc(100% - 70px);
+  height: 40px;
+  background-color: #fff;
+}
+
+.navi_inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+}
+
+.global_part {
+  height: 100%;
+  background-color: #834c33;
+}
+
+.search_part {
+  height: 100%;
+  background-color: #ffbd55;
+}
+
+/*# sourceMappingURL=c_02_dom_make_navi_01.css.map */
