@@ -20,7 +20,18 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
   background-color: $color_white_02;
 }
 
-.global_part { height:40px; background-color: $color_primary_02;}
+.global_part {width:auto; height:auto; background-color: $color_primary_02;}
+.main_menu {display:flex; width:auto; height:40px;
+  & > li {
+    width:auto; margin-right:16px; color:#fff; text-transform:capitalize;
+    &:last-child {margin-right: 0;}
+    & > a {display:flex; align-items:center; padding:0 10px; color:inherit; height:100%;}
+    @at-root .drop_btn { height:100%;
+      & > button {height: 100%; padding:0 10px; color:inherit; text-transform:inherit;}
+    } 
+  }
+}
+
 .search_part { height:40px; background-color: $color_yellow_01;}
 
 
@@ -31,6 +42,17 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
     padding:10px;
     // display: none;
   }
+  .main_menu {
+    flex-direction: column;
+    height:auto;
+    & > li {width:100%; height:auto; min-height:40px; margin-right: 0;  
+      & > a {width:100%; min-height:40px; }
+      @at-root .drop_btn {height: 40px;
+        & > button { width: 100%; text-align: left;}
+      }
+    }
+  }
+
   .global_part {margin-bottom:16px;}
   // .search_part {}
 }

@@ -49,8 +49,40 @@ h1 {
 }
 
 .global_part {
-  height: 40px;
+  width: auto;
+  height: auto;
   background-color: #834c33;
+}
+
+.main_menu {
+  display: flex;
+  width: auto;
+  height: 40px;
+}
+.main_menu > li {
+  width: auto;
+  margin-right: 16px;
+  color: #fff;
+  text-transform: capitalize;
+}
+.main_menu > li:last-child {
+  margin-right: 0;
+}
+.main_menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: inherit;
+  height: 100%;
+}
+.drop_btn {
+  height: 100%;
+}
+.drop_btn > button {
+  height: 100%;
+  padding: 0 10px;
+  color: inherit;
+  text-transform: inherit;
 }
 
 .search_part {
@@ -66,6 +98,28 @@ h1 {
   .navi_inner {
     flex-direction: column;
     padding: 10px;
+  }
+
+  .main_menu {
+    flex-direction: column;
+    height: auto;
+  }
+  .main_menu > li {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    margin-right: 0;
+  }
+  .main_menu > li > a {
+    width: 100%;
+    min-height: 40px;
+  }
+  .drop_btn {
+    height: 40px;
+  }
+  .drop_btn > button {
+    width: 100%;
+    text-align: left;
   }
 
   .global_part {
