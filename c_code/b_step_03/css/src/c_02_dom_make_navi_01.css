@@ -49,12 +49,12 @@ h1 {
 }
 
 .global_part {
-  height: 100%;
+  height: 40px;
   background-color: #834c33;
 }
 
 .search_part {
-  height: 100%;
+  height: 40px;
   background-color: #ffbd55;
 }
 

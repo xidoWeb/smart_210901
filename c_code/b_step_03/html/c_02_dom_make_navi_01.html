@@ -18,8 +18,33 @@
         <h2 class="blind">navigation</h2>
         <div class="navi_btn"><button type="button">menu</button></div>
         <div class="navi_inner">
-          <div class="global_part">gloval navigation</div>
-          <div class="search_part">search navigation</div>
+          <div class="global_part">
+            <h3 class="blind">gloval navigation</h3>
+            <ul class="main_menu">
+              <li><a href="#">home</a></li>
+              <li><a href="#">link</a></li>
+              <li>
+                <div class="drop_btn"><button type="button">dropdown</button></div>
+                <ul class="sub_menu">
+                  <li>action</li>
+                  <li class="border_line">another action</li>
+                  <li>something else here</li>
+                </ul>
+              </li>
+              <li><a href="#">disabled</a></li>
+            </ul>
+          </div>
+          <div class="search_part">
+            <h3 class="blind">search navigation</h3>
+            <form action="" method="GET">
+              <fieldset>
+                <legend>search area</legend>
+                <label for="searchInput" class="blind">필요한 자료를 검색하세요</label>
+                <input type="search" id="searchInput" name="search__Input" value="" placeholder="Search" />
+                <button type="button">search</button>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </nav>
     </header>

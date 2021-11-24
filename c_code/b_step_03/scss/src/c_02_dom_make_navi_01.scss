@@ -20,8 +20,8 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
   background-color: $color_white_02;
 }
 
-.global_part { height:100%; background-color: $color_primary_02;}
-.search_part { height:100%; background-color: $color_yellow_01;}
+.global_part { height:40px; background-color: $color_primary_02;}
+.search_part { height:40px; background-color: $color_yellow_01;}
 
 
 @include handhelds{
@@ -32,5 +32,5 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
     // display: none;
   }
   .global_part {margin-bottom:16px;}
-  .search_part {}
+  // .search_part {}
 }
