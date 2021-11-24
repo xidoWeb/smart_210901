@@ -13,7 +13,7 @@
 <body>
   <div id="wrap">
     <header id="headBox">
-      <h1><a href="./a_content.html">site name</a></h1>
+      <h1><a href="./a_content.html"><span>site name</span></a></h1>
       <nav class="nav_area">
         <h2 class="blind">navigation</h2>
         <div class="navi_btn"><button type="button">menu</button></div>
@@ -31,9 +31,9 @@
                   </button>
                 </div>
                 <ul class="sub_menu">
-                  <li>action</li>
-                  <li class="border_line">another action</li>
-                  <li>something else here</li>
+                  <li><a href="#">action</a></li>
+                  <li class="border_line"><a href="#">another action</a></li>
+                  <li><a href="#">something else here</a></li>
                 </ul>
               </li>
               <li><a href="#">disabled</a></li>
@@ -43,10 +43,10 @@
             <h3 class="blind">search navigation</h3>
             <form action="" method="GET">
               <fieldset>
-                <legend>search area</legend>
+                <legend class="blind">search area</legend>
                 <label for="searchInput" class="blind">필요한 자료를 검색하세요</label>
                 <input type="search" id="searchInput" name="search__Input" value="" placeholder="Search" />
-                <button type="button">search</button>
+                <button type="button" class="search_btn">search</button>
               </fieldset>
             </form>
           </div>
