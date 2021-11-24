@@ -22,15 +22,28 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
 
 .global_part {width:auto; height:auto; background-color: $color_primary_02;}
 .main_menu {display:flex; width:auto; height:40px;
-  & > li {
+  & > li { position: relative;
     width:auto; margin-right:16px; color:#fff; text-transform:capitalize;
     &:last-child {margin-right: 0;}
     & > a {display:flex; align-items:center; padding:0 10px; color:inherit; height:100%;}
     @at-root .drop_btn { height:100%;
       & > button {height: 100%; padding:0 10px; color:inherit; text-transform:inherit;}
-    } 
-  }
-}
+    } // .drop_btn
+    @at-root .sub_menu { 
+      position: absolute; left: 0; top: 100%; width:200%; height: auto; 
+      border:1px solid $color_light_gray_03;
+      border-radius:3px; color:$color_black_01;
+      background-color: $color_gray_op;
+      & > li {
+        width:100%; height:auto;
+        padding:10px;
+      }
+      & > .border_line {
+        border-bottom:1px solid $color_light_gray_03;
+      }
+    }// .sub_menu
+  }// li
+}// .main_menu
 
 .search_part { height:40px; background-color: $color_yellow_01;}
 
@@ -51,8 +64,8 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;}
         & > button { width: 100%; text-align: left;}
       }
     }
-  }
+  }// .main_menu
 
   .global_part {margin-bottom:16px;}
   // .search_part {}
-}
+} // @include handhelds

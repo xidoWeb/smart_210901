@@ -60,6 +60,7 @@ h1 {
   height: 40px;
 }
 .main_menu > li {
+  position: relative;
   width: auto;
   margin-right: 16px;
   color: #fff;
@@ -83,6 +84,26 @@ h1 {
   padding: 0 10px;
   color: inherit;
   text-transform: inherit;
+}
+
+.sub_menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 200%;
+  height: auto;
+  border: 1px solid #757575;
+  border-radius: 3px;
+  color: #333333;
+  background-color: rgba(85, 85, 85, 0.3);
+}
+.sub_menu > li {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.sub_menu > .border_line {
+  border-bottom: 1px solid #757575;
 }
 
 .search_part {
