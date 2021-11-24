@@ -73,6 +73,12 @@ $pc:1440px;
   }
 }
 
+@mixin handhelds(){
+  @media all and (max-width:#{$laptop - 1}) {
+    @content; 
+  }
+}
+
 @mixin laptop(){
   @media all and (min-width:$laptop) and (max-width:#{$pc - 1}) {
     @content;

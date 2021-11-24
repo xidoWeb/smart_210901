@@ -22,15 +22,30 @@ h1 {
 
 .nav_area {
   width: calc(100% - 70px);
+  height: auto;
+  min-height: 40px;
+  background-color: #dfd;
+}
+
+.navi_btn {
+  display: none;
+  float: right;
+  width: 40px;
   height: 40px;
-  background-color: #fff;
+}
+.navi_btn > button {
+  width: 100%;
+  height: 100%;
+  background-color: #f7e9d3;
 }
 
 .navi_inner {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 40px;
+  height: auto;
+  min-height: 40px;
+  background-color: #efefef;
 }
 
 .global_part {
@@ -41,6 +56,21 @@ h1 {
 .search_part {
   height: 100%;
   background-color: #ffbd55;
+}
+
+@media all and (max-width: 1023px) {
+  .navi_btn {
+    display: block;
+  }
+
+  .navi_inner {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .global_part {
+    margin-bottom: 16px;
+  }
 }
 
 /*# sourceMappingURL=c_02_dom_make_navi_01.css.map */

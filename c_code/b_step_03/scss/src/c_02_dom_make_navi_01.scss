@@ -9,10 +9,28 @@
   }
 
 h1 { width: 60px; height:40px; background-color: $color_primary_01;}
-.nav_area { width:calc(100% - 70px); height:40px; background-color: #fff;}
+.nav_area { width:calc(100% - 70px); height:auto; min-height:40px; background-color: #dfd;}
+
+.navi_btn {
+  display: none; float:right; width: 40px; height: 40px; 
+  & > button { width: 100%; height:100%; background-color: $color_yellow_02;}
+}
 .navi_inner { display:flex; justify-content:space-between;
-  width: 100%; height: 40px; 
+  width: 100%; height:auto; min-height:40px;
+  background-color: $color_white_02;
 }
 
 .global_part { height:100%; background-color: $color_primary_02;}
 .search_part { height:100%; background-color: $color_yellow_01;}
+
+
+@include handhelds{
+  .navi_btn {display: block;}
+  .navi_inner{
+    flex-direction:column;
+    padding:10px;
+    // display: none;
+  }
+  .global_part {margin-bottom:16px;}
+  .search_part {}
+}
