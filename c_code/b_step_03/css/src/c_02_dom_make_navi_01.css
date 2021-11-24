@@ -13,7 +13,7 @@
   width: 100%;
   height: 56px;
   padding: 8px 10px;
-  background-color: rgba(85, 85, 85, 0.3);
+  background-color: rgba(85, 85, 85, 0.1);
 }
 
 h1 {
@@ -154,14 +154,27 @@ h1 a {
     display: block;
   }
 
+  .nav_area.on .navi_btn > button {
+    background-color: #ffbd55;
+  }
+
+  .navi_btn > button:focus {
+    outline: 4px solid #757575;
+  }
+
   .navi_inner {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     flex-direction: column;
     padding: 10px;
-    background-color: rgba(85, 85, 85, 0.3);
+    background-color: rgba(85, 85, 85, 0.1);
+  }
+
+  .nav_area.on .navi_inner {
+    display: block;
   }
 
   .main_menu {

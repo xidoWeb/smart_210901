@@ -67,16 +67,21 @@ h1 { width: 60px; height:40px; background-color: $color_primary_01;
     color:$color_primary_01; text-transform:capitalize; }
 }// .search_part
 
-
+// ----------------------------------------------------
 @include handhelds{
+
   .navi_btn {display: block;}
-  .navi_inner{
+  .nav_area.on .navi_btn > button { background-color: $color_yellow_01; }
+  .navi_btn > button:focus{outline:4px solid $color_light_gray_03; }
+
+  .navi_inner{display: none;
     position: absolute; top:100%; left:0; width: 100%; 
     flex-direction:column;
     padding:10px;
     background-color: $color_gray_op;
-    // display: none;
   }// navi_inner
+  .nav_area.on .navi_inner {display: block;}
+
   .main_menu {flex-direction: column; height:auto;
     & > li {width:100%; height:auto; min-height:40px; margin-right: 0; padding:8px;
       & > a {width:100%; min-height:40px; }
