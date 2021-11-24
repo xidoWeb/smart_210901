@@ -1,0 +1,39 @@
+// variable.scss
+
+// color =========================
+$color_primary_01: #1a5d54;
+$color_primary_02: #834c33;
+$color_light_gray_01: #c4c4c4;
+$color_light_gray_02: #aaaaaa;
+$color_light_gray_03: #757575;
+$color_deep_gray: #505050;
+$color_black_01: #333333;
+$color_black_02: #171717;
+$color_white: #ffffff;
+$color_gray_op: rgba(85,85,85,0.3);
+$color_yellow_01: #ffbd55;
+$color_yellow_02: #f7e9d3;
+$color_white_02: #efefef;
+// ================================
+
+
+// font ===========================
+$font_family_en:"apple GD", "noto sans KR";
+$font_family_kr:"noto sans KR", "IBM Plex Sans KR";
+$font_family_common:sans-serif;
+$font_weight_thin:300;
+$font_weight_normal:400;
+$font_weight_bold:500;
+$font_weight_bolder:700;
+$font_weight: (300, 400, 500, 700);
+$font_size:(
+  title2:40px,title3:36px,title4:28px,title5:22px,
+  content1:22px, content2:18px, content3:16px, content4:12px,
+  button:22px, option1:12px, option2:10px, option3:9px);
+
+// device size ================================
+$mobile : 320px;
+$tablet : 600px;
+$laptop : 1024px;
+$pc:1440px;
+// $pcfull : 1920px;
