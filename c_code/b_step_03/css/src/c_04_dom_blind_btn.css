@@ -30,6 +30,10 @@
   border-radius: 0.25rem;
   background-color: #fff;
 }
+#contentBox > .btn > button:hover {
+  background-color: rgba(85, 119, 170, 0.3);
+  text-transform: capitalize;
+}
 #contentBox > .btn > button.on {
   background-color: #57a;
   color: #fff;
@@ -40,6 +44,7 @@
   height: 350px;
   padding: 1rem;
   background-color: #fdd;
+  border-radius: 0.25rem;
 }
 
 /*# sourceMappingURL=c_04_dom_blind_btn.css.map */
