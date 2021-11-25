@@ -158,16 +158,45 @@ i=0;
 
 // ______________________________________
 
-var a = 500;
 // 500 -> 250  
 // 0.1초마다 1씩 빠지는 숫자를 카운팅
-// 500
-// 499
-// 498
-// 497
-// 496
+// setInterval : 일정시간마다 조건이되면, 끊어주어야한다. : clearInterval
+// setTimeout  : 정해진 시간 뒤에 1회성
 
-// .
-// .
-// 250
-// 'end'
+// 1: 
+// 0.1초 : 100
+var startNum = 500;
+var timed    = 10;
+var endNum   = 250;
+var intervalFn;
+// ---------
+var btn = document.querySelector('.btn');
+var pSpan = document.querySelector('p>span');
+pSpan.innerText = 'text작성';
+// ----------
+var goCheck = true;
+var countFn = function(start){
+  var start = start;
+
+  if(goCheck){
+    goCheck = false;
+
+    intervalFn = setInterval(function(){
+      pSpan.innerText = start;
+        start -= 1;
+        if(start <= endNum){
+          pSpan.innerText = endNum + '처리 완료';
+          clearInterval(intervalFn);
+          goCheck = true;
+        }
+    }, timed);
+  }
+};
+
+btn.addEventListener('click', function(e){
+  e.preventDefault();
+  countFn(startNum);
+});
+
+
+
