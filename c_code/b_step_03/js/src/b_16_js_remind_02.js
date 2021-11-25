@@ -160,8 +160,9 @@ i=0;
 
 // 500 -> 250  
 // 0.1초마다 1씩 빠지는 숫자를 카운팅
-// setInterval : 일정시간마다 조건이되면, 끊어주어야한다. : clearInterval
-// setTimeout  : 정해진 시간 뒤에 1회성
+// setInterval : 일정시간마다 처리
+// clearInterval : setInterval을 강제로 끊어기
+// setTimeout  : 정해진 시간 뒤에 수행 1회성
 
 // 1: 
 // 0.1초 : 100
@@ -171,7 +172,7 @@ var endNum   = 250;
 var intervalFn;
 // ---------
 var btn = document.querySelector('.btn');
-var pSpan = document.querySelector('p>span');
+var pSpan = document.querySelector('p > span');
 pSpan.innerText = 'text작성';
 var goCheck = true;
 // ----------
@@ -206,7 +207,7 @@ var intervalCountFn = function(startNum){
   var countNum = startNum;
     setTimeout(function(){
       pSpan.innerText = countNum;
-      countNum -= 1;
+      countNum -= 1; 
       if(countNum > endNum){
         intervalCountFn(countNum);
       }else{
@@ -218,8 +219,7 @@ var intervalCountFn = function(startNum){
 btn.addEventListener('click', function(e){
   e.preventDefault();
   intervalCountFn(startNum);
-});
+});  
 
-
-  
-
+// 선택자.innerHTML = '<text></text>'  :  선택자 내부에 요소(태그)삽입
+// 선택자.innerText = '<text></text>'  :  선택자 내부에 글자를 삽입
