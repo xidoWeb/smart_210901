@@ -173,8 +173,9 @@ var intervalFn;
 var btn = document.querySelector('.btn');
 var pSpan = document.querySelector('p>span');
 pSpan.innerText = 'text작성';
-// ----------
 var goCheck = true;
+// ----------
+/*
 var countFn = function(start){
   var start = start;
 
@@ -197,6 +198,28 @@ btn.addEventListener('click', function(e){
   e.preventDefault();
   countFn(startNum);
 });
+*/
 
 
+// ------------------------------------------
+var intervalCountFn = function(startNum){
+  var countNum = startNum;
+    setTimeout(function(){
+      pSpan.innerText = countNum;
+      countNum -= 1;
+      if(countNum > endNum){
+        intervalCountFn(countNum);
+      }else{
+        pSpan.innerText = countNum + ' 숫자 달성!!!';
+      }
+    }, timed);
+};
+
+btn.addEventListener('click', function(e){
+  e.preventDefault();
+  intervalCountFn(startNum);
+});
+
+
+  
 
