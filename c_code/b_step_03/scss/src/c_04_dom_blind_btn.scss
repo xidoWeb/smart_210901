@@ -18,7 +18,9 @@
     }
   } // .btn
 
-  > .content_area { width: 100%; height: 350px; background-color: #fdd; 
+  > .content_area { 
+    overflow-y: hidden;
+    width: 100%; height: 350px; background-color: #fdd; 
     > ul { width: 100%; height: 100%; padding:1rem; border-radius:0.25rem; }
   }
 
