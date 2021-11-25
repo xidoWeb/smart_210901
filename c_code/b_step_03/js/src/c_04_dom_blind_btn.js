@@ -13,11 +13,18 @@
   // -----------------------------------------
   closeBtn.on('click', function(event){
     event.preventDefault();
-    contentArea.slideUp();
+    contentArea.slideUp(1000);
   });
   openBtn.on('click', function(event){
     event.preventDefault();
-    contentArea.slideDown();
+    contentArea.slideDown(1000);
   });
 
+
 })(jQuery);
+
+// javascript를 이용하여, 
+// 버튼 클릭시 높이값이 0이 되도록처리
+// 높이가 0이면, display:none;
+
+// 시...작~
