@@ -42,8 +42,12 @@
 #contentBox > .content_area {
   width: 100%;
   height: 350px;
-  padding: 1rem;
   background-color: #fdd;
+}
+#contentBox > .content_area > ul {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
   border-radius: 0.25rem;
 }
 
