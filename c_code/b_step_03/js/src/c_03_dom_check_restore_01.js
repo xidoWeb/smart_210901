@@ -18,7 +18,26 @@ window.document.querySelector('h1');
 // document.querySelectorAll('li') // 찾아서 확인
 // document.getElementsByTagName('li'); // 찾아서 가져오겠다.
 
-var conBox = document.querySelector('#contentBox'); // [0]
-conBox.style.width = '500px';
-var conStyle = getComputedStyle(conBox).width;
-console.log( conStyle );
+var conBox = document.querySelector('#contentBox');
+var btn = conBox.querySelector('button');
+var conArea = conBox.querySelector('.content_area');
+
+// conBox.style.width = '500px';
+var conStyle = getComputedStyle(conBox).borderWidth;
+console.log( conStyle ); // 1. 기존값
+console.log( !!conBox.style.width ); // 2. X
+
+// toggle
+// console.log( btn );
+btn.addEventListener('click', function(e){
+  e.preventDefault();
+  this.classList.toggle('on');
+  // this의 의미 : 이벤트 주체, property, window
+  conArea.classList.toggle('on');
+});
+
+// -------------------------------------------------
+console.clear();
+
+
+
