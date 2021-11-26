@@ -12,6 +12,7 @@ var jsBtn         = document.querySelector('.btn');
 var jsCloseBtn    = jsBtn.querySelector('.close');
 var jsOpenBtn     = jsBtn.querySelector('.open');
 var jsOpenBtn2    = jsBtn.querySelector('.open2');
+var jsToggleBtn   = jsOpenBtn2;
 var jsContentArea = document.querySelector('.content_area');
 // -----------------------------------------------
 var conH = getComputedStyle(jsContentArea).height;
@@ -109,6 +110,27 @@ jsOpenBtn.addEventListener('click', function(event){
   event.preventDefault();
   // countFn(0); // 함수샘플 구현
   slideDownFn(conHResult);
+});
+
+jsContentArea.classList.add('on');
+
+// jsToggleBtn 클릭 이벤트 : jsOpenBtn기능과, jsCloseBtn 기능을 모두 처리
+jsToggleBtn.addEventListener('click', function(event){
+  event.preventDefault();
+  /*
+  var onState = jsContentArea.classList.contains('on');
+  if (onState) { 
+    // console.log('현재 내용이 보이는 상태입니다.');
+    slideUpFn(conHResult);  
+    jsContentArea.classList.remove('on');
+  } else {
+    // console.log('현재 내용이 보이지 않습니다.');
+    slideDownFn(conHResult);  
+    jsContentArea.classList.add('on');
+  }
+  */
+  var viewState = getComputedStyle(jsContentArea).display === 'block';
+  (viewState) ? slideUpFn(conHResult) : slideDownFn(conHResult);
 });
 
 // -------------------------------------------------------------------------
