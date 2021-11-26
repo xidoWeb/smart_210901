@@ -25,7 +25,8 @@ var permission = true;
 
 // 함수1: 슬라이드기능으로 사라지는 기능 ---------------
 var slideUpFn = function(height){
-  if(permission){
+  var jsDisplayState = getComputedStyle(jsContentArea).display === 'block'; //상태체크
+  if(permission && jsDisplayState){
     permission = false;
     var setH = height;
   // console.log( setH );
@@ -39,7 +40,7 @@ var slideUpFn = function(height){
       jsContentArea.style.display = 'none';
       permission = true;
     }
-  }, timed/100);
+  }, timed/1000);
   }
 };
 // ------------------------------------------
@@ -76,18 +77,26 @@ var countFn = function(n){
 var slideDownFn = function(baseHeight){
   var originH = baseHeight;
   var setH = 0;
+  var jsDisplayState = getComputedStyle(jsContentArea).display === 'none'; //상태체크
+  if(permission && jsDisplayState){
+    permission = false;
+    jsContentArea.style.display = 'block';
+    jsContentArea.style.height = setH; 
 
-  if(setH < originH){
-    console.log('높이값변경중:', setH);
-  }else{
-    // jsContentArea.style = null;
-    // permission = true;
-    console.log('높이값 처리 완료');
-  }
-};
-
-
-
+    slideH = setInterval(function(){
+      if(setH < originH){
+        setH += 1;
+        jsContentArea.style.height = setH + 'px'; 
+        console.log('높이값변경중:', setH);
+      }else{
+        // jsContentArea.style = null;
+        permission = true;
+        console.log('높이값 처리 완료');
+        clearInterval(slideH);        
+      }
+    }, timed/1000); 
+  } 
+}; // slideDownFn(baseHeight)
 // --------------------------------------------
 // jsCloseBtn 클릭 이벤트
 jsCloseBtn.addEventListener('click', function(event){
@@ -102,4 +111,7 @@ jsOpenBtn.addEventListener('click', function(event){
   slideDownFn(conHResult);
 });
 
-
+// -------------------------------------------------------------------------
+// 과제: modal window 만들기 (하나의box만) : 샘플사이트 http://fancybox.net/
+// opacity:100%; -> opacity:0; display:none;
+// display:block; -> opacity:100%; 

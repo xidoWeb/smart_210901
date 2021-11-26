@@ -42,10 +42,8 @@
 #contentBox > .content_area {
   overflow-y: hidden;
   width: 100%;
-  height: auto;
-  min-height: 500px;
+  height: 350px;
   background-color: #fdd;
-  transition: background-color 500ms ease;
 }
 #contentBox > .content_area > ul {
   width: 100%;
