@@ -18,27 +18,61 @@ var conH = getComputedStyle(jsContentArea).height;
 var conHResult = parseInt(conH);
 var timed = 500;
 var slideH;
-// 함수 --------------------------------------------
+
+// 함수1: 슬라이드기능으로 사라지는 기능 ---------------
 var slideUpFn = function(height){
   var setH = height;
   // console.log( setH );
   slideH = setInterval(function(){
     setH -= 1;
     if(setH >= 0) {
-      jsContentArea.style.height = setH + 'px'
+      jsContentArea.style.height = setH + 'px';
     }else{
       clearInterval(slideH);
-      // jsContentArea.style = null;
+      jsContentArea.style = null;
       jsContentArea.style.display = 'none';
     }
-  }, timed / 100);
+  }, 1);
+};
+// ------------------------------------------
+// 함수2: 슬라이드 기능으로 나타나는 기능 ---------------
+var countFn = function(n){
+  // setTimeout : 일정시간 뒤에 한번만 수행
+  // setInterval : 일정시간 마다 수행 - clearInterval
+  var arr = [2,4,7,10, 20, 30, 50, 90, 432, 654, 777, 963];
+  
+  var red, green, blue;
+  setTimeout( function(){
+    red = (Math.floor(Math.random() * 256)).toString(16);
+    green = (Math.floor(Math.random() * 256)).toString(16);
+    blue = (Math.floor(Math.random() * 256)).toString(16);
+
+    if( red.length   !== 2)  { red   = '0' + red;   }
+    if( green.length !== 2)  { green = '0' + green; }
+    if( blue.length  !== 2) { blue   = '0' + blue;  }
+    console.log( red+green+blue );  
+    var randomColor = '#'+red+green+blue;
+
+    // var ram = Math.floor( Math.random()*12 )
+    // console.log( arr[ram] );
+    jsContentArea.style.backgroundColor = randomColor;
+  },500);
 };
 
+
+
+
 // --------------------------------------------
-// jsCloseBtn클릭 이벤트
+// jsCloseBtn 클릭 이벤트
 jsCloseBtn.addEventListener('click', function(event){
   event.preventDefault();
   slideUpFn(conHResult);  
+});
+
+// jsOpenBtn 클릭 이벤트
+jsOpenBtn.addEventListener('click', function(event){
+  event.preventDefault();
+  countFn(0);
 });
 
 

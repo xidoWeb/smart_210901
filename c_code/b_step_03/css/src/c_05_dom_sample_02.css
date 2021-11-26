@@ -22,6 +22,7 @@ h1 {
   width: 100%;
   height: auto;
   background-color: #ddf;
+  transition: all 500ms ease;
 }
 #viewBox .slide_area > div {
   height: 300px;
@@ -38,6 +39,12 @@ h1 {
 }
 #viewBox .slide_area > div:nth-of-type(4) {
   background-color: rgba(79, 232, 165, 0.5);
+}
+#viewBox .slide_area > div:nth-of-type(5) {
+  background-color: rgba(104, 127, 2, 0.5);
+}
+#viewBox .slide_area > div:nth-of-type(6) {
+  display: none;
 }
 
 /*# sourceMappingURL=c_05_dom_sample_02.css.map */
