@@ -43,7 +43,7 @@ var slideUpFn = function(height){
   }
 };
 // ------------------------------------------
-// 함수2: 슬라이드 기능으로 나타나는 기능 ---------------
+// 함수 샘플:setInterval/setTimeout 슬라이드 기능으로 나타나는 기능 테스트 ---------------
 var countFn = function(n){
   // setTimeout : 일정시간 뒤에 한번만 수행
   // setInterval : 일정시간 마다 수행 - clearInterval
@@ -67,6 +67,24 @@ var countFn = function(n){
   },500);
 };
 
+// 함수2: open버튼 클릭시 사라진 내용을 나타나게 만들기 ----------------------------------
+// jsContentArea 상태가 'none' 일때, 'block'으로 처리와 동시에, 
+// 기본 높이값을 파악후( conH,conHResult 에서 이미 파악 ) -> 높이 0부터 기본 높이값까지 1씩 추가해서 변동되게 수행
+// 필요한 높이만큼 수행되었다면, 더이상 처리할 내용이없으니, style 기능 제거 ( null )
+// 단, 기능이 수행되는 중간에 다른 기능을 첨부하지 못하게 제어( permission )
+
+var slideDownFn = function(baseHeight){
+  var originH = baseHeight;
+  var setH = 0;
+
+  if(setH < originH){
+    console.log('높이값변경중:', setH);
+  }else{
+    // jsContentArea.style = null;
+    // permission = true;
+    console.log('높이값 처리 완료');
+  }
+};
 
 
 
@@ -80,7 +98,8 @@ jsCloseBtn.addEventListener('click', function(event){
 // jsOpenBtn 클릭 이벤트
 jsOpenBtn.addEventListener('click', function(event){
   event.preventDefault();
-  countFn(0);
+  // countFn(0); // 함수샘플 구현
+  slideDownFn(conHResult);
 });
 
 
