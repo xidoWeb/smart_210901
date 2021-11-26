@@ -88,7 +88,7 @@ var slideDownFn = function(baseHeight){
       if(setH < originH){
         setH += 1;
         jsContentArea.style.height = setH + 'px'; 
-        console.log('높이값변경중:', setH);
+        // console.log('높이값변경중:', setH);
       }else{
         // jsContentArea.style = null;
         permission = true;
@@ -130,7 +130,7 @@ jsToggleBtn.addEventListener('click', function(event){
   }
   */
   var viewState = getComputedStyle(jsContentArea).display === 'block';
-  (viewState) ? slideUpFn(conHResult) : slideDownFn(conHResult);
+  (viewState) ? slideUpFn(conHResult)  : slideDownFn(conHResult);
 });
 
 // -------------------------------------------------------------------------
