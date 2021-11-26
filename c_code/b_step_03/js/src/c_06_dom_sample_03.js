@@ -36,7 +36,7 @@
       // conTitleLi에 들어있는 .on을 모두 제거
       conTitleLi.removeClass('on'); 
       // conTitleLi중 index번째( eq(순서지정) )에 .on을 첨부
-      conTitleLi.eq(index).addClass('on'); // eq(순서지정)  ==  배열요소[순서지정]\
+      conTitleLi.eq(index).addClass('on'); // eq(순서지정)  ==  배열요소[순서지정]
       conContentList.removeClass('on');
       conContentList.eq(index).addClass('on');
     */
@@ -62,3 +62,15 @@
   console.log( arr[3] );         // 7 -> jQuery: eq(3);
   console.log( arr.indexOf(7) ); // 7의 위치를 파악 3 -> jQuery : index();
 */
+
+
+
+
+// 우리오늘 한거?
+// 버튼클릭시 slide형식의 사라짐기능, 토글기능
+// setInterval, setTimeout을 이용한 랜덤 숫자배열/color매치
+// 탭메뉴 형식의 레이아웃 구성 -> jQuery 코드 작성
+// 과제: 버튼클릭시 모달윈도우 형식으로 fade구성처리( opacity: block,0 - 100% / 100% - 0,none );
+// 선택박스.slideDown(), 선택박스.slideUp(), 선택박스.slideToggle()
+// 선택박스.fadeIn(), 선택박스.fadeOut(), 선택박스.fadeToggle()
+
