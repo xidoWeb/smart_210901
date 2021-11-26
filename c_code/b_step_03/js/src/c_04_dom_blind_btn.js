@@ -20,7 +20,7 @@
     contentArea.slideDown(1000);
   });
 
-  open2Btn.on('click', function(event){
+  open2Btn.on('click', function(event){ 
     event.preventDefault();
     contentArea.slideToggle(500);
   });
