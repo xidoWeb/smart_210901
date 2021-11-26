@@ -16,12 +16,18 @@ var jsContentArea = document.querySelector('.content_area');
 // -----------------------------------------------
 var conH = getComputedStyle(jsContentArea).height;
 var conHResult = parseInt(conH);
+console.log('h:' , conH );
 var timed = 500;
 var slideH;
+var permission = true;
+// 처음부터 보이지 않게 하기 위한 처리(css에서 값을 가져오지 못하기에, js를 통해 값을 가져와서 파악후 display처리)
+// jsContentArea.style.display = 'none'; 
 
 // 함수1: 슬라이드기능으로 사라지는 기능 ---------------
 var slideUpFn = function(height){
-  var setH = height;
+  if(permission){
+    permission = false;
+    var setH = height;
   // console.log( setH );
   slideH = setInterval(function(){
     setH -= 1;
@@ -31,8 +37,10 @@ var slideUpFn = function(height){
       clearInterval(slideH);
       jsContentArea.style = null;
       jsContentArea.style.display = 'none';
+      permission = true;
     }
-  }, 1);
+  }, timed/100);
+  }
 };
 // ------------------------------------------
 // 함수2: 슬라이드 기능으로 나타나는 기능 ---------------
@@ -42,7 +50,7 @@ var countFn = function(n){
   var arr = [2,4,7,10, 20, 30, 50, 90, 432, 654, 777, 963];
   
   var red, green, blue;
-  setTimeout( function(){
+  setInterval( function(){
     red = (Math.floor(Math.random() * 256)).toString(16);
     green = (Math.floor(Math.random() * 256)).toString(16);
     blue = (Math.floor(Math.random() * 256)).toString(16);

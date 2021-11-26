@@ -19,10 +19,10 @@
   } // .btn
 
   > .content_area { 
-    overflow-y: hidden;
-    width: 100%; height: 350px; 
+    overflow-y: hidden; // display: none;
+    width: 100%;  height:auto; // min-height:500px; //height: 350px; 
     background-color: #fdd; 
-    transition:all 500ms ease;
+    transition: background-color 500ms ease;
     > ul { width: 100%; height: 100%; padding:1rem; border-radius:0.25rem; }
   }
 
