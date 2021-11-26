@@ -37,7 +37,7 @@
 
   @at-root .tab_content_part{ 
       $bgColor:(#CB50D0,#020455,#207801,#717293);
-      @for $i from 1 through 4 {  &:nth-of-type(#{$i}) {background-color: rgba(nth($bgColor, $i), 0.3);} }
+      @for $i from 1 through 4 {  &:nth-of-type(#{$i}) {background-color: rgba(nth($bgColor, $i), 0.05); border-radius: 4px;} }
       & { display:none; width:100%; height:100%; padding:1rem; }
       
       &.on { display:block; }
