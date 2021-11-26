@@ -31,18 +31,24 @@
     // jQuery에서는 이벤트 처리된 주체를 $(this)라고 한다.
     // 클릭한 요소는 버튼요소이므로 자신이 아닌 그 부모의 순서값을 파악(index)해야 한다.
     index = $(this).parent().index(); // parent : 부모선택자 
-
-    // 전체에 class제거 후 선택순서에 .on 첨부 ------------------
-    // conTitleLi에 들어있는 .on을 모두 제거
-    conTitleLi.removeClass('on'); 
-
-    // conTitleLi중 index번째( eq(순서지정) )에 .on을 첨부
-    conTitleLi.eq(index).addClass('on'); // eq(순서지정)  ==  배열요소[순서지정]
-
-    conContentList.removeClass('on');
-    conContentList.eq(index).addClass('on');
+    /*
+      // 전체에 class제거 후 선택순서에 .on 첨부 ------------------
+      // conTitleLi에 들어있는 .on을 모두 제거
+      conTitleLi.removeClass('on'); 
+      // conTitleLi중 index번째( eq(순서지정) )에 .on을 첨부
+      conTitleLi.eq(index).addClass('on'); // eq(순서지정)  ==  배열요소[순서지정]\
+      conContentList.removeClass('on');
+      conContentList.eq(index).addClass('on');
+    */
     // ------------------
+    conTitleLi.eq(index).addClass('on');
+    conContentList.eq(index).addClass('on');
+    
+    // siblings : 형제를 의미하며, 선택한요소(eq)를 제외한 다른 형제를 선택하는 선택자
+    conTitleLi.eq(index).siblings().removeClass('on'); 
+    conContentList.eq(index).siblings().removeClass('on');
   });
+  // css는 유교사상이 반영된 선택자, js는 상관없이 가능한 선택자
 
   // -------------------------------------------------
   // jQuery는 여러개의 선택자가 존재할때 이를 묶어서 한번에 클릭이 가능한데 이때 그 순서를 파악하는 것은 클릭시 index로 처리
