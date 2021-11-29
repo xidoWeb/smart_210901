@@ -49,6 +49,7 @@ navArea3.style.backgroundColor = '#eee';
 var navli2 = navArea3.querySelectorAll('li');
 console.log( navli2 );
 
+console.clear();
 // ---------------------------------------------------------------------------
 // HTML collection : 옛날방식의 선택자
 // document.getElementById();
