@@ -19,12 +19,12 @@ var modal  = document.getElementsByClassName('new_area_modal')[0];
 // 방법 1
 var intervalBtn = card[0];
 
+// 함수
 var intervalFn = function(){
   var value = 0;
   var interval;
   modal.style.display = 'block';
   modal.style.opacity = 0;
-
   interval = setInterval(function(){
     console.log( value  );
     value += 1;
@@ -40,11 +40,33 @@ var intervalFn = function(){
   }, 1);
 };
 
-
 // 이벤트 수행
 intervalBtn.addEventListener('click', function(event){
-  event.preventDefault();
-  
+  event.preventDefault();  
   intervalFn();
+});
+
+// ==========================================================
+// 방법2
+var timeoutBtn = card[1];
+
+// 함수 
+var opValue = 0;
+var timeoutFn = function(){  
+  opValue += 1; 
+  setTimeout(function(){
+    modal.style.opacity = opValue + '%';
+    if(opValue <= 100){
+      timeoutFn();
+    }
+  }, 1);
+};
+
+// 이벤트 수행
+timeoutBtn.addEventListener('click', function(event){
+  event.preventDefault();  
+  modal.style.display = 'block';
+  modal.style.opacity = 0;
+  timeoutFn();
 });
 // ==========================================================
