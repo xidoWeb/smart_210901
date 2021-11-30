@@ -53,6 +53,11 @@ $baseSize: 16;
   #{$name}: math.div($unit , $baseSize) + rem;
 }
 
+// $deviceBase : 400px;
+// @function makeVw($size, $deviceWidth:$deviceBase){
+//     return $size / $deviceWidth * 100;
+// }
+
 // @media query --------------------------------------
 $mobile : 320px;
 $tablet : 600px;
