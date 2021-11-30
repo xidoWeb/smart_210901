@@ -42,17 +42,13 @@ var intervalFn = function(){
   var value = 0;
   var interval;
   interval = setInterval(function(){
-    // console.log( value  );
     value += 1;
-    // if(value <= 100){
-    //   modal.style.opacity = value / 100;
-    // }else{
-    //   clearInterval( interval );
-    // }
-
-    value <= 100 ?  
-                  modal.style.opacity = value / 100 : 
-                  clearInterval( interval );
+    if(value <= 100){
+      modal.style.opacity = value / 100;
+    }else{
+      modal.style.opacity = null; // 완성 후 의미없는 속성 처리
+      clearInterval( interval );
+    }
   }, 1);
 };
 
@@ -73,9 +69,12 @@ var timeoutFn = function(){
   opValue += 1; 
   setTimeout(function(){
     modal.style.opacity = opValue + '%';
-    if(opValue <= 100){
-      timeoutFn();
-    }
+    (opValue <= 100) ? timeoutFn() : modal.style.opacity = null;
+    // if(opValue <= 100){
+    //   timeoutFn();
+    // }else{
+    //   modal.style.opacity = null; // 완성 후 의미없는 속성 처리
+    // }
   }, 1);
 };
 
@@ -100,6 +99,10 @@ var cssTransitionFn = function(timed){
   setTimeout(function(){
     modal.style.opacity = 1;
   },1);
+  setTimeout(function(){
+    modal.style = null;
+    modal.style.display = 'block';
+  }, timed + 1);
 };
 
 // 이벤트 수행
@@ -115,7 +118,7 @@ cssBtn.addEventListener('click', function(event){
 // 함수
 var intervalHideFn = function(){
   var style = modal.style;
-  var value = style.opacity * 100;
+  var value = getComputedStyle(modal).opacity * 100;
   var interval;
   interval = setInterval(function(){
     value -= 1;
