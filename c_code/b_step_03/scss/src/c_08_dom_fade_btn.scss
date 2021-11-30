@@ -20,7 +20,8 @@
   @at-root .new_area {
     display:flex; justify-content: space-around; 
     width: 100%; height: auto; background-color: $color_yellow_02;}
-  @at-root .card { width:90%; min-width:180px; max-width:300px; height:makeVw(400,600); min-height:400px; max-height:500px; padding:0.5rem; border:$line2;
+  @at-root .card { 
+    width:90%; min-width:180px; max-width:300px; height:makeVw(400,600); min-height:400px; max-height:500px; padding:0.5rem; border:$line2;
     & > a { @include full; 
       & > .img_zone {
         width: 100%; height: 200px; margin-bottom: 0.5rem; background-color: #ddd;        
@@ -35,7 +36,35 @@
       &:nth-of-type(#{$i}) .img_zone{ @include img(nth($cardImg, $i), $size:cover); }
     }
   }// .card
-}
+  @at-root .new_area_modal {
+    &:before{ 
+      content:""; display: block; 
+      position: fixed; top: 0; left: 0;  z-index: -1;
+      width: 100vw; height: 100vh; background-color: rgba($color_black_01,0.5); }
+
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0; 
+    width:70%; height:60%; 
+    margin:auto; padding:1rem; padding-top:5rem; border-radius:0.25rem; 
+    color:$color_white; font-size:1.3rem;
+    background-color: $color_deep_gray;
+    .close_btn { 
+      $w : 2rem;
+      position: absolute; top: 1rem; left: 50%; 
+      width: $w; height: $w; 
+      font-size: 0.75rem;      
+      transform:translate(-50%); 
+      & > button { @include full; border-radius:$w; background-color:$color_white; }
+      & > button:focus {background-color: $color_yellow_01; font-weight: 900;}
+      & > button:hover {background-color: $color_yellow_02;}
+    }
+  }
+
+// vw는 브라우저의 가로크기가 변할때, vh 브라우저의 세로크기가 변할때 그 비율이 처리되는 단위 이므로, 
+// width/height와는 관계가 없다.
+
+
+
+}// #newBox
 @supports (width:clamp(10px, 10%, 300px) ){
   #wrap { width:clamp(600px, 90%, 1400px); }
   .card { width:clamp(180px, 90%, 300px); }

@@ -113,6 +113,57 @@
   overflow: hidden;
 }
 
+.new_area_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 60%;
+  margin: auto;
+  padding: 1rem;
+  padding-top: 5rem;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  background-color: #505050;
+}
+.new_area_modal:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+.new_area_modal .close_btn {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.75rem;
+  transform: translate(-50%);
+}
+.new_area_modal .close_btn > button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: #ffffff;
+}
+.new_area_modal .close_btn > button:focus {
+  background-color: #ffbd55;
+  font-weight: 900;
+}
+.new_area_modal .close_btn > button:hover {
+  background-color: #f7e9d3;
+}
+
 @supports (width: clamp(10px, 10%, 300px)) {
   #wrap {
     width: clamp(600px, 90%, 1400px);
