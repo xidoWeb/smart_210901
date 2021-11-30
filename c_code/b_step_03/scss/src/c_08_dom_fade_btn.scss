@@ -36,7 +36,7 @@
       &:nth-of-type(#{$i}) .img_zone{ @include img(nth($cardImg, $i), $size:cover); }
     }
   }// .card
-  @at-root .new_area_modal {
+  @at-root .new_area_modal {display: none;
     &:before{ 
       content:""; display: block; 
       position: fixed; top: 0; left: 0;  z-index: -1;
