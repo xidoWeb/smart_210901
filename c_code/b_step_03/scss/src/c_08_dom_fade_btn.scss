@@ -20,7 +20,7 @@
   @at-root .new_area {
     display:flex; justify-content: space-around; 
     width: 100%; height: auto; background-color: $color_yellow_02;}
-  @at-root .card { width:90%; min-width:180px; max-width:300px; height:400px; padding:0.5rem; border:$line2;
+  @at-root .card { width:90%; min-width:180px; max-width:300px; height:makeVw(400,600); min-height:400px; max-height:500px; padding:0.5rem; border:$line2;
     & > a { @include full; 
       & > .img_zone {
         width: 100%; height: 200px; margin-bottom: 0.5rem; background-color: #ddd;        

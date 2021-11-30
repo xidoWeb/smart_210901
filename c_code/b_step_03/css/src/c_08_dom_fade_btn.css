@@ -36,7 +36,9 @@
   width: 90%;
   min-width: 180px;
   max-width: 300px;
-  height: 400px;
+  height: 66.6666666667vw;
+  min-height: 400px;
+  max-height: 500px;
   padding: 0.5rem;
   border: 1px solid #1a5d54;
 }
