@@ -19,14 +19,13 @@ var titleArr = [].slice.call(titleList);
 // titleArr.forEach(function(selector, index){ console.log( selector )})
 
 var contentInner = contentBox.querySelector('.tab_content_inner');
-var contentPart ='';
-
+var contentPart = contentInner.querySelectorAll('.tab_content_part');
+var indexCheck = 0;
+var optionName = 'on';
 // ===========================================
 // 기본 추가기능 
-
 // ===========================================
 // 함수
-
 // ===========================================
 // 이벤트처리
 titleArr.forEach(function(element, index){
@@ -36,13 +35,22 @@ titleArr.forEach(function(element, index){
     event.preventDefault();
     // console.log( this ); // 선택된 요소
     // 선택된 요소의 부모 요소를 찾아오려면 : parentNode
-    console.log( this.parentNode );
+    // console.log( this.parentNode );
     // 이미, forEach에서 li들중 하나를 이벤트로 발생하여 처리했기에 
-    console.log( element );
+    // console.log( element );
+
+    // console.log( index );
+    indexCheck =  index;
+    titleArr[indexCheck].classList.add(optionName);
+    contentPart[indexCheck].classList.add(optionName);
   });
 });
 
 
 // Question ---------------------------------
-// 1. titleBtn.addEventListener('click', function(){ ...  console.log( 클릭한 순번 )   });
+// 1. titleBtn.addEventListener('click', function(){ ...  console.log( 클릭한 순번 ) });
 // 2. 순번에 맞는 요소에 class='on'을 첨부
+// 3. 기존에 있는 'on'을 제거
+// 3-1. 기존의 순번을 파악해서 제거
+// 3-2. 모든 요소에 있는 'on'을 제거 후 'on'을 삽입
+// 3-3. 선택순번만 'on' 첨부, 선택순번 외 모든 요소에 'on' 제거
