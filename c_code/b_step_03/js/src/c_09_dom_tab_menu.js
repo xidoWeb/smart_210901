@@ -43,7 +43,7 @@ titleArr.forEach(function(element, index){
     // console.log( element );
     // console.log( index );
   */
-  /*
+/*
   // 아래 question 3-1 :
     // -------------------------------------------------
     titleArr[indexCheck].classList.remove(optionName);
@@ -54,7 +54,7 @@ titleArr.forEach(function(element, index){
     contentPart[indexCheck].classList.add(optionName);
   */
 /*
-    // 아래 question 3-2; - li요소에 전부 on제거 후 순번에 맞게 첨부
+    // 아래 question 3-2: - li요소에 전부 on제거 후 순번에 맞게 첨부
     // ----------------------------------------------
     titleArr.forEach(function(el){  el.classList.remove(optionName); });
     contentPart.forEach(function(el){ el.classList.remove(optionName); });
@@ -63,6 +63,15 @@ titleArr.forEach(function(element, index){
     titleArr[indexCheck].classList.add(optionName);
     contentPart[indexCheck].classList.add(optionName);
 */
+    // 아래 question 3-3: - li 순번에 맞는것은 add, 아닌것 모두(for) remove 처리
+    // 선택된것, 선택되지 않은 것을 구분
+    indexCheck = index;
+    titleArr.forEach(function(el, idx){
+      (idx !== indexCheck) ? el.classList.remove(optionName) : el.classList.add(optionName);
+    }); // titleArr.forEach
+    contentPart.forEach(function(el, idx){
+      (idx !== indexCheck) ? el.classList.remove(optionName) : el.classList.add(optionName);
+    }); // contentPart.forEach
 
   });
 });
