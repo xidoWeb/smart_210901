@@ -43,14 +43,27 @@ titleArr.forEach(function(element, index){
     // console.log( element );
     // console.log( index );
   */
+  /*
+  // 아래 question 3-1 :
     // -------------------------------------------------
-    // 아래 question 3-1 :
     titleArr[indexCheck].classList.remove(optionName);
     contentPart[indexCheck].classList.remove(optionName); 
     // -------------------------------------------------
     indexCheck = index;
     titleArr[indexCheck].classList.add(optionName);
     contentPart[indexCheck].classList.add(optionName);
+  */
+/*
+    // 아래 question 3-2; - li요소에 전부 on제거 후 순번에 맞게 첨부
+    // ----------------------------------------------
+    titleArr.forEach(function(el){  el.classList.remove(optionName); });
+    contentPart.forEach(function(el){ el.classList.remove(optionName); });
+    // ----------------------------------------------
+    indexCheck = index;
+    titleArr[indexCheck].classList.add(optionName);
+    contentPart[indexCheck].classList.add(optionName);
+*/
+
   });
 });
 
@@ -60,5 +73,5 @@ titleArr.forEach(function(element, index){
 // 2. 순번에 맞는 요소에 class='on'을 첨부
 // 3. 기존에 있는 'on'을 제거
 // 3-1. 기존의 순번을 파악해서 제거
-// 3-2. 모든 요소에 있는 'on'을 제거 후 'on'을 삽입
+// 3-2. 모든(for) 요소에 있는 'on'을 제거 후 'on'을 삽입
 // 3-3. 선택순번만 'on' 첨부, 선택순번 외 모든 요소에 'on' 제거
