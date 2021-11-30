@@ -15,6 +15,21 @@ var newBox = document.getElementById('newBox');
 var card   = document.getElementsByClassName('card');
 var modal  = document.getElementsByClassName('new_area_modal')[0];
 
+
+// 공통함수
+
+// displayFn : 상황에 맞게 display:block or display:none 처리하는 함수
+var displayFn =  function(view){
+  var displayCheck = view || true;
+  if(displayCheck){
+    modal.style.display = 'block';
+    modal.style.opacity = 0;
+  }else{
+    modal.style = null;
+    modal.style.display = 'none';
+  }
+};
+
 // ==========================================================
 // 방법 1
 var intervalBtn = card[0];
@@ -23,10 +38,8 @@ var intervalBtn = card[0];
 var intervalFn = function(){
   var value = 0;
   var interval;
-  modal.style.display = 'block';
-  modal.style.opacity = 0;
   interval = setInterval(function(){
-    console.log( value  );
+    // console.log( value  );
     value += 1;
     // if(value <= 100){
     //   modal.style.opacity = value / 100;
@@ -43,6 +56,7 @@ var intervalFn = function(){
 // 이벤트 수행
 intervalBtn.addEventListener('click', function(event){
   event.preventDefault();  
+  displayFn(true);
   intervalFn();
 });
 
@@ -65,8 +79,7 @@ var timeoutFn = function(){
 // 이벤트 수행
 timeoutBtn.addEventListener('click', function(event){
   event.preventDefault();  
-  modal.style.display = 'block';
-  modal.style.opacity = 0;
+  displayFn(true);
   timeoutFn();
 });
 // ==========================================================
@@ -89,7 +102,6 @@ var cssTransitionFn = function(timed){
 // 이벤트 수행
 cssBtn.addEventListener('click', function(event){
   event.preventDefault();
-  modal.style.display = 'block';
-  modal.style.opacity = 0;
-  cssTransitionFn(100);
+  displayFn(true);
+  cssTransitionFn(300);
 });
