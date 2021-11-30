@@ -24,6 +24,8 @@ var indexCheck = 0;
 var optionName = 'on';
 // ===========================================
 // 기본 추가기능 
+titleArr[indexCheck].classList.add(optionName);
+contentPart[indexCheck].classList.add(optionName); 
 // ===========================================
 // 함수
 // ===========================================
@@ -33,14 +35,20 @@ titleArr.forEach(function(element, index){
   var titleBtn = element.querySelector('button');
   titleBtn.addEventListener('click', function(event){
     event.preventDefault();
+  /*
     // console.log( this ); // 선택된 요소
     // 선택된 요소의 부모 요소를 찾아오려면 : parentNode
     // console.log( this.parentNode );
     // 이미, forEach에서 li들중 하나를 이벤트로 발생하여 처리했기에 
     // console.log( element );
-
     // console.log( index );
-    indexCheck =  index;
+  */
+    // -------------------------------------------------
+    // 아래 question 3-1 :
+    titleArr[indexCheck].classList.remove(optionName);
+    contentPart[indexCheck].classList.remove(optionName); 
+    // -------------------------------------------------
+    indexCheck = index;
     titleArr[indexCheck].classList.add(optionName);
     contentPart[indexCheck].classList.add(optionName);
   });
