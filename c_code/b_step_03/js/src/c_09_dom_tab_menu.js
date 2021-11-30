@@ -13,7 +13,10 @@
 var contentBox = document.querySelector('#contentBox');
 var titleInner = contentBox.querySelector('.tab_title_inner');
 var titleInnerPart = titleInner.querySelector('ul');
-var titleList = '';
+// var titleList = titleInnerPart.querySelectorAll('li');
+var titleList = titleInnerPart.children;
+var titleArr = [].slice.call(titleList);
+// titleArr.forEach(function(selector, index){ console.log( selector )})
 
 var contentInner = contentBox.querySelector('.tab_content_inner');
 var contentPart ='';
@@ -26,6 +29,18 @@ var contentPart ='';
 
 // ===========================================
 // 이벤트처리
+titleArr.forEach(function(element, index){
+  // li 내부 버튼선택
+  var titleBtn = element.querySelector('button');
+  titleBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    // console.log( this ); // 선택된 요소
+    // 선택된 요소의 부모 요소를 찾아오려면 : parentNode
+    console.log( this.parentNode );
+    // 이미, forEach에서 li들중 하나를 이벤트로 발생하여 처리했기에 
+    console.log( element );
+  });
+});
 
 
 // Question ---------------------------------
