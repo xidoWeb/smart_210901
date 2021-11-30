@@ -70,3 +70,26 @@ timeoutBtn.addEventListener('click', function(event){
   timeoutFn();
 });
 // ==========================================================
+// 방법 3.
+// css-transition
+var cssBtn = card[2];
+
+// 함수
+var cssTransitionFn = function(timed){
+  var timed = timed || 500;
+  // modal.style.transitionProperty = 'opacity';
+  // modal.style.transitionDuration = '500ms';
+  // modal.style.transitionTimingFunction = 'linear';
+  modal.style.transition = 'opacity '+ timed +'ms linear';
+  setTimeout(function(){
+    modal.style.opacity = 1;
+  },1);
+};
+
+// 이벤트 수행
+cssBtn.addEventListener('click', function(event){
+  event.preventDefault();
+  modal.style.display = 'block';
+  modal.style.opacity = 0;
+  cssTransitionFn(100);
+});

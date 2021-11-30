@@ -37,6 +37,11 @@
     }
   }// .card
   @at-root .new_area_modal {display: none;
+    // transition-property: ;
+    // transition-timing-function:ease;
+    // transition-duration: ;
+    // transition-delay: ;
+    // transition:all 500ms ease;
     &:before{ 
       content:""; display: block; 
       position: fixed; top: 0; left: 0;  z-index: -1;
