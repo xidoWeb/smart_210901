@@ -57,6 +57,7 @@ intervalBtn.addEventListener('click', function(event){
   event.preventDefault();  
   displayFn();
   intervalFn();
+  closeBtn.focus();
 });
 
 // ==========================================================
@@ -70,11 +71,6 @@ var timeoutFn = function(){
   setTimeout(function(){
     modal.style.opacity = opValue + '%';
     (opValue <= 100) ? timeoutFn() : modal.style.opacity = null;
-    // if(opValue <= 100){
-    //   timeoutFn();
-    // }else{
-    //   modal.style.opacity = null; // 완성 후 의미없는 속성 처리
-    // }
   }, 1);
 };
 
@@ -83,6 +79,7 @@ timeoutBtn.addEventListener('click', function(event){
   event.preventDefault();  
   displayFn();
   timeoutFn();
+  closeBtn.focus();
 });
 // ==========================================================
 // 방법 3.
@@ -110,6 +107,7 @@ cssBtn.addEventListener('click', function(event){
   event.preventDefault();
   displayFn();
   cssTransitionFn(300);
+  closeBtn.focus();
 });
 
 // ============================================================
@@ -137,6 +135,6 @@ closeBtn.addEventListener('click', function(event){
   intervalHideFn();
 });
 
-// 이슈 : css-transition 기능으로 나타난 효과는 사라질때 갑자기 사라지는 효과가 있으므로,
-// opacity가 1이 된 이후에는 css-transition기능을 강제로 삭제처리해야함
+console.clear();
+// 카드 클릭시 모달창 띄우면서 focus는 해당버튼으로 focus처리되도록 처리
 // ==================================================

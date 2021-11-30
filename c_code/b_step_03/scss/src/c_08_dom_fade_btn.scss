@@ -59,8 +59,8 @@
       font-size: 0.75rem;      
       transform:translate(-50%); 
       & > button { @include full; border-radius:$w; background-color:$color_white; }
-      & > button:focus {background-color: $color_yellow_01; font-weight: 900;}
-      & > button:hover {background-color: $color_yellow_02;}
+      & > button:focus {transform:scale(1.2); border:3px solid $color_white; background-color: $color_yellow_01; font-weight: 900;}
+      & > button:hover {transform:scale(1.2); background-color: $color_yellow_02;}
     }
   }
 
