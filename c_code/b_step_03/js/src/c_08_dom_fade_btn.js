@@ -20,24 +20,31 @@ var modal  = document.getElementsByClassName('new_area_modal')[0];
 var intervalBtn = card[0];
 
 var intervalFn = function(){
-  var value = 0, interval;
+  var value = 0;
+  var interval;
+  modal.style.display = 'block';
+  modal.style.opacity = 0;
+
   interval = setInterval(function(){
     console.log( value  );
-    value += 0.05;
-    if(value <= 1){
-      modal.style.opacity = value;
-    }else{
-      clearInterval( interval );
-    }
-  }, 10);
+    value += 1;
+    // if(value <= 100){
+    //   modal.style.opacity = value / 100;
+    // }else{
+    //   clearInterval( interval );
+    // }
+
+    value <= 100 ?  
+                  modal.style.opacity = value / 100 : 
+                  clearInterval( interval );
+  }, 1);
 };
 
 
 // 이벤트 수행
 intervalBtn.addEventListener('click', function(event){
   event.preventDefault();
-  modal.style.display = 'block';
-  modal.style.opacity = 0;
+  
   intervalFn();
 });
 // ==========================================================
