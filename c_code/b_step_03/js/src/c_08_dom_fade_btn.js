@@ -16,7 +16,7 @@ var card         = document.getElementsByClassName('card');
 var modal        = document.getElementsByClassName('new_area_modal')[0];
 var closeBtnPart = modal.getElementsByClassName('close_btn')[0];
 var closeBtn     = closeBtnPart.children[0];
-
+var cardIndex    = 0;
 
 // 공통함수
 
@@ -30,6 +30,7 @@ var displayFn =  function(view){
   }else{
     modal.style = null;
     modal.style.display = 'none';
+    card[cardIndex].children[0].focus();
   }
 };
 
@@ -54,7 +55,8 @@ var intervalFn = function(){
 
 // 이벤트 수행
 intervalBtn.addEventListener('click', function(event){
-  event.preventDefault();  
+  event.preventDefault();
+  cardIndex = 0;  
   displayFn();
   intervalFn();
   closeBtn.focus();
@@ -77,6 +79,7 @@ var timeoutFn = function(){
 // 이벤트 수행
 timeoutBtn.addEventListener('click', function(event){
   event.preventDefault();  
+  cardIndex = 1;
   displayFn();
   timeoutFn();
   closeBtn.focus();
@@ -105,6 +108,7 @@ var cssTransitionFn = function(timed){
 // 이벤트 수행
 cssBtn.addEventListener('click', function(event){
   event.preventDefault();
+  cardIndex = 2;
   displayFn();
   cssTransitionFn(300);
   closeBtn.focus();

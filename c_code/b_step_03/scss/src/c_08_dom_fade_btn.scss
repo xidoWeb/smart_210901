@@ -23,6 +23,7 @@
   @at-root .card { 
     width:90%; min-width:180px; max-width:300px; height:makeVw(400,600); min-height:400px; max-height:500px; padding:0.5rem; border:$line2;
     & > a { @include full; 
+      &:focus { outline: 3px solid rgba($color_black_01,0.5);}
       & > .img_zone {
         width: 100%; height: 200px; margin-bottom: 0.5rem; background-color: #ddd;        
       }
