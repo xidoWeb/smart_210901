@@ -11,17 +11,20 @@
 // 3. 모달기능이 처리되기 : display:block과 동시에 opacity:0 -> 서서히 opacity:1로 변경되게 처리
 
 
-var newBox = document.getElementById('newBox');
-var card   = document.getElementsByClassName('card');
-var modal  = document.getElementsByClassName('new_area_modal')[0];
+var newBox       = document.getElementById('newBox');
+var card         = document.getElementsByClassName('card');
+var modal        = document.getElementsByClassName('new_area_modal')[0];
+var closeBtnPart = modal.getElementsByClassName('close_btn')[0];
+var closeBtn     = closeBtnPart.children[0];
 
 
 // 공통함수
 
 // displayFn : 상황에 맞게 display:block or display:none 처리하는 함수
 var displayFn =  function(view){
-  var displayCheck = view || true;
-  if(displayCheck){
+  var displayCheck = view || false;
+  console.log( displayCheck );
+  if(!displayCheck){
     modal.style.display = 'block';
     modal.style.opacity = 0;
   }else{
@@ -56,7 +59,7 @@ var intervalFn = function(){
 // 이벤트 수행
 intervalBtn.addEventListener('click', function(event){
   event.preventDefault();  
-  displayFn(true);
+  displayFn();
   intervalFn();
 });
 
@@ -79,7 +82,7 @@ var timeoutFn = function(){
 // 이벤트 수행
 timeoutBtn.addEventListener('click', function(event){
   event.preventDefault();  
-  displayFn(true);
+  displayFn();
   timeoutFn();
 });
 // ==========================================================
@@ -102,6 +105,35 @@ var cssTransitionFn = function(timed){
 // 이벤트 수행
 cssBtn.addEventListener('click', function(event){
   event.preventDefault();
-  displayFn(true);
+  displayFn();
   cssTransitionFn(300);
 });
+
+// ============================================================
+// 닫기 버튼 수행
+
+// 함수
+var intervalHideFn = function(){
+  var style = modal.style;
+  var value = style.opacity * 100;
+  var interval;
+  interval = setInterval(function(){
+    value -= 1;
+    if(value >= 0){
+      style.opacity = value / 100;
+    }else{
+      clearInterval( interval );
+      displayFn(true);
+    }                  
+  }, 1);
+};
+
+// 이벤트
+closeBtn.addEventListener('click', function(event){
+  event.preventDefault();
+  intervalHideFn();
+});
+
+// 이슈 : css-transition 기능으로 나타난 효과는 사라질때 갑자기 사라지는 효과가 있으므로,
+// opacity가 1이 된 이후에는 css-transition기능을 강제로 삭제처리해야함
+// ==================================================
