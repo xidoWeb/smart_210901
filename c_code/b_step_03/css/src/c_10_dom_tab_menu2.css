@@ -45,6 +45,49 @@
   font-size: 1.125rem;
 }
 
+.event_area {
+  width: 58.75rem;
+  height: auto;
+  min-height: 400px;
+  margin: auto;
+  margin-bottom: 100px;
+  padding-bottom: 160px;
+  background-color: #daf;
+}
+.title_inner {
+  width: 100%;
+  height: 3.25rem;
+  margin-bottom: 3.125rem;
+  padding: 0.5rem;
+  background-color: #fdd;
+}
+.title_inner ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.title_inner li {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  color: #757575;
+  font-size: 22px;
+}
+.title_inner button {
+  width: auto;
+  height: 100%;
+  padding: 0 0.5rem;
+  color: inherit;
+}
+
+.content_inner {
+  width: 100%;
+  height: auto;
+  background-color: #dda;
+}
+
 #footBox {
   width: 100%;
   height: 450px;
