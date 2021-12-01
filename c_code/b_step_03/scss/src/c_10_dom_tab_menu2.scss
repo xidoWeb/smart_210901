@@ -16,8 +16,7 @@
   background-color: #fff;}
 // ---------------------------------------------------------
 #eventBox {
-  width: 100%; height: auto; min-height:37.5rem;  
-  background-color: #eef;
+  width: 100%; height: auto; min-height:37.5rem;
 }
 .width_full { 
   width: 100%; height:250px; 
@@ -36,18 +35,38 @@
 
 .event_area {
   width: 58.75rem; height: auto;  min-height:400px;
-  margin:auto; margin-bottom: 100px; padding-bottom:160px; background-color: #daf;
+  margin:auto; margin-bottom: 100px; padding-bottom:160px;
 
   @at-root .title_inner { 
-    width: 100%; height: 3.25rem; margin-bottom: 3.125rem; padding:0.5rem; background-color: #fdd;
+    width: 100%; height: 3.25rem; margin-bottom: 3.125rem; padding:0.5rem; 
     & ul {display:flex; justify-content:flex-start; align-items:center; width: 100%; height:100%; 
     }
     & li { display:flex; align-items:center; margin-right:2rem; 
-      color:$color_light_gray_03; font-size:map-get($map:$font_size , $key:title5);}
+      color:$color_light_gray_03; font-size:map-get($map:$font_size , $key:title5);
+    }
     & button {width: auto; height: 100%; padding:0 0.5rem; color:inherit;}
+    & li.on button{ 
+      border-bottom:$line3 ;
+      color:$color_primary_01; 
+      font-weight: 700;
+      font-size:map-get($map:$font_size , $key:title4); }    
   }
+// --------------------------
+  @at-root .content_inner { width: 100%; height: auto;}
+  .year_part { display:none;
+    &.on { display:block; }
+    & > h3 { @include blind; }
+  }
+  .event_particle { width: 100%; height: auto;
+    & > li {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      width: 100%; height: 12.5rem; margin-bottom: 1.875rem;
+      border-radius:0.5rem; 
+      padding: { top:45px; left:30px; right:30px; bottom:36px; }
+      background-color: #da9;
+    } // li
+  }// .event_particle
 
-  @at-root .content_inner { width: 100%; height: auto; background-color: #dda;}
 }// .event_area
 
 // ---------------------------------------------------------

@@ -46,6 +46,16 @@ $imgPath:'../img/';
   }
 }
 
+// blind
+@mixin blind(){
+  display: block; width: 0; height: 0;
+  position: absolute; z-index:-1;
+  clip:rect(0,0,0,0);
+  overflow: hidden;
+}
+
+
+
 // unit
 $baseSize: 16;
 @mixin remUnit($name, $unit){

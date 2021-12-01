@@ -17,7 +17,6 @@
   width: 100%;
   height: auto;
   min-height: 37.5rem;
-  background-color: #eef;
 }
 
 .width_full {
@@ -52,14 +51,12 @@
   margin: auto;
   margin-bottom: 100px;
   padding-bottom: 160px;
-  background-color: #daf;
 }
 .title_inner {
   width: 100%;
   height: 3.25rem;
   margin-bottom: 3.125rem;
   padding: 0.5rem;
-  background-color: #fdd;
 }
 .title_inner ul {
   display: flex;
@@ -81,11 +78,50 @@
   padding: 0 0.5rem;
   color: inherit;
 }
+.title_inner li.on button {
+  border-bottom: 2px solid #1a5d54;
+  color: #1a5d54;
+  font-weight: 700;
+  font-size: 28px;
+}
 
 .content_inner {
   width: 100%;
   height: auto;
-  background-color: #dda;
+}
+
+.event_area .year_part {
+  display: none;
+}
+.event_area .year_part.on {
+  display: block;
+}
+.event_area .year_part > h3 {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.event_area .event_particle {
+  width: 100%;
+  height: auto;
+}
+.event_area .event_particle > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 12.5rem;
+  margin-bottom: 1.875rem;
+  border-radius: 0.5rem;
+  padding-top: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 36px;
+  background-color: #da9;
 }
 
 #footBox {
