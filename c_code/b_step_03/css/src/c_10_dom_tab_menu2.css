@@ -97,13 +97,10 @@
   display: block;
 }
 .event_area .year_part > h3 {
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  z-index: -1;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #757575;
+  border-bottom: 1px solid #757575;
 }
 .event_area .event_particle {
   width: 100%;

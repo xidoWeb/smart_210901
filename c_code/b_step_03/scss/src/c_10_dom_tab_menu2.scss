@@ -55,7 +55,8 @@
   @at-root .content_inner { width: 100%; height: auto;}
   .year_part { display:none;
     &.on { display:block; }
-    & > h3 { @include blind; }
+    // & > h3 { @include blind; }
+    & > h3 { font-size: 1.5rem; margin-bottom: 1rem; color:$color_light_gray_03; border-bottom:$line1;}
   }
   .event_particle { width: 100%; height: auto;
     & > li {
