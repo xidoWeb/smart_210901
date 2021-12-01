@@ -59,13 +59,13 @@
     & > h3 { font-size: 1.5rem; margin-bottom: 1rem; color:$color_light_gray_03; border-bottom:$line1;}
   }
   .event_particle { width: 100%; height: auto;
-    & > li {
+    & > li {position: relative;
       display: flex; flex-direction: column; justify-content: flex-end;
       width: 100%; height: 12.5rem; margin-bottom: 1.875rem;
-      border-radius:0.5rem; 
-      padding: { top:45px; left:30px; right:30px; bottom:36px; }
-      background-color: #da9;
+      border-radius:0.5rem;       
+      background-color: #da94;
     } // li
+    @import '../particle/event_content_list_particle';
   }// .event_particle
 
 }// .event_area

@@ -107,6 +107,7 @@
   height: auto;
 }
 .event_area .event_particle > li {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -114,11 +115,112 @@
   height: 12.5rem;
   margin-bottom: 1.875rem;
   border-radius: 0.5rem;
-  padding-top: 45px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 36px;
+  background-color: #da94;
+}
+.event_area .event_particle a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 2.8125rem;
+  padding-left: 3.5rem;
+  padding-right: 1.875rem;
+  padding-bottom: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
   background-color: #da9;
+  transition: all 300ms ease;
+  text-align: left;
+  border-radius: 0.5rem;
+}
+.event_area .event_particle a h4 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(51, 51, 51, 0.7);
+}
+.event_area .event_particle a h4:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: -2rem;
+  background-color: #ffffff;
+  font-size: 4rem;
+}
+.event_area .event_particle a p {
+  color: #ffffff;
+  font-size: 22px;
+  margin: 0.4rem 0;
+}
+.event_area .event_particle a .date > dd {
+  color: #ffffff;
+  font-size: 22px;
+}
+.event_area .event_particle a .event_check {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.event_area .event_particle a .event_check:before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+.event_area .event_particle a .event_check > dt {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.event_area .event_particle a .event_check > dd {
+  margin-left: 0.5rem;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.event_area .event_particle a:focus {
+  transform: scale(1.05);
+  background-color: #1a5d54;
+}
+.event_area .event_particle a:hover {
+  transform: scale(1.05);
+  background-color: #da9;
+}
+.event_area .event_particle .end a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.7);
+  border-radius: 0.5rem;
+}
+.event_area .event_particle .end a:hover {
+  transform: scale(1);
+}
+.event_area .event_particle .end .event_check:before {
+  background-color: #c4c4c4;
+}
+.event_area .event_particle .end .event_check > dd {
+  color: #c4c4c4;
 }
 
 #footBox {
