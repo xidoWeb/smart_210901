@@ -21,30 +21,23 @@ var optionIndex = 0;
 var optionName = 'on';
 
 // 기능++++++++++++++++++++++
-// optionIndex 순번에 맞는 탭메뉴 구성
-// titleLiEl[optionIndex].classList.add('on');
-// contentYear[optionIndex].classList.add('on');
+// 함수 classSwitchFn(선택자); 기능으로 처음 요소에 'on' 첨부
 
-// 각각 들어있는 on클래스 제거
-  titleLiEl.forEach(function(data, idx){    
-    if(idx !== optionIndex){ 
-      // titleLiEl[idx].classList.remove('on'); 
-      data.classList.remove(optionName);
-    }else{ 
-      // titleLiEl[idx].classList.add('on'); 
-      data.classList.add(optionName);
-    }
-  });
-  // contentYear
-  contentYear.forEach(function(data, idx){ 
+// 함수++++++++++++++++++++++
+var classSwitchFn = function(element){
+  element.forEach(function(data, idx){ 
     if(idx !== optionIndex){
       data.classList.remove(optionName); 
     }else{
       data.classList.add(optionName); 
     }
   });
+};
 
-// 함수++++++++++++++++++++++
+// 함수 사전 수행 +++++++++++++
+classSwitchFn(titleLiEl);
+classSwitchFn(contentYear);
+
 // 이벤트++++++++++++++++++++++
   // li의 요소 각각을 클릭시 수행하는 기능
   titleLiEl.forEach(function(element, index){
@@ -52,6 +45,8 @@ var optionName = 'on';
     liBtn.addEventListener('click', function(event){
       event.preventDefault();
       optionIndex = index;
+      classSwitchFn(titleLiEl);
+      classSwitchFn(contentYear);
     });
   });
 
