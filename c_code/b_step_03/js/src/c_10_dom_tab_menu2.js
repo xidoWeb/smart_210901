@@ -18,6 +18,7 @@ var titleLiEl = [].slice.call(titleList); // button선택자는 추후 진행
 var contentInner = eventBox.querySelector('.content_inner');
 var contentYear = contentInner.querySelectorAll('.year_part');
 var optionIndex = 0;
+var optionName = 'on';
 
 // 기능++++++++++++++++++++++
 // optionIndex 순번에 맞는 탭메뉴 구성
@@ -25,12 +26,23 @@ var optionIndex = 0;
 // contentYear[optionIndex].classList.add('on');
 
 // 각각 들어있는 on클래스 제거
-  titleLiEl.forEach(function(data, idx){     
-    if(idx !== optionIndex){ titleLiEl[idx].classList.remove('on'); 
-    }else{ titleLiEl[idx].classList.add('on'); }
+  titleLiEl.forEach(function(data, idx){    
+    if(idx !== optionIndex){ 
+      // titleLiEl[idx].classList.remove('on'); 
+      data.classList.remove(optionName);
+    }else{ 
+      // titleLiEl[idx].classList.add('on'); 
+      data.classList.add(optionName);
+    }
   });
   // contentYear
-  // contentYear.forEach(function(data){ data.classList.remove('on'); });
+  contentYear.forEach(function(data, idx){ 
+    if(idx !== optionIndex){
+      data.classList.remove(optionName); 
+    }else{
+      data.classList.add(optionName); 
+    }
+  });
 
 // 함수++++++++++++++++++++++
 // 이벤트++++++++++++++++++++++
