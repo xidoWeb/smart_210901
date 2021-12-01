@@ -21,11 +21,27 @@ var optionIndex = 0;
 
 // 기능++++++++++++++++++++++
 // optionIndex 순번에 맞는 탭메뉴 구성
-titleLiEl[optionIndex].classList.add('on');
-contentYear[optionIndex].classList.add('on');
+// titleLiEl[optionIndex].classList.add('on');
+// contentYear[optionIndex].classList.add('on');
+
+// 각각 들어있는 on클래스 제거
+  titleLiEl.forEach(function(data, idx){     
+    if(idx !== optionIndex){ titleLiEl[idx].classList.remove('on'); 
+    }else{ titleLiEl[idx].classList.add('on'); }
+  });
+  // contentYear
+  // contentYear.forEach(function(data){ data.classList.remove('on'); });
 
 // 함수++++++++++++++++++++++
-
 // 이벤트++++++++++++++++++++++
+  // li의 요소 각각을 클릭시 수행하는 기능
+  titleLiEl.forEach(function(element, index){
+    var liBtn = element.children[0];
+    liBtn.addEventListener('click', function(event){
+      event.preventDefault();
+      optionIndex = index;
+    });
+  });
 
 // ===========================
+
