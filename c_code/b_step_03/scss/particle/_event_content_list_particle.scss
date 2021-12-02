@@ -23,8 +23,9 @@ a {display: block;
     &:before { content:""; display:  block; width:2rem; height: 2rem; background-color: $set_color; border-radius:100%;}
     > dt {@include blind}
     > dd {margin-left :0.5rem; font-size:map-get($map:$font_size, $key:content1); font-weight: 700; color:$set_color; }
-  }
-} 
+  }// .event_check
+}// a
+
 a:focus { transform:scale(1.05); background-color: $color_primary_01; }
 a:hover { transform:scale(1.05); background-color: #da9; }
 .end{
@@ -37,4 +38,4 @@ a:hover { transform:scale(1.05); background-color: #da9; }
     &:before {background-color: $set_color;}
     > dd {color:$set_color;}
   }
-}
+}// end
