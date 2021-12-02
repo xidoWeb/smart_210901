@@ -65,10 +65,10 @@ var len = data.length;
 var makeLi; 
 // ---------------------------------------
 // 기능 수행
-for(; i<len; i+=1){
+for(; i < 2; i+=1){
   makeLi = document.createElement('li');
   // makeLi.innerHTML = (i + 1) + data[i].title + ' ' + '<br />' + data[i].contents + ' ';
-  makeLi.innerHTML = '<dl><div class="bg_img" style="background-image:url(' + data[i].bgImg + ')"><span class="blind">' + data[i].bgNarr + '</span></div><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '<span><br /><a href=\"' + data[i].link + '\" target=\"_blank\">자세히 보기</a></dd></dl>';
+  makeLi.innerHTML = '<div class="bg_img" style="background-image:url(' + data[i].bgImg + ')"><span class="blind">' + data[i].bgNarr + '</span></div><dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '</span><br /><a href=\"' + data[i].link + '\" target=\"_blank\">자세히 보기</a></dd></dl>';
   cardUl.appendChild(makeLi);
 }
 // ---------------------------------------
