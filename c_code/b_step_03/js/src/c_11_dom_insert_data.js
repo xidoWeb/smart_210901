@@ -91,10 +91,28 @@ for(; i < len; i += 1){
   cardUl.appendChild(makeLi);
 }
 
+// ======================================================
 // 내용 중 1번째 내용만 우선 정리해서 삽입
+// data[0].
 // bgImg: background-image , bgNarr: 설명
 // title : 제목
 // contents: 내용, link: link주소
+// ======================================================
+// 시나리오 2 : 
+// 1. li요소 첫번째 선택
+// 2. 공통 n번째를 가르키는 변수를 생성
+// ======================================================
+
+  var idx = 0;
+  var li = cardUl.querySelectorAll('li');
+  var dt = li[idx].querySelector('dt');
+  var narr = li[idx].querySelector('dd>span');
+
+  dt.innerText = data[idx].title;
+  narr.innerText = data[idx].contents;
+
+
+
 
 // ---------------------------------------
 // cardUl.appendChild(makeLi); 여기서 innerHTML :(중복을 허용하지 않고 내부자료를 삭제 후 덮어 씌우기) 대신 append : 기존 자료에 추가 
