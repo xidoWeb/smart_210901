@@ -3,7 +3,13 @@
 
 // * li요소에 삽입할 객체 리스트
 var data = [
-  {id:'event_21042', title: 'summer flaver'}
+  { id:'event_21042', 
+    modalPath:'../event/y21042_data.json', 
+    title: 'summer flaver', 
+    narr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eaque?',
+    date:'2022. 01. 05 - 2022. 02. 15',
+    eventStatus:'ready' // true/false/'ready'
+  }
 ];
 
 // ----------------------------------------------------------
@@ -46,12 +52,21 @@ var latestYear = yearPart[0];
   var selectI = 0;
   var eventList = yearUl.querySelectorAll('li');
   var selectorLi = eventList[selectI];
+  var dataSelect = data[selectI];
+
   var selectorLink =selectorLi.querySelector('a');
   var selectorH4 = selectorLi.querySelector('.event_title');
+  var selectorP  = selectorLi.querySelector('.event_narration');
+  var selectorDate  = selectorLi.querySelector('.date > dd');
+  var selectorStatus  = selectorLi.querySelector('.event_check');
   
-  selectorLink.setAttribute('data-id', data[selectI].id );
-  selectorH4.innerText = data[selectI].title ;
-
+  selectorLink.setAttribute('data-id', dataSelect.id );
+  selectorLink.setAttribute('href', dataSelect.modalPath );
+  selectorH4.innerText = dataSelect.title;
+  selectorP.innerText  = dataSelect.narr;
+  selectorDate.innerText = dataSelect.date;
+  selectorStatus.classList.add(dataSelect.eventStatus);
+  
 
 // ------------------------------------------------------------------------------------
 // append 는 지정된 선택자 내부에 필요한 요소(내용)을 기존 내용에 추가로 덧붙이는 기능
