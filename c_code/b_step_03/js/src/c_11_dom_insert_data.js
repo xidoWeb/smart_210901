@@ -1,6 +1,6 @@
 // c_11_dom_insert_data.js
 // 별도 자료 ----------------------------
-var data = ['title', 'spring', 'javacript', 'winter', 'summer', 'banana', 'group'];
+var data = ['title', 'spring', 'javascript', 'winter', 'summer', 'banana', 'group'];
 // --------------------------------------
 // 시나리오: 
 // .card 내부에 li요소 삽입
