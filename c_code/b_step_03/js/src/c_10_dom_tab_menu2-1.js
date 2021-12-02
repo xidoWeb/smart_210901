@@ -79,7 +79,7 @@ var d2 = 'd\"' + insert +'\"' + insert2 + 'a';  // d" more " more2 a
 console.log( d2 );
 */
 
-var innerCode, dataSelect, selectorStatu;
+var innerCode, dataSelect, selectorStatus;
 for(; i < makeLiLen; i+=1){
 
     makeLi = document.createElement('li');
