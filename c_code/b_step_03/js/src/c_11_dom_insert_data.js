@@ -65,12 +65,18 @@ var len = data.length;
 var makeLi; 
 // ---------------------------------------
 // 기능 수행
-for(; i < 2; i+=1){
+/* // 점점 복잡해져가는 내용에 의해 추가 작업이 어려움
+for(; i < 3; i+=1){
   makeLi = document.createElement('li');
   // makeLi.innerHTML = (i + 1) + data[i].title + ' ' + '<br />' + data[i].contents + ' ';
-  makeLi.innerHTML = '<div class="bg_img" style="background-image:url(' + data[i].bgImg + ')"><span class="blind">' + data[i].bgNarr + '</span></div><dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '</span><br /><a href=\"' + data[i].link + '\" target=\"_blank\">자세히 보기</a></dd></dl>';
+  makeLi.innerHTML = '<div class="bg_img" style="background-image:url(' + (data[i].bgImg) + ')"><span class="blind">' + data[i].bgNarr + '</span></div><dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '</span><br /><a href=\"' + data[i].link + '\" target=\"_blank\">자세히 보기</a></dd></dl>';
   cardUl.appendChild(makeLi);
 }
+*/
+
+// 우선 기본 코드를 모두 담은 후에 필요한 부분만 색출해서 수정/첨부/삭제
+
+
 // ---------------------------------------
 // cardUl.appendChild(makeLi); 여기서 innerHTML :(중복을 허용하지 않고 내부자료를 삭제 후 덮어 씌우기) 대신 append : 기존 자료에 추가 
 // escape 문자 : 해당하는 글자가 어떠한 기능을 처리하게 만드는 것을 \' \' \& \| \! , \n \t
