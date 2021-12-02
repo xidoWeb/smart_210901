@@ -44,8 +44,9 @@ var makeLi;
 for(; i<len; i+=1){
   makeLi = document.createElement('li');
   // makeLi.innerHTML = (i + 1) + data[i].title + ' ' + '<br />' + data[i].contents + ' ';
-  makeLi.innerHTML = '<dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '<span><br /><a href="#">자세히보기</a></dd></dl>';
+  makeLi.innerHTML = '<dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '<span><br /><a href=\"' + data[i].link + '\" target=\"_blank\">자세히 보기</a></dd></dl>';
   cardUl.appendChild(makeLi);
 }
 // ---------------------------------------
 // cardUl.appendChild(makeLi); 여기서 innerHTML :(중복을 허용하지 않고 내부자료를 삭제 후 덮어 씌우기) 대신 append : 기존 자료에 추가 
+// escape 문자 : 해당하는 글자가 어떠한 기능을 처리하게 만드는 것을 \' \' \& \| \! , \n \t
