@@ -1,9 +1,16 @@
 // 
 // c_10_dom_tab_menj_2-1.js
 
+// * li요소에 삽입할 객체 리스트
+var data = [
+  {id:'event_21042', title: 'summer flaver'}
+];
 
-
-// 1. html요소를 생성, 지정된 위치에 삽입 - innerHTML, append
+// ----------------------------------------------------------
+// 1. html요소를 생성, 지정된 위치에 삽입 - innerHTML, append, createElement
+// 2. 한번에 생성+첨부이 반복할 수 없기에 생성+첨부를 하나의 세트로 인식하여 반복수행
+// 3. 별도의 data내용을 기반으로 해당하는 자료에 맞게 각각 첨부
+// ----------------------------------------------------------
 
 // 선택변수
 var contentInner = document.querySelector('.content_inner');
@@ -13,7 +20,7 @@ var latestYear = yearPart[0];
 
 // 기능
   // 0. 삽입할 요소
-  var innerCode = '<a href="#" data-id><h4 class="event_title"></h4><p class="event_narration"></p><dl class="date"><dt class="blind">기간</dt><dd></dd></dl><dl class="event_check success"><dt></dt><dd></dd></dl></a>';
+  var innerCode = '<a href="#" data-id><h4 class="event_title">제목</h4><p class="event_narration">설명</p><dl class="date"><dt class="blind">기간</dt><dd>날짜</dd></dl><dl class="event_check success"><dt>이벤트 상황</dt><dd>진행예정</dd></dl></a>';
 
   // 1. ul생성
     var makeUl = document.createElement('ul');
@@ -26,7 +33,7 @@ var latestYear = yearPart[0];
 
   // 2. li 5개 생성하여, 첨부
   var i=0;
-  var makeLiLen = [1,2,3,'t','a'].length; // 실제 생성할 배열의 갯수만큼 처리
+  var makeLiLen = data.length; // 실제 생성할 배열의 갯수만큼 처리
   var makeLi;//  = document.createElement('li');
 
   for(; i < makeLiLen; i+=1){
@@ -34,6 +41,16 @@ var latestYear = yearPart[0];
     makeLi.innerHTML = innerCode;
     yearUl.append(makeLi);
   }
+
+  // 생성한 내용기준 li에 내용 첨부
+  var selectI = 0;
+  var eventList = yearUl.querySelectorAll('li');
+  var selectorLi = eventList[selectI];
+  var selectorLink =selectorLi.querySelector('a');
+  var selectorH4 = selectorLi.querySelector('.event_title');
+  
+  selectorLink.setAttribute('data-id', data[selectI].id );
+  selectorH4.innerText = data[selectI].title ;
 
 
 // ------------------------------------------------------------------------------------
