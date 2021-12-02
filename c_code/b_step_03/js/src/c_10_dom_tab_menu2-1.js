@@ -41,7 +41,7 @@ var latestYear = yearPart[0];
   var i=0;
   var makeLiLen = data.length; // 실제 생성할 배열의 갯수만큼 처리
   var makeLi;//  = document.createElement('li');
-
+/*
   for(; i < makeLiLen; i+=1){
     makeLi = document.createElement('li');
     makeLi.innerHTML = innerCode;
@@ -49,24 +49,49 @@ var latestYear = yearPart[0];
   }
 
   // 생성한 내용기준 li에 내용 첨부
-  var selectI = 0;
-  var eventList = yearUl.querySelectorAll('li');
-  var selectorLi = eventList[selectI];
-  var dataSelect = data[selectI];
+  var selectI = 0; // 공통 순번을 가진 변수
+  var eventList = yearUl.querySelectorAll('li'); // 생성된 li를 선택
+  var selectorLi = eventList[selectI]; // li의 순번
+  var dataSelect = data[selectI]; // 첨부할 순번의 data위치
 
-  var selectorLink =selectorLi.querySelector('a');
+    // 각 내용을 담을 선택자
+  var selectorLink =selectorLi.querySelector('a'); 
   var selectorH4 = selectorLi.querySelector('.event_title');
   var selectorP  = selectorLi.querySelector('.event_narration');
   var selectorDate  = selectorLi.querySelector('.date > dd');
   var selectorStatus  = selectorLi.querySelector('.event_check');
   
+    // 각 선택자에 맞는 내용 첨부
   selectorLink.setAttribute('data-id', dataSelect.id );
   selectorLink.setAttribute('href', dataSelect.modalPath );
   selectorH4.innerText = dataSelect.title;
   selectorP.innerText  = dataSelect.narr;
   selectorDate.innerText = dataSelect.date;
   selectorStatus.classList.add(dataSelect.eventStatus);
-  
+*/
+
+// 위 내용이 길어서 조금 줄이면...
+/* // 샘플 테스트 ( 문자 " 와 변수의 결합 )
+var insert = ' more ';
+var insert2 = ' more2 ';
+var d = 'd' + insert + 'a' + insert2 + 't' + insert + 'a'; // d more a more2 t more a
+var d2 = 'd\"' + insert +'\"' + insert2 + 'a';  // d" more " more2 a
+console.log( d2 );
+*/
+
+var innerCode, dataSelect, selectorStatu;
+for(; i < makeLiLen; i+=1){
+
+    makeLi = document.createElement('li');
+    dataSelect = data[i];
+
+    innerCode = '<a href="'+ dataSelect.modalPath +'" data-id="'+ dataSelect.id +'"><h4 class="event_title">'+ dataSelect.title +'</h4><p class="event_narration">'+ dataSelect.narr +'</p><dl class="date"><dt class="blind">기간</dt><dd>'+ dataSelect.date +'</dd></dl><dl class="event_check"><dt>이벤트 상황</dt><dd>진행</dd></dl></a>';
+
+    makeLi.innerHTML = innerCode;
+    yearUl.append(makeLi);
+    selectorStatus  = makeLi.querySelector('.event_check');
+    selectorStatus.classList.add(dataSelect.eventStatus);
+}
 
 // ------------------------------------------------------------------------------------
 // append 는 지정된 선택자 내부에 필요한 요소(내용)을 기존 내용에 추가로 덧붙이는 기능
