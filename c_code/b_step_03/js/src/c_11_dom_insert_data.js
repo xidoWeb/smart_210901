@@ -1,6 +1,32 @@
 // c_11_dom_insert_data.js
 // 별도 자료 ----------------------------
-var data = ['title', 'spring', 'javascript', 'winter', 'summer', 'banana', 'group'];
+var data = [
+  {title:'title'      , 
+  contents:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  link:'http://naver.com' }, 
+
+  {title:'spring'     , 
+  contents:'Dolores laborum expedita eum maxime dolore porro ipsam.' ,
+  link:'http://csswinner.com' },
+
+  {title:'javascript' , 
+  contents:'Quod, impedit?' ,
+  link:'http://gdweb.co.kr' },
+
+  {title:'winter'     , 
+  contents:'Rem enim tempore maxime voluptas facilis id ad commodi rerum unde quis.' ,
+  link:'http://naver.net' },
+  
+  {title:'summer'     , 
+  contents:'Lorem, ipsum dolor.' ,
+  link:'http://google.com' }, 
+
+  {title:'banana'     , 
+  contents:'Lorem ipsum dolor sit amet.' },
+  
+  {title:'group'      , 
+  contents:'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }
+];
 // --------------------------------------
 // 시나리오: 
 // .card 내부에 li요소 삽입
@@ -17,7 +43,8 @@ var makeLi;
 // 기능 수행
 for(; i<len; i+=1){
   makeLi = document.createElement('li');
-  makeLi.innerText = data[i] + ' ' + (i + 1);
+  // makeLi.innerHTML = (i + 1) + data[i].title + ' ' + '<br />' + data[i].contents + ' ';
+  makeLi.innerHTML = '<dl><dt>' + data[i].title + '</dt><dd><span>' + data[i].contents + '<span><br /><a href="#">자세히보기</a></dd></dl>';
   cardUl.appendChild(makeLi);
 }
 // ---------------------------------------
