@@ -47,6 +47,7 @@
 .card .bg_img {
   width: 200px;
   height: 100%;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -64,7 +65,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 250px;
+  height: auto;
   font-size: 0.975rem;
   color: #757575;
 }

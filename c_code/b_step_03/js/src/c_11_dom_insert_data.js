@@ -75,7 +75,26 @@ for(; i < 3; i+=1){
 */
 
 // 우선 기본 코드를 모두 담은 후에 필요한 부분만 색출해서 수정/첨부/삭제
+var baseCode = '<div class="bg_img"><span class="blind"></span></div>\
+                <dl>\
+                  <dt></dt>\
+                  <dd>\
+                    <span></span>\
+                    <br />\
+                    <a target="_blank">자세히 보기</a>\
+                  </dd>\
+                </dl>';
 
+for(; i < len; i += 1){
+  makeLi = document.createElement('li');
+  makeLi.innerHTML = baseCode;
+  cardUl.appendChild(makeLi);
+}
+
+// 내용 중 1번째 내용만 우선 정리해서 삽입
+// bgImg: background-image , bgNarr: 설명
+// title : 제목
+// contents: 내용, link: link주소
 
 // ---------------------------------------
 // cardUl.appendChild(makeLi); 여기서 innerHTML :(중복을 허용하지 않고 내부자료를 삭제 후 덮어 씌우기) 대신 append : 기존 자료에 추가 
