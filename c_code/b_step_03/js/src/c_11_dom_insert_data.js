@@ -103,17 +103,23 @@ for(; i < len; i += 1){
 // 2. 공통 n번째를 가르키는 변수를 생성
 // ======================================================
 
-  var idx = 0;
-  var li = cardUl.querySelectorAll('li');
-  var dt = li[idx].querySelector('dt');
-  var narr = li[idx].querySelector('dd>span');
+  var idx        = 0;
+  var li         = cardUl.querySelectorAll('li');
+  var dt         = li[idx].querySelector('dt');
+  var narr       = li[idx].querySelector('dd span');
+  var link       = li[idx].querySelector('dd a');
+  var bgImg      = li[idx].querySelector('.bg_img');
+  var bgNarr     = bgImg.querySelector('span');
 
-  dt.innerText = data[idx].title;
+  dt.innerText   = data[idx].title;
   narr.innerText = data[idx].contents;
-
-
+  link.href      = data[idx].link; // html상에 존재하는 property에 값을 처리
+  bgImg.style.backgroundImage = 'url(' + data[idx].bgImg + ')';
+  bgNarr.innerText = data[idx].bgNarr;
+  
 
 
 // ---------------------------------------
 // cardUl.appendChild(makeLi); 여기서 innerHTML :(중복을 허용하지 않고 내부자료를 삭제 후 덮어 씌우기) 대신 append : 기존 자료에 추가 
 // escape 문자 : 해당하는 글자가 어떠한 기능을 처리하게 만드는 것을 \' \' \& \| \! , \n \t
+//link.setAttribute('href', data[idx].link); // 어떠한 속성도 처리 가능 data-속성
