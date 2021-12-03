@@ -33,10 +33,19 @@ var eventData ={
 
 // ===========================================
 // 기본 변수
+var eventInsertCode = '<a href="" data-id="">\
+                        <h4 class="event_title"></h4>\
+                        <p class="event_narration"></p>\
+                          <dl class="date"><dt class="blind">기간</dt><dd></dd></dl>\
+                          <dl class="event_check"><dt>이벤트 진행</dt><dd></dd></dl>\
+                      </a>';
+
 var elEventBox = document.querySelector('#eventBox');
 var elContentInner = elEventBox.querySelector('.content_inner');
 
-
+var yearPartList = eventData.eventList;
+var partLen = yearPartList.length;
+var i = 0;
 // ===========================================
 // 기능
 // 생성 후 삽입 - h3/ul -------------------------------------
@@ -48,40 +57,30 @@ var mkYearPart = document.createElement('div'); // div 생성
 var elYearPartH3 = mkYearPart.querySelector('h3'); // h3 선택
 var mkEventParticle = document.createElement('ul');// ul 생성
     mkEventParticle.setAttribute('class','event_particle'); // ul에 이름부여 (.event_particle)
+    elYearPartH3.after(mkEventParticle); // .event_particle h3뒤에 삽입
+    elContentInner.prepend(mkYearPart);  // .year_part 를 삽입    
+var elEventParticle = elContentInner.querySelector('.event_particle'); // ul 선택자
 
-elYearPartH3.after(mkEventParticle); // .event_particle h3뒤에 삽입
-elContentInner.prepend(mkYearPart);  // .year_part 를 삽입
-
-// 목록 생성 및 삽입 - li -----------------------------------
-// li의 갯수를 파악
-var yearPartList = eventData.eventList;
-var partLen = yearPartList.length;
-var i = 0;
-
+// ===========================================
+// 함수
 // var fnMake = function(el,name){
 //   var mkEl = document.createElement(el);
 //   if(!!name) { mkEl.setAttribute('class', name); }
 //   return mkEl;
 // };
 
-var elEventParticle = elContentInner.querySelector('.event_particle');
+// ===========================================
+// 이벤트(실제 최종 처리 기능)
+// 목록 생성 및 삽입 - li -----------------------------------
+// li의 갯수를 파악
 yearPartList.forEach(function(data, index){
-
   var mkLi = document.createElement('li');
   elEventParticle.append(mkLi);
 
   // var mkLi = fnMake('li');
-  // elEventParticle.append(mkLi);
-
+  // elEventParticle.append(mkLi);  
 });
 
-
-
-// ===========================================
-// 함수
-
-// ===========================================
-// 이벤트
 
 // ===========================================
 // 첨부 : 
