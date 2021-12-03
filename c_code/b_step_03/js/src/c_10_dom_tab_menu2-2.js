@@ -51,7 +51,8 @@ var eventData ={
       ]
     };
 // -------------------------------------------
-
+// 내용 이벤트 날짜 기준 순서 뒤집기
+eventData.eventList.reverse();
 // ===========================================
 // 기본 변수
 // eventInsertCode
@@ -94,6 +95,7 @@ var elEventParticle = elContentInner.querySelector('.event_particle'); // ul 선
 // li내부에 각각의 내용을 설정하는 함수
 var fnFixContent = function(parentElement, data){
     var elParent = parentElement;
+
 
     // data요소 내부에 들어있는 property: title, content(option), date, status(select), morePath(외부주소), bgImg(배경)
     var elH4 = elParent.querySelector('.event_title');
