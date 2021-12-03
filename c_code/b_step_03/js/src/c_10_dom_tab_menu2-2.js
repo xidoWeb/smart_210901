@@ -29,9 +29,9 @@ var eventData ={
           title:'spring event',
           content:'신년 맞이 대축제..',
           date:'2021.02.04 - 2021.02.21',
-          status:'end',
+          status:'play',
           morePath:'../data/y21.0201.json',
-          bgImg:'../multi/img/event/bg1.jpg'
+          bgImg:'../multi/img/event/bg_01.png'
         },
         {
           title:'spring event2',
@@ -39,14 +39,14 @@ var eventData ={
           date:'2021.03.04 - 2021.04.05',
           status:'end',
           morePath:'../data/y21.0402.json',
-          bgImg:'../multi/img/event/bg2.jpg'
+          bgImg:'../multi/img/event/bg_02.png'
         },
         {
           title:'summer flaver',
           date:'2021.07.15 - 2021.07.30',
-          status:'play',
+          status:'stop',
           morePath:'../data/y21.0702.json',
-          bgImg:'../multi/img/event/bg3.jpg'
+          bgImg:'../multi/img/event/bg_03.png'
         }
       ]
     };
@@ -101,6 +101,7 @@ var fnFixContent = function(parentElement, data){
     var elDate = elParent.querySelector('.date > dd');
     var elEventCh = elParent.querySelector('.event_check');
     var elEventDd = elEventCh.querySelector('dd');
+    var elLink    = elParent.querySelector('a');
     
     elH4.innerText = data.title;
     (data.content !== undefined) ? elP.innerText = data.content :  elP.remove();
@@ -127,7 +128,13 @@ var fnFixContent = function(parentElement, data){
         elEventCh.classList.add('stop');
         elEventDd.innerText = '진행중지';
     }
-};
+    // -----
+    // morePath(외부주소,배경이미지
+    elLink.setAttribute( 'data-href', data.morePath );
+    elLink.style.backgroundImage = 'url(' + data.bgImg + ')';
+    elLink.style.backgroundColor = 'transparent';
+
+}; // fnFixContent(mkLi, data);
 
 // ===========================================
 // 이벤트(실제 최종 처리 기능)
