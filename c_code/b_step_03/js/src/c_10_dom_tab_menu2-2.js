@@ -91,6 +91,20 @@ var elEventParticle = elContentInner.querySelector('.event_particle'); // ul 선
 //   return mkEl;
 // };
 
+// li내부에 각각의 내용을 설정하는 함수
+var fnFixContent = function(parentElement, data){
+    var elParent = parentElement;
+
+    // data요소 내부에 들어있는 property: title, content(option), date, status(select), morePath(외부주소), bgImg(배경)
+    var elH4 = elParent.querySelector('.event_title');
+    var elP = elParent.querySelector('.event_narration');
+    var elDate = elParent.querySelector('.date > dd');
+    
+    elH4.innerText = data.title;
+    (data.content !== undefined) ? elP.innerText = data.content :  elP.remove();
+    elDate.innerText = data.date;    
+};
+
 // ===========================================
 // 이벤트(실제 최종 처리 기능)
 // 목록 생성 및 삽입 - li -----------------------------------
@@ -103,20 +117,7 @@ yearPartList.forEach(function(data, index){
   // var mkLi = fnMake('li');
   // elEventParticle.append(mkLi);  
 
-  // data요소 내부에 들어있는 property: title, content(option), date, status(select), morePath(외부주소), bgImg(배경)
-  var elH4 = mkLi.querySelector('.event_title');
-  elH4.innerText = data.title;
-
-  var elP = mkLi.querySelector('.event_narration');
-  if(data.content !== undefined){ 
-    elP.innerText = data.content;
-  }else{
-    elP.remove();     
-  }
-
-  var elDate = mkLi.querySelector('.date > dd');
-  elDate.innerText = data.date;
-
+  fnFixContent(mkLi, data);
 });
 
 
@@ -133,3 +134,4 @@ yearPartList.forEach(function(data, index){
 // append-prepend  before-after next-prev
 
 // -------------------------------------------
+
