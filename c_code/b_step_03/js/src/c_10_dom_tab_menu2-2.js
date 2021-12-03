@@ -99,10 +99,34 @@ var fnFixContent = function(parentElement, data){
     var elH4 = elParent.querySelector('.event_title');
     var elP = elParent.querySelector('.event_narration');
     var elDate = elParent.querySelector('.date > dd');
+    var elEventCh = elParent.querySelector('.event_check');
+    var elEventDd = elEventCh.querySelector('dd');
     
     elH4.innerText = data.title;
     (data.content !== undefined) ? elP.innerText = data.content :  elP.remove();
-    elDate.innerText = data.date;    
+    elDate.innerText = data.date; 
+
+    // status (plan, play, end, stop) 중 하나만 선택(아무것도 작성안함), 
+    // 해당하는 요소에 class이름부여, dd에 내용을 표기
+
+    switch(data.status){
+      case 'plan':
+        elEventCh.classList.add('plan');
+        elEventDd.innerText = '준비중';
+        break;
+      case 'play':
+        elEventCh.classList.add('play');
+        elEventDd.innerText = '진행';
+        break;
+      case 'end': 
+        elEventCh.classList.add('end');
+        elEventDd.innerText = '종료';
+        break;
+      case 'stop':
+      default:
+        elEventCh.classList.add('stop');
+        elEventDd.innerText = '진행중지';
+    }
 };
 
 // ===========================================
