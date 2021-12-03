@@ -28,7 +28,7 @@ var eventData ={
         {
           title:'spring event',
           content:'신년 맞이 대축제..',
-          data:'2021.02.04 - 2021.02.21',
+          date:'2021.02.04 - 2021.02.21',
           status:'end',
           morePath:'../data/y21.0201.json',
           bgImg:'../multi/img/event/bg1.jpg'
@@ -36,14 +36,14 @@ var eventData ={
         {
           title:'spring event2',
           content:'싱그러운 봄을 위한 세일 이벤트',
-          data:'2021.03.04 - 2021.04.05',
+          date:'2021.03.04 - 2021.04.05',
           status:'end',
           morePath:'../data/y21.0402.json',
           bgImg:'../multi/img/event/bg2.jpg'
         },
         {
           title:'summer flaver',
-          data:'2021.07.15 - 2021.07.30',
+          date:'2021.07.15 - 2021.07.30',
           status:'play',
           morePath:'../data/y21.0702.json',
           bgImg:'../multi/img/event/bg3.jpg'
@@ -102,6 +102,21 @@ yearPartList.forEach(function(data, index){
 
   // var mkLi = fnMake('li');
   // elEventParticle.append(mkLi);  
+
+  // data요소 내부에 들어있는 property: title, content(option), date, status(select), morePath(외부주소), bgImg(배경)
+  var elH4 = mkLi.querySelector('.event_title');
+  elH4.innerText = data.title;
+
+  var elP = mkLi.querySelector('.event_narration');
+  if(data.content !== undefined){ 
+    elP.innerText = data.content;
+  }else{
+    elP.remove();     
+  }
+
+  var elDate = mkLi.querySelector('.date > dd');
+  elDate.innerText = data.date;
+
 });
 
 
