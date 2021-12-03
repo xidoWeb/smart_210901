@@ -22,20 +22,31 @@ var elModal          = elEventBox.querySelector('.event_modal');
 var elModalCloseBtn  = elModal.querySelector('.modal_close button');
 
 var OPTION_CHECK     = 'on';
+var cardIndex        = 0; 
 // ============================
 // 기능
 // ============================
 // 함수
 // ============================
 // 이벤트
+// 모달 나타나게하기, 닫기버튼에 focus
 elYearLiSelector.forEach(function(element, index){
   element.addEventListener('click', function(e){
     e.preventDefault();
-    // this.getAttribute('data-href') // 차후 관련 주소를 통해 필요한 data를 처리....    
+    // this.getAttribute('data-href') // 차후 관련 주소를 통해 필요한 data를 처리.... 
+    cardIndex = index;   
     elModal.classList.add(OPTION_CHECK);
     elModalCloseBtn.focus();
   });
 }); 
+
+// 모달 사라지게하기, 클릭했던 li위치로 돌아가기
+elModalCloseBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  elModal.classList.remove(OPTION_CHECK);
+  elYearLiSelector[cardIndex].focus();
+});
+
 // ============================
 // +++++++++++++++++++++++++++
 // 첨부 : 
