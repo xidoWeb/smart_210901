@@ -20,13 +20,34 @@
 
 
 // -------------------------------------------
-// data :
+// data : 
 var eventData ={ 
       heading: '2021년도 이벤트', 
-      eventList : [ // enentData.eventList
-        'title1',   // enentData.eventList[0]
-        'title2',   // enentData.eventList[1]
-        'title3'    // enentData.eventList[2]
+      // 제목, 내용(선택), 기간(시작일-종료일), 진행여부(plan, play, end, stop), 추가데이터주소, 적용이미지(background)
+      eventList : [ 
+        {
+          title:'spring event',
+          content:'신년 맞이 대축제..',
+          data:'2021.02.04 - 2021.02.21',
+          status:'end',
+          morePath:'../data/y21.0201.json',
+          bgImg:'../multi/img/event/bg1.jpg'
+        },
+        {
+          title:'spring event2',
+          content:'싱그러운 봄을 위한 세일 이벤트',
+          data:'2021.03.04 - 2021.04.05',
+          status:'end',
+          morePath:'../data/y21.0402.json',
+          bgImg:'../multi/img/event/bg2.jpg'
+        },
+        {
+          title:'summer flaver',
+          data:'2021.07.15 - 2021.07.30',
+          status:'play',
+          morePath:'../data/y21.0702.json',
+          bgImg:'../multi/img/event/bg3.jpg'
+        }
       ]
     };
 // -------------------------------------------
@@ -34,11 +55,11 @@ var eventData ={
 // ===========================================
 // 기본 변수
 // eventInsertCode
-var EVENT_INSERT_CODE  = '<a href="" data-id="">\
-                            <h4 class="event_title"></h4>\
-                            <p class="event_narration"></p>\
-                              <dl class="date"><dt class="blind">기간</dt><dd></dd></dl>\
-                              <dl class="event_check"><dt>이벤트 진행</dt><dd></dd></dl>\
+var EVENT_INSERT_CODE  = '<a href data-id>\
+                            <h4 class="event_title">제목을 넣어주세요.</h4>\
+                            <p class="event_narration">설명을 담아주세요(선택)</p>\
+                              <dl class="date"><dt class="blind">기간</dt><dd>시작-종료일 작성</dd></dl>\
+                              <dl class="event_check"><dt>이벤트 진행</dt><dd>준비,진행,종료,취소</dd></dl>\
                           </a>';
 
 var elEventBox = document.querySelector('#eventBox');
@@ -76,6 +97,7 @@ var elEventParticle = elContentInner.querySelector('.event_particle'); // ul 선
 // li의 갯수를 파악
 yearPartList.forEach(function(data, index){
   var mkLi = document.createElement('li');
+  mkLi.innerHTML = EVENT_INSERT_CODE;
   elEventParticle.append(mkLi);
 
   // var mkLi = fnMake('li');
