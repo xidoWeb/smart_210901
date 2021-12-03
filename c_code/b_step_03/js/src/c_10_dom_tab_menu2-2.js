@@ -33,12 +33,16 @@ var elContentInner = elEventBox.querySelector('.content_inner');
 // ===========================================
 // 기능
 // 생성 후 삽입
-var mkYearPart = document.createElement('div');
-mkYearPart.setAttribute('class','year_part');
-// mkYearPart.className = 'year_part';
-mkYearPart.innerHTML = '<h3>' + eventData.heading + '</h3>';
+var mkYearPart = document.createElement('div'); // div 생성
+    mkYearPart.setAttribute('class','year_part');   // div에 이름부여(.year_part)
+    // mkYearPart.className = 'year_part';          // .year_part 에 이름부여기능 동일
+    mkYearPart.innerHTML = '<h3>' + eventData.heading + '</h3>'; // .year_part에 h3생성
+var elYearPartH3 = mkYearPart.querySelector('h3'); // h3 선택
+var mkEventParticle = document.createElement('ul');// ul 생성
+    mkEventParticle.setAttribute('class','event_particle'); // ul에 이름부여 (.event_particle)
 
-elContentInner.prepend(mkYearPart);
+elYearPartH3.after(mkEventParticle); // .event_particle h3뒤에 삽입
+elContentInner.prepend(mkYearPart);  // .year_part 를 삽입
 
 // ===========================================
 // 함수
