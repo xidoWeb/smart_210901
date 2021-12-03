@@ -21,13 +21,24 @@
 
 // -------------------------------------------
 // data : 
+var eventData = { heading: '2021년도 이벤트' };
 // -------------------------------------------
 
 // ===========================================
 // 변수
+var elEventBox = document.querySelector('#eventBox');
+var elContentInner = elEventBox.querySelector('.content_inner');
+
 
 // ===========================================
 // 기능
+// 생성 후 삽입
+var mkYearPart = document.createElement('div');
+mkYearPart.setAttribute('class','year_part');
+// mkYearPart.className = 'year_part';
+mkYearPart.innerHTML = '<h3>' + eventData.heading + '</h3>';
+
+elContentInner.prepend(mkYearPart);
 
 // ===========================================
 // 함수
@@ -37,5 +48,14 @@
 
 // ===========================================
 // 첨부 : 
+  //  el     : 요소(element)선택에대한변수
+  //  mk   : 요소생성에 대한 변수
+  //  ck     : 단순한 값을 판단하는 변수
+  //  fn     : 함수 선택하는 변수
+  //  Pascal : 생성자함수
+  //  _      : 임시용 지역변수
+  //  대문자 : 'string'
+  //         : 기타
+// append-prepend  before-after next-prev
 
 // -------------------------------------------
