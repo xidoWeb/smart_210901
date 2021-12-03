@@ -33,12 +33,13 @@ var eventData ={
 
 // ===========================================
 // 기본 변수
-var eventInsertCode = '<a href="" data-id="">\
-                        <h4 class="event_title"></h4>\
-                        <p class="event_narration"></p>\
-                          <dl class="date"><dt class="blind">기간</dt><dd></dd></dl>\
-                          <dl class="event_check"><dt>이벤트 진행</dt><dd></dd></dl>\
-                      </a>';
+// eventInsertCode
+var EVENT_INSERT_CODE  = '<a href="" data-id="">\
+                            <h4 class="event_title"></h4>\
+                            <p class="event_narration"></p>\
+                              <dl class="date"><dt class="blind">기간</dt><dd></dd></dl>\
+                              <dl class="event_check"><dt>이벤트 진행</dt><dd></dd></dl>\
+                          </a>';
 
 var elEventBox = document.querySelector('#eventBox');
 var elContentInner = elEventBox.querySelector('.content_inner');
