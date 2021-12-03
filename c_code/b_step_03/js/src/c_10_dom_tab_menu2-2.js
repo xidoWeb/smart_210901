@@ -20,19 +20,27 @@
 
 
 // -------------------------------------------
-// data : 
-var eventData = { heading: '2021년도 이벤트' };
+// data :
+var eventData ={ 
+      heading: '2021년도 이벤트', 
+      eventList : [ // enentData.eventList
+        'title1',   // enentData.eventList[0]
+        'title2',   // enentData.eventList[1]
+        'title3'    // enentData.eventList[2]
+      ]
+    };
 // -------------------------------------------
 
 // ===========================================
-// 변수
+// 기본 변수
 var elEventBox = document.querySelector('#eventBox');
 var elContentInner = elEventBox.querySelector('.content_inner');
 
 
 // ===========================================
 // 기능
-// 생성 후 삽입
+// 생성 후 삽입 - h3/ul -------------------------------------
+
 var mkYearPart = document.createElement('div'); // div 생성
     mkYearPart.setAttribute('class','year_part');   // div에 이름부여(.year_part)
     // mkYearPart.className = 'year_part';          // .year_part 에 이름부여기능 동일
@@ -43,6 +51,31 @@ var mkEventParticle = document.createElement('ul');// ul 생성
 
 elYearPartH3.after(mkEventParticle); // .event_particle h3뒤에 삽입
 elContentInner.prepend(mkYearPart);  // .year_part 를 삽입
+
+// 목록 생성 및 삽입 - li -----------------------------------
+// li의 갯수를 파악
+var yearPartList = eventData.eventList;
+var partLen = yearPartList.length;
+var i = 0;
+
+// var fnMake = function(el,name){
+//   var mkEl = document.createElement(el);
+//   if(!!name) { mkEl.setAttribute('class', name); }
+//   return mkEl;
+// };
+
+var elEventParticle = elContentInner.querySelector('.event_particle');
+yearPartList.forEach(function(data, index){
+
+  var mkLi = document.createElement('li');
+  elEventParticle.append(mkLi);
+
+  // var mkLi = fnMake('li');
+  // elEventParticle.append(mkLi);
+
+});
+
+
 
 // ===========================================
 // 함수
