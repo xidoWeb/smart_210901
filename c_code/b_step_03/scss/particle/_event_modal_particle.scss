@@ -1,2 +1,20 @@
 // _event_modal_particle.scss
 
+@at-root .event_modal {
+  position: fixed; z-index: 1500; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #fdd;
+
+  @at-root .modal_part {
+    position: absolute; z-index:100; top: 50%; left: 50%; margin:auto;
+    width:80%; min-width: 800px; max-width:1400px; height:auto; min-height:400px; max-height:700px;
+    padding:1rem; border-radius:0.25rem; 
+    background-color: #fff; transform:translate(-50%, -50%); box-shadow:0.3rem 0.3rem 1rem rgba($color_black_01,0.5);
+  }
+
+  @at-root .modal_bg { 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    background-color:rgba($color_black_01,0.5);
+  }
+}

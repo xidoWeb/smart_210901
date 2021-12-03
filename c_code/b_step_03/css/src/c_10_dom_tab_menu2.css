@@ -222,6 +222,42 @@
 .event_area .event_particle .end .event_check > dd {
   color: #c4c4c4;
 }
+.event_modal {
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fdd;
+}
+.modal_part {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  width: 80%;
+  min-width: 800px;
+  max-width: 1400px;
+  height: auto;
+  min-height: 400px;
+  max-height: 700px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.3rem 0.3rem 1rem rgba(51, 51, 51, 0.5);
+}
+
+.modal_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+}
 
 #footBox {
   width: 100%;
