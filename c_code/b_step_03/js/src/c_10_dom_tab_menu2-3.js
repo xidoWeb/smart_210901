@@ -25,8 +25,8 @@ var elEventLi = elEventParticle.children;
 var elEventLiArr = [].slice.call(elEventLi);
 
 // event Modal(생성시 선택가능하도록 처리)
-// var elEventModal = elEventBox.querySelector('.event_modal');
-// var elModalClose = elEventModal.querySelector('.modal_close button');
+var elEventModal;// = elEventBox.querySelector('.event_modal');
+var elModalClose;// = elEventModal.querySelector('.modal_close button');
 
 // 추가 적용할 변수
 var OPTION_TEXT = 'on';
@@ -45,13 +45,40 @@ var MODAL_CODE = '<div class="modal_part">\
 
 
 // 함수
+
+// 닫기버튼 클릭활성화 하는 함수
+var fnCloseBtnAction = function(){  
+  // (elEventModal이 생성되어 있지 않으면 존재하지 않으므로 에러가 발생-> 생성시 동작하게 처리 )
+  // parentEl;
+  elModalClose.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log( e );
+    elEventModal.classList.remove(OPTION_TEXT);
+    elEventLiArr[OPTION_INDEX].children[0].focus();
+  });
+};
+
 // elEventModal 내용을 생성
 var fnMakeModal = function(){
-  var elEventModal = document.createElement('div');
-  elEventModal.setAttribute('class', 'event_modal on');
-  // elEventModal.className = 'event_modal'; 
-  elEventModal.innerHTML = MODAL_CODE;
-  elContentInner.after(elEventModal);
+  // div를 생성하고, class이름 부여
+  var mkModal = document.createElement('div');
+  // elEventModal.setAttribute('class', 'event_modal on');
+  mkModal.className = 'event_modal'; 
+  mkModal.innerHTML = MODAL_CODE;
+
+  // 생성된 요소를 삽입
+  elContentInner.after(mkModal);
+
+  // 내용이 배치되었으므로, 선택자에관련 변수 설정(전역에서 인지할 수 있도록 전역변수처리)
+  elEventModal = elEventBox.querySelector('.event_modal');
+  elModalClose = elEventModal.querySelector('.modal_close button');
+
+  // .on을 첨부하여 나타나도록 처리 및 focus
+  elEventModal.classList.add(OPTION_TEXT);
+  elModalClose.focus();
+
+  // 버튼요소가 인지되어있는 상태에서 닫기버튼을 사용할 수 있도록 처리
+  fnCloseBtnAction();
 };
 
 // 이벤트
@@ -64,18 +91,12 @@ elEventLiArr.forEach(function(element, index){
     OPTION_INDEX = index;
     fnMakeModal();
 
-    // - elEventModal 내용을 생성하고, 처리(.content_inner뒤에 생성 : 선택자.after() )
-    // elEventModal.classList.add(OPTION_TEXT);
-    // elModalClose.focus();
+    
   });
 });
 
-// - 닫기버튼 클릭(elEventModal이 생성되어 있지 않으면 존재하지 않으므로 에러가 발생-> 생성시 동작하게 처리 )
-// elModalClose.addEventListener('click', function(e){
-//   e.preventDefault();
-//   elEventModal.classList.remove(OPTION_TEXT);
-//   elEventLiArr[OPTION_INDEX].children[0].focus();
-// });
+
+
 
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
