@@ -1,0 +1,30 @@
+// c_12_dom_list_modal.scss
+/* c_12_dom_list_modal.css */
+
+#wrap {
+  width: 90%; height: auto; margin:auto;
+}
+
+#contentBox {width: 100%; height: auto; padding: 1rem; }
+.card_area { width: 100%; height: auto; margin-top: 1rem; padding: 1rem; border:1px solid #777; }
+.card_part {
+  display:flex; justify-content:space-between; flex-wrap:wrap;
+  width: 100%; height: auto; background-color: #eef;
+  & > li {
+    display: flex; text-align: center; align-items:center; color:#333; font-size: 1.2rem; 
+    width: 250px; height: 400px; margin-bottom:2rem; padding: 0.5rem; background-color: #fda;
+    & a {
+      display: flex; text-align: center; align-items:center; 
+      width: 100%; height: 100%; border:1px solid #79a; border-radius:0.5rem;}
+  }
+}
+
+.card_modal {
+  &.on{display: block;}
+  display: none;  
+  position: fixed; z-index:500; top: 0; left: 0; right: 0; bottom: 0; margin: auto; 
+  width: 500px; height: 500px; background-color: #fff; padding: 1.5rem; 
+  box-shadow: 1rem 1rem 1rem rgba(#333, 0.3);
+
+  button { padding: 0.5rem; background-color: #f55; color:#fff; font-weight: 700; }
+}
