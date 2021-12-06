@@ -49,7 +49,7 @@ elLiOrigin.remove(); // 기존(원본)요소 삭제(추가생성시에 혼동을
 // 모달요소 기본가져오고 기존값 제거
 var elModal = elConBox.querySelector('.card_modal');
 elModal.remove();
-
+var elCardModal;
 // 함수 수행 ======================================
 var fnMakeCard = function(n){
   var cloneEl = elLiOrigin.cloneNode(elLiOrigin); // 기존data 복제(복제기능을 반복)
@@ -73,7 +73,7 @@ var fnClickLi = function(e){
 
   // 클릭시 수행하는 기능
     elConBox.append(elModal);//  .card_modal을 생성
-    var elCardModal = elConBox.querySelector('.card_modal');
+    elCardModal = elConBox.querySelector('.card_modal');
     var elCloseBtn = elCardModal.querySelector('button');
     elCardModal.classList.add('on'); // .card_modal영역이 나타나기(on)
     elCloseBtn.addEventListener('click', fnRemoveModal); // 내부 닫기버튼사용가능하게
