@@ -17,8 +17,8 @@ var elContentInner = elEventArea.querySelector('.content_inner');
 var elYearPart = elContentInner.querySelector('.year_part.on');
 var elEventParticle = elYearPart.querySelector('.event_particle');
 // var elEventLi = elEventParticle.querySelectorAll('li');
-// var elEventLi = elEventParticle.children;
-// var elEventLiArr = Array.prototype.slice.call(elEventLi);
+var elEventLi = elEventParticle.children;
+var elEventLiArr = [].slice.call(elEventLi);
 
 
 
@@ -29,11 +29,13 @@ var elEventParticle = elYearPart.querySelector('.event_particle');
 
 
 // 이벤트
-// elEventLiArr.forEach(function(element, index){
-//   console.log( element );
-// });
+elEventLiArr.forEach(function(element, index){
+  var elLink = element.children[0];
+  elLink.addEventListener('click', function(e){
+    e.preventDefault();
 
-
+  });
+});
 
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
@@ -44,7 +46,7 @@ var footInnerLi = footInner.childNodes;
 // * childNodes에서 필요한 요소를 뽑아내려면: nodeType을 체크
 // nodeType: 1- 요소 , 8-comment, 3-text 
 
-
+/*
 console.log( footInnerLi );
 // var liArr = Array.prototype.slice.call(footInnerLi);
 // var footTypeCheck = liArr.filter(function(data){
@@ -52,6 +54,16 @@ console.log( footInnerLi );
 // });
 // console.log( footTypeCheck );
 
+var footTypeArr = Array.prototype.filter.call(footInnerLi, function(data){
+  // 들어온 data의 형식이 요소의 개념인경우는 footTypeArr에 push()처리
+  return data.nodeType === 1;
+});
+// footInnerLi.filter(function(){})
+console.log( footTypeArr );
+
+// NodeList의 경우는 forEach로 사용시 인식하는 형태이지만, 실제로는 배열이 아니기에, 배열기능은 원할하게 동작하지 않는다.
+// 필요시 강제로 배열형식으로 처리해야 하는경우 Array.prototype기능을 사용한다.
+*/
 
 
 
