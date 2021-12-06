@@ -49,10 +49,8 @@ var MODAL_CODE = '<div class="modal_part">\
 // 닫기버튼 클릭활성화 하는 함수
 var fnCloseBtnAction = function(){  
   // (elEventModal이 생성되어 있지 않으면 존재하지 않으므로 에러가 발생-> 생성시 동작하게 처리 )
-  // parentEl;
   elModalClose.addEventListener('click', function(e){
     e.preventDefault();
-    console.log( e );
     elEventModal.classList.remove(OPTION_TEXT);
     elEventLiArr[OPTION_INDEX].children[0].focus();
   });
@@ -61,13 +59,13 @@ var fnCloseBtnAction = function(){
 // elEventModal 내용을 생성
 var fnMakeModal = function(){
   // div를 생성하고, class이름 부여
-  var mkModal = document.createElement('div');
+  var _mkModal = document.createElement('div');
   // elEventModal.setAttribute('class', 'event_modal on');
-  mkModal.className = 'event_modal'; 
-  mkModal.innerHTML = MODAL_CODE;
+  _mkModal.className = 'event_modal'; 
+  _mkModal.innerHTML = MODAL_CODE;
 
   // 생성된 요소를 삽입
-  elContentInner.after(mkModal);
+  elContentInner.after( _mkModal );
 
   // 내용이 배치되었으므로, 선택자에관련 변수 설정(전역에서 인지할 수 있도록 전역변수처리)
   elEventModal = elEventBox.querySelector('.event_modal');
@@ -89,15 +87,9 @@ elEventLiArr.forEach(function(element, index){
   elLink.addEventListener('click', function(e){
     e.preventDefault();
     OPTION_INDEX = index;
-    fnMakeModal();
-
-    
+    fnMakeModal();    
   });
 });
-
-
-
-
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
 var footInner = document.querySelector('.footer_inner');
@@ -125,7 +117,21 @@ console.log( footTypeArr );
 // NodeList의 경우는 forEach로 사용시 인식하는 형태이지만, 실제로는 배열이 아니기에, 배열기능은 원할하게 동작하지 않는다.
 // 필요시 강제로 배열형식으로 처리해야 하는경우 Array.prototype기능을 사용한다.
 */
-
-
-
 // ++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+// 기능 ----------------------------------------
+// li>a클릭  
+// 모달 생성 및 모달이 나타나게 만들기
+// 닫기버튼 생성
+// 닫기 클릭시 원래의 li번째에 focus
+// ==================================================================
+// 배치-----------------------------------------
+// 선택자들
+// 선택자중 (모달은 현재 없으니 생성후 처리)
+
+// 닫기버튼처리함수
+// 모달생성함수 (모달생성함수를 수행시, 닫기버튼처리 함수를 동작하도록)
+
+// li클릭시 모달생성함수를 수행
