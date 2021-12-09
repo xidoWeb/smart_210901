@@ -1,5 +1,7 @@
 "use strict";
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // d_04_fetch.js
 
 /*
@@ -39,19 +41,45 @@
 
 */
 // ----------------------------------------------------
-const elBtn = document.querySelector('button');
-const elPre = document.querySelector('pre');
+var elBtn = document.querySelector('button');
+var elPre = document.querySelector('ul');
+var url = "../data/person_card.json";
 
-let url = "../data/person_card.json";
-const fnFetch = function(path){
+var dataInsert = function dataInsert(title, image) {
+  _classCallCheck(this, dataInsert);
+
+  this.cardTitle = title;
+  this.imageUrl = image;
+};
+
+var fnGetData = function fnGetData(jsonData) {
+  var returnData = [];
+  var data = jsonData;
+  data.forEach(function (data) {
+    // 하나하나 객체로 만들기
+    // const objD = {};
+    // objD.name = data.title;
+    // objD.imgPah =  data.image;
+    // returnData.push(objD);
+    // class를 이용하여(생성자처리) 객체 만들기
+    var objD = new dataInsert(data.title, data.image);
+    var mkLi = document.createElement('li');
+    mkLi.innerText = objD.cardTitle;
+    elPre.append(mkLi);
+  });
+  console.log(returnData); // return returnData;
+};
+
+var fnFetch = function fnFetch(path) {
   fetch(path).then(function (response) {
     return response.json();
   }).then(function (data) {
     // elPre.innerText = JSON.stringify(data);
+    fnGetData(data);
   });
 };
 
-elBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    fnFetch();
+elBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  fnFetch(url);
 });
