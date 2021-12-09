@@ -53,33 +53,37 @@ var dataInsert = function dataInsert(title, image) {
 };
 
 var fnGetData = function fnGetData(jsonData) {
-  var returnData = [];
   var data = jsonData;
   data.forEach(function (data) {
-    // 하나하나 객체로 만들기
-    // const objD = {};
-    // objD.name = data.title;
-    // objD.imgPah =  data.image;
-    // returnData.push(objD);
-    // class를 이용하여(생성자처리) 객체 만들기
     var objD = new dataInsert(data.title, data.image);
     var mkLi = document.createElement('li');
     mkLi.innerText = objD.cardTitle;
     elPre.append(mkLi);
   });
-  console.log(returnData); // return returnData;
-};
+}; // const fnFetch = function(path){
+//   fetch(path).then(function (response) {
+//     return response.json();
+//   }).then(function (data) {
+//     // elPre.innerText = JSON.stringify(data);
+//     fnGetData(data);
+//   });
+// };
+
 
 var fnFetch = function fnFetch(path) {
   fetch(path).then(function (response) {
     return response.json();
-  }).then(function (data) {
-    // elPre.innerText = JSON.stringify(data);
-    fnGetData(data);
-  });
+  }).then(fnGetData);
 };
 
-elBtn.addEventListener('click', function (e) {
+var fnEvent = function fnEvent(e) {
   e.preventDefault();
   fnFetch(url);
-});
+}; // 이벤트
+// elBtn.addEventListener('click', function(e){
+//   e.preventDefault();
+//   fnFetch(url);
+// });
+
+
+elBtn.addEventListener('click', fnEvent);
