@@ -52,9 +52,11 @@ class dataInsert {
 
 const fnGetData = jsonData => {
   console.log( jsonData )
+  const dataList = [];
   const data = jsonData;
   data.forEach( data => {
     let objD = new dataInsert(data.title, data.image);
+    dataList.push(objD);
     const mkLi = document.createElement('li');
     mkLi.innerText = objD.cardTitle;
     elPre.append(mkLi);    

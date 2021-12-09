@@ -54,9 +54,11 @@ var dataInsert = function dataInsert(title, image) {
 
 var fnGetData = function fnGetData(jsonData) {
   console.log(jsonData);
+  var dataList = [];
   var data = jsonData;
   data.forEach(function (data) {
     var objD = new dataInsert(data.title, data.image);
+    dataList.push(objD);
     var mkLi = document.createElement('li');
     mkLi.innerText = objD.cardTitle;
     elPre.append(mkLi);
