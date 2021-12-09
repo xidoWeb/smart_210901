@@ -76,3 +76,36 @@ console.log( a3, f1);
 console.log(arrItBrand);
 
 // let a3 = 'google', f1 = 'nokia'
+//--------------------------------
+const samsungPhone = {
+  company : 'samsung',
+  brand : 'galaxy'
+};
+const smartphone = {
+  ...samsungPhone,
+  makeYear : 2021,
+  keyCode : 's21',
+  type : 'bar'
+};
+const smartphone2 = {
+  ...samsungPhone,
+  makeYear : 2020,
+  keyCode : 's20',
+  type : 'flip'
+};
+const smartphone3 = {
+  ...samsungPhone,
+  makeYear : 2019,
+  keyCode : 'tab s6',
+  type : 'tablet'
+};
+
+console.log( smartphone3);
+
+//--------------------------
+
+//  let i = 0;
+//  let permission = true;
+//  let optionCheck = 'on';
+
+let [i, permission, optionCheck] = [0, true, 'on'];

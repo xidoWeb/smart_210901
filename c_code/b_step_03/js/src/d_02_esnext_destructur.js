@@ -27,15 +27,15 @@ var music = obj.music,
     keyboard = obj.keyboard; // --------------------
 
 {
-  var i = 0;
+  var _i = 0;
 } // 얕은복사 : 참조변수의 위치를 할당
 
 var arrFruits = fruits;
 var arr2Fruits = []; // ------------------------------------
 // 깊은 복사 수행1
 
-for (var _i = 0; _i < fruits.length; _i++) {
-  arr2Fruits[_i] = fruits[_i];
+for (var _i2 = 0; _i2 < fruits.length; _i2++) {
+  arr2Fruits[_i2] = fruits[_i2];
 }
 
 fruits[5] = 'orange';
@@ -81,3 +81,36 @@ var k1 = arrItBrand[0],
     f1 = _arrItBrand$2 === void 0 ? 'nokia' : _arrItBrand$2;
 console.log(a3, f1);
 console.log(arrItBrand); // let a3 = 'google', f1 = 'nokia'
+//--------------------------------
+
+var samsungPhone = {
+  company: 'samsung',
+  brand: 'galaxy'
+};
+
+var smartphone = _objectSpread(_objectSpread({}, samsungPhone), {}, {
+  makeYear: 2021,
+  keyCode: 's21',
+  type: 'bar'
+});
+
+var smartphone2 = _objectSpread(_objectSpread({}, samsungPhone), {}, {
+  makeYear: 2020,
+  keyCode: 's20',
+  type: 'flip'
+});
+
+var smartphone3 = _objectSpread(_objectSpread({}, samsungPhone), {}, {
+  makeYear: 2019,
+  keyCode: 'tab s6',
+  type: 'tablet'
+});
+
+console.log(smartphone3); //--------------------------
+//  let i = 0;
+//  let permission = true;
+//  let optionCheck = 'on';
+
+var i = 0,
+    permission = true,
+    optionCheck = 'on';
