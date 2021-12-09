@@ -53,6 +53,7 @@ var dataInsert = function dataInsert(title, image) {
 };
 
 var fnGetData = function fnGetData(jsonData) {
+  console.log(jsonData);
   var data = jsonData;
   data.forEach(function (data) {
     var objD = new dataInsert(data.title, data.image);
@@ -64,16 +65,20 @@ var fnGetData = function fnGetData(jsonData) {
 //   fetch(path).then(function (response) {
 //     return response.json();
 //   }).then(function (data) {
-//     // elPre.innerText = JSON.stringify(data);
 //     fnGetData(data);
 //   });
 // };
+// let url = "../data/person_card.json"; -> url 이 아래 path로 들어가는 매개변수
 
 
 var fnFetch = function fnFetch(path) {
-  fetch(path).then(function (response) {
-    return response.json();
-  }).then(fnGetData);
+  fetch(path) //주소값을 넣어서 그것의 결과를 받아서 then으로 넘김
+  .then(function (response) {
+    // 넘겨받은 data중에서 일부 정제해서 다음 then으로 넘기위한 기능
+    // console.log( response.json() );
+    return response.json(); // 받은 dta중에서 json내용만 최종 처리하는 함수
+  }) // 정제된 data를 다음 then으로 넘김
+  .then(fnGetData); // 넘겨받은 data를 fnGetData함수에 전달
 };
 
 var fnEvent = function fnEvent(e) {
@@ -86,4 +91,14 @@ var fnEvent = function fnEvent(e) {
 // });
 
 
-elBtn.addEventListener('click', fnEvent);
+elBtn.addEventListener('click', fnEvent); // 외부문서불러오기
+// fetch          // 자료요청을 위해 주소를 보내서 처리된 것을 then으로 넘김
+// then           // 이전기능에서 넘겨받은 자료를 수행하는 메소드(이전내용이 처리되어야 동작함)
+// response.json() // 응답받은 data중 json내용만 찾아내는 메소드
+// --------------------------------------------------------------------------------------------
+// 1. 어떠한 자료주소(json주소)를 가져와라    // fetch(json주소)
+// 2. 그리고난 후 다음기능을 처리 - (json파일을 정리해서 보내라) // .then()
+// 3. 그리고난 후 다음기능 수행(우리가 수행해야하는 기능) // .then()
+//  fetch(주소).then().then()
+// --------------------------------------------------------------------------------------------
+// Promise, then
