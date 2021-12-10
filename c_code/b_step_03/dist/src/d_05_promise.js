@@ -38,38 +38,96 @@ console.log( valueReusult );
 */
 /* */
 
+
 // promise
 // 1. pending : 진행전/진행중
 // 2. fulfilled : 성공
 // 3. reject : 실패/오류
 
 
-
+/*
 const fnDataValue = new Promise((resolve, reject) => {
   setTimeout(function(){
-    resolve('success!');
+    // resolve('success!');
     reject('내용이 실패!!!');
   }, 500);
 });
 
+console.log(fnDataValue)
+
 fnDataValue
-  .then((resolve) => { return '성공'; })
+  .then((resolve) => { 
+    return '성공'; 
+  })
   .catch(function(error){  return '실패';  })
   .then(function(data){ return data + ' 하였습니다.';})
   .then(data => console.log( data ) );
+*/
 
-// promise 기능 수행 후
+
+// promise는 기능 수행 후
 // 다음을 수행
-
-
-
-
-
-
-
-
 
 
 // 실행 컨텍스트 : 브라우저에서 실행되는 순서를 파악하고 처리하는 형태
 // 스택 : 수행하는 순서에서 처리되는 모양
 // 힙   : 스택과는 별도로 관리하는 것
+
+
+
+// ----------------------------------------
+/*
+const fndata = function(method , url, async) {   
+  return new Promise(function(resolve, reject){
+    const http =new XMLHttpRequest();
+    http.open(method , url, async);
+    http.onreadystatechange = function(){
+      if(false){
+        resolve('success');
+      }else{
+        reject('falil');
+      }
+    }
+    http.send();
+  })
+};
+
+fndata('get', 'url', true).then( (resonse)=>{} );
+*/
+
+
+/*
+const fn2One =  data => data**2;
+  const fn2Two = (data) => {
+    const rel = data / 2;
+    return fn2One(rel);
+  }
+  const fn2Three = (data) => {
+    const rel = data * 5;
+    return fn2Two(rel);
+  }
+  let valueResult2 = fn2Three(10);
+  console.log( valueResult2 );
+*/
+
+// Promise 미리 만들어진 생성자 함수
+// XMLHttpRequest 미리 만들어진 생성자 함수
+// Array, Object, Function ...
+
+const dataCalc = (ins) => {
+  const dataResult =  new Promise(function(resolve,reject){
+    const convertNum = parseInt(ins); //들어오는 수치를 강제로 숫자처리
+    const permission = isNaN(convertNum); // 숫자를 NaN인지 아닌지 파악(NaN이면 true도출)
+    (!permission) ?  resolve(ins) :  reject('숫자가 아니니 숫자로 작성해주세요.');
+  });
+  return dataResult;
+};
+
+const fnNum = function(n){
+  dataCalc(n)
+  .then(function(response){  return response  * 5;  })
+  .then(function(response){  return response / 2;  })
+  .then(function(response){  return response ** 2;  })
+  .then(function( response ){ console.log( response ); })
+  .catch(function(error){ console.log( error ); });
+};
