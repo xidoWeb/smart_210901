@@ -1,5 +1,11 @@
 "use strict";
 
+require("core-js/modules/es.array.filter.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/es.function.name.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // d_03_esnext_arrowFunction.js

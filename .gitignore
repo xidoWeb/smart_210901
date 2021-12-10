@@ -19,6 +19,8 @@
 # node-module삭제
 **/node_modules
 node_modules
+**/package-lock.json
+
 
 # .vscode
 **/*.vscode
