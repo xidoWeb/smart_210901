@@ -155,7 +155,7 @@ btn.addEventListener('click', function(e){
 //점수도출 :  => 최종 점수 : ///
 //메세지 : 점수도출이 되지 않으면 다시 입력하세요!! 
 
-// 문제2 : const tel = '01027771234'; // -> const telN = ['010', '1234', '2777']
+// 문제2 : const tel = '01027771234'; // -> const telN = ['010', '2777', '1234']
 //배열메소드: split, slice, join
 /*
   // const tel = '01027771234';
