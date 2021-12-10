@@ -131,3 +131,14 @@ const fnNum = function(n){
   .then(function( response ){ console.log( response ); })
   .catch(function(error){ console.log( error ); });
 };
+
+// -----------------------------------------
+const input = document.querySelector('#num');
+const btn = document.querySelector('button');
+
+// 버튼 클릭시 input의 값을 파악하여 무언가 연산!!
+btn.addEventListener('click', function(e){
+  e.preventDefault();
+  const _n = input.value;
+  fnNum(_n);
+});
