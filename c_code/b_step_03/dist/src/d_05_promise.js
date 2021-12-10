@@ -45,24 +45,21 @@ console.log( valueReusult );
 
 
 
-const fnDataValue = new Promise(function(resolve, reject){
+const fnDataValue = new Promise((resolve, reject) => {
   setTimeout(function(){
     resolve('success!');
+    reject('내용이 실패!!!');
   }, 500);
 });
 
 fnDataValue
-  .then(function(resolve){
-    // console.log( resolve );
-    return '성공하였습니다.';
-  })
-  .then(function(data){
-    console.log( data );
-  })
+  .then((resolve) => { return '성공'; })
+  .catch(function(error){  return '실패';  })
+  .then(function(data){ return data + ' 하였습니다.';})
+  .then(data => console.log( data ) );
 
 // promise 기능 수행 후
 // 다음을 수행
-
 
 
 
