@@ -142,3 +142,27 @@ btn.addEventListener('click', function(e){
   const _n = input.value;
   fnNum(_n);
 });
+
+
+// -----------------------------------------------------
+// 문제 : 여러분의 현재 점수의 합을 계산하시오?
+// 국어점수  :  5점 이하의 값
+// 영어점수  :  5점 이하의 값
+// 수학점수  :  5점 이하의 값
+// 그점수 합 + 5
+// 현재의 총점 * 5 
+
+//점수도출 :  => 최종 점수 : ///
+//메세지 : 점수도출이 되지 않으면 다시 입력하세요!! 
+
+// 문제2 : const tel = '01027771234'; // -> const telN = ['010', '1234', '2777']
+//배열메소드: split, slice, join
+/*
+  // const tel = '01027771234';
+  // const telArr = tel.split('');
+  // const firstN = telArr.slice(0,3).join('');
+  // const lastN = telArr.slice(-4).join('');
+  // const middleN = telArr.slice(3,-4).join('');
+  // const userNum = [firstN, lastN, middleN];
+  // console.log( telArr, userNum );
+*/
