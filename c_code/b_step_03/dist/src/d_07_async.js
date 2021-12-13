@@ -32,8 +32,6 @@ async function fnTest5 (){
 
 fnTest5()
 
-
-
 // const A = new Promise();
 // const B = new Promise();
 // A.then().then(B).then().then();  -> Promise를 통해 순차기능을 수행시
@@ -45,3 +43,33 @@ fnTest5()
 //   await D(); // c 수행 후 D수행
 // }
 
+function timed(){
+  return new Promise(resolve => {
+    setTimeout(()=>{ resolve('time') },500);
+  })
+}
+
+async function fn1 (){
+  await timed()
+  return 'one'
+}
+async function fn2 (){
+  await timed()
+  return 'two'
+}
+async function fn3 (){
+  await timed()
+  return 'three'
+}
+
+async function fnRel(){
+  const a = await fn1();
+  const b = await fn2();
+  const c = await fn3();
+  return `${a} + ${b} + ${c}`;
+}
+fnRel().then( console.log );
+
+
+// 순차 수행을 원할하게 처리하기 위해 나온 기능
+// Promise - Promise, fetch, async/await  + then()
