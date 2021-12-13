@@ -6,6 +6,8 @@ require("core-js/modules/es.object.to-string.js");
 
 require("core-js/modules/es.promise.js");
 
+require("core-js/modules/es.array.concat.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // d_06_promise_polyfill.js 
@@ -111,4 +113,44 @@ fnOne.then(console.log).then(function () {
   return fnThree;
 }).then(console.log).then(function () {
   return fnFour;
-}).then(console.log);
+}).then(console.log); // -------------------------------------------------
+
+var fnFirst = function fnFirst() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(one);
+    }, 1500);
+  });
+};
+
+var fnSecond = function fnSecond(data) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("".concat(data, " -> ").concat(two));
+    }, 1000);
+  });
+};
+
+var fnThird = function fnThird(data) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("".concat(data, " -> ").concat(three));
+    }, 500);
+  });
+};
+
+var fnForth = function fnForth(data) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("".concat(data, " -> ").concat(four));
+    }, 0);
+  });
+}; // ------------------------------------
+//  fnFirst()
+//    .then( response => fnSecond(response) )
+//    .then( response => fnThird(response)  )
+//    .then( response => fnForth(response)  )
+//    .then( response => console.log(response)  )
+
+
+fnFirst().then(fnSecond).then(fnThird).then(fnForth).then(console.log);

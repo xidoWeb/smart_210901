@@ -93,3 +93,34 @@ fnOne
   .then(()=>fnFour)
   .then(console.log)
 
+
+  // -------------------------------------------------
+  const fnFirst = ()=>{
+    return new Promise( (resolve, reject)=>{
+      setTimeout( () => { resolve(one) }, 1500);
+    })
+  }
+
+  const fnSecond = (data)=>{
+    return new Promise( (resolve, reject) => {
+      setTimeout( ()=>{  resolve( `${data} -> ${two}` ) }, 1000);
+    })
+  }
+  const fnThird = (data)=>{
+    return new Promise( (resolve, reject) => {
+      setTimeout( ()=>{ resolve( `${data} -> ${three}` ) }, 500)
+    })
+  }
+  const fnForth = (data)=>{
+    return new Promise( (resolve, reject) => {
+      setTimeout( ()=>{ resolve( `${data} -> ${four}` ) }, 0)
+    })
+  }
+// ------------------------------------
+//  fnFirst()
+//    .then( response => fnSecond(response) )
+//    .then( response => fnThird(response)  )
+//    .then( response => fnForth(response)  )
+//    .then( response => console.log(response)  )
+
+fnFirst().then( fnSecond ).then( fnThird ).then( fnForth  ).then( console.log  );
