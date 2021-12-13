@@ -1,5 +1,7 @@
 // d_08_for_of.js
 
+const { forEach } = require("lodash");
+
 const arr = [1,2,3,4,5,6,7,'-----'];
 console.log( arr );
 

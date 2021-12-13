@@ -24,6 +24,8 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 require("core-js/modules/es.object.to-string.js");
 
+require("core-js/modules/web.dom-collections.for-each.js");
+
 require("core-js/modules/es.object.keys.js");
 
 require("core-js/modules/es.object.values.js");
@@ -47,6 +49,9 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 // d_08_for_of.js
+var _require = require("lodash"),
+    forEach = _require.forEach;
+
 var arr = [1, 2, 3, 4, 5, 6, 7, '-----'];
 console.log(arr);
 
