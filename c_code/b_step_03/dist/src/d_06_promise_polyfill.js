@@ -123,4 +123,6 @@ fnOne
 //    .then( response => fnForth(response)  )
 //    .then( response => console.log(response)  )
 
-fnFirst().then( fnSecond ).then( fnThird ).then( fnForth  ).then( console.log  );
+fnFirst().then( fnSecond ).then( fnThird ).then( fnForth  ).then( console.log );
+
+
