@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "build": "babel --watch dist -d js"
+    "babel" : "babel --watch dist -d js"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +15,6 @@
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
-    "@babel/parser": "^7.16.4",
-    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.4"
-  },
-  "dependencies": {
-    "core-js": "^3.19.3"
   }
 }

@@ -1,16 +1,22 @@
 "use strict";
 
-require("core-js/modules/es6.object.keys.js");
+require("core-js/modules/es.object.keys.js");
 
-require("core-js/modules/es6.symbol.js");
+require("core-js/modules/es.symbol.js");
 
-require("core-js/modules/es6.array.filter.js");
+require("core-js/modules/es.array.filter.js");
 
-require("core-js/modules/es6.object.get-own-property-descriptor.js");
+require("core-js/modules/es.object.to-string.js");
 
-require("core-js/modules/es7.object.get-own-property-descriptors.js");
+require("core-js/modules/es.object.get-own-property-descriptor.js");
 
-require("core-js/modules/es6.array.slice.js");
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.get-own-property-descriptors.js");
+
+require("core-js/modules/es.array.concat.js");
+
+require("core-js/modules/es.array.slice.js");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
