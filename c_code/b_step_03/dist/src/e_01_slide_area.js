@@ -87,20 +87,34 @@ const fnIndexCountType2 = () => {
     el.classList.remove(OPTION_CLASSNAME);
   });
 }
+// ----------------------------------------------------------
+const fnAddCountType3 = () => {
+  (checkIndex < addLen -1) ? checkIndex += 1 : checkIndex = 0;
+  elViewAddv.forEach( (el)=>{  el.classList.remove(OPTION_CLASSNAME); });
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+};
 
+const fnRemoveCountType3 = () => {
+  (checkIndex > 0) ? checkIndex -= 1 : checkIndex = addLen -1;
+  elViewAddv.forEach( (el)=>{  el.classList.remove(OPTION_CLASSNAME); });
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+};
 // -----------------------------------------------------------
 // 이벤트 ++
 // 다음버튼 클릭
 elNext.addEventListener('click', (e) => {
   e.preventDefault();
   // fnAddCountType1();
-  fnAddCountType2();
+  // fnAddCountType2();
+  fnAddCountType3();
 });
 
 // 이전버튼 클릭
 elPrev.addEventListener('click', (e) => {
   e.preventDefault();
-  fnRemoveCountType1();
+  // fnRemoveCountType1();
+  // fnRemoveCountType2();
+  fnRemoveCountType3();
 });
 
 // indicator 클릭하여 순서 파악
