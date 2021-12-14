@@ -12,16 +12,20 @@ const wrap = document.querySelector('#wrap');
 const headBox = document.createElement('div');
 const viewBox = document.querySelector('#viewBox');
 
+
+headBox.id = 'headBox';
+wrap.prepend(headBox);
+
+
 fetch(headCode)
-  .then( response => {
-    return response.text();
-  })
-  .then((data)=>{
-    headBox.id = 'headBox';
-    wrap.prepend(headBox);
-    headBox.innerHTML = data;
-  });
+  .then( response => response.text() )
+  .then((data)=> headBox.innerHTML = data );
 
 fetch(slideArea)
   .then( response => response.text() )
-  .then( data => viewBox.innerHTML = data  );
+  .then( data => viewBox.innerHTML = data  )
+  .then(()=>{
+    const slideScript = document.createElement('script');
+    slideScript.src = "../dist/src/e_01_slide_area.js";
+    wrap.after(slideScript);
+  });
