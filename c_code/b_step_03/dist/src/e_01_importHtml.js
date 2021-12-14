@@ -29,3 +29,8 @@ fetch(slideArea)
     slideScript.src = "../dist/src/e_01_slide_area.js";
     wrap.after(slideScript);
   });
+
+
+  fetch(headCode)
+  .then( response => response )
+  .then((data)=> console.log( data ) );
