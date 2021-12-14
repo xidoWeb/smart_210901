@@ -30,6 +30,7 @@ const elViewAddv = elViewConUl.querySelectorAll('li');
 // elAddLen
 const addLen = elViewAddv.length;
 const OPTION_CLASSNAME = 'on';
+let checkIndex = 0;
 // -----------------------------------------------------------
 // 함수
 // -----------------------------------------------------------
@@ -37,6 +38,15 @@ const OPTION_CLASSNAME = 'on';
 // 다음버튼 클릭
 elNext.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log( ' click!! ');
+  // console.log( ' click!! ');
+  elViewAddv[checkIndex].classList.remove(OPTION_CLASSNAME);
+  console.log( checkIndex )
+  if(checkIndex < addLen -1){
+    checkIndex += 1;
+  }else{
+    checkIndex = 0;
+  }
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+
 });
 
