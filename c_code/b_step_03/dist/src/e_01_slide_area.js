@@ -128,3 +128,52 @@ elIndiList.forEach( (element, index) => {
   });
 });
 
+// ============================================================
+
+const fnT = function( i = '값 입력하세요~~!' ){  
+  // if(!i){ 
+  //   return '값 입력되지 않았음' 
+  // }else{
+  //   return i;
+  // }
+  
+  // return i || '값 입력되지 않았음';
+  
+  return i;  
+}
+
+console.log( fnT(12) );
+
+
+
+const arrayList = ['a', 'b','c','d'];
+// console.log(arrayList[0]);
+// console.log(arrayList[2]);
+
+// for(let i=0; i<4; i++){
+//   console.log( arrayList[i] );
+// }
+
+arrayList.forEach( (d,i) => {
+  // console.log( d );
+  console.log(arrayList[i]);
+});
+// forEach ( 배열의 각요소, 각요소의 순번 )
+
+const arrayList2 = ['a', 'b','c','d'];
+const otherArr = [];
+let selectI = 1;
+
+arrayList2.forEach( (d,i) => {
+  if(selectI !== i){
+    otherArr.push(d);
+  }
+});
+
+const otherArr2 = arrayList.filter((el)=>{
+  return el !== arrayList2[selectI];
+});
+console.log( otherArr );
+console.log( otherArr2 );
+
+// -----------------------------------------
