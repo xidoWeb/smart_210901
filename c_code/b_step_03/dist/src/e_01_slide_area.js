@@ -48,13 +48,35 @@ const fnRemoveCountType1 = () => {
   elViewAddv[i].classList.remove(OPTION_CLASSNAME);
   elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
 };
+// ----------------------------------------
+// 전체 갯수 중 선택한 순번을 제외한 나머지 형제를 선택
+const fnSiblings = () => {
+  const otherArr = [];
+  elViewAddv.forEach((element, index)=>{
+    //let check = element.classList.contains(OPTION_CLASSNAME);
+    // if(!check){ otherArr.push(element) }
+    if(checkIndex !== index){ otherArr.push(element) }
+  })
+  return otherArr;
+}
+// console.log( fnSiblings() );
+
+// 다음버튼클릭시 1씩 카운트업하면서, 선택순번이 아닌경우 on빼라
+const fnAddCountType2 = () => {
+  (checkIndex < addLen -1) ? checkIndex += 1 : checkIndex = 0;
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+  fnSiblings().forEach( (el, idx) => {
+    el.classList.remove(OPTION_CLASSNAME);
+  });
+};
 
 // -----------------------------------------------------------
 // 이벤트 ++
 // 다음버튼 클릭
 elNext.addEventListener('click', (e) => {
   e.preventDefault();
-  fnAddCountType1();
+  // fnAddCountType1();
+  fnAddCountType2();
 });
 
 // 이전버튼 클릭
