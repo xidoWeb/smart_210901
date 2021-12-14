@@ -33,20 +33,34 @@ const OPTION_CLASSNAME = 'on';
 let checkIndex = 0;
 // -----------------------------------------------------------
 // 함수
+const fnAddCountType1 = () => {
+  let i = checkIndex;
+  // 0 -> 1 -> 2 -> 3 -> 0
+  (checkIndex < addLen -1) ? checkIndex += 1 : checkIndex = 0;
+  elViewAddv[i].classList.remove(OPTION_CLASSNAME);
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+};
+
+const fnRemoveCountType1 = () => {
+  let i = checkIndex;
+  // 0 -> 3(length-1) -> 2 -> 1 -> 0
+  (checkIndex > 0) ? checkIndex -= 1 : checkIndex = addLen -1;
+  elViewAddv[i].classList.remove(OPTION_CLASSNAME);
+  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
+};
+
 // -----------------------------------------------------------
 // 이벤트 ++
 // 다음버튼 클릭
 elNext.addEventListener('click', (e) => {
   e.preventDefault();
-  // console.log( ' click!! ');
-  elViewAddv[checkIndex].classList.remove(OPTION_CLASSNAME);
-  console.log( checkIndex )
-  if(checkIndex < addLen -1){
-    checkIndex += 1;
-  }else{
-    checkIndex = 0;
-  }
-  elViewAddv[checkIndex].classList.add(OPTION_CLASSNAME);
-
+  fnAddCountType1();
 });
+
+// 이전버튼 클릭
+elPrev.addEventListener('click', (e) => {
+  e.preventDefault();
+  fnRemoveCountType1();
+});
+
 
