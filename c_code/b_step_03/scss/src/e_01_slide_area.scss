@@ -20,6 +20,8 @@
   background-color: #ddf;
 }
 
+.part { width: 100%; height: auto; margin-bottom: 5rem;}
+
 .view_area {
   position: relative;
   width: 100%; height: 70vh; 
@@ -31,7 +33,7 @@
   flex-direction:row-reverse;
   justify-content: space-between;
   position: absolute; 
-  top:50%; left: 0; 
+  top:50%; left: 0; z-index:200;
   width: 100%; height: 0; 
   > button { 
     $s: 3rem;
