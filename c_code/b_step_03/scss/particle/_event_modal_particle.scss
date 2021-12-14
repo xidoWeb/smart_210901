@@ -1,0 +1,46 @@
+// _event_modal_particle.scss
+
+@at-root .event_modal {
+  &.on {display: block;}
+  display: none;
+  position: fixed; z-index: 1500; top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  @at-root .modal_part {
+    position: absolute; z-index:100; top: 50%; left: 50%; margin:auto;
+    width:80%; min-width: 800px; max-width:1400px; height:auto; min-height:400px; max-height:700px;
+    padding:1rem; border-radius:0.25rem; 
+    background-color: #fff; transform:translate(-50%, -50%); box-shadow:0.3rem 0.3rem 1rem rgba($color_black_01,0.5);
+    & > h4 {
+      width: 100%; height:auto; padding-bottom: 0.5rem; border-bottom:$line1; text-indent:0.5rem; 
+      color:$color_primary_02; text-transform: uppercase; font-weight: 700;
+      &:before{ content:"●"; color:$color_primary_01; margin-right:0.5rem; font-size: 0.7rem;}
+    }
+    .modal_particle { 
+      overflow-x:hidden; overflow-y:auto;
+      width:100%; height:auto; min-height:400px; max-height:600px; 
+      background-color: #fda;
+      .inner_sample { width: 100%; height: 2000px; background-image:linear-gradient(30deg, #da7, #fc7);}
+    }
+    .modal_close { 
+      position: absolute; top:0.7rem; right:1.3rem; width: 2rem; height: 2rem; 
+      & > button {
+        width: 100%; height: 100%; border-radius:3rem; color:$color_white; background-color: $color_primary_01;
+        font-size:0.75rem;
+
+        &:hover { background-color: $color_primary_02;}
+        &:focus { 
+          box-shadow:0.3rem 0.3rem 0.3rem $color_light_gray_02; 
+          border:5px solid $color_light_gray_02; box-sizing: content-box;
+        }
+      }// button
+
+    }// .modal_close
+  }
+
+  @at-root .modal_bg { 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    background-color:rgba($color_black_01,0.5);
+  }
+}

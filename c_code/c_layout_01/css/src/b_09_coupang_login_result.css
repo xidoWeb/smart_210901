@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* b_09_coupang_login_result.css */
+
+html,body { width: 100%; height: 100%; }
+#wrap { width: 100%; height: auto; min-height: 100%; }
+
+/* #headBox ====================================== */
+#headBox {
+  width:520px; height:94px; margin:auto; 
+  padding:47px 30px 0; margin-bottom: 14px;
+}
+h1 {width: 190px; height:100%; margin:auto; background-color: #f30;}
+h1 a {display: block; width: 100%; height: 100%; text-align: center;}
+
+/* #loginBox ====================================== */
+#loginBox {
+  width:520px; height:auto; min-height:220px;
+  margin:auto; padding:0 30px; 
+  /* background-color: #eee; */
+}
+
+.privite { width: 100%; height:auto; }
+.privite ul{width: 100%; height:auto;}
+.privite li{position: relative;
+  width: 100%; height: 50px; margin-bottom: 14px;
+  border:1px solid #ccc; }
+.privite li:last-child{margin-bottom: 0;}
+
+.privite li label {
+  /* position: absolute; top: 0; left: 0; */
+  border:0;
+  float:left; width: 50px; height: 48px; 
+  border-right:1px solid #ccc;
+  color:#575757; font-size:1.2rem; text-align: center; line-height:50px;
+  background-color: #ddd;
+}
+.privite li input {
+  float:left; width:calc(100% - 120px); height: 100%;
+  padding:12px 8px; 
+}
+.privite li button {
+  /* position: absolute; top: 0; right: 0; */
+  float:right;
+  width: 50px; height: 50px;
+  font-size: 1.2rem; color:#575757;
+}
+
+.disable > i.fa-eye-slash {display: none;}
+.enable > i.fa-eye {display: none;}
+
+/* ------------------------ */
+.check {width: 100%; height:50px; padding-top: 0.5rem;}
+.check label { float:left; cursor: pointer;}
+.check label i { 
+  float: left;
+  width:20px; height: 20px;
+  margin-right: 0.3rem; margin-top:0.35rem;
+  border:1px solid #777; 
+}
+/* .check label span { margin-top:-1rem;} */
+#autoLogin:checked + label > i { 
+  position: relative; 
+  outline:4px solid #0074e9; 
+  background-color: #dff;
+  border-color:transparent;}
+
+#autoLogin + label > i {position: relative; overflow: hidden;}
+#autoLogin + label > i::before{
+    position: absolute; top:110%; left: 0;
+    content:""; display: block; width: 100%; height: 100%; background-color: #fa0; 
+    transition: all 300ms ease;}
+#autoLogin:checked + label > i::before { top: 0; }
+
+.check a { float:right; color:#0074e9;} 
+.check a i { font-weight: 700; }
+
+/* ------------------------ */
+.login_btn {width: 100%; height:54px;}
+.btn , .btn > button {width: 100%; height: 100%;}
+.btn > button { 
+  border-radius:0.1rem;
+  color:#fff; font-size:1.2rem; font-weight: 700;
+  word-spacing:-0.4375rem;
+  background-color: #0074e9;
+  box-shadow: inset 0 -0.2rem 0 rgba(0,0,0,0.2);
+}
+
+
+/* #joinLinkBox ====================================== */
+#joinLinkBox {
+  width:520px; height:auto; 
+  margin:auto; margin-top:18px; padding:0 30px; 
+  border-top:1px solid #777;
+}
+
+.link {
+  width: 100%; height:54px;
+  padding-top:18px; box-sizing: content-box; 
+  text-align: center; line-height:54px; font-size:1.2rem;
+  color:#0073e9; font-weight: 700;
+}
+
+.link > a { 
+  display:block; width: 100%; height: 100%; 
+  color:inherit; 
+  border:1px solid #777; border-bottom-width:2px;
+  border-radius:0.1rem;
+  background-color: #fff;
+}
+
+
+/* #footBox ====================================== */
+#footBox {
+  width:520px; height:auto;
+  margin:auto; margin-top:1rem; padding:0 30px; 
+  text-align: center;
+}
+

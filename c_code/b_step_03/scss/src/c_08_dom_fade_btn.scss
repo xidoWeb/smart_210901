@@ -1,0 +1,77 @@
+// c_08_dom_fade_btn.scss
+
+@import "../common/variable";
+@import "../common/mixin";
+
+// -----------------------------
+  $imgPath : '../../multi/img/';
+  $cardImg : ('bottle.jpg', 'cookie.jpg', 'juice.jpg');
+// -----------------------------
+#wrap {
+  width: 90%; min-width:600px; max-width:1400px;
+  margin:auto; background-color: $color_white_02;
+}
+
+
+#headBox { width: 100%; height: auto; border-bottom:$line1;}
+
+#newBox { width: 100%; height: auto; padding:1rem; 
+  h2 { width: 100%; margin-bottom: 1rem; font-size: 1.5rem; text-align: center; text-decoration: underline;}
+  @at-root .new_area {
+    display:flex; justify-content: space-around; 
+    width: 100%; height: auto; background-color: $color_yellow_02;}
+  @at-root .card { 
+    width:90%; min-width:180px; max-width:300px; height:makeVw(400,600); min-height:400px; max-height:500px; padding:0.5rem; border:$line2;
+    & > a { @include full; 
+      &:focus { outline: 3px solid rgba($color_black_01,0.5);}
+      & > .img_zone {
+        width: 100%; height: 200px; margin-bottom: 0.5rem; background-color: #ddd;        
+      }
+      & > dl{width: 100%; height: 180px;}
+      &  dt{width: 100%; margin-bottom:1rem; font-weight: bold; font-size: 1.3em; text-transform:uppercase;}
+      &  dd{width: 100%; }
+    }// a
+    // .card 내부의 이미지 반복하여 첨부
+    // &:nth-of-type(1) .img_zone{ @include img(nth($cardImg, 2), $size:cover); }
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) .img_zone{ @include img(nth($cardImg, $i), $size:cover); }
+    }
+  }// .card
+  @at-root .new_area_modal {display: none;
+    // transition-property: ;
+    // transition-timing-function:ease;
+    // transition-duration: ;
+    // transition-delay: ;
+    // transition:all 500ms ease;
+    &:before{ 
+      content:""; display: block; 
+      position: fixed; top: 0; left: 0;  z-index: -1;
+      width: 100vw; height: 100vh; background-color: rgba($color_black_01,0.5); }
+
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0; 
+    width:70%; height:60%; 
+    margin:auto; padding:1rem; padding-top:5rem; border-radius:0.25rem; 
+    color:$color_white; font-size:1.3rem;
+    background-color: $color_deep_gray;
+    .close_btn { 
+      $w : 2rem;
+      position: absolute; top: 1rem; left: 50%; 
+      width: $w; height: $w; 
+      font-size: 0.75rem;      
+      transform:translate(-50%); 
+      & > button { @include full; border-radius:$w; background-color:$color_white; }
+      & > button:focus {transform:scale(1.2); border:3px solid $color_white; background-color: $color_yellow_01; font-weight: 900;}
+      & > button:hover {transform:scale(1.2); background-color: $color_yellow_02;}
+    }
+  }
+
+// vw는 브라우저의 가로크기가 변할때, vh 브라우저의 세로크기가 변할때 그 비율이 처리되는 단위 이므로, 
+// width/height와는 관계가 없다.
+
+
+
+}// #newBox
+@supports (width:clamp(10px, 10%, 300px) ){
+  #wrap { width:clamp(600px, 90%, 1400px); }
+  .card { width:clamp(180px, 90%, 300px); }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- b_09_coupang_login_result.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../fonts/fontAwesome/css/all.min.css">
+  <link rel="stylesheet" href="../fonts/ibm_Plex/IBMPlex.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/b_09_coupang_login_result.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <header id="headBox">
+      <h1><a href="./a_content.html">웹</a></h1>
+    </header>
+
+    <article id="loginBox">
+      <h2 class="blind">로그인 영역</h2>
+      <div class="input_area">
+        <form action="#" method="POST">
+          <fieldset class="privite">
+            <legend class="blind">개인 로그인정보 입력</legend>
+            <ul>
+              <li>
+                <label for="userId">
+                  <i class="fas fa-envelope-open"></i>
+                  <span class="blind">사용자 이메일 작성</span>
+                </label>
+                <input type="text" id="userId" name="user__Id" value="">
+              </li>
+              <li>
+                <label for="userPw">
+                  <i class="fas fa-unlock-alt"></i>
+                  <span class="blind">사용자 계정 비밀번호</span>
+                </label>
+                <input type="password" id="userPw" name="user__Pw" value="">
+                <button type="button" title="문자 보이기" class="disable">
+                  <i class="fas fa-eye"></i>
+                  <i class="fas fa-eye-slash"></i>
+                  <span class="blind">사용자 비밀번호 임시보기</span>
+                </button>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="check">
+            <legend class="blind">자동로그인체크 및 계정찾기</legend>
+            <input class="blind" type="checkbox" name="auto__Login" id="autoLogin" value="autoLogin-true">
+            <label for="autoLogin">
+              <i></i> <span>자동로그인</span> </label>
+            <a href="#">아이디(이메일)&sol;비밀번호 찾기 <i>&gt;</i></a>
+          </fieldset>
+
+          <fieldset class="login_btn">
+            <legend class="blind">로그인처리</legend>
+            <div class="btn">
+              <button type="submit">로그<span>인</span></button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </article>
+
+    <section id="joinLinkBox">
+      <h2 class="blind">회원가입 링크</h2>
+      <div class="link">
+        <a href="#">회원가입</a>
+      </div>
+    </section>
+
+    <footer id="footBox">
+      <h2 class="blind">coupang info</h2>
+      <address>
+        <p class="blind">주소</p>
+        <p class="blind">연락처</p>
+        <p>©Coupang Corp. All rights reserved.</p>
+      </address>
+    </footer>
+  </div>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>

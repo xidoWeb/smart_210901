@@ -1,0 +1,101 @@
+// c_02_dom_make_navi_01.scss
+/* c_02_dom_make_navi_01.css */
+@import "../common/variable", "../common/mixin";
+
+#wrap { width: 100%; min-width: 320px; height: auto; min-height:800px; }
+#headBox { 
+  position: relative;
+  display:flex; justify-content:space-between;
+  width: 100%; height:56px; padding:8px 10px; background-color: $color_gray_op; 
+  }
+
+h1 { width: 60px; height:40px; background-color: $color_primary_01;
+  & a { @include full; }
+}
+
+.nav_area { width:calc(100% - 70px); height:auto; min-height:40px;}
+
+.navi_btn {
+  display: none; float:right; width: 40px; height: 40px; 
+  & > button { 
+    width: 100%; height:100%; 
+    border-radius:4px; border:1px solid $color_deep_gray;
+    background-color: $color_light_gray_02; 
+  }
+}
+.navi_inner { display:flex; justify-content:space-between;
+  width: 100%; height:auto; min-height:40px;
+}
+
+.global_part {width:auto; height:40px;}
+.main_menu {display:flex; width:auto; height:40px;
+  & > li { position: relative;
+    width:auto; margin-right:16px; color:$color_black_01; font-weight:600; text-transform:capitalize;
+    &:last-child {margin-right: 0;}
+    & > a {display:flex; align-items:center; padding:0 10px; color:inherit; height:100%;}
+    @at-root .drop_btn { height:100%;
+      & > button {height: 100%; padding:0 10px; color:inherit; text-transform:inherit;}
+    } // .drop_btn
+    @at-root .sub_menu { 
+      display: none; 
+      position: absolute; left: 0; top:calc(100% + 4px); width:auto; height: auto; 
+      border:1px solid $color_light_gray_03;
+      border-radius:3px; 
+      color:$color_black_01; white-space:nowrap;
+      background-color: $color_white;
+      & > li {
+        width:100%; height:auto; margin-bottom:8px;
+        & a { display: block; width: 100%; padding:8px 20px;}
+      }
+      & > .border_line {
+        border-bottom:1px solid $color_light_gray_03;
+      }
+    }// .sub_menu
+  }// li
+}// .main_menu
+
+.search_part { height:auto;
+  & > form { width:auto; height: auto;}
+  fieldset {display:flex; width: auto; height:auto; padding:4px; }
+  @at-root #searchInput {
+    width:250px; height:40px; 
+    margin-right: 8px;
+    border-radius:4px; border:1px solid 
+    $color_light_gray_02;}
+  @at-root .search_btn { 
+    width:70px; border-radius:4px; border:1px solid $color_primary_01; 
+    color:$color_primary_01; text-transform:capitalize; }
+}// .search_part
+
+// ----------------------------------------------------
+@include handhelds{
+
+  .navi_btn {display: block;}
+  .nav_area.on .navi_btn > button { background-color: $color_yellow_01; }
+  .navi_btn > button:focus{outline:4px solid $color_light_gray_03; }
+
+  .navi_inner{display: none;
+    position: absolute; top:100%; left:0; width: 100%; 
+    flex-direction:column;
+    padding:10px;
+    background-color: $color_gray_op;
+  }// navi_inner
+  .nav_area.on .navi_inner {display: block;}
+
+  .main_menu {flex-direction: column; height:auto;
+    & > li {width:100%; height:auto; min-height:40px; margin-right: 0; padding:8px;
+      & > a {width:100%; min-height:40px; }
+      @at-root .drop_btn {height: 40px;
+        & > button { width: 100%; text-align: left;}
+      }// .drop_btn
+      @at-root .sub_menu {
+        position:static; 
+      } // .sub_menu
+    }// li
+  }// .main_menu
+
+  .global_part {margin-bottom:16px; height:auto; 
+    @at-root #searchInput {width:calc(100% - 78px);}
+  }// .global_part
+  // .search_part {}
+} // @include handhelds

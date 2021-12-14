@@ -1,0 +1,327 @@
+@charset "UTF-8";
+/* c_10_dom_tab_menu2.scss */
+#wrap {
+  width: 100%;
+  min-width: 80rem;
+  height: auto;
+  margin: auto;
+}
+
+#headBox {
+  width: 100%;
+  height: 6.25rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+#eventBox {
+  width: 100%;
+  height: auto;
+  min-height: 37.5rem;
+}
+
+.width_full {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 6.25rem;
+  padding: 1.6875rem 0;
+  background-color: #753;
+}
+.title_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 940px;
+  height: 100%;
+  margin: auto;
+  color: #ffffff;
+}
+.title_area > h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+.title_area > p {
+  font-size: 1.125rem;
+}
+
+.event_area {
+  width: 58.75rem;
+  height: auto;
+  min-height: 400px;
+  margin: auto;
+  margin-bottom: 100px;
+  padding-bottom: 160px;
+}
+.title_inner {
+  width: 100%;
+  height: 3.25rem;
+  margin-bottom: 3.125rem;
+  padding: 0.5rem;
+}
+.title_inner ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.title_inner li {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  color: #757575;
+  font-size: 22px;
+}
+.title_inner button {
+  width: auto;
+  height: 100%;
+  padding: 0 0.5rem;
+  color: inherit;
+}
+.title_inner li.on button {
+  border-bottom: 2px solid #1a5d54;
+  color: #1a5d54;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.content_inner {
+  width: 100%;
+  height: auto;
+}
+
+.event_area .year_part {
+  display: none;
+}
+.event_area .year_part.on {
+  display: block;
+}
+.event_area .year_part > h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #757575;
+  border-bottom: 1px solid #757575;
+}
+.event_area .event_particle {
+  width: 100%;
+  height: auto;
+}
+.event_area .event_particle > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 12.5rem;
+  margin-bottom: 1.875rem;
+  border-radius: 0.5rem;
+  background-color: #da94;
+}
+.event_area .event_particle a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 2.8125rem;
+  padding-left: 3.5rem;
+  padding-right: 1.875rem;
+  padding-bottom: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #da9;
+  transition: all 300ms ease;
+  text-align: left;
+  border-radius: 0.5rem;
+}
+.event_area .event_particle a h4 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(51, 51, 51, 0.7);
+}
+.event_area .event_particle a h4:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: -2rem;
+  background-color: #ffffff;
+  font-size: 4rem;
+}
+.event_area .event_particle a p {
+  color: #ffffff;
+  font-size: 22px;
+  margin: 0.4rem 0;
+}
+.event_area .event_particle a .date > dd {
+  color: #ffffff;
+  font-size: 22px;
+}
+.event_area .event_particle a .event_check {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.event_area .event_particle a .event_check:before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+.event_area .event_particle a .event_check > dt {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.event_area .event_particle a .event_check > dd {
+  margin-left: 0.5rem;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.event_area .event_particle a:focus {
+  transform: scale(1.05);
+  background-color: #1a5d54;
+}
+.event_area .event_particle a:hover {
+  transform: scale(1.05);
+  background-color: #da9;
+}
+.event_area .event_particle .end a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.7);
+  border-radius: 0.5rem;
+}
+.event_area .event_particle .end a:hover {
+  transform: scale(1);
+}
+.event_area .event_particle .end .event_check:before {
+  background-color: #c4c4c4;
+}
+.event_area .event_particle .end .event_check > dd {
+  color: #c4c4c4;
+}
+.event_modal {
+  display: none;
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.event_modal.on {
+  display: block;
+}
+.modal_part {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  width: 80%;
+  min-width: 800px;
+  max-width: 1400px;
+  height: auto;
+  min-height: 400px;
+  max-height: 700px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.3rem 0.3rem 1rem rgba(51, 51, 51, 0.5);
+}
+.modal_part > h4 {
+  width: 100%;
+  height: auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #757575;
+  text-indent: 0.5rem;
+  color: #834c33;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.modal_part > h4:before {
+  content: "●";
+  color: #1a5d54;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+}
+.modal_part .modal_particle {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  max-height: 600px;
+  background-color: #fda;
+}
+.modal_part .modal_particle .inner_sample {
+  width: 100%;
+  height: 2000px;
+  background-image: linear-gradient(30deg, #da7, #fc7);
+}
+.modal_part .modal_close {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.3rem;
+  width: 2rem;
+  height: 2rem;
+}
+.modal_part .modal_close > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  color: #ffffff;
+  background-color: #1a5d54;
+  font-size: 0.75rem;
+}
+.modal_part .modal_close > button:hover {
+  background-color: #834c33;
+}
+.modal_part .modal_close > button:focus {
+  box-shadow: 0.3rem 0.3rem 0.3rem #aaaaaa;
+  border: 5px solid #aaaaaa;
+  box-sizing: content-box;
+}
+
+.modal_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+#footBox {
+  width: 100%;
+  height: 450px;
+  padding: 2rem;
+  color: #fff;
+  background-color: #333333;
+}
+
+/*# sourceMappingURL=c_10_dom_tab_menu2.css.map */

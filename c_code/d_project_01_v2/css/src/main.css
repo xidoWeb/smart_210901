@@ -1,0 +1,342 @@
+/* main.css */
+#wrap {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  background-color: #ddd;
+}
+@media all and (max-width: 599px) {
+  #wrap {
+    min-width: 320px;
+    background-color: #fda;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #wrap {
+    background-color: #adf;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #wrap {
+    background-color: #fdf;
+  }
+}
+@media all and (min-width: 1440px) {
+  #wrap {
+    background-color: #dfd;
+  }
+}
+
+#headBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 50px;
+  height: 3.125rem;
+  background-color: #fff;
+}
+h1 {
+  position: relative;
+  z-index: 200;
+  width: 60px;
+  height: 35px;
+}
+@media all and (max-width: 599px) {
+  h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    margin: auto;
+  }
+  .head_area {
+    padding: 8px 20px;
+  }
+}
+h1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../multi/img/base/logo_color.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+h1 > a > span {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  h1 > a {
+    background-image: url(../../multi/img/base/logo_color_pc.png);
+  }
+}
+@media all and (max-width: 599px) {
+  #headBox.on h1 > a {
+    background-image: url(../../multi/img/base/logo_white.svg);
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #headBox.on h1 > a {
+    background-image: url(../../multi/img/base/logo_white.svg);
+  }
+}
+
+.navi_inner {
+  width: 30px;
+  height: 35px;
+  float: left;
+  background-color: #1a5d54;
+}
+.navi_inner .nav_btn {
+  position: relative;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+.navi_inner .nav_btn > button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../multi/img/base/menu_btn.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+.navi_inner .nav_btn > button > span {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  .navi_inner .nav_btn {
+    display: none;
+  }
+}
+@media all and (min-width: 1440px) {
+  .navi_inner .nav_btn {
+    display: none;
+  }
+}
+@media all and (max-width: 599px) {
+  .navi_wrap {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 60px 30px;
+    background-color: rgba(26, 93, 84, 0.7);
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  .navi_wrap {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 60px 30px;
+    background-color: rgba(131, 76, 51, 0.7);
+  }
+}
+
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #headBox {
+    height: 50px;
+    height: 3.125rem;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #headBox {
+    height: 100px;
+    height: 6.25rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  #headBox {
+    height: 100px;
+    height: 6.25rem;
+  }
+}
+
+#slideBox {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  background-color: #dff;
+}
+@media all and (max-width: 599px) {
+  #slideBox {
+    padding-top: 50;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #slideBox {
+    padding-top: 50;
+    height: 450px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #slideBox {
+    padding-top: 100;
+    height: 600px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #slideBox {
+    padding-top: 100;
+    height: 600px;
+  }
+}
+
+#newBox {
+  width: 100%;
+  height: 100vh;
+  background-color: #add;
+}
+@media all and (max-width: 599px) {
+  #newBox {
+    min-height: 600px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #newBox {
+    height: 600px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #newBox {
+    height: 700px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #newBox {
+    height: 700px;
+  }
+}
+
+#commercialBox {
+  width: 100%;
+  height: 580px;
+  background-color: #ffbd55;
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #commercialBox {
+    height: 350px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #commercialBox {
+    height: 350px;
+  }
+}
+
+#bestBox {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+}
+@media all and (max-width: 599px) {
+  #bestBox {
+    min-height: 1500px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #bestBox {
+    min-height: 1200px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #bestBox {
+    height: 700px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #bestBox {
+    height: 700px;
+  }
+}
+
+#galleryBox {
+  width: 100%;
+  height: auto;
+  background-color: #f7e9d3;
+}
+@media all and (max-width: 599px) {
+  #galleryBox {
+    min-height: 970px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #galleryBox {
+    min-height: 970px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #galleryBox {
+    height: 750px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #galleryBox {
+    height: 750px;
+  }
+}
+
+#sponsorBox {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+}
+@media all and (max-width: 599px) {
+  #sponsorBox {
+    height: 400px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #sponsorBox {
+    height: 300px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+  #sponsorBox {
+    height: 100px;
+  }
+}
+@media all and (min-width: 1440px) {
+  #sponsorBox {
+    height: 100px;
+  }
+}
+
+#footBox {
+  width: 100%;
+  height: 450px;
+  background-color: #333333;
+}
+@media all and (max-width: 599px) {
+  #footBox {
+    height: 435px;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  #footBox {
+    height: 425px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

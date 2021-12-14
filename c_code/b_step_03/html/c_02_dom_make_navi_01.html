@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- c_02_dom_make_navi_01.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/c_02_dom_make_navi_01.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <header id="headBox">
+      <h1><a href="./a_content.html"><span>site name</span></a></h1>
+      <nav class="nav_area">
+        <h2 class="blind">navigation</h2>
+        <div class="navi_btn"><button type="button">menu</button></div>
+        <div class="navi_inner">
+          <div class="global_part">
+            <h3 class="blind">gloval navigation</h3>
+            <ul class="main_menu">
+              <li><a href="#">home</a></li>
+              <li><a href="#">link</a></li>
+              <li>
+                <div class="drop_btn">
+                  <button type="button">
+                    dropdown
+                    <i class="iconify" data-icon="bi:file-arrow-down-fill"></i>
+                  </button>
+                </div>
+                <ul class="sub_menu">
+                  <li><a href="#">action</a></li>
+                  <li class="border_line"><a href="#">another action</a></li>
+                  <li><a href="#">something else here</a></li>
+                </ul>
+              </li>
+              <li><a href="#">disabled</a></li>
+            </ul>
+          </div>
+          <div class="search_part">
+            <h3 class="blind">search navigation</h3>
+            <form action="" method="GET">
+              <fieldset>
+                <legend class="blind">search area</legend>
+                <label for="searchInput" class="blind">필요한 자료를 검색하세요</label>
+                <input type="search" id="searchInput" name="search__Input" value="" placeholder="Search" />
+                <button type="button" class="search_btn">search</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+  </div>
+  <!-- script -->
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <script src="../js/src/c_02_dom_make_navi_01.js"></script>
+  <script src="../js/src/c_02_dom_make_navi_02.js"></script>
+</body>
+</html>

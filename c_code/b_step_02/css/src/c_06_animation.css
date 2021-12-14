@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/* c_06_animation.css */
+
+#wrap {
+  width: 900px; height: auto;
+  margin:auto;
+  box-sizing: content-box;
+  padding-bottom:700px;
+}
+
+.part {
+  width: 100%; height: auto;
+  margin-bottom: 4rem;
+  padding: 1rem; 
+  border:1px solid #777;
+}
+
+ul { width: 100%; height: auto; 
+  background-color: #eee;}
+
+li {width: 100%; height: 6rem; 
+  margin-bottom: 1rem; 
+  padding: 1rem;
+  border-bottom: 1px solid #555;}
+
+.part span {
+  --size: 4rem;
+  display: block; width: var( --size ); height: var( --size );
+  border-radius:0.3rem; background-color: #f7a;
+  text-align: center; line-height:var( --size ); font-weight: 700;
+}
+
+/* -------------------------------- */
+/**
+ * animation기능 사용을위해서는 2가지 속성을알아야한다.
+ * 1. animation 시간/움직임/반복 등의 선택자에 관련된 내용
+ * 2. animation의 전체 시간에 따른 비율(%)에 대한 움직임처리
+*/
+
+@keyframes myMove {
+  0% { transform:translate(0px);}  
+  50% { transform:translate(-100px, -100px) rotate(360deg); }
+  100% { transform:translate(500px, 100px);}
+}
+
+.ani li:nth-child(1) > span {
+  /* 이름을 설정 (사용자가 임의로 생성) */
+  animation-name:myMove; 
+  /* animation 움직이는 시간 */
+  animation-duration: 2000ms;
+  /* animation 반복여부처리 1은 1번이동, infinite는 무제한반복 */
+  animation-iteration-count: 2;
+  /* 행동을 처리하는 방향 - 
+   * 정방향(normal), 역방향(reverse), 왕복(alternate), 역순으로왕복(alternate-reverse) 
+  */
+  animation-direction: normal;
+  /* 움직임처리 */
+  animation-timing-function: linear;
+}
+
+
+.ani li:nth-child(2) > span {
+  animation-name: myMove;
+  animation-duration:1000ms;
+  animation-iteration-count:3;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  /*animation-fill-mode: backwards, both, forwards */
+  animation-fill-mode:both;
+  animation-delay: 3000ms;
+}
+
+.ani li:nth-child(3) > span {
+  animation:myMove 1500ms infinite alternate linear both 500ms;
+}
+
+.ani li:nth-child(4) > span {
+  animation:myLinear 2000ms infinite alternate; 
+  animation-play-state: paused;
+}
+
+@keyframes myLinear {
+  0% { transform:translateX(0);}
+  50% { transform:translateX(400px) scale(1.5) rotate(720deg);}
+  100% { 
+    transform:translate(700px) scale(1.2) rotate(960deg); 
+    background-color: #057; color:#fff;}
+}
+
+.ani li:nth-child(4):hover > span {
+  animation-play-state: running;
+}
+
+/* ---------------------------------- */
+.sample_test {
+  overflow: hidden;
+  position: relative; z-index:100;
+  width: 100%; height: 800px; 
+  background-color: #77f;
+}
+.sample_test h2 {
+  width: 100%; height: auto;
+  margin:1rem auto; padding:2rem;
+  text-align: center; color:#fff;
+}
+.sample_test p {
+  width: 100%; height:auto;
+  margin:2rem auto; 
+  padding-bottom:3rem; padding-left:2rem;
+}
+
+
+.car {
+  position: absolute; bottom:7rem; left: 0; right: 0;
+  width: 780px; height:290px;
+  margin:auto;
+  border: 1px solid #057;
+  background-color: #fff;
+  transform:translate(100vw);
+  animation:onceMove 1000ms 1 both 1000ms;
+}
+
+@keyframes onceMove {
+  100% { transform:translate(0); }
+} /* onceMove */
+
+
+.win {
+  overflow: hidden;
+  position: absolute; top:16.8%; left:34%;
+  width: 128px; height: 53px; 
+}
+.win > span {
+  display: block; width: 110%; height: 110%; 
+  background-color: rgba(0,0,0,0.5);
+  border-radius:0.2rem;
+  transform-origin:0 100%;
+  transform:skew(-45deg);
+  animation:onceWin 700ms  1 normal both ease-out 2500ms;
+}
+
+@keyframes onceWin {
+  100% { transform:translateY(70%) skew(-45deg); }
+}/* onceWin */
+
+.wheel {
+  position: absolute; bottom:0; left:15%;
+  width:70%; height:100px;
+}
+.wheel span {
+  width: 80px; height: 80px; 
+  background-color: #77a;
+  border-radius:100%; text-align: center;
+  animation:moveWheel 500ms infinite normal both linear;
+}
+
+.front_wheel { float:left; }
+.back_wheel { float:right; }
+
+@keyframes moveWheel {
+  0% {transform:rotate(0deg);}
+  100% {transform:rotate(-360deg);}
+}/* moveWheel */
+
+/* --------------------------------- */
+
+.mouse {
+  position: absolute; bottom: 1rem; left: 0; right: 0;
+  width: 3rem; height: 6.5rem;
+  margin:auto; padding:1.5rem 0.5rem;
+  background-color: #059;
+}
+
+.mouse_line {
+  position: relative;
+  width: 100%; height: 100%; 
+  border:0.3rem solid #fff;
+  border-radius:2rem;
+  animation:mouseMove 700ms infinite alternate linear; 
+}
+
+.mouse_line:before,
+.mouse_line::before{
+  position: absolute; top:0.4rem; left: 0; right: 0;
+  content:""; display: block;
+  width: 0.5rem; height: 0.8rem;
+  margin:auto; border-radius: 1rem;
+  background-color: #fff;
+  animation:mouseMove 700ms infinite alternate linear; 
+}
+
+@keyframes mouseMove {
+  0% { transform:translateY(10%);  }
+  100% {transform:translateY(-10%); }
+}/* mouseMove */

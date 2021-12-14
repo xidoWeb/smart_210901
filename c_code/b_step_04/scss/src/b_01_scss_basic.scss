@@ -1,0 +1,38 @@
+// b_01_scss_basic.scss : 한줄주석은 css변환x
+/* b_01_scss_basic.css */
+
+// css변수 : 지정범위 내에서 선언
+:root {
+  --color-gray:#777;
+}
+
+
+// scss변수 : 범위가 존재하지만, 최초설정시 범위X
+// color-variable
+$gray : #999;
+$line : 1px;
+$style: solid;
+$border: $line $style $gray;
+
+
+#wrap {
+  color:var(--color-gray);
+  background-color:rgba($gray + #fa0, 0.5);
+  border:1px solid lighten($gray, 10%);
+  outline:$border;
+}
+
+@mixin full($full: 100%){
+  width: $full; height: $full;
+  min-width:90px; min-height:100px;
+}
+
+#navBox {
+  $full: 100%;
+  @include full($full);
+  & > ul { @include full($full); }
+  & li { width: $full; height: auto; margin-bottom:10px; 
+    &:last-child{ margin-bottom: 0; }
+  }// li
+  
+}// #navBox

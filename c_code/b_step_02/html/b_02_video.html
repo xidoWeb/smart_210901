@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- b_02_video.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/b_02_video.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹</a></h1>
+
+    <div class="part">
+      <h2>영상첨부</h2>
+      <div class="movie">
+        <video 
+        volume="0" muted autoplay controls loop preload
+        class="video" 
+        poster="../multi/video/bird-gc9a4e54f7_1920.jpg">
+          <source 
+          src="../multi/video/mixkit-waterfall-in-forest-2213.webm" 
+          type="video/webm" />
+          <source  
+          src="../multi/video/mixkit-waterfall-in-forest-2213.ogg" 
+          type="video/ogg" />
+          <source 
+          src="../multi/video/mixkit-waterfall-in-forest-2213.mp4" 
+          type="video/mp4" />
+          <p>현재 사용하고 계신 브라우저는 영상을 지원하지 않습니다. <br />
+          <a href="http://google.com/chrome/">최신 브라우저</a>
+          를 이용하여 주세요.</p>
+        </video>
+      </div>
+      
+    </div>
+
+    <div class="part">
+      <h2>iframe - 외부문서 불러오기</h2>
+      <div class="movie">
+        <iframe src="https://www.youtube.com/embed/S_7sIc9kABI?start=37" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>

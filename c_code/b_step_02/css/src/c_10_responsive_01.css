@@ -1,0 +1,13 @@
+
+/* base css */
+@import url("../c_10_rwd/c_10_base.css");
+@import url("../c_10_rwd/c_10_smartphone.css");
+@import url("../c_10_rwd/c_10_tablet.css");
+@import url("../c_10_rwd/c_10_pc.css");
+
+
+/* 
+  @media 영역에 해당하는 부분은 
+  해당 디바이스 크기에 맞는 내용을 처리하기 위한 부분으로 작성
+  이외의 공통영역/구형브라우저에서는 @media영역이 아닌 곳에서 처리
+*/

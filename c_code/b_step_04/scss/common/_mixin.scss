@@ -1,0 +1,34 @@
+// mixin
+
+$url:"../../img/bgIcon/";
+$baseSize:16;
+
+@mixin bgImg($i, $r:no-repeat, $p:50% 50%, $z:initial) {
+  background : {
+    image:url(#{$url}#{$i});
+    repeat:$r;
+    position: $p;
+    size: $z;
+  }  
+}
+
+@mixin size($w:100%, $h:auto){
+  width:$w; height:$h;
+  @content;
+}
+
+
+@function rem($u){
+  @return ($u/$baseSize) + rem;
+}
+
+@mixin unit($s,$u){
+  #{$s}:#{$u}px;
+  #{$s}:rem($u);
+}
+
+$device:360;
+@function vw($u, $d:$device){
+  @return ($u/$d*100)+vw;
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- b_05_form_question.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/b_05_form_question.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹</a></h1>
+
+    <div class="part">
+      <h2>게시판 작성내용</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>질문 내용</legend>
+
+          <div class="title_area">
+            <input type="text" name="write__Title" id="writeTitle" value="" />
+            <label for="writeTitle">제목</label>
+          </div>
+          <div class="content_area">
+            <label for="writeContent" class="blind">
+              상세내용을 작성하세요.
+            </label>
+            <textarea name="write__Content" id="writeContent"></textarea>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="//unpkg.com/jquery"></script>
+  <script>
+    // console.log($.fn);
+    var title = $('#writeTitle');
+    title.on('focus', function(){
+      title.addClass('action');
+    });
+
+    title.on('blur', function(){
+      var titleVal = title.val().length;
+      if(titleVal === 0) {
+        title.removeClass('action');
+      }
+    });
+  </script>
+</body>
+</html>

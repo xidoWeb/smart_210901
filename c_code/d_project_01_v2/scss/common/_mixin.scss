@@ -1,0 +1,89 @@
+// mixin.scss
+@use "sass:math"; 
+
+// font-set
+@mixin font_set (){
+  font-family:$font_family_en,  $font_family_kr,  $font_family_common; 
+}
+
+@mixin text_option($size:title3, $weight:4, $line:false){ 
+  font-size:map-get($map:$font_size, $key: $size);
+  font-weight:nth($font_weight,$weight);
+  @if $line {
+    line-height:24px;
+    letter-spacing:-0.006em;    
+  }
+}
+
+@mixin effect_shadow_01 {
+	box-shadow:0px 4px 4px rgba(0,0,0,0.25);
+}
+
+// image
+$imgPath:'../img/';
+
+@mixin img($file, $repeat:no-repeat, $position:50% 50%, $size:initial){
+  background: {
+    image: url(#{$imgPath}#{$file});
+    repeat: $repeat;
+    position:$position;
+    size: $size;
+  } 
+  & > span{
+    display: block; 
+    position: absolute; z-index:-1; clip:rect(0 0 0 0);
+    width: 0; height: 0; overflow: hidden;
+  }
+  @content;
+}
+
+// size 
+@mixin full($file:false, $repeat:no-repeat, $position:50% 50%, $size:initial){
+  display:block; width:100%; height:100%;
+  
+  @if ($file) {
+    @include img($file, $repeat, $position, $size){      @content;    }
+  }
+}
+
+// unit
+$baseSize: 16;
+@mixin remUnit($name, $unit){
+  #{$name}: #{$unit} + px;
+  #{$name}: math.div($unit , $baseSize) + rem;
+}
+
+// @media query --------------------------------------
+$mobile : 320px;
+$tablet : 600px;
+$laptop : 1024px;
+$pc:1440px;
+// $pcfull : 1920px;
+
+
+@mixin mobile(){
+  @media all and (max-width: #{$tablet - 1}){
+    @content;
+  }
+}
+
+@mixin tablet(){
+  @media all and (min-width:$tablet) and (max-width:#{$laptop - 1}) {
+    @content; 
+  }
+}
+
+@mixin laptop(){
+  @media all and (min-width:$laptop) and (max-width:#{$pc - 1}) {
+    @content;
+  }
+}
+
+@mixin pc(){
+  @media all and (min-width:$pc) {
+    @content;
+  }
+}
+
+
+

@@ -1,0 +1,56 @@
+// c_06_dom_sample_03.scss
+/* c_06_dom_sample_03.css */
+
+#wrap {
+  // width:90%; min-width: 600px; max-width:1200px;
+  width:clamp(600px, 90%, 1200px); height:auto; min-height:500px; margin:auto; padding-bottom:300px; background-color: #efe;}
+
+#headBox { width: 100%; margin-bottom: 5rem; border-bottom: 1px solid #aaa; background-color: #ddd;}
+#contentBox { width: 100%; height:600px; padding:2rem; 
+  > h2 { text-align: center; font-size: 1.2rem; padding:1rem; border-bottom: 1px solid #555; margin-bottom:2rem;}
+  @at-root .tab_area { width:100%; height:100%; padding:0.5rem; border:1px solid #777;  background-color: #fff;}
+  @at-root .tab_title_inner {width: 100%; height:80px; padding:0.5rem;
+              & > ul {display:flex; justify-content:flex-start; align-items:flex-end;
+                width: 100%; height: 100%;  border-bottom: 1px solid #555;
+                li{ height:40px; margin:0 4px; }
+                li.on {
+                  border:1px solid #555; border-bottom: none; 
+                  // border-top-left-radius:4px; border-top-right-radius:4px;
+                  border-top : {
+                    $r : 4px; 
+                    left-radius:$r; 
+                    right-radius:$r;
+                  }
+                  > button {height: calc(100% + 2px);  color:#037;}
+                }// on
+              }// ul
+
+              & button { color:#575757; font-weight: 700; text-transform:capitalize;
+                width: 100%; height:100%; padding:0 1rem; background-color: #fff;
+                border-top : {
+                  $r : 4px; 
+                  left-radius:$r; right-radius:$r;
+                }
+              }
+            }// .tab_title_inner
+  @at-root .tab_content_inner {width: 100%; height:calc(100% - 80px); padding:1rem;
+
+  @at-root .tab_content_part{ 
+      $bgColor:(#CB50D0,#020455,#207801,#717293);
+      @for $i from 1 through 4 {  &:nth-of-type(#{$i}) {background-color: rgba(nth($bgColor, $i), 0.05); border-radius: 4px;} }
+      & { display:none; width:100%; height:100%; padding:1rem; }
+      
+      &.on { display:block; }
+      & > h3 { font-size:1.2rem;  font-weight: 900; color:#357; padding-bottom:1rem; }
+      & > p { font-size:1.05rem; color:#555; padding-bottom:0.7rem;}
+      & > .link { width:120px; height:50px; border-radius:4px; padding:0.3rem; border:1px solid #357;
+        & > a{ 
+          display:flex; justify-content: center; align-items: center; 
+          width: 100%; height: 100%; 
+          color:#357; font-weight: 700; background-color: #fff; }
+        & > a:hover{background-color: #357; color:#fff;}
+        & > a:focus{border-width:2px; background-color: lighten(#357, 30%);}
+      } // .link
+    }// .tab_content_part    
+  }// .tab_content_inner
+}// #contentBox

@@ -1,0 +1,135 @@
+
+ // scss class(html에서 불리는 class와는 다소 다른 의미)
+ // base layout
+
+ @mixin baseLayout($w:100%, $mw:$minWidth, $boo:false ,$h:auto, $bgc:dark, $myC:null){
+ 	// $w : 가로값의 크기(width)
+ 	// $mw : min-width
+ 	// $boo : boolean 기능으로 min-width를 작성할 것인지(true) 아니면 작성하지 않을 것인지로 판단(false). -  기본설정: false
+ 	// $h : 높이값(height)
+ 	// $bgc: 배경색상
+ 	// $myC: 배경색 설정시 true 또는 false 일 경우 색상을 입력하도록 설정 이외의 값일 경우 배경색을 입력하지 않도록 처리(기본 null)
+ 	// $myC 색상설정시 true :변수를 이용한 색상처리,  false: 직접 입력한 색상 사용하도록 처리
+
+ 	width:$w; 
+
+	@if $h == null{} 
+	@else if $h == auto {
+		height:auto;
+		&:after{content:" "; display: block; width: 100%; height: 0;clear: both;}
+	}@else if $h == number {
+		height:rem($h);
+	}@else {	
+		height:$h;  
+	}
+
+	 	@if $boo == true { min-width:rem($minWidth); 	}
+
+	 	@if $myC == true or false{ 	
+			background-color:bgc($bgc, $myC);
+	 	} 
+ } // baseLayout
+
+@mixin ani($u:$baseaniUse, $t:$baseTime ,$m:$baseMotion){
+	transition : $u $t $m;
+}
+
+@mixin boxSizing($s){
+ 	padding: ($s / 16) + rem;
+ 	box-sizing:border-box;
+ }
+ 
+
+ // 외부 기본 연결주소 세팅()
+ // $url:"../../img/";
+ // 문자의 연결은  기호로 표기
+@mixin link($u:$url, $f:none, $p:center, $t:300ms, $s:cover){ 
+		a{width: 100%; height: 100%; display: block; 
+			background-image: url($u + $f);	
+			background-repeat: no-repeat; 
+			background-position:$p;
+			background-size:$s;
+			transition:all $t linear;
+	 >span{display: block; width:0; height:0; 
+			position: absolute; z-index:-100; overflow: hidden;}//span 
+		 }// a 
+	 } // link()
+
+@mixin img($u:$url, $f:none, $p:center, $s:contain , $c:false, $boo:false){ 
+
+	@if $u == false{} @else{background-image: url($u + $f);}
+	background-repeat: no-repeat; 
+	@if $p == false {}	@else {	background-position:$p;}
+	background-size:$s;
+	@if $c == false {}@else {	background-color:$c; }
+
+	 } // img()
+
+@mixin firstFix($p, $v){
+ 	-webkit-#{$p} : $v;
+ 	-moz-#{$p}    : $v;
+ 	-ms-#{$p}     : $v;
+ 	-o-#{$p}      : $v;
+ }
+
+@mixin lastFix($p, $v){
+ 	#{$p} : -webkit-$v;
+ 	#{$p} : -moz-$v;
+ 	#{$p} : -ms-$v;
+ 	#{$p} : -o-$v;
+ }
+
+$shadow:2;
+@mixin shadow($x:$shadow, $y:$shadow, $b:$shadow,$c:#{dark,0.2}, $i:false){
+	@if $i == false{
+	 box-shadow:rem($x) rem($y) rem($b) color($c);
+	 } @else if $i == true {
+	 box-shadow:$x $y $b $c inset;
+ }
+}
+
+// -----------------------------------------------------------
+
+@function wideVw($w){
+ 	@return ($w / 1920 * 100)+vw;
+ }
+
+@function pcVw($w){
+ 	@return ($w / 960 * 100)+vw;
+ }
+
+@function rem($s){
+ 	@return ($s / 16)+ rem;
+ }
+
+ 
+@function fs($size:base, $boo:true){
+	@if $boo == true {
+ 	@return map-get($fontSize, $size);
+ } @else if $boo == false {
+ 	@return rem($s);
+ }
+}
+
+@function line($l){
+	@return map-get($line, $l);
+}
+ 
+@function bgc($bgc, $myColor:$myC){
+ @if $myColor == true { 	
+ 	 @return color($bgc);	
+ } @else if $myColor == false {
+ 	 @return $bgc;
+ }
+}
+
+@function color($c , $o:1){
+	@if $o >= 1{
+		@return map-get($color, $c);
+	}@else if $o < 1{
+		@return rgba( map-get($color, $c) , $o);
+	}
+}
+ 
+
+

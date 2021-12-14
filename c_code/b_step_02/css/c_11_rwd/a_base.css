@@ -1,0 +1,16 @@
+/* a_base.css */
+
+#wrap {
+  width: 100%; height: auto; min-height:400px;
+  background-color: #ccc;
+}
+#headBox {width:100%; background-color: #fd0;}
+#viewBox {width:100%; background-color: #d9d;}
+#conBox  {width:100%; background-color: #afa;}
+  #conBox ul {width: 100%; height:auto;}
+  #conBox li {float:left; background-color: #7af;}
+  #conBox li:nth-child(2n+1)  {background-color: #7a7;}
+
+#otherBox{width:100%; background-color: #aff;}
+#footBox { width:100%; height:100px; background-color: #a70;}
+#footBox h2 { height:100px; background-color: #0af;}

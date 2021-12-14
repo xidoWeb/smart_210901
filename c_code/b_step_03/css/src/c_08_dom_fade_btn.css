@@ -1,0 +1,184 @@
+#wrap {
+  width: 90%;
+  min-width: 600px;
+  max-width: 1400px;
+  margin: auto;
+  background-color: #efefef;
+}
+
+#headBox {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #757575;
+}
+
+#newBox {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+#newBox h2 {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.new_area {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  background-color: #f7e9d3;
+}
+
+.card {
+  width: 90%;
+  min-width: 180px;
+  max-width: 300px;
+  height: 66.6666666667vw;
+  min-height: 400px;
+  max-height: 500px;
+  padding: 0.5rem;
+  border: 1px solid #1a5d54;
+}
+.card > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.card > a:focus {
+  outline: 3px solid rgba(51, 51, 51, 0.5);
+}
+.card > a > .img_zone {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0.5rem;
+  background-color: #ddd;
+}
+.card > a > dl {
+  width: 100%;
+  height: 180px;
+}
+.card > a dt {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+.card > a dd {
+  width: 100%;
+}
+.card:nth-of-type(1) .img_zone {
+  background-image: url(../../multi/img/bottle.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.card:nth-of-type(1) .img_zone > span {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.card:nth-of-type(2) .img_zone {
+  background-image: url(../../multi/img/cookie.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.card:nth-of-type(2) .img_zone > span {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.card:nth-of-type(3) .img_zone {
+  background-image: url(../../multi/img/juice.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.card:nth-of-type(3) .img_zone > span {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.new_area_modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 60%;
+  margin: auto;
+  padding: 1rem;
+  padding-top: 5rem;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  background-color: #505050;
+}
+.new_area_modal:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+.new_area_modal .close_btn {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.75rem;
+  transform: translate(-50%);
+}
+.new_area_modal .close_btn > button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: #ffffff;
+}
+.new_area_modal .close_btn > button:focus {
+  transform: scale(1.2);
+  border: 3px solid #ffffff;
+  background-color: #ffbd55;
+  font-weight: 900;
+}
+.new_area_modal .close_btn > button:hover {
+  transform: scale(1.2);
+  background-color: #f7e9d3;
+}
+
+@supports (width: clamp(10px, 10%, 300px)) {
+  #wrap {
+    width: clamp(600px, 90%, 1400px);
+  }
+
+  .card {
+    width: clamp(180px, 90%, 300px);
+  }
+}
+
+/*# sourceMappingURL=c_08_dom_fade_btn.css.map */

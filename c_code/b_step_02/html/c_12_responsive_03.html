@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- c_12_responsive_03.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap">
+  <link rel="stylesheet" href="../fonts/fontawesome/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/c_12_responsive_03.css">
+
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+
+  <title>c_12_responsive_03</title>
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <header id="headBox">
+      <div class="container">
+        <h1><a href="./a_content.html" class="full">웹기초</a></h1>
+        <nav id="navigation">
+          <h2 class="blind">navigation</h2>
+          <div class="gnb">
+            <h3 class="blind">global navigation</h3>
+            <div class="gnb_btn">
+              <button type="button" class="open_btn">메뉴</button>
+              <button type="button" class="close_btn">닫기</button>
+            </div>
+            <div class="gnb_list">
+              <ul>
+                <li><a href="#">list_01</a></li>
+                <li><a href="#">list_02</a></li>
+                <li><a href="#">list_03</a></li>
+                <li><a href="#">list_04</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="unb"></div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="viewBox"> 
+      <h2 class="blind">주요 광고 영역</h2>
+      <div class="container">
+        <div class="indicator">
+          <ul class="indi_list blind_wrap clearfix">
+            <li class="action"><a href="#"><span>광고 1번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 2번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 3번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 4번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 5번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 6번째 내용 요약 설명</span></a></li>
+            <li><a href="#"><span>광고 7번째 내용 요약 설명</span></a></li>
+          </ul>
+          <p><span class="now">1</span> / <span class="total">7</span></p>
+        </div>
+
+        <div class="view_area">
+          <ul class="view_list_wrap">
+            <li class="action">해당 광고 1번째</li>
+            <li>해당 광고 2번째</li>
+            <li>해당 광고 3번째</li>
+            <li>해당 광고 4번째</li>
+            <li>해당 광고 5번째</li>
+            <li>해당 광고 6번째</li>
+            <li>해당 광고 7번째</li>
+          </ul>
+        </div>
+        <!-- 
+          슬라이드 광고 처리순서
+          1. 보이는 슬라이드는 맨 앞으로 배치하기 위해 .action 담는다.
+          2. .action이 담긴요소를 제외한 나머지 슬라이드 요소는 display:none처리
+          3. 이후 인디케이터 또는 다음버튼 및 여러이유로 다음 슬라이드가 나타나는 경우
+          4. 우선 해당 순번에 있는 요소가 나타나고(.action이 없으므로 뒤에 배치)
+          5. .action에 있던 요소에 .action을 강제로 나타나게한 순번의 요소에 이동하여 앞으로 이동
+          6. .action을 제외한 나머지 요소는 display:none 처리
+        -->
+      </div>
+    </section>
+
+    <article id="contentBox"></article>
+    <article id="infoBox"></article>
+
+    <footer id="footBox">
+      <div class="container"></div>
+    </footer>
+  </div>
+  <!-- javascript -->
+</body>
+</html>

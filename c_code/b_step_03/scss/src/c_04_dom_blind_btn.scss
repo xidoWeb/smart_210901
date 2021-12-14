@@ -1,0 +1,31 @@
+// c_04_dom_blind_btn.scss
+@import "../common/variable";
+@import "../common/mixin";
+
+#wrap {
+  width: 90%; height: auto; min-height:500px; margin:auto;
+}
+
+#headBox { border-bottom: 1px solid #333;}
+#contentBox { 
+  width: 100%; height:500px; margin-top: 5rem; padding:1rem; border:1px solid #57a; 
+  > .btn {
+    display: flex; justify-content:space-around; align-items:center;
+    width: 100%; height: 100px; padding:1rem 0; 
+    > button { padding:0.5rem 1rem; border:2px solid #57a; border-radius:0.25rem; background-color: #fff;
+      &:hover { background-color: rgba(#57a, 0.3); text-transform:capitalize;}
+      &.on { background-color: #57a; color:#fff; font-weight: 700;}
+    }
+  } // .btn
+
+  > .content_area { 
+    overflow-y: hidden; // display: none;
+    width: 100%; height: 350px; // height:auto; // min-height:500px; 
+    background-color: #fdd; 
+    // transition: background-color 500ms ease;
+    > ul { width: 100%; height: 100%; padding:1rem; border-radius:0.25rem; }
+  }
+
+}// #contentBox
+
+

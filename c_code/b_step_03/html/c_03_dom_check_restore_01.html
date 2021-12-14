@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- c_03_dom_check_restore_01.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <title>Document</title>
+  <style>
+    #wrap { width: 90%; height: auto; min-height:400px; margin:auto; background-color: #eee;}
+    h1 { font-size: 2.5rem; background-color: #ddd;}
+    #contentBox { width: 100%; height:auto; padding: 10px; margin-top:50px; background-color: #cdc;}
+    #contentBox > button { padding:10px; border:1px solid #57a; border-radius: 4px; font-weight: 700;}
+    #contentBox > button.on { background-color: #57a; color:#fff; font-weight: 900; font-size:1.1rem;}
+    .content_area {display: none; width: 100%; height: 300px; padding:10px; background-color: #cdf; }
+    .content_area.on {display: block;}
+    .content_area ul {border:1px solid #57a; padding: 8px; }
+    .content_area li { margin-bottom:4px; padding: 4px; border-bottom: 1px solid #57a;;}
+
+  </style>
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">DOM</a></h1>
+    <article id="contentBox">
+      <button type="button">클릭</button>
+      <div class="content_area">
+        <ul>
+          <li><a href="#">link_01</a></li>
+          <li><a href="#">link_02</a></li>
+          <li><a href="#">link_03</a></li>
+          <li><a href="#">link_04</a></li>
+          <li><a href="#">link_05</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- script -->
+  <script src="../js/src/c_03_dom_check_restore_01.js"></script>
+</body>
+</html>

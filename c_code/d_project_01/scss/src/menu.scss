@@ -1,0 +1,13 @@
+@charset "UTF-8";
+// menu.scss
+/* menu.css */
+@import "../common/variable", "../common/mixin";
+
+// design -------------------------- 
+.container { width: 1100px; height: 100%; margin:auto;}
+// --------------- 
+#wrap { width: 1440px; height:auto; margin:auto;}
+
+  @import "../dist/headBox";
+  @import "../dist/contentBox";
+  @import "../dist/footBox";

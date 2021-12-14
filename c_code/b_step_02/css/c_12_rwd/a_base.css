@@ -1,0 +1,118 @@
+/* a_base.css */
+/* 기능 처리에따른 내용 */
+/* .gnb영역에 `.action` 부여시 gnb 내부 버튼 및 .gnb_list 나타나게 처리 */
+
+
+/* 변수할당 */
+:root {
+  --color-white:#fff;
+  --color-black:#333;
+  --color-deepGn:#547d77;
+  --color-lightGn:#33b88f;
+  --color-sky:#95D2E9;
+  --color-purple:#957de9;
+  --color-deepY:#ba7;
+}
+
+/* common-layout */
+.container {position:relative; width:100%; height:100%; max-width:960px; margin:auto; background-color: rgba(255,255,255,0.1);}
+
+
+/* design */
+#wrap { width: 100%; height: auto; min-height:400px; background-color: #ddd;}
+
+/* #headBox --------------------------------------------  */
+#headBox {
+  position: fixed;  top: 0; left: 0; z-index: 1500;
+  width:100%; background-color: var(--color-black);}
+  h1 {float:left; width: 180px; height: 40px; background-color: var(--color-deepGn);}
+  #navigation {float:right; width:500px; height:auto; padding-top:6px;}  
+    .gnb {float:right; background-color: var(--color-deepY);}
+    .close_btn{display:none;}
+    .gnb_list {display:none;}
+    /* mobile영역 gnb 구현시 처리되는 부분 */
+    .gnb_btn {width: 100%; height: 100%;}
+    .gnb_btn > button { width: 100%; height: 100%; font-size: 0.5rem;}
+    .gnb_list {
+      position: fixed; top: 0; right: 0;
+      width: 100%; height: 100%; 
+      padding: 2rem; padding-top: 3rem;
+      background-color: #fff;
+    }
+    .gnb_list ul {width: 100%; height: auto;}
+    .gnb_list li {
+      width: 100%; height:auto; margin-bottom: 1rem;
+      color:var(--color-deepGn);
+      font-size:1.2rem; font-weight: 600; text-transform:capitalize;}
+    .gnb_list a { color:inherit; }    
+    
+    /* gnb에 action 클래스 첨부시 처리 */
+    .action .open_btn { display: none;}
+    .action .close_btn { display: block; color:var(--color-white);}
+    .action .gnb_btn {
+      position: relative; z-index:100; 
+      background-color: var(--color-black);}
+    .action .gnb_list {display:block;}
+
+    /* unb */
+    .unb {float:left; width:30px; height:34px; background-color: var(--color-white);}  
+    
+
+/* #viewBox --------------------------------------------  */
+#viewBox { width:100%; background-color:var(--color-deepY);}
+  .indicator { 
+    position: absolute; bottom:10px; left:50%; z-index:100;
+    width:auto; height:auto; 
+    transform:translateX(-50%);
+  }
+  .indi_list {
+    width:auto; height:auto; min-width:306px;
+    padding:2px; border-radius:30px;
+    background-color: var(--color-white);
+  }
+  .indi_list li {
+    float:left;
+    width:26px; height: 26px; margin-left:16px;    
+  }
+  .indi_list li.action{ width:50px; }
+  .indi_list li:first-child {margin-left:0;}
+  .indi_list  a {
+    display:block; width: 100%; height: 100%;
+    background-color: var(--color-deepY);
+    border-radius:30px;
+  }
+
+.indicator p{ display:none; }
+
+.view_area {width: 100%; height: 100%;}
+  .view_list_wrap {position:relative; width: 100%; height: 100%;}
+  .view_list_wrap li {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    font-size:2rem;
+    background-color: var(--color-purple);
+    display: none;
+  }
+  .view_list_wrap li.action{z-index:10; display: block;}
+/* #contentBox --------------------------------------------  */
+#contentBox { width:100%; margin:auto; background-color: var(--color-deepGn);}
+
+/* #infoBox --------------------------------------------  */
+#infoBox { width:100%; margin:auto; background-color: var(--color-purple);}
+
+/* #footBox --------------------------------------------  */
+#footBox { width:100%; background-color: var(--color-black);}
+
+
+/* 
+ * vw적용하는 대표적인 형상 : logo(h1) , #viewBox 영역, 가로/세로의 비율이 그대로 유지하면서 커지는 경우
+
+ * 반응형웹 작업시 : 스마트폰 규격부터 점점 큰 규격으로 변경
+ * 반응형웹 디자인작업: 코드의 크기의 기준에서 작은 디바이스 기준으로 작업
+ * 320 - 768 - 1280 - 1440 - 1920
+ * 공통디자인 요소가 많아야 작업이 쉬워진다.
+ * 모바일기기(wifi가 아닌경우)에서는 영상소스는 최대한 줄여서 처리
+ * font크기는 동일하게(단, 보여주기용으로 크게만든 font는 줄여도 무방)
+ * 버튼의 경우 간격을 넓혀서 모바일기기에서 터치가 용이하도록
+  (여성분들의 경우 엄지손가락으로 누르는 것보다 더 넓은 범위를 누른다고 생각)
+*/

@@ -1,2 +1,27 @@
+# .gitignore
+# --------------------------------------------------
+# .gitignore가 실행되지 않을때 다음 순서대로 처리하자.
+# $ git rm -r --cached .  
+# $ git add .
+# $ git commit -m "fixed untracked files"
+# --------------------------------------------------
 
+
+# mac사용자들을 위한 .DS_Store파일
 **/.DS_Store
+
+# scss 변환시 해당내용 정보처리에 대한 자료
+**/*.css.map
+
+# prepros이용하여 생긴 config파일 
+**/prepros.config
+
+# node-module삭제
+**/node_modules
+node_modules
+**/package-lock.json
+yarn.lock
+
+
+# .vscode
+**/*.vscode

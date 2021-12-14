@@ -1,0 +1,22 @@
+// b_03_scss_mixin_function.scss
+/* b_03_scss_mixin_function.css */
+@import "../common/mixin";
+
+// @import url(); // css - css파일을 별도로 분리하여 참조하는 기능
+// @import ; //scss - scss파일을 불러와서 css변환시 1개의 파일로 결합
+
+
+$url:"../../img/main/";
+#wrap {
+  @include bgImg("file.png");
+}
+
+p{
+  @include unit(width,100); 
+  height:rem(50);
+}
+
+$device:768;
+.div1 {
+  width: vw(40);
+}

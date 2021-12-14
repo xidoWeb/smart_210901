@@ -1,0 +1,46 @@
+/* b_mob_v.css */
+
+/* (max-width:479px) / design 기준 : 320px */
+@media all and (max-width:479px) {
+  
+
+  /* #headBox -------------------------------------- */
+  #headBox{ height:40px; height:12.5vw  /* 40/320*100 vw*/ ; min-height:40px; }
+  #headBox > .container { padding:2.1875vw 10px; }
+  h1 {width: 110px; height: 26px;}
+  #navigation {width:60px; padding:0;}  
+    .gnb {width:20px; height:26px;}
+    .unb {width:26px; height:26px;}
+
+  /* #viewBox -------------------------------------- */
+  #viewBox{ height: 480px; height:150vw; min-height:480px; 
+    padding-top: 12.5vw;}
+
+  .indicator { 
+    left:auto; right:20px; 
+    width:56px; height:26px; 
+  }
+  .indi_list { display:none;}
+  .indicator p {
+    display: block;
+    width: 100%; height: 100%;
+    border-radius:40px;
+    font-size:1rem; color:var(--color-white); text-align:center;
+    line-height:26px;
+    background-color: var(--color-deepGn); 
+  }
+  .total { font-weight: 700;}
+
+  
+
+
+  /* #contentBox -------------------------------------- */
+  #contentBox{ height:480px;height:150vw; min-height:480px;}
+
+  /* #infoBox -------------------------------------- */
+  #infoBox{ height:480px; height:150vw; min-height:480px;}
+
+  /* #footBox -------------------------------------- */
+  #footBox{ height:40px; }
+
+}/* (max-width:479px) */

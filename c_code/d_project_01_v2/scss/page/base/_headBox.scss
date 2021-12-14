@@ -1,0 +1,78 @@
+// headBox
+$headH:50 !global;
+$headH2:$headH *2;
+$imgPath:'../../multi/img/base/';
+$logoWhite: #{$imgPath}+'logo_white.svg';
+
+
+#headBox {
+  position: fixed; top: 0; left: 0; z-index:1000;
+  width: 100%; 
+  @include remUnit(height, $headH);
+  background-color: #fff;
+
+  @at-root h1 {
+    position:relative; z-index:200;
+    width: 60px; height: 35px;
+
+    @include mobile{
+      @at-root .head_area{ padding:8px 20px; }
+      position:absolute; left:0; right:0;  top:8px; margin:auto;
+    }
+
+    & > a {      
+      @include full('logo_color.png',$size:contain){
+        @include laptop{ background-image: url(#{$imgPath}+'logo_color_pc.png'); }
+      };
+
+      @include mobile{
+        @at-root #headBox.on & { background-image: url($logoWhite);  } 
+      }
+      @include tablet{
+        @at-root #headBox.on & { background-image: url($logoWhite);  } 
+      }
+    }
+  }// h1
+
+  @at-root .navi_inner {
+    width:30px; height: 35px; 
+    float:left;
+    background-color: $color_primary_01;
+    .nav_btn{position: relative; z-index:200; width: 100%; height: 100%;
+      & > button { @include full($file:'menu_btn.svg', $size:contain); }
+      @include laptop { display:none; }
+      @include pc{ display:none; }
+    }
+    
+    @at-root .navi_wrap{       
+      @include mobile{
+        position:absolute; z-index:100; top: 0; left: 0;
+        width: 100%; height:100vh; 
+        padding:70px 60px 30px; 
+        background-color: rgba($color_primary_01, 0.7);    
+      } // @include mobile
+
+      @include tablet {
+        position:absolute; z-index:100; top: 0; left: 0;
+        width: 100%; height:100vh; 
+        padding:70px 60px 30px; 
+        background-color: rgba($color_primary_02, 0.7);    
+      }// @include tablet
+    }// .navi_wrap
+  }
+
+  // @include mobile{}
+  @include tablet{ 
+    @include remUnit(height,$headH); 
+  }
+
+  @include laptop{ 
+    @include remUnit(height,$headH2); 
+  }
+
+  @include pc{ 
+    @include remUnit(height,$headH2); 
+  }
+  
+}
+

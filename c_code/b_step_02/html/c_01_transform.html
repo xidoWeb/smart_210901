@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- c_01_transform.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/transform.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹</a></h1>
+    <hr />
+    <h2>transform</h2>
+
+    <div class="part">
+      <h3>translate</h3>
+      <ul class="translate">
+        <li> x:100px 위치 이동</li>
+        <li> y: -100px 위치 이동</li>
+        <li> x:-120px , y:50px <br> 
+          위치 이동</li>
+        <li> z:500px 위치 이동</li>
+        <li>자신의 크기를 
+            기준 1/2만큼 
+            오른쪽으로 이동</li>
+      </ul>
+    </div><!-- // .part -->
+
+    <div class="part">
+      <h3>scale</h3>
+      <ul class="scale">
+        <li>1.2배 scale</li>
+        <li>x-1.5배 scale</li>
+        <li>y-0.7배 scale</li>
+        <li>x-0.5, y-1.5 <br /> 
+          scale</li>
+        <li>scale</li>
+      </ul>
+    </div><!-- // .part -->
+
+    <div class="part">
+      <h3>skew(뒤틀림)</h3>
+      <ul class="skew">
+        <li>skew</li>
+        <li>skew</li>
+        <li>skew</li>
+        <li><span>skew</span></li>
+      </ul>
+    </div><!-- .skew -->
+
+    <div class="part">
+      <h3>rotate</h3>
+      <ul class="rotate">
+        <li>45deg: rotate</li>
+        <li>720deg: rotate</li>
+        <li>15deg: rotate</li>
+        <li>30deg, 45deg rotate</li>
+        <li>
+          <div class="front">Y:180deg</div>
+          <div class="back">뒤집어진 카드</div>
+      </li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <ul class="rorate2">
+        <li>card_01</li>
+        <li>card_02</li>
+        <li>card_03</li>
+        <li>card_04</li>
+        <li>card_05</li>
+        <li>card_06</li>
+      </ul>
+      <ul class="rotate3">
+        <li>card_01</li>
+        <li>card_02</li>
+        <li>card_03</li>
+        <li>card_04</li>
+        <li>card_05</li>
+        <li>card_06</li>
+      </ul>
+    </div>
+    <!-- ========= -->
+    <div class="part">
+      <h3>복합수행</h3>
+      <ul class="multi_tr">
+        <li>1: x축 500px 이동, 
+          회전 180도</li>
+        <li>2: 회전 180도, 
+          x축 500px 이동</li>
+        <li>회전 기준</li>
+      </ul>
+    </div>
+  </div><!-- #wrap -->
+
+  <div id="perspectiveWrap">
+    <div class="pers_card">card_1</div>
+    <div class="pers_card">card_2</div>
+    <div class="pers_card">card_3</div>
+    <div class="pers_card">card_4</div>
+    <div class="pers_card">card_5</div>
+  </div>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* c_02_dom_make_navi_01.css */
+#wrap {
+  width: 100%;
+  min-width: 320px;
+  height: auto;
+  min-height: 800px;
+}
+
+#headBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 8px 10px;
+  background-color: rgba(85, 85, 85, 0.1);
+}
+
+h1 {
+  width: 60px;
+  height: 40px;
+  background-color: #1a5d54;
+}
+h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nav_area {
+  width: calc(100% - 70px);
+  height: auto;
+  min-height: 40px;
+}
+
+.navi_btn {
+  display: none;
+  float: right;
+  width: 40px;
+  height: 40px;
+}
+.navi_btn > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid #505050;
+  background-color: #aaaaaa;
+}
+
+.navi_inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+}
+
+.global_part {
+  width: auto;
+  height: 40px;
+}
+
+.main_menu {
+  display: flex;
+  width: auto;
+  height: 40px;
+}
+.main_menu > li {
+  position: relative;
+  width: auto;
+  margin-right: 16px;
+  color: #333333;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.main_menu > li:last-child {
+  margin-right: 0;
+}
+.main_menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: inherit;
+  height: 100%;
+}
+.drop_btn {
+  height: 100%;
+}
+.drop_btn > button {
+  height: 100%;
+  padding: 0 10px;
+  color: inherit;
+  text-transform: inherit;
+}
+
+.sub_menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  width: auto;
+  height: auto;
+  border: 1px solid #757575;
+  border-radius: 3px;
+  color: #333333;
+  white-space: nowrap;
+  background-color: #ffffff;
+}
+.sub_menu > li {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+.sub_menu > li a {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+}
+.sub_menu > .border_line {
+  border-bottom: 1px solid #757575;
+}
+
+.search_part {
+  height: auto;
+}
+.search_part > form {
+  width: auto;
+  height: auto;
+}
+.search_part fieldset {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 4px;
+}
+#searchInput {
+  width: 250px;
+  height: 40px;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #aaaaaa;
+}
+
+.search_btn {
+  width: 70px;
+  border-radius: 4px;
+  border: 1px solid #1a5d54;
+  color: #1a5d54;
+  text-transform: capitalize;
+}
+
+@media all and (max-width: 1023px) {
+  .navi_btn {
+    display: block;
+  }
+
+  .nav_area.on .navi_btn > button {
+    background-color: #ffbd55;
+  }
+
+  .navi_btn > button:focus {
+    outline: 4px solid #757575;
+  }
+
+  .navi_inner {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(85, 85, 85, 0.1);
+  }
+
+  .nav_area.on .navi_inner {
+    display: block;
+  }
+
+  .main_menu {
+    flex-direction: column;
+    height: auto;
+  }
+  .main_menu > li {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    margin-right: 0;
+    padding: 8px;
+  }
+  .main_menu > li > a {
+    width: 100%;
+    min-height: 40px;
+  }
+  .drop_btn {
+    height: 40px;
+  }
+  .drop_btn > button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .sub_menu {
+    position: static;
+  }
+
+  .global_part {
+    margin-bottom: 16px;
+    height: auto;
+  }
+  #searchInput {
+    width: calc(100% - 78px);
+  }
+}
+
+/*# sourceMappingURL=c_02_dom_make_navi_01.css.map */

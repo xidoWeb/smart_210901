@@ -1,0 +1,7 @@
+// _headBox.scss
+#headBox { width:100%; height:100px; background-color: #ccc;
+  & > div { display:flex; justify-content:space-between; align-items:center; }
+}
+
+  h1 {width:120px; height: 70px; background-color: #fff;}
+  #naviBox{width:530px; height:70px; background-color: #dff;}

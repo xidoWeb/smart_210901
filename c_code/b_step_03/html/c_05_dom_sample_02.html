@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <link rel="stylesheet" href="../css/src/c_05_dom_sample_02.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">js-dom</a></h1>
+
+    <section id="viewBox">
+      <div class="slide_area">
+        <div>slide _ 01</div>
+        <div>slide _ 02</div>
+        <div>slide _ 03</div>
+        <div>slide _ 04</div>
+        <div>slide _ 05</div>
+        <div>slide _ 05</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- script -->
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script>
+    (function($){
+      $('.slide_area').bxSlider();
+    })(jQuery);
+  </script>
+</body>
+</html>

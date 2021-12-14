@@ -1,0 +1,46 @@
+/* menu.css */
+.container { width: 1100px; height: 100%; margin: auto; }
+
+#wrap { width: 1440px; height: auto; margin: auto; }
+
+#headBox { width: 100%; height: 100px; background-color: #ccc; }
+
+#headBox > div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+h1 { width: 120px; height: 70px; background-color: #fff; }
+
+#naviBox { width: 530px; height: 70px; background-color: #dff; }
+
+#contentBox { width: 100%; height: auto; background-color: #777; }
+
+.title_area { width: 100%; height: 250px; padding-top: 92px; padding-bottom: 17px; background-color: #adf; }
+
+.title_area .container { height: auto; }
+
+.menu_title { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; width: 100%; height: 57px; margin-bottom: 16px; padding-bottom: 20px; border-bottom: 2px solid #aaa; }
+
+.menu_content { width: 100%; height: auto; }
+
+.coffee { width: 100%; height: auto; }
+
+.menu_content ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.menu_content li { width: 240px; height: 350px; margin-bottom: 20px; }
+
+.menu_content li > a { display: block; width: 100%; height: 100%; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #333; border-radius: 3px; background-color: #fff; }
+
+.thumbnail { width: 100%; height: 220px; margin-bottom: 5px; border-radius: 3px; background-image: url("../../img/menu/card_menu_2.png"); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; }
+
+.menu_thum { width: 100%; height: auto; }
+
+.menu_thum > dt { width: 100%; height: auto; margin-bottom: 5px; border-bottom: 1px solid #757575; color: #333; text-transform: capitalize; font-size: 22px; font-weight: 700; }
+
+.menu_thum > dd { width: 100%; height: auto; font-size: 12px; font-weight: 400; color: #757575; }
+
+.tag { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; height: auto; margin-top: 5px; font-size: 12px; font-weight: 500; color: #757575; text-transform: uppercase; }
+
+.tag > span { margin-right: 5px; padding: 2px 5px; border: 1px solid #757575; border-radius: 3px; }
+
+.test { background-image: url("../../img/card_menu_1.png"); background-repeat: no-repeat; background-position: 50% 50%; background-size: initial; }
+
+#footBox { width: 100%; height: 450px; background-color: #555; }

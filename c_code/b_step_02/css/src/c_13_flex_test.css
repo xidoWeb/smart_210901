@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* c_13_flex_test.css */
+#wrap {  width: 90%; height: auto;  padding-bottom: 500px; }
+#wrap > div { width: 100%; height:auto;
+  border:1px solid #333; margin-bottom:100px; }
+h3 {width:150px; height:80px; background-color: #ccc;}
+.navi { width:600px; height:50px; background-color: #eee; margin-top:30px; }
+.gnb {width:400px; height:40px; background-color: #acf;}
+.gnb ul {width: 100%; height: 100%;}
+.gnb li {border:1px solid #7d7;  background-color: #fff;}
+.unb {width:150px; height:40px; background-color: #fdd;}
+
+/* float ------------------------------ */
+.header_01 { position: relative; }
+.header_01:after { content:""; display: block; clear:both; }
+.header_01 > h3 {  float:left; }
+/* .header_01  .gnb { float:left; margin-left:100px; } */
+.header_01 .gnb {
+  position: absolute;  bottom:0; left: 50%; 
+  transform:translate(-50%);}
+
+.header_01 .gnb li { float:left; margin-right:10px;}
+.header_01 .gnb li:last-child { margin-right: 0;}
+
+.header_01  .unb { float:right; margin-top:40px;}
+.header_01 .unb > a {
+  float:left; width:45px; 
+  margin-left: 5px; font-size: 0.7rem;
+  background-color: #fff; }
+.header_01 .unb > a:first-of-type { float:right; }
+.header_01 .unb > a:nth-of-type(2){  margin-left:0;}
+
+/* flex ------------------------------ */
+.header_02 { display:flex; justify-content:space-between; align-items:flex-end;}
+.header_02 .gnb  ul { display:flex; justify-content:space-around;}
+.header_02 .unb  {display:flex; justify-content:space-between;}
+.header_02 .unb a { 
+  font-size: 0.7rem; background-color: #fa0;}
+.header_02 .unb a:nth-of-type(1) { order:2;}
+
+
+
+/* ----------------------------------------- */
+#wrap .part {
+  display:flex; justify-content:space-between;
+  width: 800px; height: 500px; background-color: #eee;
+}
+.part > ul {
+  display:flex; flex-wrap:wrap; align-content:flex-start;
+  width:350px; height:300px; border:1px solid #333;}
+.part > ol {
+  display:flex; justify-content: space-around; align-items:flex-end;
+  width:350px; height:300px; border:1px solid #f06;}
+.part li { width:80px; height:50px; background-image:linear-gradient(45deg,#7af, #fd7);}
+
+/** display:flex;
+  * flex를 사용하면 자식요소들을 정렬하는 것을 편하게 처리할 수 있는 기능이다.
+  * flex-direction을 사용하면 가로정렬(row), 세로정렬(culumn)을 설정할 수 있다.
+  * 내부요소들의 시작과,끝의 정렬을 맞출 수 있는데 
+    시작위치정렬은(flex-start), 끝정렬(flex-end), 가운데(center), 양쪽정렬(space-between), 공간을 가지는 양쪽정렬 (space-around)의 값을 가진다.
+  * 이러한 정렬이 요소의 배치방향(주축)에 따른 정렬이면 justify-content 속성을 사용
+  * 요소의 나열방향이 아닌 방향이면,  align-items와 align-contens로 사용  
+  * 내용요소들은 기본적으로 지정영역보다 양이 많을 경우 넘쳐서 처리된다. 이를 해결하기 위해
+    flex-wrap이며, 넘치는것을 허용하는 것(nowrap) , 허용하지않고 내부로 처리(wrap)
+*/

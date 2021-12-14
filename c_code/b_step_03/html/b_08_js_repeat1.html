@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹기초-js</a></h1>
+    <hr />
+    <p>3가지 이상의 기능/요소 등의 처리를 반복 수행할 경우에는 매번 하나씩 만드는 것이아닌, 
+      반복문을 사용하여 처리</p>
+    <ul>
+      <li>while    : 여러개의 반복 수행 처리하는 문법 - while(){} 
+                    다른 반복문에 비해 속도가 느리기도하며, 특정조건 수행후 반복을 끝내는 기능을 미작성하는 경우가 있어, 권장하지 않는 기능
+      </li>
+      <li>do-while : while의 확장형으로 조건을 파악했을때 기본반복문은 처음부터 수행하지 않을 수 있지만,
+                    do-while은 무조건 최소 1번은 수행 - do {} while()
+      </li>
+      <li>for      : 가장 많이 사용된는 반복문의 기본형태이며, 최초의값/조건/이후수행처리에 대한내용을 
+                    한군데 모두 작성하여, 반복문의 수행속도를 개선하게된 처리방법 - for( ; ; ){}
+      </li>
+      <li>for-in   : for의 변형된 형태로 배열에서 많이 사용하는 기법으로 알려져있지만, 반대로 배열에서는 지양
+                    객체({})에서 사용되는 기법 for( in ){}
+      </li>
+      <li>forEach  : for의 변형된 형태로 배열의 반복으로 사용되는 기법으로, 배열요소를 각각 수행한다는 의미
+                    - [].forEach(function(data, index){})
+      </li>
+    </ul>
+
+    <hr/>
+    <ul class="test"></ul>
+  </div>
+
+  <!-- <script src="../js/src/b_08_js_repeat1.js"></script> -->
+  <script src="../js/src/b_08_js_repeat2.js"></script>
+  
+</body>
+</html>

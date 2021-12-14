@@ -1,0 +1,78 @@
+// _content.scss
+
+$full:100%;
+
+#contentBox{ @include size(); background-color: #777;}
+
+.title_area { 
+  @include size($h:250px); 
+  padding: {
+    top:92px;
+    bottom:17px;
+  }
+  background-color: #adf;
+  .container {height: auto;}
+}// .title_area
+
+.menu_title{
+  display:flex; justify-content:space-evenly; align-items:flex-end;
+  @include size($h:57px);
+  margin-bottom:16px;
+  padding-bottom:20px; 
+  border-bottom: 2px solid #aaa; }
+
+.menu_content{
+  @include size();
+  @at-root .coffee { @include size(); }
+  ul{ display:flex; justify-content:space-between; flex-wrap:wrap;}
+  li {
+    @include size($w:240px, $h:350px);
+    margin-bottom: 20px;
+
+    & > a {
+      display: block; 
+      @include size($h:$full);
+      padding:10px; box-sizing:border-box;
+      border:1px solid #333; border-radius:3px;
+      background-color: #fff;
+
+    @at-root .thumbnail{ 
+      @include size($h:220px);
+      margin-bottom: 5px; border-radius:3px; 
+        background : {
+          image:url("../../img/menu/card_menu_2.png");
+          repeat:no-repeat;
+          position:50% 50%;
+          size:cover;
+        }
+      }
+    @at-root .menu_thum{ @include size();
+      & > dt {
+        @include size();
+        margin-bottom: 5px;
+        border-bottom:1px solid #757575;
+        color:#333;
+        text-transform:capitalize;
+        font : {
+          size:22px;
+          weight: 700;
+        }
+      }
+      & > dd {
+        @include size();
+        font-size:12px; font-weight: 400; color:#757575;
+      }
+    }
+    @at-root .tag{
+      display:flex; @include size();
+      margin-top:5px;
+      font-size:12px; font-weight:500; color:#757575; text-transform: uppercase;
+      & > span {margin-right:5px; padding:2px 5px; border:1px solid #757575; border-radius:3px; }
+    }
+    }// a
+  }// li
+}// .menu_content
+
+.test {
+  @include bgImg("card_menu_1.png");
+}

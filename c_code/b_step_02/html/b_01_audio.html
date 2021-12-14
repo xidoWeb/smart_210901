@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- b_01_audio.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../fonts/fontAwesome/css/all.min.css">
+  <link rel="stylesheet" href="../fonts/ibm_Plex/IBMPlex.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/b_01_audio.css">
+  <script src="../js/common/modernizr-custom.js"></script>
+  <title>웹기초</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <h1><a href="./a_content.html">웹</a></h1>
+
+    <div class="part">
+      <h2>audio 불러오기</h2>
+      <p>audio는 음성파일을 불러오는 태그이다.<br />
+        접근성원칙에 벗어남(3초 이상 소리가 나는 경우에는 제어가 가능)
+      </p>
+      <div class="sound">
+        <audio src="../multi/audio/jazz-loopwav-7163.mp3" controls preload loop muted>
+        <p>현재 사용하고 있는 브라우저는 audio파일이 지원하지 않습니다.<br />
+          <a href="http://google.com/chrome">최신브라우저</a>를 사용하세요.</p>
+        </audio>
+      </div>
+      <div class="sound">
+        <div class="audio_btn">
+          <button type="button">재생&sol;일시정지</button>
+          <button type="button">음소거</button>
+        </div>
+        <audio controls>
+          <source  src="../multi/audio/opening-8043.ogg" type="audio/ogg" />
+          <source  src="../multi/audio/opening-8043.mp3" type="audio/mp3" />
+          <p>현재 사용하고 있는 브라우저는 audio파일이 지원하지 않습니다.<br />
+            <a href="http://google.com/chrome">최신브라우저</a>를 사용하세요.</p>
+        </audio>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- script -->
+  <script></script>
+</body>
+</html>
+
+<!-- 
+html은 먼저 처리하는 것을 수행, 동일하지만 나중요소를 배제 
+css는 하나의 속성에서 여러개 작성하는 경우, 앞의 것을 수행 뒤에것은 배제 font-family
+css에서 동일속성이 여러개가 존재하면, 이전 속성은 사라지고 뒤에오는 속성을 처리
+width:100%; width:auto; width:40px; width:10vw;
+-->

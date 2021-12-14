@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- c_07_dom_selector_01.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- layout -->
+  <div id="wrap">
+    <header id="headBox">
+      <h1>
+        <a href="./a_content.html">js- <abbr title="document object model">DOM</abbr></a>
+        <!-- 추가 내용 -->
+        <span>선택자 구조이해하기</span>
+      </h1>
+      <nav class="nav_area">
+        <h2>네비게이션</h2>
+        <ul>
+          <li><a href="#">link_01</a></li>
+          <li><a href="#">link_02</a></li>
+          <li><a href="#">link_03</a></li>
+          <li><a href="#">link_04</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article id="conBox">
+      <h2>children</h2>
+      <ul class="con_nav">
+        <li><a href="#">link_01</a></li>
+        <li><a href="#">link_02</a></li>
+        <li><a href="#">link_03</a></li>
+        <li><a href="#">link_04</a>
+            <ul class="con_sub_nav">
+              <li><a href="#">sub_link_01</a></li>
+              <li><a href="#">sub_link_02</a></li>
+              <li><a href="#">sub_link_03</a></li>
+            </ul>
+        </li>
+      </ul>
+    </article>
+
+
+    <article id="bestBox">
+      <h2>best product</h2>
+      <div class="best_area">
+        <ul>
+          <li><a href="#">card_01</a></li>
+          <li><a href="#">card_02</a></li>
+          <li><a href="#">card_03</a></li>
+          <li><a href="#">card_04</a></li>
+        </ul>
+      </div>
+    </article>
+  </div><!-- #wrap -->
+
+  <!-- script -->
+  <!-- <script src="../js/src/c_07_dom_selector_01.js"></script>
+  <script src="../js/src/c_07_dom_selector_02.js"></script> -->
+  <script src="../js/src/c_07_dom_selector_03.js"></script>
+</body>
+</html>

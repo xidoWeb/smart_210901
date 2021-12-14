@@ -1,0 +1,91 @@
+/* reset.css */
+:root {
+  font-size: 16px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "apple GD", "noto sans KR", "noto sans KR", "IBM Plex Sans KR", sans-serif;
+  font-weight: 300;
+}
+
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, pre, blockquote, address,
+ul, ol, li, dl, dt, dd,
+hr, button, img, div,
+header, article, nav, section, footer, aside,
+main, figure, figcaption, hgroup,
+form, fieldset, textarea, select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-bottom: 0.0625rem solid #505050;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+em, address, i {
+  font-style: normal;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+table, tr, td, th, thead, tbody, tfoot {
+  border: 0.0625rem solid #757575;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+select, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password],
+input[type=tel], input[type=url],
+input[type=email], input[type=search] {
+  text-indent: 0.5rem;
+  cursor: pointer;
+}
+
+select, input, textarea {
+  cursor: pointer;
+}
+
+header, article, nav, section, footer, aside,
+main, figure, figcaption, hgroup {
+  display: block;
+}
+
+/*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,72 @@
+//e_01_slide_area.scss
+/* e_01_slide_area */
+@use "sass:math";
+
+#wrap {
+  width: 90%; min-width:31.25rem; height: auto;
+  margin: auto;
+  padding: 1rem; padding-bottom: 31.25rem;
+}
+
+#headBox { 
+  display: flex; justify-content:space-around;
+  width: 100%; height: 5rem; border-bottom: 1px solid #777;
+  @at-root h1{ font-size: 1.5rem; }
+}// #headBox
+#navBox {
+  >ul{
+    display: flex;
+  }
+}
+
+#viewBox {
+  width: 100%; height: auto;
+  margin-bottom: 2rem; 
+  padding:1rem; 
+  border:1px solid #05a;
+  background-color: #ddf;
+}
+
+.part { width: 100%; height: auto; margin-bottom: 5rem;}
+
+.view_area {
+  position: relative;
+  width: 100%; height: 70vh; 
+  border:1px solid #a70;
+}
+
+.view_btn {
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content: space-between;
+  position: absolute; 
+  top:50%; left: 0; z-index:200;
+  width: 100%; height: 0; 
+  > button { 
+    $s: 3rem;
+    width: $s; height: $s; 
+    margin-top:math.div(-$s, 2);
+    border-radius: $s; background-color: #afd;
+    border:2px solid #555;
+  }
+}
+.view_content {
+  width: 100%; height: 100%; 
+  background-color: #fdf;
+  > ul {
+    width: 100%; height: 100%; 
+    > li{ 
+      display: none;
+      width: 100%; height: 100%; 
+      padding-top: 5rem;
+      text-align: center; color:#fff; font-size: 2rem;
+      font-weight: bold;
+
+      $li_bg :(#851BB2, #1b76b2, #71b21b,#b21b34);
+      @for $var from 1 through 4 {
+        &:nth-child(#{$var}) {background-color:nth($li_bg, $var);}        
+      }// for
+      &.on { display: block; }
+    }// li
+  }
+}
