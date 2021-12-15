@@ -70,3 +70,15 @@
     }// li
   }
 }
+
+
+.slide_02 ul{
+  position: relative;  
+  li{
+    position: absolute; top: 0; left: 0; 
+    &.act{
+      display: block;
+      z-index:100;
+    }
+  }
+}

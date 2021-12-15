@@ -100,4 +100,17 @@ h1 {
   display: block;
 }
 
+.slide_02 ul {
+  position: relative;
+}
+.slide_02 ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slide_02 ul li.act {
+  display: block;
+  z-index: 100;
+}
+
 /*# sourceMappingURL=e_01_slide_area.css.map */
