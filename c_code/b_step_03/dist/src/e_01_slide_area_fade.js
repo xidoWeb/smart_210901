@@ -26,24 +26,40 @@ const viewLi  = viewCon.querySelectorAll('li');
 // let CLASS_CHECK = 'act';
 // let countIndex = 0;
 let [CLASS_CHECK, countIndex, timed, cssFn] = ['act', 0, 500, 'ease'];
+let beforeIndex = countIndex;
+const liLen = viewLi.length;
 // -------------------------------------------------------------
 viewLi[countIndex].classList.remove('on');
 
-viewLi[countIndex].style.display = 'block';
-viewLi[countIndex].style.zIndex = '10';
-viewLi[countIndex].style.position = 'absolute';
-viewLi[countIndex].style.transition = `all ${timed*2}ms  ${cssFn}`;
 
 // -------------------------------------------------------------
 // 함수
+const fnInsertStyle = () => {
+  viewLi[beforeIndex].style.display    = 'block';
+  viewLi[beforeIndex].style.zIndex     = '100';
+  viewLi[beforeIndex].style.position   = 'absolute'; // css에서 작성
+  viewLi[beforeIndex].style.transition = `all ${timed}ms  ${cssFn}`; //css에서 or js
+};
 
+const fnOpacity = () => {
+  viewLi[countIndex].style.display = 'block';
+  viewLi[beforeIndex].style.opacity = 0;
+    // 수행2
+    setTimeout( () => {
+      viewLi[beforeIndex].removeAttribute('style'); // viewLi[beforeIndex].style = null;
+      beforeIndex = countIndex;
+      fnInsertStyle();
+    }, timed);
+};
+// 함수 기본 수행
+fnInsertStyle();
 // -------------------------------------------------------------
 // 이벤트처리
 // elNext클릭시
-
-elNext.addEventListener('click', (e)=>{
-  e.preventDefault();
-  viewLi[countIndex].style.opacity = 0;
-});
-
+  elNext.addEventListener('click', (e)=>{
+    e.preventDefault();
+    // 수행1
+    (countIndex < liLen-1) ? countIndex += 1 : countIndex = 0;
+    fnOpacity();
+  });
 })()
