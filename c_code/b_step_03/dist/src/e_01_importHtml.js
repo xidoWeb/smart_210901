@@ -40,7 +40,7 @@
   // view - slide2
   fetch(slideArea)
     .then(response => response.text() )
-    .then(html => viewBox2.innerHTML(html) )
+    .then(html => viewBox2.innerHTML = html )
     .then(() => fnMakeScript("../dist/src/e_01_slide_area_fade.js") );
 })()
 
