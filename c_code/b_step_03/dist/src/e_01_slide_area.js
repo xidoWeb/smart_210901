@@ -15,7 +15,6 @@
 
 // 2. 이전버튼을 클릭시 위 기능을 동일하게 수행
 // -------------------------------------
-window.addEventListener('load', function(){
 
   // 요소 선택
   const elSlide_01 = document.querySelector('.slide_01');
@@ -178,4 +177,3 @@ window.addEventListener('load', function(){
   console.log( otherArr2 );
 
 // -----------------------------------------
-})
