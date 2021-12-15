@@ -30,20 +30,18 @@ let beforeIndex = countIndex;
 const liLen = viewLi.length;
 let permission = true;
 // -------------------------------------------------------------
-// viewLi[countIndex].classList.remove('on');
-// viewLi[countIndex].classList.add(CLASS_CHECK);
 viewLi[countIndex].classList.replace('on', CLASS_CHECK);
-
-
 // -------------------------------------------------------------
 // 함수
-// const fnDelay = async ( t = timed ) => {
-//   const promise = new Promise(resolve => {
-//     setTimeout( ()=> resolve(permission = true), t)
-//   });
-//   return await promise;
-// };
-
+const fnDelay = async ( t = timed ) => {
+  const promise = new Promise(resolve => {
+    setTimeout( ()=> {
+      permission = true;
+      resolve(permission);
+    }, t)
+  });
+  return await promise;
+};
 
 const fnOpacity = () => {
     viewLi[countIndex].style.display = 'block'; // 바로 뒤에 나타나기
@@ -51,22 +49,42 @@ const fnOpacity = () => {
     viewLi[beforeIndex].style.transition = `all ${timed}ms  ${cssFn}`; // 사라질기능 animation
     viewLi[beforeIndex].style.opacity = 0;   // 투명도조절 + 위animation기능 처리
     
-    setTimeout(()=>{
-      viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
-      viewLi[beforeIndex].classList.remove(CLASS_CHECK); // .act 제거 (display:none)
+    // setTimeout(()=>{
+    //   viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
+    //   viewLi[beforeIndex].classList.remove(CLASS_CHECK); // .act 제거 (display:none)
+    //   viewLi[countIndex].classList.add(CLASS_CHECK); // 순번이 바뀐 요소 (.act 첨부)
+    //   beforeIndex = countIndex;  // 순서 기존변수, 변경변수값 통일
+    //   permission = true;
+    // },timed);
 
-      viewLi[countIndex].classList.add(CLASS_CHECK); // 순번이 바뀐 요소 (.act 첨부)
-      beforeIndex = countIndex;  // 순서 기존변수, 변경변수값 통일
-    },timed);
+    fnDelay(timed)
+      .then( () => {
+        viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
+        viewLi[beforeIndex].classList.remove(CLASS_CHECK); // .act 제거 (display:none)
+        viewLi[countIndex].classList.add(CLASS_CHECK); // 순번이 바뀐 요소 (.act 첨부)
+        beforeIndex = countIndex;  // 순서 기존변수, 변경변수값 통일
+    });
+
   }; // fnOpacity; 
 // -------------------------------------------------------------
 // 이벤트처리
 // elNext클릭시
   elNext.addEventListener('click', (e)=>{
     e.preventDefault();
-    // 수행1
+    if(permission){
+      permission = false;
       (countIndex < liLen-1) ? countIndex += 1 : countIndex = 0;
-      fnOpacity();
+      fnOpacity();    
+    }
+  });
+
+  elPrev.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(permission){
+      permission = false;
+      (countIndex <= 0) ? countIndex = liLen-1 : countIndex -= 1;
+      fnOpacity(); 
+    }
   });
 
 })()
