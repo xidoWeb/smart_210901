@@ -50,7 +50,7 @@ const fnOpacity = () => {
 
     indiLi[beforeIndex].classList.remove('act');
     indiLi[countIndex].classList.add('act');
-    
+
     fnDelay(timed)
       .then( () => {
         viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
@@ -62,7 +62,7 @@ const fnOpacity = () => {
   }; // fnOpacity; 
 // -------------------------------------------------------------
 // 이벤트처리
-// elNext클릭시
+// elNext 클릭시
   elNext.addEventListener('click', (e)=>{
     e.preventDefault();
     if(permission){
@@ -72,6 +72,7 @@ const fnOpacity = () => {
     }
   });
 
+  // elPrev 클릭시
   elPrev.addEventListener('click', (e)=>{
     e.preventDefault();
     if(permission){
@@ -81,6 +82,7 @@ const fnOpacity = () => {
     }
   });
 
+  // indicator 클릭
   indiLi.forEach((d,i)=>{
     d.addEventListener('click', (e) => {
       e.preventDefault();
@@ -91,5 +93,5 @@ const fnOpacity = () => {
       }
     });    
   })
-
-})()
+// ----------------------------------------------------------------
+})() 
