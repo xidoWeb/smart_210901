@@ -15,6 +15,7 @@
 
 // 2. 이전버튼을 클릭시 위 기능을 동일하게 수행
 // -------------------------------------
+(()=>{
 
   // 요소 선택
   const elSlide_01 = document.querySelector('.slide_01');
@@ -130,19 +131,19 @@
 
   // ============================================================
 
-  const fnT = function( i = '값 입력하세요~~!' ){  
-    // if(!i){ 
-    //   return '값 입력되지 않았음' 
-    // }else{
-    //   return i;
-    // }
+  // const fnT = function( i = '값 입력하세요~~!' ){  
+  //   // if(!i){ 
+  //   //   return '값 입력되지 않았음' 
+  //   // }else{
+  //   //   return i;
+  //   // }
     
-    // return i || '값 입력되지 않았음';
+  //   // return i || '값 입력되지 않았음';
     
-    return i;  
-  }
+  //   return i;  
+  // }
 
-  console.log( fnT(12) );
+  // console.log( fnT(12) );
 
 
 
@@ -156,7 +157,7 @@
 
   arrayList.forEach( (d,i) => {
     // console.log( d );
-    console.log(arrayList[i]);
+    // console.log(arrayList[i]);
   });
   // forEach ( 배열의 각요소, 각요소의 순번 )
 
@@ -173,7 +174,8 @@
   const otherArr2 = arrayList.filter((el)=>{
     return el !== arrayList2[selectI];
   });
-  console.log( otherArr );
-  console.log( otherArr2 );
-
+  // console.log( otherArr );
+  // console.log( otherArr2 );
+  // console.clear();
+})()
 // -----------------------------------------

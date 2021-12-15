@@ -41,6 +41,21 @@
   fetch(slideArea)
     .then(response => response.text() )
     .then(html => viewBox2.innerHTML = html )
+    .then(()=>{
+      const part = viewBox2.querySelector('.part');
+      // part.classList.remove('slide_01');
+      // part.classList.add('slide_02');
+      part.classList.replace('slide_01','slide_02');
+      console.log( part.classList.value );
+    })
     .then(() => fnMakeScript("../dist/src/e_01_slide_area_fade.js") );
 })()
 
+// {
+//   const a = 10;
+//   console.log( a );
+// }
+// (()=>{
+//   const a = 10;
+//   console.log( a );
+// })()
