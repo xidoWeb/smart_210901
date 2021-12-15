@@ -100,17 +100,62 @@ h1 {
   display: block;
 }
 
-.slide_02 ul {
+.slide_02 .view_content ul {
   position: relative;
 }
-.slide_02 ul li {
+.slide_02 .view_content ul li {
   position: absolute;
   top: 0;
   left: 0;
 }
-.slide_02 ul li.act {
+.slide_02 .view_content ul li.act {
   display: block;
   z-index: 100;
+}
+
+.indicator {
+  position: absolute;
+  z-index: 500;
+  right: 0;
+  bottom: 1rem;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border-radius: 3rem;
+}
+.indicator > ul {
+  display: flex;
+  width: auto;
+  height: 100%;
+  padding: 0.5rem;
+}
+.indicator li {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+.indicator li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #354;
+}
+.indicator li > a > span {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.indicator li.act > a {
+  background-color: #fa0;
+  transform: scale(1.1);
+}
+.indicator li:last-child {
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=e_01_slide_area.css.map */

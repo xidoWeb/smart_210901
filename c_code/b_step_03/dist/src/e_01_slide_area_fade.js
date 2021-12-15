@@ -16,21 +16,20 @@ const elBtnPart = elSlide.querySelector('.view_btn');
 const elNext = elBtnPart.querySelector('.next');
 const elPrev = elBtnPart.querySelector('.prev');
 
-const indi = elSlide.querySelector('.indicator');
-indi.remove();
+const indi = elSlide.querySelector('.indicator'); // 인디케이터 사용 하지 않도록 제거
+// indi.remove();
+const indiLi = indi.querySelectorAll('li');
 
 const viewCon = elSlide.querySelector('.view_content ul');
 const viewLi  = viewCon.querySelectorAll('li');
 
 // 옵션변수
-// let CLASS_CHECK = 'act';
-// let countIndex = 0;
-let [CLASS_CHECK, countIndex, timed, cssFn] = ['act', 0, 500, 'ease'];
+let [CLASS_CHECK, countIndex, timed, cssFn, permission] = ['act', 0, 500, 'ease', true];
 let beforeIndex = countIndex;
 const liLen = viewLi.length;
-let permission = true;
 // -------------------------------------------------------------
-viewLi[countIndex].classList.replace('on', CLASS_CHECK);
+viewLi[countIndex].classList.replace('on', CLASS_CHECK); // 기존 li class이름 변경
+indiLi[countIndex].classList.add('act');
 // -------------------------------------------------------------
 // 함수
 const fnDelay = async ( t = timed ) => {
@@ -48,15 +47,10 @@ const fnOpacity = () => {
 
     viewLi[beforeIndex].style.transition = `all ${timed}ms  ${cssFn}`; // 사라질기능 animation
     viewLi[beforeIndex].style.opacity = 0;   // 투명도조절 + 위animation기능 처리
-    
-    // setTimeout(()=>{
-    //   viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
-    //   viewLi[beforeIndex].classList.remove(CLASS_CHECK); // .act 제거 (display:none)
-    //   viewLi[countIndex].classList.add(CLASS_CHECK); // 순번이 바뀐 요소 (.act 첨부)
-    //   beforeIndex = countIndex;  // 순서 기존변수, 변경변수값 통일
-    //   permission = true;
-    // },timed);
 
+    indiLi[beforeIndex].classList.remove('act');
+    indiLi[countIndex].classList.add('act');
+    
     fnDelay(timed)
       .then( () => {
         viewLi[beforeIndex].removeAttribute('style');  // js설정된 style제거 (animate 제거)
@@ -86,5 +80,16 @@ const fnOpacity = () => {
       fnOpacity(); 
     }
   });
+
+  indiLi.forEach((d,i)=>{
+    d.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(permission){
+        permission = false;
+        countIndex = i;
+        fnOpacity(); 
+      }
+    });    
+  })
 
 })()
