@@ -9,6 +9,7 @@
 // 영역 내부에 담기   : 선택자.innerHTML, 선택자.append
 // ----------------------------------------------------
 // 불러올 data
+(()=>{
 const headBox = '/temp/header.html';
 const viewBox = '/temp/slide_area2.html';
 const scriptData = "/dist/src/e_02_slide_area-002.js";
@@ -45,4 +46,4 @@ fetch(viewBox)
     fnScript(scriptData);
   });
 // --------------------------------------------
-
+})()
