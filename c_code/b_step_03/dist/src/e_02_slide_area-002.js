@@ -35,8 +35,12 @@
 
   // 1.2 변경된 요소의 갯수에 맞게, `elSlideUl` 의 사이즈와, 
   // 1.3 `elSlideLi`요소의 사이즈를 변경 (복제된 요소는 기존 변수로 선정된 요소와는 별개로 처리)
+  // 1.4 메인에 보여주어야 하는 요소를 맞추기위해 위치 이동(왼쪽방향으로 -100% 만큼 이동);
 
   elSlideUl.style.width = ( (slideLen + 1) * 100 )+'%';
+  elSlideUl.style.position = 'relative';
+  elSlideUl.style.marginLeft = '-100%';
+  // elSlideContent.style.overflowX = 'hidden';
 
   const elSlideLiRe = elSlideUl.querySelectorAll('li');
   const elSlideLiReCvt = [].slice.call(elSlideLiRe);
@@ -44,8 +48,27 @@
   elSlideLiReCvt.forEach( (li,idx)=>{
     li.style.width = 100 / (slideLen + 1) + '%';
   });
+// --------------------------------------------------------
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })()
