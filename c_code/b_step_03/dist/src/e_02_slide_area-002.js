@@ -22,8 +22,6 @@
   const elSlideLi = elSlideUl.querySelectorAll('li');// Node(4) [ li, li, li, li ]
   const elSlideCvt = [].slice.call(elSlideLi);  // [ li, li, li, li ]
 
-  console.log( elSlideLi );
-  console.log( elSlideCvt );
   // 추가설정 변수
   const slideLen = elSlideLi.length;
 
@@ -37,10 +35,12 @@
   // 1.3 `elSlideLi`요소의 사이즈를 변경 (복제된 요소는 기존 변수로 선정된 요소와는 별개로 처리)
   // 1.4 메인에 보여주어야 하는 요소를 맞추기위해 위치 이동(왼쪽방향으로 -100% 만큼 이동);
 
-  elSlideUl.style.width = ( (slideLen + 1) * 100 )+'%';
-  elSlideUl.style.position = 'relative';
-  elSlideUl.style.marginLeft = '-100%';
-  // elSlideContent.style.overflowX = 'hidden';
+  const ulStyle = elSlideUl.style;
+  ulStyle.width = ( (slideLen + 1) * 100 )+'%';
+  ulStyle.position = 'relative';
+  ulStyle.left = 0;
+  ulStyle.marginLeft = '-100%';
+  
 
   const elSlideLiRe = elSlideUl.querySelectorAll('li');
   const elSlideLiReCvt = [].slice.call(elSlideLiRe);
@@ -48,15 +48,35 @@
   elSlideLiReCvt.forEach( (li,idx)=>{
     li.style.width = 100 / (slideLen + 1) + '%';
   });
-// --------------------------------------------------------
 
+// =========================================
+/** 시나리오 - 2 
+ * + 가로형슬라이드 형태를 구현을 위한 세팅 +
+ * 2.1 다음버튼 클릭시 UL이 현재위치 기준 왼쪽으로 100% 이동 (왼쪽으로이동이기에  -100% * i)
+ * 2.2 위 기능의 반복수행처리 체크
+ * 2.3 기본 이동을 animation기능으로 부드럽게 이동
+ * 3.4 원본이미지 마지막요소에 위치했을 경우 복제된곳으로 점프이동하여, 처음요소로 부드럽게 animation 이동
+ * 3.5 여러번 반복 클릭시 문제점 발생됨
+ */
+// =========================================
+elSlideContent.style.overflowX = 'hidden';
+const slideNext = elViewBox.querySelector('.next');
+const slidePrev = elViewBox.querySelector('.prev');
 
+let SLIDE_COUNT = 0;
+let TIME_OPTION = 500;
+ulStyle.transition = `left ${TIME_OPTION}ms linear`;
 
+slideNext.addEventListener('click', (e)=>{
+  e.preventDefault();
+  SLIDE_COUNT += 1;
 
+  if(SLIDE_COUNT >= slideLen){
+    SLIDE_COUNT = 0;
+  }
 
-
-
-
+  elSlideUl.style.left = ( -100 * SLIDE_COUNT ) +'%';
+});
 
 
 
