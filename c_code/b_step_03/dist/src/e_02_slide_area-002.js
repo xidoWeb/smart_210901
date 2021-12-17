@@ -37,8 +37,6 @@
 
   const ulStyle = elSlideUl.style;
   ulStyle.width = ( (slideLen + 1) * 100 )+'%';
-  ulStyle.position = 'relative';
-  ulStyle.left = 0;
   ulStyle.marginLeft = '-100%';
   
 
@@ -59,7 +57,7 @@
  * 3.5 여러번 반복 클릭시 문제점 발생됨 -> 권한을 부여하여 처리
  */
 // =========================================
-elSlideContent.style.overflowX = 'hidden';
+// elSlideContent.style.overflowX = 'hidden';
 const slideNext = elViewBox.querySelector('.next');
 const slidePrev = elViewBox.querySelector('.prev');
 
@@ -68,33 +66,36 @@ let TIME_OPTION = 500;
 let PERMISSION = true;
 
 ulStyle.transition = `left ${TIME_OPTION}ms linear`;
+ulStyle.position = 'relative';
+  ulStyle.left = 0;
+
+const fnDelay = async (ms = 0) => {
+  return await new Promise(resolve=>{
+    setTimeout( ()=> { resolve() }, ms)
+  });
+};
+
+const fnAniSlide = async () =>{
+  await fnDelay();
+  ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
+  ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
+  await fnDelay(TIME_OPTION + 200);
+  PERMISSION = true;
+};
 
 slideNext.addEventListener('click', (e)=>{
   e.preventDefault();
   if(PERMISSION){
     PERMISSION = false;
-
     SLIDE_COUNT += 1;
-
     if(SLIDE_COUNT >= slideLen){
       SLIDE_COUNT = 0;
       ulStyle.transition = null; //ani 삭제
       ulStyle.left = 100 +'%'; // 복제로이동
     }
-
-    setTimeout(()=>{
-      ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
-      ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
-
-      setTimeout( ()=>{
-        PERMISSION = true;
-      }, TIME_OPTION+200);
-    }, 0);
-
+    fnAniSlide();
   }// if
 }); // slideNext.click
-
-// 1 - 2 - 3 - 4 - 4+ - 1 - 2 - 3 - 4 - 4+
 
 
 
