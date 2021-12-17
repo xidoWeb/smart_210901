@@ -29,17 +29,32 @@
   .slide_wrapper {
     display: flex; flex-wrap:nowrap;
     width:400%; height:100%; background-color: #afa;
-    > li {
+    > li {position: relative;  z-index: 0;
       width:calc(100% / 4); height: 100%;
       padding: 3rem; color:#fff;
       font-size:1rem; border:1px solid #aaa; 
+      background-repeat: no-repeat; background-size: cover;
+      &:before{
+        content:""; display: block; position: absolute; z-index: -1; top: 0; left: 0;
+        width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
+      }
 
       // 임시로 배경색상넣기
-      &:nth-child(1){ background-color: #4BA686;}
-      &:nth-child(2){ background-color: #609263;}
-      &:nth-child(3){ background-color: #AA0CA7;}
-      &:nth-child(4){ background-color: #ABA1F4;}
-      &:nth-child(5){ background-color: #333;}
+      &.slide_con_01{ 
+        background-image:url('../../multi/img/event/bg_01.png'); 
+        background-color: #4BA686;}
+      &.slide_con_02{ 
+        background-image:url('../../multi/img/event/bg_02.png'); 
+        background-color: #609263;}
+      &.slide_con_03{ 
+        background-image:url('../../multi/img/event/bg_03.png'); 
+        background-color: #AA0CA7;}
+      &.slide_con_04{ 
+        background-image:url('../../multi/img/event/bg_04.png'); 
+        background-color: #ABA1F4;}
+      &.slide_con_05{ 
+        background-image:url('../../multi/img/event/bg_05.png'); 
+        background-color: #333;}
     }
   }
   h3{font-size: 2rem; font-weight: 600;}

@@ -32,8 +32,10 @@ const fnMakeEl = (selectEl, insertEl)=>{
 const fnScript = (codeUrl) => {
   const script = document.createElement('script');
   script.src = codeUrl;
-  body.append(script);
+  body.append(script); // bod 내부에 뒤에 첨부 <--> 
 };
+
+
 // ---------------------------------------------
 fetch(headBox)
   .then( response => response.text() )
@@ -47,3 +49,10 @@ fetch(viewBox)
   });
 // --------------------------------------------
 })()
+
+
+
+//before : 선택자 이전에 형제로 첨부 
+//after : 선택자 이후에 형제로 첨부 
+//append : 선택자 내부에 자식으로 끝에 첨부
+//prepend : 선택자 내부에 자식으로 앞에 첨부
