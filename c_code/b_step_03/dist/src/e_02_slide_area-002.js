@@ -56,33 +56,43 @@
  * 2.2 위 기능의 반복수행처리 체크
  * 2.3 기본 이동을 animation기능으로 부드럽게 이동
  * 3.4 원본이미지 마지막요소에 위치했을 경우 복제된곳으로 점프이동하여, 처음요소로 부드럽게 animation 이동
- * 3.5 여러번 반복 클릭시 문제점 발생됨
+ * 3.5 여러번 반복 클릭시 문제점 발생됨 -> 권한을 부여하여 처리
  */
 // =========================================
-// elSlideContent.style.overflowX = 'hidden';
+elSlideContent.style.overflowX = 'hidden';
 const slideNext = elViewBox.querySelector('.next');
 const slidePrev = elViewBox.querySelector('.prev');
 
 let SLIDE_COUNT = 0;
 let TIME_OPTION = 500;
+let PERMISSION = true;
+
 ulStyle.transition = `left ${TIME_OPTION}ms linear`;
 
 slideNext.addEventListener('click', (e)=>{
   e.preventDefault();
-  SLIDE_COUNT += 1;
+  if(PERMISSION){
+    PERMISSION = false;
 
-  if(SLIDE_COUNT >= slideLen){
-    SLIDE_COUNT = 0;
-    ulStyle.transition = null; //ani 삭제
-    ulStyle.left = 100 +'%'; // 복제로이동
-  }
+    SLIDE_COUNT += 1;
 
-  setTimeout(()=>{
-    ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
-    ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
-  }, 0)
+    if(SLIDE_COUNT >= slideLen){
+      SLIDE_COUNT = 0;
+      ulStyle.transition = null; //ani 삭제
+      ulStyle.left = 100 +'%'; // 복제로이동
+    }
 
-});
+    setTimeout(()=>{
+      ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
+      ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
+
+      setTimeout( ()=>{
+        PERMISSION = true;
+      }, TIME_OPTION+200);
+    }, 0);
+
+  }// if
+}); // slideNext.click
 
 // 1 - 2 - 3 - 4 - 4+ - 1 - 2 - 3 - 4 - 4+
 
