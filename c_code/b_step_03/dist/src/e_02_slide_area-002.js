@@ -59,7 +59,7 @@
  * 3.5 여러번 반복 클릭시 문제점 발생됨
  */
 // =========================================
-elSlideContent.style.overflowX = 'hidden';
+// elSlideContent.style.overflowX = 'hidden';
 const slideNext = elViewBox.querySelector('.next');
 const slidePrev = elViewBox.querySelector('.prev');
 
@@ -73,11 +73,18 @@ slideNext.addEventListener('click', (e)=>{
 
   if(SLIDE_COUNT >= slideLen){
     SLIDE_COUNT = 0;
+    ulStyle.transition = null; //ani 삭제
+    ulStyle.left = 100 +'%'; // 복제로이동
   }
 
-  elSlideUl.style.left = ( -100 * SLIDE_COUNT ) +'%';
+  setTimeout(()=>{
+    ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
+    ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
+  }, 0)
+
 });
 
+// 1 - 2 - 3 - 4 - 4+ - 1 - 2 - 3 - 4 - 4+
 
 
 
