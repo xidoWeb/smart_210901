@@ -11,29 +11,38 @@
 // 불러올 data
 const headBox = '/temp/header.html';
 const viewBox = '/temp/slide_area2.html';
+const scriptData = "/dist/src/e_02_slide_area-002.js";
 
 // 선택 요소
+const body = document.querySelector('body');
 const elWrap = document.querySelector('#wrap');
-
 // 생성요소
 const mkHeadBox = document.createElement('header');
 mkHeadBox.id = 'headBox';
-
 const mkViewBox = document.createElement('section');
 mkViewBox.setAttribute('id','viewBox');
 // ---------------------------------------------
+// 코드삽입 함수
+const fnMakeEl = (selectEl, insertEl)=>{
+  selectEl.innerHTML = insertEl;
+  elWrap.append(selectEl);
+};
+
+const fnScript = (codeUrl) => {
+  const script = document.createElement('script');
+  script.src = codeUrl;
+  body.append(script);
+};
+// ---------------------------------------------
 fetch(headBox)
   .then( response => response.text() )
-  .then( (textElement) => {
-    mkHeadBox.innerHTML = textElement;
-    elWrap.prepend(mkHeadBox);
-  });
+  .then( (textElement) => fnMakeEl(mkHeadBox, textElement) );
   
 fetch(viewBox)
   .then(response => response.text())
   .then(textElement => {
-    mkViewBox.innerHTML = textElement;
-    elWrap.append(mkViewBox);
+    fnMakeEl(mkViewBox, textElement);
+    fnScript(scriptData);
   });
 // --------------------------------------------
 
