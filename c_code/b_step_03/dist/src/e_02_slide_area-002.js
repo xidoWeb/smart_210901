@@ -86,11 +86,26 @@ const fnDelay = async (ms = 0) => {
   });
 };
 
+// 다음버튼 클릭시 수행하는 함수
 const fnAniSlide = async () =>{
   await fnDelay();
   ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
   ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
   await fnDelay(TIME_OPTION + 200);
+  PERMISSION = true;
+};
+
+// 이전버튼 클릭시 수행하는 함수
+const aniPrevSlide = async () => {
+  ulStyle.left = ( -100 * SLIDE_COUNT ) + '%'; 
+  await fnDelay(TIME_OPTION);
+  if(SLIDE_COUNT <= -1){
+    SLIDE_COUNT = slideLen - 1;
+    ulStyle.transition = null;
+    ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
+  }
+  await fnDelay(200);
+  ulStyle.transition = `left ${TIME_OPTION}ms linear`;
   PERMISSION = true;
 };
 
@@ -114,24 +129,35 @@ slideNext.addEventListener('click', (e)=>{
 // 이전버튼 클릭
 slidePrev.addEventListener('click', (e) => {
   e.preventDefault();
-  SLIDE_COUNT -= 1;
-  console.log( SLIDE_COUNT );
-  // 변수 "ulStyle" 의 의미는 elSlideUl.style;
-  // 최종결과물이 다음버튼 클릭시 음수수치,이전버튼 클릭시 양수 수치가 나와야 함
-  ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';    
+  if(PERMISSION === true){
+    PERMISSION = false;
 
-  // TIME_OPTION 시간이 지난 후에 SLIDE_COUNT 값을 파악하여 추가 진행
-  setTimeout( ()=>{
-    if(SLIDE_COUNT <= -1){
-      SLIDE_COUNT = slideLen - 1;
-      ulStyle.transition = null;
-      ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
-      setTimeout(()=>{
-        ulStyle.transition = `left ${TIME_OPTION}ms linear`;
-      }, 10);
-    }
-  }, TIME_OPTION);
+    SLIDE_COUNT -= 1;
+    console.log( SLIDE_COUNT );
+    // 변수 "ulStyle" 의 의미는 elSlideUl.style;
+    // 최종결과물이 다음버튼 클릭시 음수수치,이전버튼 클릭시 양수 수치가 나와야 함
 
+    // TIME_OPTION 시간이 지난 후에 SLIDE_COUNT 값을 파악하여 추가 진행
+    /*
+    setTimeout( ()=>{
+      if(SLIDE_COUNT <= -1){
+        SLIDE_COUNT = slideLen - 1;
+        ulStyle.transition = null;
+        ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
+        setTimeout(()=>{
+          ulStyle.transition = `left ${TIME_OPTION}ms linear`;
+          PERMISSION = true;
+        }, 200);
+      }
+    }, TIME_OPTION);
+    */
+
+  
+
+    aniPrevSlide();
+
+
+  }// if
 }); // slidePrev 클릭
 
 
