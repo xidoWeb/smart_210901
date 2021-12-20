@@ -39,14 +39,15 @@ const fnScript = (codeUrl) => {
 // ---------------------------------------------
 fetch(headBox)
   .then( response => response.text() )
-  .then( (textElement) => fnMakeEl(mkHeadBox, textElement) );
-  
-fetch(viewBox)
-  .then(response => response.text())
-  .then(textElement => {
-    fnMakeEl(mkViewBox, textElement);
-    fnScript(scriptData);
-  });
+  .then( (textElement) => fnMakeEl(mkHeadBox, textElement) )
+  .then(()=>{  
+    fetch(viewBox)
+      .then(response => response.text())
+      .then(textElement => {
+        fnMakeEl(mkViewBox, textElement);
+        fnScript(scriptData);
+      });
+})
 // --------------------------------------------
 })()
 

@@ -49,12 +49,23 @@
 
 // =========================================
 /** 시나리오 - 2 
- * + 가로형슬라이드 형태를 구현을 위한 세팅 +
+ * + 가로형슬라이드 형태를 구현을 위한 세팅 : 다음버튼 +
  * 2.1 다음버튼 클릭시 UL이 현재위치 기준 왼쪽으로 100% 이동 (왼쪽으로이동이기에  -100% * i)
  * 2.2 위 기능의 반복수행처리 체크
  * 2.3 기본 이동을 animation기능으로 부드럽게 이동
- * 3.4 원본이미지 마지막요소에 위치했을 경우 복제된곳으로 점프이동하여, 처음요소로 부드럽게 animation 이동
- * 3.5 여러번 반복 클릭시 문제점 발생됨 -> 권한을 부여하여 처리
+ * 2.4 원본이미지 마지막요소에 위치했을 경우 복제된곳으로 점프이동하여, 처음요소로 부드럽게 animation 이동
+ * 2.5 여러번 반복 클릭시 문제점 발생됨 -> 권한을 부여하여 처리
+ */
+// =========================================
+// =========================================
+/** 시나리오 - 3
+ * + 가로형슬라이드 형태를 구현을 위한 세팅 : 이전버튼 +
+ * 3.1 다음버튼 클릭시 UL이 현재위치 기준 오른쪽으로 100% 이동 (오른쪽으로 이동이기에  +100% * i)
+ * 3.2 위 기능의 반복수행처리 체크
+ * 3.3 기본 이동을 animation기능으로 부드럽게 이동
+ * 3.4 원본이미지 처음요소에 위치했을 경우 복제된곳으로 animation으로 이동하여, 복제원본요소로 점프 이동
+ * 3.5 팁1 : 여러번 반복 클릭시 문제점 발생됨 -> 권한을 부여하여 처리
+ * 3.6 팁2 : 움직이는 기준이 되는 변수는 "공통변수", 권한을 부여하는 변수 "공통변수" 
  */
 // =========================================
 // elSlideContent.style.overflowX = 'hidden';
@@ -83,6 +94,8 @@ const fnAniSlide = async () =>{
   PERMISSION = true;
 };
 
+// ------------------------------------------
+// 다음버튼 클릭
 slideNext.addEventListener('click', (e)=>{
   e.preventDefault();
   if(PERMISSION){
@@ -96,6 +109,30 @@ slideNext.addEventListener('click', (e)=>{
     fnAniSlide();
   }// if
 }); // slideNext.click
+
+
+// 이전버튼 클릭
+slidePrev.addEventListener('click', (e) => {
+  e.preventDefault();
+  SLIDE_COUNT -= 1;
+  console.log( SLIDE_COUNT );
+  // 변수 "ulStyle" 의 의미는 elSlideUl.style;
+  // 최종결과물이 다음버튼 클릭시 음수수치,이전버튼 클릭시 양수 수치가 나와야 함
+  ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';    
+
+  // TIME_OPTION 시간이 지난 후에 SLIDE_COUNT 값을 파악하여 추가 진행
+  setTimeout( ()=>{
+    if(SLIDE_COUNT <= -1){
+      SLIDE_COUNT = slideLen - 1;
+      ulStyle.transition = null;
+      ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
+      setTimeout(()=>{
+        ulStyle.transition = `left ${TIME_OPTION}ms linear`;
+      }, 10);
+    }
+  }, TIME_OPTION);
+
+}); // slidePrev 클릭
 
 
 
