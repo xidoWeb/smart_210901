@@ -68,9 +68,23 @@
  * 3.6 팁2 : 움직이는 기준이 되는 변수는 "공통변수", 권한을 부여하는 변수 "공통변수" 
  */
 // =========================================
-// elSlideContent.style.overflowX = 'hidden';
+// =========================================
+/** 시나리오 - 4
+ * + 슬라이 처리에 따른 count 수치 수행 +
+ * 4.1 복제 이전의 갯수 파악하여 .total_count에 값 삽입
+ * 4.2 현재 보이는 순번을 .now_count에 값 삽입
+ * 4.3 다음/이전 버튼 수행시 .now_count값은 계속 변화 
+ */
+// =========================================
+
+elSlideContent.style.overflowX = 'hidden';
+
 const slideNext = elViewBox.querySelector('.next');
 const slidePrev = elViewBox.querySelector('.prev');
+const elCount  = elViewBox.querySelector('.count_part');
+const elNowCount = elCount.querySelector('.now_count');
+const elTotalCount = elCount.querySelector('.total_count');
+
 
 let SLIDE_COUNT = 0;
 let TIME_OPTION = 500;
@@ -78,12 +92,19 @@ let PERMISSION = true;
 
 ulStyle.transition = `left ${TIME_OPTION}ms linear`;
 ulStyle.position = 'relative';
-  ulStyle.left = 0;
+ulStyle.left = 0;
+
+elTotalCount.innerText = slideLen;
 
 const fnDelay = async (ms = 0) => {
   return await new Promise(resolve=>{
     setTimeout( ()=> { resolve() }, ms)
   });
+};
+
+// 현재 슬라이드 위치를 표현하는 함수
+const fnNowCount = ()=>{
+  elNowCount.innerText = SLIDE_COUNT + 1;
 };
 
 // 다음버튼 클릭시 수행하는 함수
@@ -92,6 +113,7 @@ const fnAniSlide = async () =>{
   ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
   ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
   await fnDelay(TIME_OPTION + 200);
+  fnNowCount();
   PERMISSION = true;
 };
 
@@ -105,9 +127,14 @@ const aniPrevSlide = async () => {
     ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
   }
   await fnDelay(200);
+  fnNowCount();
   ulStyle.transition = `left ${TIME_OPTION}ms linear`;
   PERMISSION = true;
 };
+
+// ------------------------------------------
+// 기본함수 수행
+fnNowCount();
 
 // ------------------------------------------
 // 다음버튼 클릭
@@ -131,7 +158,6 @@ slidePrev.addEventListener('click', (e) => {
   e.preventDefault();
   if(PERMISSION === true){
     PERMISSION = false;
-
     SLIDE_COUNT -= 1;
     console.log( SLIDE_COUNT );
     // 변수 "ulStyle" 의 의미는 elSlideUl.style;
@@ -151,25 +177,17 @@ slidePrev.addEventListener('click', (e) => {
       }
     }, TIME_OPTION);
     */
-
-  
-
+    
     aniPrevSlide();
-
-
   }// if
 }); // slidePrev 클릭
 
+})();
+
+// 1. indicator 
+// 2. 일정시간마다 넘어가는 수치
+// 3. 터치/마우스누른상태로 내용이동
 
 
 
-
-
-
-
-
-
-
-
-
-})()
+// js에서는 잠시 기다렸다가 다음을 수행해라는 의미가 뒤에오는 코드들 까지 기다리게하는 의미가 아니다!
