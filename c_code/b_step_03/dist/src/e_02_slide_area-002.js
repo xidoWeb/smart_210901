@@ -1,4 +1,6 @@
 // e_02_slide_area-002.js
+
+
 // =========================================
 /** 시나리오 - 1 
  * + 가로형슬라이드 형태를 구현을 위한 세팅 +
@@ -52,7 +54,14 @@
  * 영역을 벗어나면 다시 재생
  */
 // =========================================
-
+/** 시나리오추가 구성
+ *  data불러와서 광고 갯수만큼 생성 (시나리오 0 )
+ *  indicator 생성 (시나리오 5.1 )
+ *  광고자체 링크는 우선 `tabIndex = -1` 마우스 클릭/indicator처리/다음/이전버튼으로 화면이 나타나는 시점에서 `tabIndex=0`
+ *  indicator기준 클릭이아닌 focus처리시 광고화면이 이동, 엔터키를 누르면 해당하는 광고의 위치로 이동
+ *  ...
+ *  */ 
+// ========================================
 
 (()=>{
   
@@ -146,7 +155,6 @@
     fnNowCount();
     PERMISSION = true;
   };
-
   // 이전버튼 클릭시 수행하는 함수
   const aniPrevSlide = async () => {
     ulStyle.left = ( -100 * SLIDE_COUNT ) + '%'; 
@@ -162,18 +170,13 @@
     ulStyle.transition = `left ${TIME_OPTION}ms linear`;
     PERMISSION = true;
   };
-
   // 일정시간마다 광고슬라이드 이동수행 (다음버튼 클릭과 동일한 기능)
-  let slideGo;
-  
+  let slideGo;  
   const fnSlideMove = ()=> {
     slideGo = setInterval( ()=>{
-      if(PERMISSION){
-        PERMISSION = false;
         SLIDE_COUNT += 1;
         fnAniSlide();
-      }// if
-    }, TIME_OPTION * 4 );
+    }, TIME_OPTION * 10 );
   };
   
   const fnSlidePause = () =>{
@@ -223,7 +226,15 @@
     });
   });
 
-  // r
+  //  광고영역에 마우스 올리면, 광고슬라이드 일시정지
+  elViewBox.addEventListener('mouseenter', (e) => { // mouseenter, mouseover
+    fnSlidePause();
+  });
+
+  // 광고영역에 마우스 벗어나면, 광고슬라이드 다시 재생
+  elViewBox.addEventListener('mouseleave', (e)=>{  // mouseleave , mouseout
+    fnSlideMove(); 
+  });
 
 // ====================================================================
 })();
@@ -231,3 +242,5 @@
 
   // js에서는 잠시 기다렸다가 다음을 수행해라는 의미가 뒤에오는 코드들 까지 기다리게하는 의미가 아니다!
   // 이벤트 위임, 버블링, 캡쳐링
+  // window.requestAnimationFrame(callback)
+
