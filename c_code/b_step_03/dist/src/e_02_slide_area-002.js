@@ -48,6 +48,7 @@
 // =========================================
 
 
+
 (()=>{
   
   // 변수 -----------------------------------------------------------------
@@ -120,16 +121,10 @@
 
   // indicator수행 함수 (수행중)
   const fnIndiRotate = ()=>{
-        SLIDE_COUNT = idx;
-
-        indiLi[BEFORE_COUNT].classList.remove('on');
-        indiLi[SLIDE_COUNT].classList.add('on');
-
         indiLi.forEach((el, index)=>{
-
-        })
+          (index !== SLIDE_COUNT) ? el.classList.remove('on') : el.classList.add('on');
+        });
   };
-
 
   // 다음버튼 클릭시 수행하는 함수
   const fnAniSlide = async () =>{
@@ -195,17 +190,14 @@
       e.preventDefault();
       if(PERMISSION){
         PERMISSION = false;
-        // let BEFORE_COUNT = SLIDE_COUNT;
-        // SLIDE_COUNT = idx;
-        // indiLi[BEFORE_COUNT].classList.remove('on');
-        // indiLi[SLIDE_COUNT].classList.add('on');
-        fnIndiRotate(idx);
+        SLIDE_COUNT = idx;
+        fnIndiRotate();
         fnNowCount();
         ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';
-      setTimeout( ()=>{
-          PERMISSION = true;
-        }, TIME_OPTION+200);
-      }
+        setTimeout( ()=>{
+            PERMISSION = true;
+          }, TIME_OPTION+200);
+        }
     });
   });
 
