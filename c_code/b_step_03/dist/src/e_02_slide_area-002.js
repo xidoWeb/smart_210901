@@ -35,6 +35,17 @@
  * 4.3 다음/이전 버튼 수행시 .now_count값은 계속 변화 
  */
 // =========================================
+/** 시나리오 - 5.1
+ * + 광고의 갯수를 파악하여, indicator li를 생성 +
+ */
+// =========================================
+/** 시나리오 - 5.2 (5.2를 먼저 수행하고, 5.1을 이후에 처리)
+ * + 인디케이터 처리 수행 +
+ * 5.2.1 클릭시 해당 순번 파악 
+ * 5.2.2 파악된 광고슬라이드 해당위치로 이동(공통변수)
+ * 5.2.3 indicator li에 .on의 위치 변경
+ */
+// =========================================
 
 
 (()=>{
@@ -45,7 +56,7 @@
 
   const slideNext = elViewBox.querySelector('.next');
   const slidePrev = elViewBox.querySelector('.prev');
-  
+
   const elCount  = elViewBox.querySelector('.count_part');
   const elNowCount = elCount.querySelector('.now_count');
   const elTotalCount = elCount.querySelector('.total_count');
@@ -63,6 +74,12 @@
   const slideLen = elSlideLi.length; // 슬라이드 복제전 갯수 파악변수
 
   // 기능처리 --------------------------------
+  // -----------
+  // 5.2 (cloneNode는 indicator목록에 포함 되지 않는다)
+  const indiPart = elViewBox.querySelector('.indicator_part');
+  const indiLi = indiPart.querySelectorAll('li');
+  
+  // -----------
   // 1.1 마지막요소 복제하여 앞에 붙이기(prepend) - li갯수 5개로 변경
   const elSlideLast = elSlideCvt.at(-1); // li의 마지막 요소를 선택
   const cloneSlide = elSlideLast.cloneNode(true); // li의 마지막 요소를 복제(내부요소까지 복제)
@@ -101,12 +118,26 @@
     elNowCount.innerText = SLIDE_COUNT + 1;
   };
 
+  // indicator수행 함수 (수행중)
+  const fnIndiRotate = ()=>{
+        SLIDE_COUNT = idx;
+
+        indiLi[BEFORE_COUNT].classList.remove('on');
+        indiLi[SLIDE_COUNT].classList.add('on');
+
+        indiLi.forEach((el, index)=>{
+
+        })
+  };
+
+
   // 다음버튼 클릭시 수행하는 함수
   const fnAniSlide = async () =>{
     await fnDelay();
     ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
     ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
     await fnDelay(TIME_OPTION + 200);
+    fnIndiRotate();
     fnNowCount();
     PERMISSION = true;
   };
@@ -121,10 +152,12 @@
       ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
     }
     await fnDelay(200);
+    fnIndiRotate();
     fnNowCount();
     ulStyle.transition = `left ${TIME_OPTION}ms linear`;
     PERMISSION = true;
   };
+
 
   // ------------------------------------------
   // 기본함수 수행
@@ -155,8 +188,31 @@
       aniPrevSlide();
     }// if
   }); // slidePrev 클릭
+
+  // indicator li 클릭
+  indiLi.forEach((el, idx)=>{
+    el.children[0].addEventListener('click', (e)=>{
+      e.preventDefault();
+      if(PERMISSION){
+        PERMISSION = false;
+        // let BEFORE_COUNT = SLIDE_COUNT;
+        // SLIDE_COUNT = idx;
+        // indiLi[BEFORE_COUNT].classList.remove('on');
+        // indiLi[SLIDE_COUNT].classList.add('on');
+        fnIndiRotate(idx);
+        fnNowCount();
+        ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';
+      setTimeout( ()=>{
+          PERMISSION = true;
+        }, TIME_OPTION+200);
+      }
+    });
+  });
+
+
 // ====================================================================
 })();
 
 
   // js에서는 잠시 기다렸다가 다음을 수행해라는 의미가 뒤에오는 코드들 까지 기다리게하는 의미가 아니다!
+  // 이벤트 위임, 버블링, 캡쳐링
