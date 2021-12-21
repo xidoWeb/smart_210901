@@ -128,6 +128,11 @@
 
   // 다음버튼 클릭시 수행하는 함수
   const fnAniSlide = async () =>{
+    if(SLIDE_COUNT >= slideLen){
+      SLIDE_COUNT = 0;
+      ulStyle.transition = null; //ani 삭제
+      ulStyle.left = 100 +'%'; // 복제로이동
+    }
     await fnDelay();
     ulStyle.transition = `left ${TIME_OPTION}ms linear`;// ani첨부(있으면 덮어씌우기)
     ulStyle.left = ( -100 * SLIDE_COUNT ) +'%';
@@ -147,7 +152,7 @@
       ulStyle.left = ( -100 * SLIDE_COUNT ) + '%';  
     }
     await fnDelay(200);
-    fnIndiRotate();
+    fnIndiRotate();    
     fnNowCount();
     ulStyle.transition = `left ${TIME_OPTION}ms linear`;
     PERMISSION = true;
@@ -164,11 +169,6 @@
     if(PERMISSION){
       PERMISSION = false;
       SLIDE_COUNT += 1;
-      if(SLIDE_COUNT >= slideLen){
-        SLIDE_COUNT = 0;
-        ulStyle.transition = null; //ani 삭제
-        ulStyle.left = 100 +'%'; // 복제로이동
-      }
       fnAniSlide();
     }// if
   }); // slideNext.click
