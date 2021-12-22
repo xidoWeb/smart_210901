@@ -39,21 +39,25 @@ fetch(path)
   return [elViewWrap, elViewLi];
 })
 .then((el)=>{
+
   const elViewCon = elViewBox.querySelector('.view_content');
+  const liLen = el[1].length - 1;
+  let conWidth =  elViewCon.clientWidth;
+  let leftData = parseInt(el[0].style.left);
+
+  // 기능 추가 
+  const pointer = {};// { start:0, end:0, gap:0 }; 좌표 x의 이동점의 차이가 100px 이상 나면 해당하는 위치로 이동
+  let SLIDE_COUNT =0;
+  let PERMISSION = true;
+  let TIMED = 500;
+  
   elViewCon.style.overflowX = 'hidden';
+  el[0].style.marginLeft = 0;
+  el[0].style.position = 'relative';
+  el[0].style.left = 0;
+  el[0].style.transition = 'left ' + TIMED + 'ms linear';
 
-  // 좌표 x의 이동점의 차이가 100px 이상 나면 해당하는 위치로 이동
-  const pointer = {};//  { start:0, end:0, gap:0 };
-// 기능 추가 
-let SLIDE_COUNT =0;
-let PERMISSION = true;
-let TIMED = 500;
 
-el[0].style.marginLeft = 0;
-el[0].style.position = 'relative';
-el[0].style.left = 0;
-el[0].style.transition = 'left ' + TIMED + 'ms linear';
-let conWidth =  elViewCon.clientWidth;
 // console.log('width:', el[0].parentNode.clientWidth );
 
 // element.clientWidth : padding포함한 width
@@ -64,34 +68,42 @@ let conWidth =  elViewCon.clientWidth;
   const fnSlideMove = () => {
     if(PERMISSION) {
       PERMISSION = false;
-      if( pointer.gap >= 100 &&  SLIDE_COUNT < el[1].length - 1 ){
+      if ( pointer.gap >= 100 &&  SLIDE_COUNT < liLen ) {
         SLIDE_COUNT +=1;
-        // el[0].style.left = 100 * SLIDE_COUNT + '%';
-      }else if( pointer.gap <= -100 && SLIDE_COUNT > 0 ){
+      } else if ( pointer.gap <= -100 && SLIDE_COUNT > 0 ) {
         SLIDE_COUNT -=1;
       }
       el[0].style.left = -100 * SLIDE_COUNT + '%';
-      setTimeout(()=>{
-        PERMISSION = true;
-      }, TIMED)
+      setTimeout(()=>{  PERMISSION = true; }, TIMED);
     }
   };
 // 이벤트 ------------------------------------------
   elViewCon.addEventListener('touchstart', (e) => {
     console.log('시작점:', e.changedTouches[0].pageX );
     pointer.start =  e.changedTouches[0].pageX;
+    leftData = parseInt(el[0].style.left); // 기존 %수치
   }); 
 
   elViewCon.addEventListener('touchmove', (e)=>{
     let _nowPointer =  e.changedTouches[0].pageX;
-    // el[0].style.left = -100 * SLIDE_COUNT + '%';
-
     // 시작점 기준으로 움직인 값 :  pointer.start - nowPointer 
-    let _pointerMove = pointer.start - _nowPointer;
-
+    let _pointerMove = pointer.start - _nowPointer; // 움직인수치를 계산
     // 해당하는 움직인 값의 % 값 : 움직인값 / 기준 * 100
+    let movePer = parseInt(_pointerMove / conWidth * 100); // 현재 움직인값에대한 % 위치
+    let moverPx = leftData - movePer;
 
-    console.log(  parseInt(_pointerMove / conWidth * 100)  );
+    // if(SLIDE_COUNT !== 0 && SLIDE_COUNT !== liLen){
+    //   el[0].style.left = (leftData - movePer) + '%'; // start위치에서 움직인 만큼 화면이 이동하게
+    // }
+
+    // 첫슬라이드 또는 마지막 슬라이드위치이며, 해당위치보다 바깥 슬라이드방향으로 터치가 움직인다면
+    let ckFirst = SLIDE_COUNT === 0 && _pointerMove > 0; // true이면 동작 X
+    let ckLast  = SLIDE_COUNT === liLen && _pointerMove < 0; // true이면 동작 x
+    if(ckFirst || ckLast){
+      el[0].style.left = (leftData - movePer) + '%';
+    }
+    
+
   });
 
   elViewCon.addEventListener('touchend', (e) => {
