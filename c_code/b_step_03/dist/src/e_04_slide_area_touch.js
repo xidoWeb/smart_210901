@@ -40,22 +40,42 @@ fetch(path)
 })
 .then((el)=>{
   const elViewCon = elViewBox.querySelector('.view_content');
+  elViewCon.style.overflowX = 'hidden';
 
-  // elViewCon.addEventListener('touchstart', (e)=>{
-  //   console.log( e.changedTouches[0].pageX );
-  //   console.log( e.touches[0].pageX );
-  // });
-  // elViewCon.addEventListener('touchmove', (e)=>{
-  //   console.log('changed:', e.changedTouches[0].pageX,  'touch:', e.touches[0].pageX  );    
-  // });
-  // elViewCon.addEventListener('touchend', (e)=>{
-  //   console.log('changed:', e.changedTouches[0]);    
-  //   console.log('touch:', e.touches[0].pageX  );    
-  // });
+  // 좌표 x의 이동점의 차이가 100px 이상 나면 해당하는 위치로 이동
+  const pointer = {};//  { start:0, end:0, gap:0 };
+// 기능 추가 
+el[0].style.position = 'relative';
+el[0].style.left = 0;
+el[0].style.transition = 'left 500ms linear';
+let SLIDE_COUNT =0;
 
+// 함수 -------------------------------------------- 
+  const fnSlideMove = () => {
+    if(pointer.gap >= 100){
+      SLIDE_COUNT -=1;
+      // el[0].style.left = 100 * SLIDE_COUNT + '%';
+    }else if(pointer.gap <= -100){
+      SLIDE_COUNT +=1;
+    }
+    el[0].style.left = 100 * SLIDE_COUNT + '%';
+  };
+// 이벤트 ------------------------------------------
+  elViewCon.addEventListener('touchstart', (e) => {
+    console.log('시작점:', e.changedTouches[0].pageX );
+    pointer.start =  e.changedTouches[0].pageX;
+  }); 
+  elViewCon.addEventListener('touchend', (e) => {
+    console.log('끝점:', e.changedTouches[0].pageX );
+    pointer.end =  e.changedTouches[0].pageX;
 
-  console.log( elViewCon.getBoundingClientRect().left );
-})
+    pointer.gap = pointer.start - pointer.end;
+    console.log( pointer );
+    fnSlideMove();
+  });  
+}); // then
+
+// Q1 : 갭차이가 100 이상날경우 그값이 음수이면 이전내용, 양수이면 다음 내용이 나타나게 만드시오.
 
 
 
@@ -68,3 +88,16 @@ fetch(path)
 // 터치를 이용하여 좌표를 계산하는 기능 :  clientX, screenX, pageX 가 존재(y좌표도 있음)
 // 대상의 위치를 기준으로 좌표를 계산(offsetX)하는 기능이 없음, 
 // 이에, 해당 요소의 위치를 파악하는 기능필요 : target.getBoundingClientRect().left | target.getBoundingClientRect().top
+
+  // elViewCon.addEventListener('touchstart', (e)=>{
+  //   console.log( e.changedTouches[0].pageX );
+  //   console.log( e.touches[0].pageX );
+  // });
+  // elViewCon.addEventListener('touchmove', (e)=>{
+  //   console.log('changed:', e.changedTouches[0].pageX,  'touch:', e.touches[0].pageX  );    
+  // });
+  // elViewCon.addEventListener('touchend', (e)=>{
+  //   console.log('changed:', e.changedTouches[0]);    
+  //   console.log('touch:', e.touches[0].pageX  );    
+  // });
+  // console.log( elViewCon.getBoundingClientRect().left );
