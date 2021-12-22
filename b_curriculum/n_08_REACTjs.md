@@ -19,8 +19,8 @@
     - [x] indicator 1: number 표시 
     - [x] indicator 2: 위치표시 해주는 형태
     - [x] 일정 시간마다 자동으로 이동하게 만들어주는 형태
-    - [ ] 터치기반으로 슬라이드 광고 수행
-      - [ ] 이벤트 핸들러 : touchstart, touchmove, touchend, 좌표인식
+    - [x] 터치기반으로 슬라이드 광고 수행
+      - [x] 이벤트 핸들러 : touchstart, touchmove, touchend, 좌표인식
       - [ ] 마우스 핸들러 : mousedown, mousemove, mouseend
 
 
