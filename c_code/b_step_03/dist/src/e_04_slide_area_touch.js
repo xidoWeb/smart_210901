@@ -34,8 +34,8 @@ fetch(path)
 .then(()=>{
   const elViewWrap = elViewBox.querySelector('.view_wrap');
   const elViewLi = elViewWrap.querySelectorAll('li');
-  const cloneEl = elViewLi[elViewLi.length -1].cloneNode(true);
-  elViewWrap.prepend(cloneEl);
+  // const cloneEl = elViewLi[elViewLi.length -1].cloneNode(true);
+  // elViewWrap.prepend(cloneEl);
   return [elViewWrap, elViewLi];
 })
 .then((el)=>{
@@ -45,20 +45,31 @@ fetch(path)
   // 좌표 x의 이동점의 차이가 100px 이상 나면 해당하는 위치로 이동
   const pointer = {};//  { start:0, end:0, gap:0 };
 // 기능 추가 
+let SLIDE_COUNT =0;
+let PERMISSION = true;
+let TIMED = 500;
+
+el[0].style.marginLeft = 0;
 el[0].style.position = 'relative';
 el[0].style.left = 0;
-el[0].style.transition = 'left 500ms linear';
-let SLIDE_COUNT =0;
+el[0].style.transition = 'left ' + TIMED + 'ms linear';
+
 
 // 함수 -------------------------------------------- 
   const fnSlideMove = () => {
-    if(pointer.gap >= 100){
-      SLIDE_COUNT -=1;
-      // el[0].style.left = 100 * SLIDE_COUNT + '%';
-    }else if(pointer.gap <= -100){
-      SLIDE_COUNT +=1;
+    if(PERMISSION) {
+      PERMISSION = false;
+      if( pointer.gap >= 100 &&  SLIDE_COUNT < el[1].length - 1 ){
+        SLIDE_COUNT +=1;
+        // el[0].style.left = 100 * SLIDE_COUNT + '%';
+      }else if( pointer.gap <= -100 && SLIDE_COUNT > 0 ){
+        SLIDE_COUNT -=1;
+      }
+      el[0].style.left = -100 * SLIDE_COUNT + '%';
+      setTimeout(()=>{
+        PERMISSION = true;
+      }, TIMED)
     }
-    el[0].style.left = 100 * SLIDE_COUNT + '%';
   };
 // 이벤트 ------------------------------------------
   elViewCon.addEventListener('touchstart', (e) => {
