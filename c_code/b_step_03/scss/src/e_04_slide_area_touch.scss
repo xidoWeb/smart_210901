@@ -1,0 +1,20 @@
+// e_04_slide_area_touch.scss
+@use 'sass:math';
+@import "../common/variable";
+@import "../common/mixin";
+
+#viewBox { width: 100%; height: auto; max-height:600px; min-height: 450px;}
+.container {  width: 100%; max-width: 1200px; margin:auto;}
+.view_content { width: 100%; height: 500px;
+  $len: 6; 
+  > ul {
+    display:flex; justify-content: flex-start; flex-wrap:nowrap;
+    width: 100% * $len ; height:100%; background-color: #ddf;
+    margin-left:-100%;
+  }
+  li {
+    width: math.div(100%, $len); height:100%; 
+    border:1px solid #677; font-size: 3rem;
+    background-image:linear-gradient(45deg, #daf, #9af);
+  }
+}

@@ -9,10 +9,11 @@ const elBox = elWrap.querySelector('.box');
 
 // 이벤트 -------------------------
 elWrap.addEventListener('mousemove', (e)=>{
+  console.log('clientY:' , e.clientY, 'pageY:', e.pageY    );
+});
   // console.log('clientX'  , e.clientX   );
   // console.log('layerX'   , e.layerX    );
   // console.log('movementX', e.movementX );
-  console.log('clientY:' , e.clientY, 'pageY:', e.pageY    );
   // console.log('pageX'    , e.pageX     );
   // console.log('screenX'  , e.screenX   );
   // console.log(' ----------------------------------- '   );
@@ -23,4 +24,3 @@ elWrap.addEventListener('mousemove', (e)=>{
   // screenX | Y     -> 모니터화면의 좌표
 
   // movementX | Y   -> 이전기준과, 차후의 기준의 값차이
-});
