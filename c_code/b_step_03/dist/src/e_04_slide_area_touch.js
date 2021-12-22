@@ -17,6 +17,8 @@ const path = "../temp/slide_area3.jsx";
 
 const elViewBox = document.querySelector('#viewBox');
 const elTitle = document.querySelector('head>title');
+// let elViewWrap;
+// let elViewLi;
 
 fetch(path)
 .then( response => response.text() )
@@ -34,4 +36,35 @@ fetch(path)
   const elViewLi = elViewWrap.querySelectorAll('li');
   const cloneEl = elViewLi[elViewLi.length -1].cloneNode(true);
   elViewWrap.prepend(cloneEl);
+  return [elViewWrap, elViewLi];
 })
+.then((el)=>{
+  const elViewCon = elViewBox.querySelector('.view_content');
+
+  // elViewCon.addEventListener('touchstart', (e)=>{
+  //   console.log( e.changedTouches[0].pageX );
+  //   console.log( e.touches[0].pageX );
+  // });
+  // elViewCon.addEventListener('touchmove', (e)=>{
+  //   console.log('changed:', e.changedTouches[0].pageX,  'touch:', e.touches[0].pageX  );    
+  // });
+  // elViewCon.addEventListener('touchend', (e)=>{
+  //   console.log('changed:', e.changedTouches[0]);    
+  //   console.log('touch:', e.touches[0].pageX  );    
+  // });
+
+
+  console.log( elViewCon.getBoundingClientRect().left );
+})
+
+
+
+// 터치를 기반으로 처리하기
+// touchstart : 이벤트 핸들러 중 터치의 시작을 의미
+// touchmove : 이벤트 핸들러 중 터치를 이용하여 움직이는 상황
+// touchend : 이벤트 핸들러 중 터치의 끝을 의미
+// event.changedTouches[0] : 터치를 인식하여 좌표를 계산하는 위치 
+// event.touches[0] :  터치를 인식하여 좌표를 계산하는 위치 touchend가 없음
+// 터치를 이용하여 좌표를 계산하는 기능 :  clientX, screenX, pageX 가 존재(y좌표도 있음)
+// 대상의 위치를 기준으로 좌표를 계산(offsetX)하는 기능이 없음, 
+// 이에, 해당 요소의 위치를 파악하는 기능필요 : target.getBoundingClientRect().left | target.getBoundingClientRect().top
