@@ -1,75 +1,60 @@
 // test_matchMedia.js
 
-
-//   const device = [
-//     {"type": "mobile"  , "size":600  },
-//     {"type": "tablet"  , "size":1024 },
-//     {"type": "pc"      , "size":1440 },
-//     {"type": "full"                  },
-//   ];
-//   let deviceType;
-//   const deviceList = [];
-  
-//   let mob = (deviceType) => {
-//     const matchType = window.matchMedia(`screen and (max-device-width: ${deviceType}px)`);
-//     deviceList.push(matchType);
-//     // return window.matchMedia(`screen and (max-device-width: ${deviceType}px)`);
-//   }
-//   for(check of device){
-//     mob(check.size)
-//   }
-//   console.log( deviceList )
-//   deviceList.forEach((device, index)=>{
-//     device.addEventListener('change', e=>{
-//       console.log(e.currentTarget)
-//       // if(e.currentTarget.matches === false){
-//       //   console.log(  e.currentTarget.media );
-//       // }
-//       // if(e.currentTarget.matches === true){
-//       //   console.log(  e.currentTarget.media );
-//       // }
-//     })
-//   })
-
-// // mediaQueryList.addEventListener('change', (e)=>{
-// //   fnDeviceCheck();
-// // })
-
 const device = [
   {"type": "mobile"  , "size":600  },
   {"type": "tablet"  , "size":1024 },
   {"type": "pc"      , "size":1440 },
   {"type": "full"                  },
 ];
-const deviceMedia = [
-  window.matchMedia(`(max-device-width: ${device[0].size -1}px)`),
-  window.matchMedia(`(min-device-width: ${device[0].size}px) and (max-device-width: ${device[1].size -1}px)`),
-  window.matchMedia(`(min-device-width: ${device[1].size}px) and (max-device-width: ${device[2].size -1}px)`),
-  window.matchMedia(`(min-device-width: ${device[2].size}px)`)
-];
-let nowDeviceType;
+// const deviceMedia = [
+//   window.matchMedia(`all and (max-width: ${device[0].size -1}px)`),
+//   window.matchMedia(`all and (min-width: ${device[0].size}px) and (max-width: ${device[1].size -1}px)`),
+//   window.matchMedia(`all and (min-width: ${device[1].size}px) and (max-width: ${device[2].size -1}px)`),
+//   window.matchMedia(`all and (min-width: ${device[2].size}px)`)
+// ];
 
-deviceMedia.forEach( (type,index)=>{
-    let el;
-    if( type.matches === true ){
-      nowDeviceType = device[index].type;
-      el = document.querySelector('.'+nowDeviceType);
-      el.classList.add('on');
-    }
-})
+
+const deviceMedia = []
+for(let i=0; i<device.length; i++){
+  let match;
+  if(i===0){
+    match = window.matchMedia(`all and (max-width: ${device.at(i).size -1}px)`);
+    deviceMedia.push(match);
+  }else if(i === device.length-1){
+    match = window.matchMedia(`all and (min-width: ${device.at(-2).size}px)`);
+    deviceMedia.push(match);
+  }else{
+    match = window.matchMedia(`all and (min-width: ${device.at(i-1).size}px) and (max-width: ${device.at(i).size -1}px)`);
+    deviceMedia.push(match);
+  }
+}
+// console.log( deviceMedia );
+
+
+let nowDeviceType;
+const fnMatchcheck = (type,index)=>{
+  let el;
+  if( type.matches === true ){
+    nowDeviceType = device[index].type;
+    console.log( nowDeviceType );
+    console.log( type.__proto__ );
+
+    el = document.querySelector('.'+nowDeviceType);
+    el.classList.add('on');
+
+  }else{
+    el = document.querySelector('.'+device[index].type);
+    el.classList.remove('on');
+  } 
+};
+
+deviceMedia.forEach( fnMatchcheck );
 
 
 deviceMedia.forEach( (type,index)=>{
   type.addEventListener('change', e =>{
-    let el;
-    if( type.matches === true ){
-      nowDeviceType = device[index].type;
-      // console.log( nowDeviceType );
-      el = document.querySelector('.'+nowDeviceType);
-      el.classList.add('on');
-    }else{
-      el = document.querySelector('.'+device[index].type);
-      el.classList.remove('on');
-    } 
+    fnMatchcheck(type,index);
   });
-})
+});
+
+
