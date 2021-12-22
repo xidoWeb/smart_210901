@@ -53,7 +53,12 @@ el[0].style.marginLeft = 0;
 el[0].style.position = 'relative';
 el[0].style.left = 0;
 el[0].style.transition = 'left ' + TIMED + 'ms linear';
+let conWidth =  elViewCon.clientWidth;
+// console.log('width:', el[0].parentNode.clientWidth );
 
+// element.clientWidth : padding포함한 width
+// element.offsetWidth : padding + border 포함한 width
+// element.getBoundingClientRect() : 외곽에 보이는 width
 
 // 함수 -------------------------------------------- 
   const fnSlideMove = () => {
@@ -76,6 +81,19 @@ el[0].style.transition = 'left ' + TIMED + 'ms linear';
     console.log('시작점:', e.changedTouches[0].pageX );
     pointer.start =  e.changedTouches[0].pageX;
   }); 
+
+  elViewCon.addEventListener('touchmove', (e)=>{
+    let _nowPointer =  e.changedTouches[0].pageX;
+    // el[0].style.left = -100 * SLIDE_COUNT + '%';
+
+    // 시작점 기준으로 움직인 값 :  pointer.start - nowPointer 
+    let _pointerMove = pointer.start - _nowPointer;
+
+    // 해당하는 움직인 값의 % 값 : 움직인값 / 기준 * 100
+
+    console.log(  parseInt(_pointerMove / conWidth * 100)  );
+  });
+
   elViewCon.addEventListener('touchend', (e) => {
     console.log('끝점:', e.changedTouches[0].pageX );
     pointer.end =  e.changedTouches[0].pageX;
