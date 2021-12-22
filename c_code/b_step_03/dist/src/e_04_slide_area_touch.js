@@ -96,20 +96,19 @@ fetch(path)
     //   el[0].style.left = (leftData - movePer) + '%'; // start위치에서 움직인 만큼 화면이 이동하게
     // }
 
-    // 첫슬라이드 또는 마지막 슬라이드위치이며, 해당위치보다 바깥 슬라이드방향으로 터치가 움직인다면
+    // 첫슬라이드 또는 마지막 슬라이드위치이며, 해당위치보다 바깥 슬라이드방향으로 터치가 움직인다면    
     let ckFirst = SLIDE_COUNT === 0 && _pointerMove > 0; // true이면 동작 X
     let ckLast  = SLIDE_COUNT === liLen && _pointerMove < 0; // true이면 동작 x
     if(ckFirst || ckLast){
       el[0].style.left = (leftData - movePer) + '%';
+    }else if(SLIDE_COUNT !== 0 && SLIDE_COUNT !== liLen){
+      el[0].style.left = (leftData - movePer) + '%';
     }
-    
-
   });
 
   elViewCon.addEventListener('touchend', (e) => {
     console.log('끝점:', e.changedTouches[0].pageX );
     pointer.end =  e.changedTouches[0].pageX;
-
     pointer.gap = pointer.start - pointer.end;
     console.log( pointer );
     fnSlideMove();
@@ -142,3 +141,27 @@ fetch(path)
   //   console.log('touch:', e.touches[0].pageX  );    
   // });
   // console.log( elViewCon.getBoundingClientRect().left );
+
+
+
+  // 터치가 아닌 마우스로 컨트롤시 
+  /*
+    let move = false;
+    영역.addEventListener('mousedown',(e)=>{ 
+        1. e의 코드번호 -> 왼버튼과 일치하는 것으로 처리
+        move = true;
+    });
+    영역.addEventListener('mouseup',(e)=>{
+        move = false;
+    });
+    영역.addEventListener('mousemove',(e)=>{
+        if(move){
+          // 마우스를 누르고 있는 상태에서 영역을 이동하게 만드는(슬라이드 스와이프기능)
+          // 기능을 수행처리
+        }
+    });
+  */
+
+// 결론: 
+// 터치 기반으로 사용시 touchstart, touchend, touchmove
+// 이벤트 발생시 changedTouches[0].pageX
