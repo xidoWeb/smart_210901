@@ -13,14 +13,23 @@ const elViewBox = document.querySelector('#viewBox');
 const elSlideBtn = elViewBox.querySelector('.slide_btn');
 const elSlideWrap = elViewBox.querySelector('.view_wrap');
 let elSlideLi = elSlideWrap.querySelectorAll('li');
-// const elSlideArr = [].slice.call(elSlideLi);
+
+let PERMISSION = true;
+elViewBox.style.overflowX = 'hidden';
 
 const fnSlideMove = (e)=>{
   e.preventDefault();
-  let target = e.target.classList.contains('next');
-  let elSlide = [...elSlideLi];
-  (target) ?  elSlideWrap.append( elSlide.at(0) ) : elSlideWrap.prepend( elSlide.at(-1) ) ;
-  elSlideLi = elSlideWrap.querySelectorAll('li');
+  if(PERMISSION){
+    PERMISSION = false;
+    let target = e.target.classList.contains('next');
+    let elSlide = [...elSlideLi];
+    (target) ?  
+      elSlideWrap.append( elSlide.at(0) ) : 
+      elSlideWrap.prepend( elSlide.at(-1) ) ;
+
+    elSlideLi = elSlideWrap.querySelectorAll('li');
+    setTimeout(()=>{ PERMISSION=true; },500);
+  }
 };
 
 // 이벤트

@@ -73,22 +73,27 @@
 #viewBox .view_content li:nth-child(1) {
   z-index: 10;
   transform: translateX(-150%) scale(0.3);
+  opacity: 0;
 }
 #viewBox .view_content li:nth-child(2) {
   z-index: 20;
   transform: translateX(-90%) scale(0.7);
+  opacity: 1;
 }
 #viewBox .view_content li:nth-child(3) {
   z-index: 30;
   transform: translateX(0) scale(1);
+  opacity: 1;
 }
 #viewBox .view_content li:nth-child(4) {
   z-index: 20;
   transform: translateX(90%) scale(0.7);
+  opacity: 1;
 }
 #viewBox .view_content li:nth-child(5) {
   z-index: 10;
   transform: translateX(150%) scale(0.3);
+  opacity: 0;
 }
 .modal_area {
   display: none;
