@@ -13,6 +13,7 @@ const elViewBox = document.querySelector('#viewBox');
 const elSlideBtn = elViewBox.querySelector('.slide_btn');
 const elSlideWrap = elViewBox.querySelector('.view_wrap');
 const elModal = elViewBox.querySelector('.modal_area');
+const elMovie = elModal.querySelector('.movie');
 const elModalClose = elModal.querySelector('.modal_close > button');
 
 let elSlideLi = elSlideWrap.querySelectorAll('li');
@@ -20,10 +21,21 @@ let elSlideLi = elSlideWrap.querySelectorAll('li');
 let elSlide = [...elSlideLi];
 let PERMISSION = true;
 elViewBox.style.overflowX = 'hidden';
+let dbVideoData = [];
+let videoCode = (fileName, type = 'mp4')=> { 
+        return  ` <video controls autoplay muted preload>
+                    <source src="${fileName}" type="video/${type}" /> 
+                  </video>`};
 // -------------------------------------------------
 
-elSlide.forEach((el,idx)=>{
-  el.setAttribute('data-num',idx);
+const path = "../data/video_modal.json";
+fetch(path)
+.then(response => response.json() )
+.then((data)=>{
+  dbVideoData = [...data];
+  elSlide.forEach((el,idx)=>{
+    el.setAttribute('data-num', dbVideoData[idx].id );
+  });
 });
 
 // -------------------------------------------------
@@ -41,8 +53,6 @@ const fnSlideMove = (e)=>{
     setTimeout(()=>{ PERMISSION=true; },500);
   }
 };
-
-
 elSlideWrap.prepend( elSlide.at(-1) ) ;
 elSlideWrap.prepend( elSlide.at(-2) ) ;
 elSlideLi = elSlideWrap.querySelectorAll('li');
@@ -53,8 +63,16 @@ elSlideBtn.addEventListener('click', fnSlideMove);
 elSlideWrap.addEventListener('click', (e) => {
   e.preventDefault();
   let el = e.target;
+  let selectData;
+  // console.log(dbVideoData );
   if(el.tagName.toLowerCase() === 'button' ){
     let num = el.parentNode.getAttribute('data-num');
+    
+    // 필요한 data 찾아오기
+    selectData = dbVideoData.filter((data)=> data.id === parseInt(num) );
+    // console.log( selectData[0].file );
+    let src = `../multi/video/${selectData[0].file}.mp4`;
+    elMovie.innerHTML = videoCode(src);
     elModal.classList.add('on');
     elModalClose.focus();
   }
@@ -63,6 +81,7 @@ elSlideWrap.addEventListener('click', (e) => {
 elModalClose.addEventListener('click', (e)=>{
   e.preventDefault();
   elModal.classList.remove('on');
+  elMovie.children[0].remove();
 });
 
 // -----------------------------------------------------

@@ -7,20 +7,21 @@
  */
 // =====================================
 
+{
+  const path = '../temp/slide_movie.html';
+  const body = document.querySelector('body');
+  const viewBox = document.querySelector('#viewBox');
 
-const path = '../temp/slide_movie.html';
-const body = document.querySelector('body');
-const viewBox = document.querySelector('#viewBox');
+  const fnScript = ()=>{
+    const mkScript = document.createElement('script');
+    mkScript.src = '../dist/src/slide_movie.js';
+    body.prepend(mkScript);
+  }
 
-const fnScript = ()=>{
-  const mkScript = document.createElement('script');
-  mkScript.src = '../dist/src/slide_movie.js';
-  body.prepend(mkScript);
+  fetch(path)
+    .then(response => response.text() )
+    .then( (element)=>{
+      viewBox.innerHTML = element;
+      fnScript();
+    }) 
 }
-
-fetch(path)
-  .then(response => response.text() )
-  .then( (element)=>{
-    viewBox.innerHTML = element;
-    fnScript();
-  }) 
