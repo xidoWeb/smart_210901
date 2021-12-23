@@ -23,7 +23,7 @@
       - [x] 이벤트 핸들러 : touchstart, touchmove, touchend, 좌표인식
       - [ ] 마우스 핸들러 : mousedown, mousemove, mouseend
 
-
+​		***check***: 이벤트 주체인 this를 다시 확인
 
 
 
