@@ -22,7 +22,7 @@ const fnSlideMove = (e)=>{
   if(PERMISSION){
     PERMISSION = false;
     let target = e.target.classList.contains('next');
-    let elSlide = [...elSlideLi];
+    elSlide = [...elSlideLi];
     (target) ?  
       elSlideWrap.append( elSlide.at(0) ) : 
       elSlideWrap.prepend( elSlide.at(-1) ) ;
@@ -32,9 +32,13 @@ const fnSlideMove = (e)=>{
   }
 };
 
+let elSlide = [...elSlideLi];
+elSlideWrap.prepend( elSlide.at(-1) ) ;
+elSlideWrap.prepend( elSlide.at(-2) ) ;
+elSlideLi = elSlideWrap.querySelectorAll('li');
+
 // 이벤트
 elSlideBtn.addEventListener('click', fnSlideMove);
-
 // ---------------------------------------------
 // 이벤트 위임 : 실제로 클릭해야하는 요소가 아닌 그 부모에서 클릭했을 경우 해당하는 요소가 반응할 수 있도록 인식
 // 버블링:부모에 전달, 캡처링:자식에게 전달
