@@ -1,0 +1,36 @@
+// e_05_slide_movie.scss
+
+#wrap {
+  width: 90%; height: auto; min-height: 500px; margin:auto;
+}
+
+#viewBox { width: 100%; height: 600px; margin:3rem; 
+  .container { 
+    position: relative;
+    width: 100%; max-width:1200px; min-width:600px; 
+    height:100%;
+    margin: auto; padding: 5rem 1rem;
+  }
+  .slide_btn {
+    position: absolute; z-index: 200; top: 50%; left: 0;
+    width: 100%; height:0; 
+    button{
+      width:50px; height:50px; padding:0.2rem;
+      transform: translateY(-50%);
+      background-color: #dff;}
+    .next{ float:right; }
+    .prev{ float:left; }
+  }
+
+  .view_content {
+    position: relative;
+    width: 100%; height: 100%; background-color: #dfa;
+
+    > ul{ }
+    li { width:30%; height:100%; border:1px solid #777; padding:1rem; 
+      background-image:linear-gradient(45deg, #fa9, #a7f);}
+  }
+
+
+}
+
