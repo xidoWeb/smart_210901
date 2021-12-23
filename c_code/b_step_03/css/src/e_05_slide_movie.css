@@ -12,9 +12,7 @@
 }
 #viewBox .container {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  min-width: 600px;
+  width: 900px;
   height: 100%;
   margin: auto;
   padding: 5rem 1rem;
@@ -40,18 +38,56 @@
 #viewBox .slide_btn .prev {
   float: left;
 }
+#viewBox .slide_btn:hover {
+  background-color: #7cf;
+}
 #viewBox .view_content {
   position: relative;
   width: 100%;
   height: 100%;
   background-color: #dfa;
 }
-#viewBox .view_content li {
-  width: 30%;
+#viewBox .view_content > ul {
+  width: 100%;
   height: 100%;
+}
+#viewBox .view_content li {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -175px;
+  margin-top: -125px;
+  width: 350px;
+  height: 250px;
   border: 1px solid #777;
   padding: 1rem;
   background-image: linear-gradient(45deg, #fa9, #a7f);
+}
+#viewBox .view_content li button {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: rgba(200, 200, 200, 0.7);
+}
+#viewBox .view_content li:nth-child(1) {
+  z-index: 10;
+  transform: translateX(-150%) scale(0.3);
+}
+#viewBox .view_content li:nth-child(2) {
+  z-index: 20;
+  transform: translateX(-90%) scale(0.7);
+}
+#viewBox .view_content li:nth-child(3) {
+  z-index: 30;
+  transform: translateX(0) scale(1);
+}
+#viewBox .view_content li:nth-child(4) {
+  z-index: 20;
+  transform: translateX(90%) scale(0.7);
+}
+#viewBox .view_content li:nth-child(5) {
+  z-index: 10;
+  transform: translateX(150%) scale(0.3);
 }
 
 /*# sourceMappingURL=e_05_slide_movie.css.map */
