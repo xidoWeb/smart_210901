@@ -12,28 +12,34 @@
 const elViewBox = document.querySelector('#viewBox');
 const elSlideBtn = elViewBox.querySelector('.slide_btn');
 const elSlideWrap = elViewBox.querySelector('.view_wrap');
-const elSlideLi = elSlideWrap.querySelectorAll('li');
+let elSlideLi = elSlideWrap.querySelectorAll('li');
 // const elSlideArr = [].slice.call(elSlideLi);
-const elSlide = [...elSlideLi];
-elSlideWrap.prepend(elSlide.at(-1));
-console.log( elSlide );
+
+const fnSlideMove = ()=>{
+  let elSlide = [...elSlideLi];
+  elSlideWrap.prepend( elSlide.at(-1) ); 
+  elSlideLi = elSlideWrap.querySelectorAll('li');
+};
+const fnSlideMove2 = ()=>{
+  let elSlide = [...elSlideLi];
+  elSlideWrap.append( elSlide.at(0) );
+  elSlideLi = elSlideWrap.querySelectorAll('li');
+};
 
 // 이벤트
-/*
 elSlideBtn.addEventListener('click', (e)=>{
   // 이벤트발생시킨.원인제공.class이름.있는가(name)
   e.preventDefault();
   let target = (name) => e.target.classList.contains(name);
   if(target('next')){ // '.next' 버튼 클릭
     console.log('next버튼 클릭시');
-    // console.log( elSlideArr.at(0) )
-
+    fnSlideMove2();
   }else{ // '.prev' 버튼 클릭
     console.log('prev버튼 클릭시');
-    
+    fnSlideMove();
   }
 });
-*/
+
 // ---------------------------------------------
 // 이벤트 위임 : 실제로 클릭해야하는 요소가 아닌 그 부모에서 클릭했을 경우 해당하는 요소가 반응할 수 있도록 인식
 // 버블링:부모에 전달, 캡처링:자식에게 전달
@@ -76,5 +82,3 @@ elSlideBtn.addEventListener('click', (e)=>{
 //   // elem.addEventListener("click", e => console.log(`캡쳐링: ${elem.tagName}`), true);
 //   elem.addEventListener("click", e => console.log(`버블링: ${elem.tagName}`));
 // }
-
-
