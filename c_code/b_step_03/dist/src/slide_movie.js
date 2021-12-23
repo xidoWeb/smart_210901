@@ -69,7 +69,7 @@ elSlideWrap.addEventListener('click', (e) => {
     let num = el.parentNode.getAttribute('data-num');
     
     // 필요한 data 찾아오기
-    selectData = dbVideoData.filter((data)=> data.id === parseInt(num) );
+    selectData = dbVideoData.filter((data)=> data.id === num );
     // console.log( selectData[0].file );
     let src = `../multi/video/${selectData[0].file}.mp4`;
     elMovie.innerHTML = videoCode(src);
