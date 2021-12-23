@@ -15,30 +15,16 @@ const elSlideWrap = elViewBox.querySelector('.view_wrap');
 let elSlideLi = elSlideWrap.querySelectorAll('li');
 // const elSlideArr = [].slice.call(elSlideLi);
 
-const fnSlideMove = ()=>{
+const fnSlideMove = (e)=>{
+  e.preventDefault();
+  let target = e.target.classList.contains('next');
   let elSlide = [...elSlideLi];
-  elSlideWrap.prepend( elSlide.at(-1) ); 
-  elSlideLi = elSlideWrap.querySelectorAll('li');
-};
-const fnSlideMove2 = ()=>{
-  let elSlide = [...elSlideLi];
-  elSlideWrap.append( elSlide.at(0) );
+  (target) ?  elSlideWrap.append( elSlide.at(0) ) : elSlideWrap.prepend( elSlide.at(-1) ) ;
   elSlideLi = elSlideWrap.querySelectorAll('li');
 };
 
 // 이벤트
-elSlideBtn.addEventListener('click', (e)=>{
-  // 이벤트발생시킨.원인제공.class이름.있는가(name)
-  e.preventDefault();
-  let target = (name) => e.target.classList.contains(name);
-  if(target('next')){ // '.next' 버튼 클릭
-    console.log('next버튼 클릭시');
-    fnSlideMove2();
-  }else{ // '.prev' 버튼 클릭
-    console.log('prev버튼 클릭시');
-    fnSlideMove();
-  }
-});
+elSlideBtn.addEventListener('click', fnSlideMove);
 
 // ---------------------------------------------
 // 이벤트 위임 : 실제로 클릭해야하는 요소가 아닌 그 부모에서 클릭했을 경우 해당하는 요소가 반응할 수 있도록 인식
