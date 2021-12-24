@@ -2,12 +2,13 @@
 
 // matchMedia를 이용하여 해당규격에 일치하는지(matches) 판단
 // window.matchMedia('css크기를 그대로 옮겨놓은 형태').matches 
-/*
 const wrap = document.querySelector('#wrap');
 const mobile = document.querySelector('.mobile');
 const pc = document.querySelector('.pc');
 mobile.remove();
 pc.remove();
+
+/*
 const size = 'screen and (max-width:768px)';
 const mediaQuery = window.matchMedia(size);  
 // 지정규격과 체크해서 맞으면 true 아니면 false
@@ -39,16 +40,34 @@ const dataDevice = [ // dataDevice[n].size
   { type: 'mobile' , size : 599 }, // 600미만
   { type: 'tablet' , size : 767 }, // 600 ~ 767
   { type: 'laptop' , size : 1439 },// 768 ~ 1439
-  { type: 'pc' }                   // 1440 ~     
+  { type: 'pc'     }  // 1440 ~     
 ];
 
-const mobile = window.matchMedia(`screen and (max-width:${dataDevice[0].size}px)`);
-const tablet = window.matchMedia(`screen and (min-width:${dataDevice[0].size + 1}px) and (max-width:${dataDevice[1].size}px)`);
-const laptop = window.matchMedia(`screen and (min-width:${dataDevice[1].size + 1}px) and (max-width:${dataDevice[2].size}px)`);
-const pc     = window.matchMedia(`screen and (min-width:${dataDevice[2].size + 1}px)`);
+// 규격 하나씩 작성 step1
+// const mobile = window.matchMedia(`screen and (max-width:${dataDevice[0].size}px)`);
+// const tablet = window.matchMedia(`screen and (min-width:${dataDevice[0].size + 1}px) and (max-width:${dataDevice[1].size}px)`);
+// const laptop = window.matchMedia(`screen and (min-width:${dataDevice[1].size + 1}px) and (max-width:${dataDevice[2].size}px)`);
+// const pc     = window.matchMedia(`screen and (min-width:${dataDevice[2].size + 1}px)`);
+// const mediaArray = [mobile, tablet, laptop, pc];
 
-const mediaArray = [mobile, tablet, laptop, pc];
+// 규격을 조금더 확장가능하도록 처리
+const mediaArray = [];
+for(let i=0; i<dataDevice.length; i+=1){
+  let matchCode;
+  if(i === 0){
+    matchCode = window.matchMedia(`screen and (max-width:${dataDevice[i].size}px)`);
+  }else if( i === dataDevice.length - 1){
+    matchCode = window.matchMedia(`screen and (min-width:${dataDevice[i-1].size + 1}px)`);
+  }else{
+    matchCode = window.matchMedia(`screen and (min-width:${dataDevice[i-1].size + 1}px) and (max-width:${dataDevice[i].size}px)`);
+  }
+  mediaArray.push(matchCode);
+}
 
+console.log( mediaArray );
+
+//=======================================================================================================================
+//이벤트 하나씩 작성 -step1
 // mobile.addEventListener('change', e=>{
 //   if(e.matches){ console.log('현재 mobile규격'); }
 // });
