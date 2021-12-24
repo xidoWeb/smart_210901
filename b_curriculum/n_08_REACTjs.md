@@ -21,9 +21,13 @@
     - [x] 일정 시간마다 자동으로 이동하게 만들어주는 형태
     - [x] 터치기반으로 슬라이드 광고 수행
       - [x] 이벤트 핸들러 : touchstart, touchmove, touchend, 좌표인식
-      - [ ] 마우스 핸들러 : mousedown, mousemove, mouseend
+      - [x] 마우스 핸들러 : mousedown, mousemove, mouseend
+    - [ ] js를 반응형 기능에 대한 처리 
+      - [ ] 구형브라우저(ie)
+      - [ ] 2가지 경우의 수
+      - [ ] 3가지 이상의 경우의 수
 
-​		***check***: 이벤트 주체인 this를 다시 확인
+
 
 
 
