@@ -3,8 +3,8 @@
 // matchMedia를 이용하여 해당규격에 일치하는지(matches) 판단
 // window.matchMedia('css크기를 그대로 옮겨놓은 형태').matches 
 const wrap = document.querySelector('#wrap');
-const mobile = document.querySelector('.mobile');
-const pc = document.querySelector('.pc');
+const mobile = wrap.querySelector('.mobile');
+const pc = wrap.querySelector('.pc');
 mobile.remove();
 pc.remove();
 
