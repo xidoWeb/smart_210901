@@ -9,28 +9,67 @@
 }
 
 #headBox {
+  position: fixed; top: 0; left: 0;
   width:100%; height: 80px; background-color: #fff;
-  padding:0.5rem 1rem;
+  padding:0.4rem 1rem;
   border-bottom: 1px solid #555; 
   box-shadow:0 0.2rem 0.3rem rgba(0,0,0,0.3);
   .container{
     display: flex; justify-content:space-between;
-    background-color: transparent;}
+    padding-top: 0.5rem; background-color: transparent;}
 }
 
 @include desk{
   #navBox {
-    width:80%; height:50px;
+    width:auto; height:auto;
     background-color: #dff;
-    .unb, .search{ display: none;}
-    .gnb {
+    // .unb, .search{ display: none;}
+    .sub_nav {display: flex; justify-content: flex-end; }
+      .unb {border:1px solid #777;}
+      .search {margin-left:1rem; border:1px solid #777;}
+    .gnb {padding-top: 0.5rem;
       >ul{ display: flex; justify-content: flex-end; 
-            width:auto; height:50px; background-color: #faa;}
+            width:auto; height:auto; background-color: #faa;}
       li {width:150px; height:auto; margin-right:  2rem; background-color: #dff;
         &:last-child {margin-right: 0;}
       }
-      .nav_sub  {display: none;}
-      &:hover .nav_sub{display: block;}    
+      .nav_title {
+        display: flex; 
+        width: 100%; height: auto;         
+        > a {width: 100%; background-color: #0af; color:#fff; text-align: center; font-weight: 700; text-transform: uppercase;}
+      }
+      .nav_sub  {display: none;
+        li {margin: 0.2rem 0; text-indent: 0.5rem;}
+      }
+      // &:hover .nav_sub{display: block;}    
     }
   }
 }
+
+
+@include handhelds{
+  h1{position: relative; z-index:300;}
+  #navBox { background-color: #fff; }
+  .menu_btn {position: relative; z-index: 200; width: 2.5rem; height: 2.5rem; border:$line1; }
+  .nav_list { 
+    display: flex;  flex-direction: column; align-items: flex-end;
+    position: fixed; z-index:100; top: 0; right: 0; padding: 1rem; padding-top: 4rem;
+    width:100%; height: 100%; background-color: rgba(0,0,0,0.3); }
+  .nav_list::before{
+    content: ""; display: block; position: absolute; top: 0; right: 0; z-index:-1;
+    width:calc(100% - 150px); height: 100%; background-color: #fff;
+  }
+  .gnb{display: flex;  flex-direction: column; align-items: flex-end; 
+      width: 80%; 
+    >li {margin-bottom: 1rem;}
+    }
+      .nav_title {
+        display: flex; text-align: right; width: 100%; background-color: #ddd;
+        margin-bottom:0.2rem; text-transform:uppercase; font-size: 1.2rem; font-weight: bold; border-bottom:$line1;
+        > a{width: 100px; }
+      }
+      .nav_sub {display: none;}
+
+      // li:hover .nav_sub {display: block;}
+
+} 
