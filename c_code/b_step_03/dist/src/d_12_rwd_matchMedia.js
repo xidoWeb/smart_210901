@@ -81,18 +81,34 @@ console.log( mediaArray );
 //   if(e.matches){ console.log('현재 pc규격'); }
 // });
 
-const fnCKDevice = (device, index)=>{
-  if(device.matches){ console.log( dataDevice[index].type )}
+const fnInsertCode = (type)=>{
+    switch(type){
+      case 'mobile':
+      case 'tablet':
+        wrap.append(mobile);
+        pc.remove();
+        break;
+      case 'laptop':
+      case 'pc':
+        wrap.append(pc);
+        mobile.remove();
+        break;
+    }
 }
 
-mediaArray.forEach( (type,index) =>  {
-    // if(e.matches){ console.log( dataDevice[index].type )}
+const fnCKDevice = (device, index)=>{
+  if(device.matches){ 
+    let type = dataDevice[index].type;
+    fnInsertCode(type);  
+  }
+}
+
+mediaArray.forEach( (type, index) =>  {     
     fnCKDevice(type, index);
 });
 
 mediaArray.forEach( (type,index) =>  {
   type.addEventListener('change', (e) =>{
-    // if(e.matches){ console.log( dataDevice[index].type )}
-    fnCKDevice(e, index);
+    fnCKDevice(type, index);
   });
 });
