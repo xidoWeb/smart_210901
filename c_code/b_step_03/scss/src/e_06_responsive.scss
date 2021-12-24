@@ -1,1 +1,36 @@
 // e_06_responsive.scss
+@use "sass:math";
+@import "../common/variable";
+@import "../common/mixin";
+
+#wrap {
+  width: 100%; height: auto; min-height:800px;
+  background-color: #fdd;
+}
+
+#headBox {
+  width:100%; height: 80px; background-color: #fff;
+  padding:0.5rem 1rem;
+  border-bottom: 1px solid #555; 
+  box-shadow:0 0.2rem 0.3rem rgba(0,0,0,0.3);
+  .container{
+    display: flex; justify-content:space-between;
+    background-color: transparent;}
+}
+
+@include desk{
+  #navBox {
+    width:80%; height:50px;
+    background-color: #dff;
+    .unb, .search{ display: none;}
+    .gnb {
+      >ul{ display: flex; justify-content: flex-end; 
+            width:auto; height:50px; background-color: #faa;}
+      li {width:150px; height:auto; margin-right:  2rem; background-color: #dff;
+        &:last-child {margin-right: 0;}
+      }
+      .nav_sub  {display: none;}
+      &:hover .nav_sub{display: block;}    
+    }
+  }
+}

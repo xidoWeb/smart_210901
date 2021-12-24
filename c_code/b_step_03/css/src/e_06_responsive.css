@@ -1,0 +1,55 @@
+#wrap {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  background-color: #fdd;
+}
+
+#headBox {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #555;
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+#headBox .container {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+@media all and (min-width: 1024px) {
+  #navBox {
+    width: 80%;
+    height: 50px;
+    background-color: #dff;
+  }
+  #navBox .unb, #navBox .search {
+    display: none;
+  }
+  #navBox .gnb > ul {
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    height: 50px;
+    background-color: #faa;
+  }
+  #navBox .gnb li {
+    width: 150px;
+    height: auto;
+    margin-right: 2rem;
+    background-color: #dff;
+  }
+  #navBox .gnb li:last-child {
+    margin-right: 0;
+  }
+  #navBox .gnb .nav_sub {
+    display: none;
+  }
+  #navBox .gnb:hover .nav_sub {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=e_06_responsive.css.map */
