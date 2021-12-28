@@ -9,9 +9,9 @@
   const elBody     = document.querySelector('body');
   const elHeadBox  = document.querySelector('#headBox');
   const elNavBox   = document.querySelector('#navBox');
-  const elNavTitle = elNavBox.querySelector('h2');
-  const elNavBtn   = elNavBox.querySelector('.nav_btn');
-  const elGnb      = elNavBox.querySelector('.gnb');
+  // const elNavTitle = elNavBox.querySelector('h2');
+  // const elNavBtn   = elNavBox.querySelector('.nav_btn');
+  // const elGnb      = elNavBox.querySelector('.gnb');
 
   // 각 디바이스 세팅
   // const setDevice = [
@@ -22,8 +22,8 @@
   // ];
 
   const setDevice = [ 
-    {size:768, type:'mobile', script:'../dist/rwd/e_08_rwd_nav_mobile.js'},
-    {          type:'pc',     script:'../dist/rwd/e_08_rwd_nav_pc.js'}
+    {size:768, type:'mobile', nav:'../temp/e_08_rwd_mob.html', script:'../dist/rwd/e_08_rwd_nav_mobile.js'},
+    {          type:'pc',     nav:'../temp/e_08_rwd_pc.html', script:'../dist/rwd/e_08_rwd_nav_pc.js'}
   ];
 
   const mediaSize = `screen and (max-width:${setDevice[0].size}px)`;
@@ -33,28 +33,32 @@
 
   const fnMkScript = (data)=>{
     const ckScript = document.querySelector('.navScript');
-    console.log('null:', ckScript === null);
-    console.log('null:', !ckScript === false);
-    console.log('null:', !!ckScript === true);
-    if(ckScript !== null){
-      ckScript.remove();
-    }
+    if(!!ckScript){ ckScript.remove(); }
 
     const mkScript = document.createElement('script');
     mkScript.setAttribute('src', data);
     mkScript.setAttribute('class', 'navScript');
-    return mkScript;
+    elBody.append(mkScript);
   };
+
 
   const fnCheckHeader = (type = mediaMatches.matches)=>{
     if(type){
       console.log( 'mobile 버전');
-      elNavTitle.after(elNavBtn);
-      elBody.append( fnMkScript(setDevice[0].script) );
+      
+      fetch(setDevice[0].nav)
+      .then( response=> response.text() )
+      .then( data=> { elNavBox.innerHTML = data })
+      .then( ()=> { fnMkScript(setDevice[0].script ) })
+
     }else{
       console.log( 'pc 버전');
-      elNavBtn.remove();
-      elGnb.style = null;      
+
+      fetch(setDevice[1].nav)
+      .then( response=> response.text() )
+      .then( data=> { elNavBox.innerHTML = data })
+      .then( ()=> { fnMkScript(setDevice[1].script ) })
+
     }
   };
 
@@ -62,6 +66,7 @@
   // -----------------------------------------------------------
   // 이벤트 체크
   mediaMatches.addEventListener('change', (e)=>{
+    // location.reload();
     fnCheckHeader(e.matches);
   });
 

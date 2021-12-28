@@ -18,6 +18,7 @@
   // 이벤트
   elNavBtn.addEventListener('click', (e)=>{
     const ckOption = elNavBtn.classList.contains(OPTION_NAME);
+    console.log('on:',ckOption);
     if(!ckOption){
       elGnb.style.display = OPTION_VIEW;
       elNavBtn.classList.add(OPTION_NAME);

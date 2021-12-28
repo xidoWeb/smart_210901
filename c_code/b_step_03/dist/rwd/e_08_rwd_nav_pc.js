@@ -6,7 +6,8 @@
 // 4. 사라지게 만들기
 
 // -----------------------------------------
-
+{
+  
 // 변수 
 const elNavBox = document.querySelector('#navBox');
 const elGnb    = elNavBox.querySelector('.gnb');
@@ -45,5 +46,6 @@ elGnbLiArr.forEach((el, idx)=>{
   // .sub_list의 마직막 요소의 a에 focusout 또는 blur처리시 li에 on제거
 });
 
+}
 
 
