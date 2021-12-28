@@ -32,12 +32,29 @@
 // hover,focus기능을 js에서 수행
 
 
-@media screen and (max-width:599px) {
-  #headBox {background-color: #fa0;}
-}
-
-@media screen  and (min-width:600px) and (max-width:1279px){
+@media screen and (max-width:768px){
   #headBox {background-color: #f75;}
+  #navBox { padding:0.5rem;}
+  .nav_btn { width:2.5rem; height: 2.5rem; 
+    > button { width: 100%; height: 100%; background-color: #fdf;}
+    .menu_bar {
+      display: block; position: relative; 
+      width: 100%; height: 2px; background-color: #555; transition:all 300ms linear;
+    }
+    .menu_bar::before {
+      content:""; display: block; position:absolute; top: 0; left:0; transform:translateY(-1rem);
+      width: 100%; height: 2px; background-color: #555; transition:all 300ms linear;
+    }
+    .menu_bar::after {
+      content:""; display: block; position:absolute; top: 0; left:0; transform:translateY(1rem);
+      width: 100%; height: 2px; background-color: #555; transition:all 300ms linear;
+    }
+  }
+  .nav_btn.on .menu_bar {height:0}
+  .nav_btn.on .menu_bar::before{transform:translateY(0) rotate(45deg); }
+  .nav_btn.on .menu_bar::after{transform:translateY(0)  rotate(-45deg); }
+
+  .gnb {display: none;}
 }
 
 
