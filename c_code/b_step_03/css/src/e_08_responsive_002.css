@@ -49,9 +49,12 @@
 
 .sub_list {
   display: none;
+  width: 100%;
+  height: auto;
+  background-color: #fdd;
 }
 
-.gnb:hover .sub_list {
+.gnb > li.on .sub_list {
   display: block;
 }
 
