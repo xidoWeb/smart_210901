@@ -43,32 +43,20 @@
 
 
   const fnCheckHeader = (type = mediaMatches.matches)=>{
-    if(type){
-      console.log( 'mobile 버전');
-      
-      fetch(setDevice[0].nav)
-      .then( response=> response.text() )
-      .then( data=> { elNavBox.innerHTML = data })
-      .then( ()=> { fnMkScript(setDevice[0].script ) })
-
-    }else{
-      console.log( 'pc 버전');
-
-      fetch(setDevice[1].nav)
-      .then( response=> response.text() )
-      .then( data=> { elNavBox.innerHTML = data })
-      .then( ()=> { fnMkScript(setDevice[1].script ) })
-
-    }
+    let num = (type) ? 0 : 1;
+    fetch(setDevice[num].nav)
+    .then( response=> response.text() )
+    .then( data=> { elNavBox.innerHTML = data })
+    .then( ()=> { fnMkScript(setDevice[num].script ) })
   };
 
   fnCheckHeader(mediaMatches.matches);
+
   // -----------------------------------------------------------
   // 이벤트 체크
   mediaMatches.addEventListener('change', (e)=>{
     // location.reload();
     fnCheckHeader(e.matches);
   });
-
 }
 
