@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/e_08_responsive_002.css">
+  <title>Document</title>  
+</head>
+<body>
+  <!-- layout -->
+  <div id="root">
+    <header id="headBox">
+      <h1><a href="./a_content.html">site name</a></h1>
+      <nav id="navBox">
+        <h2 class="blind">네비게이션</h2>
+        <!-- ul.gnb>li*3>(.gnb_title>a{title_$$})+(ol.sub_list>li*3>a{sub_link_$$}) -->
+        <ul class="gnb">
+          <li>
+            <div class="gnb_title">
+              <a href="#">title_01</a>
+            </div>
+            <ol class="sub_list">
+              <li><a href="">sub_link_01</a></li>
+              <li><a href="">sub_link_02</a></li>
+              <li><a href="">sub_link_03</a></li>
+            </ol>
+          </li>
+          <li>
+            <div class="gnb_title"><a href="">title_02</a></div>
+            <ol class="sub_list">
+              <li><a href="">sub_link_01</a></li>
+              <li><a href="">sub_link_02</a></li>
+              <li><a href="">sub_link_03</a></li>
+            </ol>
+          </li>
+          <li>
+            <div class="gnb_title"><a href="">title_03</a></div>
+            <ol class="sub_list">
+              <li><a href="">sub_link_01</a></li>
+              <li><a href="">sub_link_02</a></li>
+              <li><a href="">sub_link_03</a></li>
+            </ol>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+    <main id="mainBox"></main>
+    <footer id="footBox"></footer>
+  </div>
+
+  <!-- script -->
+  <!-- <script src="../dist/rwd/e_08_responsive_002.js"></script> -->
+  <script src="../dist/rwd/e_08_rwd_nav_pc.js"></script>
+</body>
+</html>

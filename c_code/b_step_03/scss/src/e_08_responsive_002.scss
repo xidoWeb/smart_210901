@@ -1,0 +1,48 @@
+// e_08_responsive_002.scss
+
+#root {
+  width: 100%; height: auto; min-height:500px;
+  background-color: #eef; }
+
+#headBox {
+  display: flex;
+  justify-content: space-between;
+  position: fixed; z-index:1000;
+  top: 0; left:0;  right: 0; 
+  width:100%; max-width:1440px; height:80px; 
+  margin:auto; padding:0.5rem 1rem;
+  border-bottom: 1px solid #555; 
+  box-shadow:0 0.2rem 0.2rem rgba(0,0,0,0.4);
+  background-color: rgba(#fff, 0.8); }
+
+#navBox {
+  width:auto; height: 100%; padding-top:1.5rem;
+  background-color: #fff;}
+.gnb{
+  display: flex;
+  justify-content:flex-end;
+  >li {width:200px; margin-left:2rem;}
+  >li:first-child {margin: 0;}
+}
+.gnb_title {font-weight: 700; text-transform:uppercase;}
+.sub_list {display: none;}
+.gnb:hover .sub_list{display: block;}
+// hover,focus기능을 js에서 수행
+
+
+@media screen and (max-width:599px) {
+  #headBox {background-color: #fa0;}
+}
+
+@media screen  and (min-width:600px) and (max-width:1279px){
+  #headBox {background-color: #f75;}
+}
+
+
+#mainBox { 
+  width:100%; height:auto; min-height:1200px; background-color: #5cf;}
+
+#footBox { 
+  width:100%; height:auto; min-height:200px; 
+  padding-bottom:80px;
+  background-color: #333;}
