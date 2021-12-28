@@ -52,8 +52,9 @@
   .nav_btn.on .menu_bar {height:0}
   .nav_btn.on .menu_bar::before{transform:translateY(0) rotate(45deg); }
   .nav_btn.on .menu_bar::after{transform:translateY(0)  rotate(-45deg); }
-
-  .gnb {// display: none;
+  // .nav_btn.on + .gnb{display: block;}
+  
+  .gnb {display: none;
     flex-direction: column;
     justify-content:flex-start;
     align-items:flex-end;
