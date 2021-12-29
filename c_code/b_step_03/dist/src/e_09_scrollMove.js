@@ -21,7 +21,8 @@ elScrollToBtn.addEventListener('click', (e)=>{
   // window.scrollTo({top:WIN_HEIGHT, behavior: 'smooth'});  // : 지정된 스크롤 위치로 이동
   window.scrollBy({top:WIN_HEIGHT, behavior:'smooth'});  // : 현재의 위치를 기준으로 지정된 스크롤만큼 추가로 이동
   // window.scroll({top:WIN_HEIGHT, behavior: 'smooth'});    // : scrollTo와 같이 지정된 스크롤 위치로 이동
-}); 
+});
+
 
 
 
