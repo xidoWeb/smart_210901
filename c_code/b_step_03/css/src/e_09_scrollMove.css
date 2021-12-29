@@ -1,6 +1,11 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
 #wrap {
   width: 100%;
-  height: 5000px;
+  height: 3400px;
   background-image: linear-gradient(45deg, #ada, #da7);
 }
 
@@ -21,6 +26,49 @@
   bottom: auto;
   top: 0;
   transition: all 300ms ease;
+}
+
+.scroll_down_btn {
+  position: fixed;
+  z-index: 1200;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  width: 5rem;
+  height: 3rem;
+  margin: auto;
+}
+.scroll_down_btn > button {
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  animation: move 1000ms alternate infinite;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.scroll_down_btn > button i:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #fff;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(45deg);
+}
+.scroll_down_btn > button:hover {
+  background-color: #fd0;
+  color: #333;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1rem);
+  }
 }
 
 /*# sourceMappingURL=e_09_scrollMove.css.map */
