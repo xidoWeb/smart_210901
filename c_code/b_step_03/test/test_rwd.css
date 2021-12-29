@@ -1,0 +1,21 @@
+#wrap{ 
+  width: 100%; min-width:900px;
+  height:1500px; 
+  background-image: linear-gradient(#adf, #fd8);}
+
+  #headBox {width: 100%; height: 150px; background-color: #dfa; padding: 1rem;}
+  #viewBox {width: 100%; min-width:500px; 
+    height: 500px; margin:auto;}
+
+
+@media screen {
+  #wrap {min-width:500px; background-color: #adf}
+  #viewBox { min-width:100%; }
+}
+
+/*
+  Android : min-width -> 전체에 min-width를 걸면 
+  Iphone : min-width -> 무시
+
+  a,button,inline요소들 : position을 X
+*/

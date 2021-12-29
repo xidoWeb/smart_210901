@@ -32,9 +32,11 @@
   // 기능 함수
 
   const fnMkScript = (data)=>{
+    // .navScript 요소가 존재한다면 선택 후 삭제 (기존 script문서 삭제)
     const ckScript = document.querySelector('.navScript');
     if(!!ckScript){ ckScript.remove(); }
 
+    // 새로운 기능을 가진 script를 생성 및 첨부
     const mkScript = document.createElement('script');
     mkScript.setAttribute('src', data);
     mkScript.setAttribute('class', 'navScript');
@@ -59,4 +61,3 @@
     fnCheckHeader(e.matches);
   });
 }
-

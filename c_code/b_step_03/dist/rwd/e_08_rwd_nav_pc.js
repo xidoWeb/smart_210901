@@ -47,5 +47,3 @@ elGnbLiArr.forEach((el, idx)=>{
 });
 
 }
-
-
