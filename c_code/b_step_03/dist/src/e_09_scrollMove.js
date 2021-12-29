@@ -23,16 +23,6 @@ elScrollToBtn.addEventListener('click', (e)=>{
   // window.scroll({top:WIN_HEIGHT, behavior: 'smooth'});    // : scrollTo와 같이 지정된 스크롤 위치로 이동
 });
 
-
-
-
-
-
-
-
-
-
-
 //-------------------------------------------------------------
 /**
  * scrollTop : 선택요소(element) 기준 스크롤의 움직임의 위치 값 
