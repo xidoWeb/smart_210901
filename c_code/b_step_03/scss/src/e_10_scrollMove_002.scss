@@ -2,7 +2,8 @@
 
 #wrap {
   width: 100%; height: auto; min-width:500px; 
-  padding:0 1rem 5rem; background-image:linear-gradient(45deg, #fa0, #acf, #ccc);
+  padding:0 1rem 5rem; padding-top:300rem;
+  background-image:linear-gradient(45deg, #fa0, #acf, #ccc);
 }
 #headBox { 
   position: fixed; z-index: 1000; top: 0; left: 0; right:0; margin:auto; 
@@ -26,8 +27,7 @@
 }
 
 #contentBox {
-  padding-top:300rem;
-  width: 100%; max-width:1200px; height:800px; margin:auto; background-color: transparent;
+  width: 100%; max-width:1200px; height:800px; margin:auto; background-color: #fd7;
 }
 
 #footBox {
