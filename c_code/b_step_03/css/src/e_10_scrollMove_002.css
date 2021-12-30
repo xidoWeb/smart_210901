@@ -1,0 +1,66 @@
+#wrap {
+  width: 100%;
+  height: auto;
+  min-width: 500px;
+  padding: 0 1rem 5rem;
+  background-image: linear-gradient(45deg, #fa0, #acf, #ccc);
+}
+
+#headBox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #aaa;
+  padding: 1rem;
+}
+
+#viewBox {
+  width: 100%;
+  height: 700px;
+  border: 1px solid #777;
+  padding: 0.5rem;
+  margin-top: 10rem;
+}
+#viewBox > .img_area {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #7af;
+  background-color: #fff;
+}
+#viewBox > .img_area img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#contentBox {
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;
+  margin: auto;
+  background-color: #fda;
+}
+
+#footBox {
+  width: 100%;
+  height: 200px;
+  background-color: #333;
+}
+
+/*# sourceMappingURL=e_10_scrollMove_002.css.map */
