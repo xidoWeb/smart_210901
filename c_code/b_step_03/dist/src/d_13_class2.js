@@ -44,32 +44,51 @@ submitBtn.addEventListener('click', (e)=>{
 });
 
 
-
 const fnMkScript = (file)=>{
   const mkScript = document.createElement('style');
   mkScript.setAttribute('class', 'box');
   mkScript.setAttribute('src', file);
 };
 
-const fnMakeEl = (el, attr, text)=>{
+const fnMakeEl = (el, attribute, text)=>{
   const element = document.createElement(el);
   let check;
-  let name;
-  if(!!attr){
-    if(attr[0] === '.'){ 
-      check = 'class';
-      name = attr.slice(1);
-    }else if(attr[0] === '#'){
-      check = 'id';
-      name = attr.slice(1);
-    }else{
-      check = 'data-type';
-      name = attr;
+  // let name;
+  class PropertySet{
+    constructor (type, name){
+      this.type = type,
+      this.name = name
     }
-    element.setAttribute(check, name);
+  };
+  let fnProps = (type, name)=>{ 
+    check = new PropertySet(type, name); 
+  };
+  const fnAttr = (attr)=>{
+    if(attr[0] === '.'){ 
+      fnProps('class', attr.slice(1));
+    }else if(attr[0] === '#'){
+      fnProps('id', attr.slice(1));
+    }else{
+      fnProps('data-type', attr);
+    }
+  };
+  if(!!attribute){
+    if(typeof(attribute) === 'array'){ 
+      fnAttr(attr) 
+      element.setAttribute(check.type, check.name);
+    }else{
+      attribute.forEach((attr)=>{  
+        fnAttr(attr)  
+        element.setAttribute(check.type, check.name);
+      });
+    }
   }
-  element.innerText = text;
-  console.log( element );
+    element.innerText = text;
+    console.log( element );
 }
 
+fnMakeEl('div', ['.box','#test'], 'lorem text');
+fnMakeEl('div', ['#box'], 'lorem text');
+fnMakeEl('div', ['.box'], 'lorem text');
 fnMakeEl('div', null, 'lorem text');
+
