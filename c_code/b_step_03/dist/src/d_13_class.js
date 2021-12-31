@@ -38,3 +38,11 @@ let newNArr = nArr.map(n=>{ // 내용 전체를 순환하여 처리하는 것
 });
 
 console.log( newNArr );
+
+const fileArr = ['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
+const fileUrl = fileArr.map(file=>{
+  return '../img/path/'+file;
+});
+
+console.log( fileUrl );
+
