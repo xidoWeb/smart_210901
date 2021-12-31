@@ -42,3 +42,34 @@ submitBtn.addEventListener('click', (e)=>{
   const sendData = new CheckMember(userId.value, userPw.value, userRemember.checked);
   console.log( sendData );
 });
+
+
+
+const fnMkScript = (file)=>{
+  const mkScript = document.createElement('style');
+  mkScript.setAttribute('class', 'box');
+  mkScript.setAttribute('src', file);
+};
+
+const fnMakeEl = (el, attr, text)=>{
+  const element = document.createElement(el);
+  let check;
+  let name;
+  if(!!attr){
+    if(attr[0] === '.'){ 
+      check = 'class';
+      name = attr.slice(1);
+    }else if(attr[0] === '#'){
+      check = 'id';
+      name = attr.slice(1);
+    }else{
+      check = 'data-type';
+      name = attr;
+    }
+    element.setAttribute(check, name);
+  }
+  element.innerText = text;
+  console.log( element );
+}
+
+fnMakeEl('div', null, 'lorem text');
