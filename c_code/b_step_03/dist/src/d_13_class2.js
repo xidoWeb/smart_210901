@@ -16,25 +16,20 @@ class CheckMember {
     this.remember = option
   }
 };
-
+const fnPwType = (e) => {
+  e.preventDefault();
+  if( e.button === 0 && e.type === 'mousedown' ){ 
+    userPw.type = 'text'; 
+  }else{
+    userPw.type = 'password'
+  }
+};
 //-------------------------------------------------------------------
 // 이벤트
-
 // 비밀번호확인버튼 클릭시 비번 확인
-pwViewBtn.addEventListener('mousedown', (e)=>{
-  e.preventDefault();
-  // 왼버튼 클릭 확인 (e.button에서 0번)
-  if( e.button === 0 ){ userPw.type = 'text'; }
-}); 
-pwViewBtn.addEventListener('mouseup', (e)=>{
-  e.preventDefault();
-  userPw.type = 'password'
-}); 
-pwViewBtn.addEventListener('mouseleave', (e)=>{
-  e.preventDefault();
-  userPw.type = 'password'
-});
-
+pwViewBtn.addEventListener('mousedown', fnPwType); 
+pwViewBtn.addEventListener('mouseup', fnPwType ); 
+pwViewBtn.addEventListener('mouseleave', fnPwType );
 
 // data 전송시 객체로 처리
 submitBtn.addEventListener('click', (e)=>{
