@@ -18,22 +18,27 @@ class CheckMember {
 };
 const fnPwType = (e) => {
   e.preventDefault();
-  if( e.button === 0 && e.type === 'mousedown' ){ 
-    userPw.type = 'text'; 
-  }else{
-    userPw.type = 'password'
-  }
+  ( e.button === 0 && e.type === 'mousedown' )? userPw.type = 'text': userPw.type = 'password';
+};
+
+const fnEvent = (element, handlerType, fn) => {
+  handlerType.forEach( handler =>{
+    element.addEventListener( handler , (e) => {
+      fn(e);
+    });
+  });  
 };
 //-------------------------------------------------------------------
 // 이벤트
 // 비밀번호확인버튼 클릭시 비번 확인
-pwViewBtn.addEventListener('mousedown', fnPwType); 
-pwViewBtn.addEventListener('mouseup', fnPwType ); 
-pwViewBtn.addEventListener('mouseleave', fnPwType );
+// pwViewBtn.addEventListener('mousedown', fnPwType); 
+// pwViewBtn.addEventListener('mouseup', fnPwType ); 
+// pwViewBtn.addEventListener('mouseleave', fnPwType );
+fnEvent(pwViewBtn,['mousedown', 'mouseup', 'mouseleave'],  fnPwType);
 
 // data 전송시 객체로 처리
 submitBtn.addEventListener('click', (e)=>{
   e.preventDefault();
   const sendData = new CheckMember(userId.value, userPw.value, userRemember.checked);
   console.log( sendData );
-}); 
+});
