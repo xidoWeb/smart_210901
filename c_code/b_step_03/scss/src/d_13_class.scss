@@ -26,6 +26,19 @@
   background-color: #dfd;
 }
 
+.formBox {
+  border:1px solid #555;
+  form{width: 500px; height: auto; background-color: #fff;}
+  fieldset{ width: 100%; height:auto; padding: 1rem; }
+  @at-root .login_area {width: 100%; height:auto; }
+  .login_area> div {
+    display: flex; justify-content:flex-start;
+    border-bottom: 1px solid #555; margin-bottom: 0.5rem; }
+  label{width:100px; height:30px; }
+  input[type="text"], input[type="password"] {width:50%; height:30px; border:1px solid #777; background-color: #dff;}
+  button[type="button"]{ width:1.5rem; height: 1.5rem; background-color: #07f; color:#fff;}
+}
+
 #footBox {
   width: 100%; height: 50px; 
   background-color: #777;

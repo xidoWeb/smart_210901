@@ -19,21 +19,25 @@
       <form action="#" method="get">
         <fieldset>
           <legend>member</legend>
-          <ul>
-            <li>
+          <div class="login_area">
+            <div class="input_id">
               <label for="userId">id</label>       
-              <input type="text" value="" id="userId" name="user__Id">
-            </li>
-            <li>
+              <input type="text" value="" id="userId" name="user__Id" />
+            </div>
+            <div class="input_pw">
               <label for="userPw">pw</label>       
-              <input type="password" value="" id="userPw" name="user__Pw">
-            </li>
-            <li>
+              <input type="password" value="" id="userPw" name="user__Pw" />
+              <button type="button">
+                <span class="blind">임시 비번보기</span>
+                <span area-hidden="true">i</span>
+              </button>
+            </div>
+            <div class="check_remember">
               <label for="userRemember">remember</label> 
               <input type="checkbox" value="id 기억" id="userRemember" 
-              name="user__Remember">
-            </li>
-          </ul>
+              name="user__Remember" />
+            </div>
+          </div>
           <div class="send"><button type="submit">전송</button></div>
         </fieldset>
       </form>
