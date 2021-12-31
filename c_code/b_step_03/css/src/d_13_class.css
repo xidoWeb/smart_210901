@@ -63,7 +63,7 @@
   border: 1px solid #777;
   background-color: #dff;
 }
-.formBox button[type=button] {
+.formBox .pw_view {
   width: 1.5rem;
   height: 1.5rem;
   background-color: #07f;
