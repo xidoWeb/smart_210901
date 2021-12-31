@@ -43,6 +43,29 @@ const fileArr = ['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
 const fileUrl = fileArr.map(file=>{
   return '../img/path/'+file;
 });
-
 console.log( fileUrl );
 
+
+// const BoxSet = function(title, content, imgUrl, img){
+//   this.title = title;
+//   this.content = content;
+//   this.img = imgUrl + img
+// }
+// const newData = new BoxSet(a, b)
+
+class BoxReSet {
+  constructor ( title, content, imgUrl, img) {
+    this.title = title;
+    this.content = content;
+    this.img = imgUrl + img
+  }
+}
+
+let setBox2 = [];
+dataFile.forEach((data,idx)=>{
+  setBox2.push(new BoxReSet(data.title, data.content, data.imgUrl, data.img));
+
+});
+console.log( setBox2 );
+
+// ==================================================================================
