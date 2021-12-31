@@ -7,7 +7,7 @@
  * 3. 스크롤에의한 이미지가 다 끝나고 난 뒤, 이후에 보여줄 내용을 원활하게 보이도록 처리
  */
 
-
+const elWrap    = document.querySelector('#wrap');
 const elViewBox = document.querySelector('#viewBox');
 const elImgArea = elViewBox.querySelector('.img_area');
 const COUNT_NUM = 80;
@@ -54,8 +54,9 @@ window.addEventListener('scroll',(e)=>{                  // 브라우저에서 �
   // * 이미지담은 요소 이동수행 (topMove 이 음수로 나타나기 시작하는 시점)
   let topMove = COUNT_NUM + 20 - moveScroll;   // 이미지가 모두 처리된 시점을 기준으로 해당 요소는 위로이동하게
   if(topMove <= 0){
-    elViewBox.style.top = (topMove * 10) + 'px';
-  }
+    elViewBox.style.top = (topMove * 15) + 'px';
+  }  
+
 });
 
 
