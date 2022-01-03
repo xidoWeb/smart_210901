@@ -1,15 +1,15 @@
 
-export default function ContentBox(){
-
-  const myName = 'xido-school';
+export default function ContentBox(props){
 
   // -------------------------------
   return (    
     <article id="contentBox">
-      <p style={ {color:'#f50'} }>{myName} 이란? ...</p>
+      <p style={ {color:'#f50'} }>
+        {props.name} 이란? ...
+      </p>
       <dl>
-        <dt>{myName} 커리큘럼</dt>
-        <dd>{myName} 내용</dd>
+        <dt>{props.name} 커리큘럼</dt>
+        <dd>{props.name} 내용</dd>
       </dl>
     </article>  
   )
