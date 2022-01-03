@@ -4,12 +4,11 @@ import Footer from './component/Footer';
 import './App.css';
 
 function App() {
-  const myName = 'xido';
+  const myName = 'xido-web';
   // -------------------------------------
   return (
     <div className="App">
       <Header 
-        site={myName} 
         url="http://naver.com" />
       <ContentBox 
         name={myName} />  
