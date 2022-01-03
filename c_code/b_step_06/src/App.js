@@ -1,13 +1,18 @@
+import Header from './component/Header';
+import ContentBox from './component/ContentBox';
+import Footer from './component/Footer';
+
 import './App.css';
 
 function App() {
+  const myName = 'xido-web';
+  // -------------------------------------
   return (
-    <>
-      <header></header>
-      <section></section>
-      <article></article>
-      <footer></footer>
-    </>
+    <div className="App">
+      <Header />
+      <ContentBox />  
+      <Footer />      
+    </div>
   );
 }
 
