@@ -1,0 +1,35 @@
+// ConBox.scss
+
+#conBox {
+  width: 100%; max-width:700px;
+  height:auto; min-height:300px;
+  margin:auto; padding:1rem;
+  border:1px solid #333; 
+  background-color: #fff;
+}
+
+.card {
+  width: 250px; height: 400px;
+  padding: 0.5rem;
+  border:1px solid #787;
+  > .img{
+    width: 100%; height: 200px;
+    margin-bottom: 1rem;
+    background-color: #ddd;
+  }
+  dl { width: 100%; height:100px;}
+  .btn {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%; height: 30px;
+
+    button {
+      padding:0.5rem 1rem; 
+      background-color: #05a; color:#fff;}
+    span {
+      padding: 0.5rem;
+      font-size:1.3rem;
+    }
+  }
+}
