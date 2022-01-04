@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import '../style/Review.scss';
-import axios from 'axios';
+
 
 export default function Review() {
   const [review, setReview] = useState('글자를 입력하세요.');
