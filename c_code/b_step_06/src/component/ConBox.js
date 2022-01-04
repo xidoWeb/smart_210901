@@ -33,7 +33,6 @@ export default function ConBox(){
           <button type="button" onClick={fnDecr}>-1</button>
           <span>{number}</span>
         </div>
-
       </div>
     </article>
   )
