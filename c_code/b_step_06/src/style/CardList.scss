@@ -43,9 +43,14 @@
       display:flex; justify-content:space-between;
       width: 100%; height: auto;
       padding:0 1rem;
-      button {
+      
+      label {
         padding: 0.5rem 1rem; border-radius: 0.3rem;
+        cursor: pointer;
         background-color: #ada;}
+
+      input:focus + label{ box-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.7); }
+
       a {
         padding:0.5rem 1rem;  border-radius: 0.3rem;
         background-color: rgb(255, 0, 128);

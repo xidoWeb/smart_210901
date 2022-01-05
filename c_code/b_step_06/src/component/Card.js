@@ -12,14 +12,12 @@ export default function Card({data}){
 
 
   const [ckN, setCkN] = useState(0);
-  const fnCheck = ()=>{
+  const [checkState, setCheckState] = useState('');
+  const fnCheck = (e)=>{
     setCkN( ()=> ckN === 0 ? 1 : 0 )
-    // console.log( checked )
+    setCheckState( e.target.checked );
   };
-  
-  const fnChange = (e)=>{
-    console.log( e.target );
-  }
+
   return (
     <li>
       <div  className="img_set" 
@@ -31,16 +29,21 @@ export default function Card({data}){
         <dd>{data.content}</dd>
       </dl>
       <div className="btns">
-        <span>
-          <input  type="checkbox"
-                  id={data.checkName} 
-                  name={data.checkName} 
-                  onChange={ fnChange }   
-                  checked={ckN}           
-                  value="좋아요체크" />
-        </span>  
+  
+        <input  className="blind"
+                type="checkbox"
+                id={data.checkName} 
+                name={data.checkName} 
+                onChange={ fnCheck }
+                data-checked={checkState}
+                value="좋아요체크" />
         
-        <button type="button" onClick={fnCheck} style={btnStyleArr[ckN]}>좋아요 <MdFavorite style={styleArr[ckN]} /></button>
+        <label  htmlFor={data.checkName} 
+                type="button" 
+                style={btnStyleArr[ckN]}>
+          좋아요 <MdFavorite style={styleArr[ckN]} />
+        </label>
+
         <a className="link" href={data.detailLInk}>상세보기</a>
       </div>
     </li>
