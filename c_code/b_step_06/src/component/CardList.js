@@ -14,11 +14,12 @@ export default function CardList(){
   // ---------------------------------------------
   // const cardListData = ;
   const [cardData, setCardData] = useState([]);
+  const dataUrl = './data/cardListData.json';
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect( async ()=>{
-    const res = await axios.get('./data/cardListData.json')
-                setCardData(res.data)  
+  useEffect( ()=>{
+    axios.get(dataUrl)
+    .then(res => setCardData(res.data))
+    .catch( console.log )  
   }, [])
 
   // ---------------------------------------------
