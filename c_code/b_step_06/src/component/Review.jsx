@@ -9,7 +9,7 @@ export default function Review() {
   const fnReviewChange = (e)=>{  setReview( e.target.value ) };
   
   useEffect( ()=>{
-    console.log( review );
+    // console.log( review );
   }, []);
 
 
@@ -28,7 +28,7 @@ export default function Review() {
   useEffect( async () => {
     const response = await axios.get('./data/dataSample.json');
     const dataResult = await response.data;
-    console.log(dataResult);
+    // console.log(dataResult);
   }, [])
   
   
