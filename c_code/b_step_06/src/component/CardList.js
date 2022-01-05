@@ -22,6 +22,9 @@ export default function CardList(){
     .catch( console.log )  
   }, [])
 
+  // 단순히 순서대로진행하는경우는 async/await이용
+  // 결과에대한 에러를 확인할 필요가 있을경우 then/catch 절을 이용
+
   // ---------------------------------------------
   return (
     <div className="card_area">
