@@ -1,6 +1,5 @@
-/* eslint-disable no-lone-blocks */
 import React,{useState, useEffect} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import '../style/Review.scss';
 
 
@@ -13,23 +12,12 @@ export default function Review() {
   }, []);
 
 
-  {
-  // useEffect( async () => {
-  //   // fetch('./data/dataSample.json')
-  //   // .then(res => res.json() )
-  //   // .then(console.log);   
-    
-  //       const resolve = await fetch('./data/dataSample.json');
-  //       const data    = await resolve.json();
-  //       console.log( data );
-  // }, [])
-  }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect( async () => {
-    const response = await axios.get('./data/dataSample.json');
-    const dataResult = await response.data;
-    // console.log(dataResult);
-  }, [])
+  // useEffect( async () => {
+  //   // const response = await axios.get('./data/dataSample.json');
+  //   // const dataResult = await response.data;
+  //   // console.log(dataResult);
+  // }, [])
   
   
   

@@ -2,6 +2,7 @@ import { MdFavorite } from 'react-icons/md';
 import { useState } from 'react';
 import '../style/ConBox.scss';
 
+
 export default function ConBox(){
 
   const favArr = ['Normal', 'Good'];
@@ -10,10 +11,11 @@ export default function ConBox(){
     {color:'#f33', fontSize:'1.5rem'},
   ];
   const [fav, setFav] = useState(0);
-  const fnFavorite = ()=>{ setFav( (fav === 0) ? 1 : 0 ) };
+  const fnFavorite = ()=>{ setFav( !fav ? 1 : 0  ) };
   const [number, setNumber] = useState(0);
   const fnIncr = ()=>{ setNumber(number + 1) };
   const fnDecr = ()=>{ setNumber(number <= 0 ? 0 : number -1 ) };
+
   
   return (
     <article id="conBox">
