@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from './component/Header';
-import Router from './component/Router';
 import Footer from './component/Footer';
+import RouterPage from './router/RouterPage';
 import './App.css';
 
 function App() {
   const title = 'site';
   return (
-    <div className="App">      
+    <div className="App">    
         <Header heading={title} />
-        <Router />
-        <Footer heading={title} />      
+        <RouterPage />
+        <Footer heading={title} />
     </div>
   );
 }
@@ -18,7 +18,10 @@ function App() {
 export default App;
 
 
-
+// react-router-dom을 사용하기 위해
+// 1. router기능이 연계되는 범위를 <BrowserRouter>로 감싸주어야한다.
+// 2. router를 사용하기 위해 a요소 대신 Link 또는 NavLink요소
+// 3. href 대신 to속성을 사용
 
 
 

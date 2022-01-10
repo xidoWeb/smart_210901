@@ -3,8 +3,6 @@ import Main from './Main';
 import Review from './Review';
 import CardList from './CardList';
 
-
-
 export default function Router(){
   return(   
   <Routes>
