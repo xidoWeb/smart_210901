@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Main from '../component/Main';
+import Main from '../page/Main';
 // import Company from '../page/Company';
 import {Manual, Person, Rule, Etc} from '../page/Company';
 
