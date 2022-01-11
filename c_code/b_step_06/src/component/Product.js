@@ -1,6 +1,7 @@
 // Product.js
 
 import React, { useState } from 'react';
+import ProductContent from './ProductContent';
 import '../style/Product.scss';
 
 export default function Product() {
@@ -45,16 +46,7 @@ export default function Product() {
         <button type="button" onClick={(e)=> fnTab(e, 0) }>Coffee</button>
         <button type="button" onClick={(e)=> fnTab(e, 1) }>Drink</button>
       </div>
-
-      <div className="content_part">
-        <h2>{prCon.pageTitle}</h2>
-        <p>{prCon.pageContent}</p>
-        <ul>
-          { prCon.products.map( (pr, idx) => (
-            <li key={idx}><dl><dt>{pr.product}</dt><dd>{pr.narr}</dd></dl></li>
-            ) )}
-        </ul>
-      </div>
+      <ProductContent data={prCon} />      
     </div>
   )}
 
