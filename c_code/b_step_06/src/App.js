@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">    
         <Header heading={title} />
-        <RouterPage />
+        <RouterPage />     
         <Footer heading={title} />
     </div>
   );

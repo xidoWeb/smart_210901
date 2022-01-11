@@ -5,7 +5,8 @@ export default function Navigation (){
   const navList = [
     {content:"Main", href:"main"},
     {content:"Review", href:"review"},
-    {content:"CardList", href:"cardList"}
+    {content:"CardList", href:"cardList"},
+    {content:"Product", href:'product' }
   ];
 
   return (

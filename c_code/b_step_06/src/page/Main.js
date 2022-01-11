@@ -21,9 +21,6 @@ export default function Main() {
         { 
           detail.map( (data) => <ViewDetail key={data.id} /> )  
         }
-
-        
-        
       </div>
     </div>
   )

@@ -1,0 +1,24 @@
+
+[
+  {
+    "pageTitle" : "cofee",
+    "pageContent" : "coffee 내용에 따른 설명",
+    "products": [
+      { "product":"espresso"   , "narr": "espresso 설명" },
+      { "product":"americano"  , "narr": "아메리카노 설명" },
+      { "product":"latte"      , "narr": "latte 설명" },
+      { "product":"cafe mocca" , "narr": "cafe mocca 설명" },
+      { "product":"apogato"    , "narr": "apogato 설명" }
+    ]
+  },
+  {
+    "pageTitle" : "drink",
+    "pageContent" : "drink 내용에 따른 설명",
+    "products": [
+      { "product":"orange" , "narr": "orange 설명" },
+      { "product":"포도"   , "narr": "포도 설명" },
+      { "product":"kiwi"   , "narr": "kiwi 설명" },
+      { "product":"banana" , "narr": "banana 설명" }
+    ]                      
+  }
+]
