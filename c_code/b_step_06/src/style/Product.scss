@@ -5,6 +5,13 @@
   box-sizing:border-box;
   margin:3rem auto; background-color: #fff;
 
+  .btn_part{ padding: 1rem; 
+    >button {
+      margin:0.1rem 1rem; padding:0.7rem 1.5rem; 
+      border-radius:0.25rem; background-color: #0af;}
+    >button:hover{ background-color: #057; color:#fff;}
+  }
+
   > h2 { font-size: 1.5rem; margin-bottom: 0.5rem; text-transform:capitalize; color:#057}
   > p { padding-bottom: 0.5rem; border-bottom: 1px solid #057;}
 
