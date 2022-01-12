@@ -148,6 +148,11 @@ main, figure, figcaption, hgroup {
   background-color: #ddd;
 }
 
+.blank_wrap {
+  width: 100%; height: auto; min-height:400px; padding:5rem; 
+  font-size: 2rem;
+}
+
 /*# sourceMappingURL=common.css.map */
 
 #root { width: 100%; height: 100%; }

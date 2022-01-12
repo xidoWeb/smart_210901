@@ -1,5 +1,20 @@
 // Footer.scss
 
+
+#footBox {
+  display: flex;
+  width: 100%; height: auto;
+  padding: 1rem; background-color: #333;
+  color:#fff;
+  h2{
+    display:flex; align-items: center; width:100px; border:1px solid #aaa;
+    margin-right:2rem; padding: 0.5rem 1rem; border-radius:0.4rem; 
+    text-align: center; background-color: #575757; text-transform: uppercase;}
+  a{ color:inherit; }
+}
+.company_info {width: 600px; height: auto;  margin:1rem; margin-top: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid #fff;
+  > ul {display:flex; justify-content:space-between;}
+}
 .on {
   font-weight: 700; color:#f00;
   text-decoration-line:underline; text-decoration-color:#f33;}
