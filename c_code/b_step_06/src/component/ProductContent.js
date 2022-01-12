@@ -1,6 +1,5 @@
 // ProductContent.js
 
-import React,{useState, useEffect} from 'react';
 import ProductLi from './ProductLi'
 
 export default function ProductContent({data}) {
