@@ -8,30 +8,35 @@ import '../style/Event.scss';
 import EventLi from './EventLi';
 
 export default function Event() {
-
+  const plusN = 5;
+  const dataUrl = './data/eventList.json';
+  
   const [dataList, setDataList] = useState([]);
+  const [num, setNum] = useState(5);
 
   // data 불러오기
-  const dataUrl = './data/eventList.json';
-
   useEffect(()=>{
-    axios.get(dataUrl).then(res => setDataList(res.data) )
+    // axios.get(dataUrl).then(res => setDataList(res.data) )
+    (async ()=>{
+      const res = await axios.get(dataUrl);
+                  setDataList(res.data);
+    })()
   }, [])
-
-  const viewData = dataList.filter((data,i)=> i < 10 );
-
+  // useEffect(()=>{   console.log( num ); }, [num])
+  const fnPlusNum = () => {  setNum( num + plusN );   }
+  const viewData = dataList.filter((data,i)=> i < num );
   return (
     <article className='event_area'>
       <h2>Event</h2>
       <ul>
-        { viewData.map( (data,idx)=> <EventLi  key={idx} data={data} />  )}        
+        { viewData.map( (view,idx)=> <EventLi  key={idx} data={view} />  )}        
       </ul>
 
       <div className='more_btn'>
-        <button type="button">
+        <button type="button" onClick={fnPlusNum}>
           <MdExpandMore />
           <span className='blind'>더보기</span>
-          </button>
+        </button>
       </div>
     </article>
   )
