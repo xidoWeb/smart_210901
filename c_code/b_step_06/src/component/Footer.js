@@ -8,7 +8,7 @@ export default function Footer(props){
 
   return (
     <footer id="footBox">
-      <h2>{props.heading} 정보</h2>
+      <h2>{props.heading}<br />정보</h2>
       <div className="company_info">
         <ul>
           <li><NavLink className={fnAction} to="/manual">이용약관</NavLink></li>
