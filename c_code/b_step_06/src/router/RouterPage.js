@@ -5,7 +5,7 @@ import Product from '../component/Product';
 import Review from '../component/Review';
 import CardList from '../component/CardList';
 import Event from '../component/Event';
-import {Manual, Person, Rule, Etc} from '../page/Company';
+import {Manual, Person, Rule} from '../page/Company';
 import NotFound from '../component/NotFound';
 
 export default function RouterPage() {
