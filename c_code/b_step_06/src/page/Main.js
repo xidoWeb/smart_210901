@@ -10,23 +10,25 @@ export default function Main() {
   const listData = ['content_01', 'content_02', 'content_03', 'content_04'];
   const [num, setNum] = useState(0);
 
+  const setStyle = {
+    transition:'margin 500ms ease' ,
+    marginLeft: `${num * -100}%`
+  }
 
   useEffect( ()=>{
     console.log( listData[num] );
   }, [num])
 
-
   const fnClassAdd = (i)=>{
-    // const ON = (i === num) ? '  on' : '';
+    const ON = (i === num) ? '  on' : '';
     const VIEW = 'view_';
     const textNum = '000' + (i+1);
-    const VIEWTEXT = VIEW + textNum.slice(-2);
-    // console.log( VIEWTEXT, ON );
-    // return VIEWTEXT+ON;
-    return VIEWTEXT+ '  on';
+    const VIEW_TEXT = VIEW + textNum.slice(-2);
+    return VIEW_TEXT+ ON;
   };
 
-  const viewData = listData.filter( (list,idx) => idx === num );
+  // const viewData = listData.filter( (list,idx) => idx === num );
+
   return (
     <div className='main_area'>
       <h2>Title</h2>
@@ -36,13 +38,15 @@ export default function Main() {
           <button type='button' className='prev' onClick={ ()=>{ setNum( num <= 0 ? 3 : num - 1 ) }}>이전</button>
         </div>
         <div className='view_contents'>
-          <ul>
+          <ul style={setStyle}>
             {/* {listData.map( (list, idx)=> 
                 <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )} */}
 
-            {viewData.map((list, idx)=> 
-                <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )}
+            {/* {viewData.map((list, idx)=> 
+                <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )} */}
 
+            {listData.map( (list, idx)=> 
+                            <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )}
           </ul>
         </div>
       </div>
