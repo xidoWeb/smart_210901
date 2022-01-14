@@ -1,26 +1,33 @@
 // Main.js (page)
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import ViewDetail from './main/ViewDetail';
+import React, { useState, useEffect } from 'react';
+
 import '../style/Main.scss';
+import '../style/MainViewBox.scss';
 
 export default function Main() {
-
-  const [detail, setDetail] = useState([]);
+  const [num, setNum] = useState(0);
 
   useEffect( ()=>{
-    axios.get('./data/viewDetail.json')
-    .then(res => setDetail(res.data) )    
-  }, [])
+    console.log( num );
+  }, [num])
 
   return (
     <div className='main_area'>
       <h2>Title</h2>
       <div className='view_part'>
-        { 
-          detail.map( (data) => <ViewDetail key={data.id} /> )  
-        }
+        <div className='slide_btn'>
+          <button type='button' className='next' onClick={ ()=>{ setNum( num >= 3 ? 0 : num + 1 ) }}>다음</button>
+          <button type='button' className='prev' onClick={ ()=>{ setNum( num <= 0 ? 3 : num - 1 ) }}>이전</button>
+        </div>
+        <div className='view_contents'>
+          <ul>
+            <li className='view_01 on'>01</li>
+            <li className='view_02'>02</li>
+            <li className='view_03'>03</li>
+            <li className='view_04'>04</li>
+          </ul>
+        </div>
       </div>
     </div>
   )
