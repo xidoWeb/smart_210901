@@ -10,8 +10,8 @@ export default function Main() {
   const listData = ['content_01', 'content_02', 'content_03', 'content_04'];
   const [num, setNum] = useState(0);
 
-  const setStyle = {
-    transition:'margin 500ms ease' ,
+  const setStyle = {    
+    transition: (num===0) ? null : 'margin 500ms ease' ,
     marginLeft: `${num * -100}%`
   }
 
