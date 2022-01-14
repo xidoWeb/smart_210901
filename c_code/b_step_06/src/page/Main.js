@@ -6,11 +6,24 @@ import '../style/Main.scss';
 import '../style/MainViewBox.scss';
 
 export default function Main() {
+  
+  const listData = ['content_01', 'content_02', 'content_03', 'content_04'];
   const [num, setNum] = useState(0);
 
+
   useEffect( ()=>{
-    console.log( num );
+    console.log( listData[num] );
   }, [num])
+
+
+  const fnClassAdd = (i)=>{
+    const ON = (i === num) ? '  on' : '';
+    const VIEW = 'view_';
+    const textNum = '000' + (i+1);
+    const VIEWTEXT = VIEW + textNum.slice(-2);
+    // console.log( VIEWTEXT, ON );
+    return VIEWTEXT+ON;
+  };
 
   return (
     <div className='main_area'>
@@ -22,10 +35,14 @@ export default function Main() {
         </div>
         <div className='view_contents'>
           <ul>
-            <li className='view_01 on'>01</li>
+            {/* <li className='view_01 on'>01</li>
             <li className='view_02'>02</li>
             <li className='view_03'>03</li>
-            <li className='view_04'>04</li>
+            <li className='view_04'>04</li> */}
+
+            {listData.map( (list, idx)=> 
+                <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )}
+
           </ul>
         </div>
       </div>
