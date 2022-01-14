@@ -17,14 +17,16 @@ export default function Main() {
 
 
   const fnClassAdd = (i)=>{
-    const ON = (i === num) ? '  on' : '';
+    // const ON = (i === num) ? '  on' : '';
     const VIEW = 'view_';
     const textNum = '000' + (i+1);
     const VIEWTEXT = VIEW + textNum.slice(-2);
     // console.log( VIEWTEXT, ON );
-    return VIEWTEXT+ON;
+    // return VIEWTEXT+ON;
+    return VIEWTEXT+ '  on';
   };
 
+  const viewData = listData.filter( (list,idx) => idx === num );
   return (
     <div className='main_area'>
       <h2>Title</h2>
@@ -35,12 +37,10 @@ export default function Main() {
         </div>
         <div className='view_contents'>
           <ul>
-            {/* <li className='view_01 on'>01</li>
-            <li className='view_02'>02</li>
-            <li className='view_03'>03</li>
-            <li className='view_04'>04</li> */}
+            {/* {listData.map( (list, idx)=> 
+                <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )} */}
 
-            {listData.map( (list, idx)=> 
+            {viewData.map((list, idx)=> 
                 <li className={ fnClassAdd(idx) } key={idx}>{list}</li> )}
 
           </ul>
