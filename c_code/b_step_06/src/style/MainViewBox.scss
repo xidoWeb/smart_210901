@@ -6,7 +6,7 @@
     button { padding:0.3rem 1rem; background-color: #ddd; margin:0 1rem; }
   }
 
-  $len : 4; 
+  $len: 5; 
   .view_contents {
     overflow: hidden;
     width: 100%; height: 500px; border:1px solid #999;
@@ -24,4 +24,9 @@
     .view_04{ background-color: #0CE69C;}
   }
 
+}
+
+@keyframes firstSlide {
+  0% { margin-left: 100%; transition:none; }
+  100% { margin-left:0; transition: margin 500ms ease;}
 }
