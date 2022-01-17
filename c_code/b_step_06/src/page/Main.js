@@ -1,6 +1,6 @@
 // Main.js (page)
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import '../style/Main.scss';
 import '../style/MainViewBox.scss';
@@ -11,9 +11,9 @@ export default function Main() {
   listData.unshift(listData[listData.length-1]);
 
   const [num, setNum] = useState(0);
-  const [check, setCheck] = useState('next');
+  // const [check, setCheck] = useState('next');
+  const checkRef = useRef('next'); // {current:'next'}
   
-
   const initialStyle = {
     position:'relative', left:'-100%',    
     marginLeft: `${num * -100}%`
@@ -23,7 +23,8 @@ export default function Main() {
 
   useEffect( ()=>{
     // console.log( listData[num] );
-    (check === 'next') ? fnSlideNext() : fnSlidePrev();
+    // (check === 'next') ? fnSlideNext() : fnSlidePrev();
+    (checkRef.current === 'next') ? fnSlideNext() : fnSlidePrev();
   }, [num])
 
   const fnClassAdd = (i)=>{
@@ -49,8 +50,16 @@ export default function Main() {
   };
 
   // const viewData = listData.filter( (list,idx) => idx === num );
-  const fnNextSlide = ()=> { setNum( num >= listData.length-2 ? 0 : num + 1 ); setCheck('next');}
-  const fnPrevSlide = ()=> { setNum( num <= 0 ? listData.length-2 : num - 1 ); setCheck('prev');}
+  const fnNextSlide = ()=> { 
+    setNum( num >= listData.length-2 ? 0 : num + 1 ); // useState값 변경 -> Main()
+    // setCheck('next'); // useState값 변경 -> Main()
+    checkRef.current = 'next';
+  }
+  const fnPrevSlide = ()=> { 
+    setNum( num <= 0 ? listData.length-2 : num - 1 ); 
+    // setCheck('prev'); 
+    checkRef.current = 'prev';
+  }
 
   return (
     <div className='main_area'>
@@ -83,3 +92,15 @@ export default function Main() {
 // const obj = { a: 1, b:2, c:3};
 // const obj2 = {...obj, c:4, b:1, e:8};
 // console.log( obj2 );
+
+
+// useState는 값이 바뀌면 해당하는 변수에따른 값이 재할당하기위해 리렌더링처리
+// useRef는 값이 바뀌더라도 렌더링을 다시 하지 않는다. 단순히 값만 가지고 있는다.
+
+
+
+// useState는 변화가 일어나면 useEffect에서 감지가 됨 , 
+// useState를 사용하면 렌더링이 다시됨.
+// useRef는 DOM의 변화는 일어나지 않음
+// 함수를 다시 수행하지 않거나, 화면에 뿌려주는기능을 사용하지 않는다면
+// useRef를 써도 된다.

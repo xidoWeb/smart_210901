@@ -27,11 +27,14 @@
 }
 
 @keyframes firstSlide {
-  0% { margin-left: 100%; transition:none; }
-  100% { margin-left:0; transition: margin 500ms ease;}
+  0% { margin-left: 100%; }
+  100% { margin-left:0%; }
 }
 
 @keyframes lastSlide {
-  0% {margin-left:0%; transition:margin 500ms ease;}
+  0% {margin-left:0%;}
   100% {margin-left:100%;}
 }
+
+// transition 은 1회성의 움직임에대한 시간,
+// animation은 전체의 시간
