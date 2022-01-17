@@ -12,17 +12,18 @@ export default function Main() {
 
   const [num, setNum] = useState(0);
   const [check, setCheck] = useState('next');
+  
 
   const initialStyle = {
-    position:'relative', left:'-100%',
-    transition: (num !== 0) ? 'margin 500ms ease' : 'none',
-    animation : (num === 0) ? 'firstSlide 500ms ease 1' : 'none',
+    position:'relative', left:'-100%',    
     marginLeft: `${num * -100}%`
   }  
-  const setStyle = { ...initialStyle }
+
+  const [slideStyle, setSlideStyle] = useState(initialStyle);
 
   useEffect( ()=>{
-    console.log( listData[num] );
+    // console.log( listData[num] );
+    (check === 'next') ? fnSlideNext() : fnSlidePrev();
   }, [num])
 
   const fnClassAdd = (i)=>{
@@ -33,9 +34,23 @@ export default function Main() {
     return VIEW_TEXT+ ON;
   };
 
+  const fnSlideNext = () => {
+    setSlideStyle({
+      ...initialStyle,
+      transition: (num !== 0) ? 'margin 500ms ease' : 'none',
+      animation : (num === 0) ? 'firstSlide 500ms ease 1' : 'none',});
+  };
+  const fnSlidePrev = () => {
+    setSlideStyle({
+      ...initialStyle,
+      transition: (num !== listData.length-2) ? 'margin 500ms ease':'none',
+      animation : (num === listData.length-2 ) ? 'lastSlide 500ms ease 1':'none'
+    });
+  };
+
   // const viewData = listData.filter( (list,idx) => idx === num );
-  const fnNextSlide = ()=> { setNum( num >= 3 ? 0 : num + 1 ); setCheck('next');}
-  const fnPrevSlide = ()=> { setNum( num <= 0 ? 3 : num - 1 ); setCheck('prev');}
+  const fnNextSlide = ()=> { setNum( num >= listData.length-2 ? 0 : num + 1 ); setCheck('next');}
+  const fnPrevSlide = ()=> { setNum( num <= 0 ? listData.length-2 : num - 1 ); setCheck('prev');}
 
   return (
     <div className='main_area'>
@@ -46,7 +61,7 @@ export default function Main() {
           <button type='button' className='prev' onClick={ fnPrevSlide }>이전</button>
         </div>
         <div className='view_contents'>
-          <ul style={setStyle}>
+          <ul style={slideStyle}>
             {listData.map( (list, idx)=> <li key={idx}>{list}</li> )}
           </ul>
         </div>

@@ -30,3 +30,8 @@
   0% { margin-left: 100%; transition:none; }
   100% { margin-left:0; transition: margin 500ms ease;}
 }
+
+@keyframes lastSlide {
+  0% {margin-left:0%; transition:margin 500ms ease;}
+  100% {margin-left:100%;}
+}
